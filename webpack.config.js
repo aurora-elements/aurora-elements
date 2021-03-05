@@ -1,4 +1,5 @@
 const HtmlWebpackPlugin = require("html-webpack-plugin");
+const CopyWebpackPlugin = require("copy-webpack-plugin");
 const path = require("path");
 
 module.exports = {
@@ -8,7 +9,7 @@ module.exports = {
         showcase: './src/showcase.js'
     },
     output: {
-        publicPath: '/dist/'
+        publicPath: '/'
     },
     module: {
         rules: [
@@ -22,6 +23,9 @@ module.exports = {
         new HtmlWebpackPlugin({
             chunks: ['showcase'],
             template: './src/showcase.html'
+        }),
+        new CopyWebpackPlugin({
+            patterns: [{from: './src/showcase', to: 'showcase'}]
         })
     ]
 };

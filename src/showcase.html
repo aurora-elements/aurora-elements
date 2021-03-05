@@ -5,13 +5,97 @@
         <title>Aurora Components Showcase</title>
     </head>
     <body>
-        <h1 class="header">Aurora Components Showcase</h1>
-        <h2>Link</h2>
-        <pre>
-            <code>
-                &lt;aurora-link href="https://space.one" label="space.one" /&gt;
-            </code>
-        </pre>
-        <aurora-link href="https://space.one" label="space.one" />
+      <div class="nav">
+        <a href="/">
+          <img src="https://t4.ftcdn.net/jpg/02/98/08/89/360_F_298088930_nLwhenYeFLdKv3suBmSy38M7OSMvfUnI.jpg" />
+        </a>
+        <span class="claim">Showcase</span>
+        <nav is="aurora-router" data-outlet="#main">
+            <a href="/" slot="link">Overview</a>
+            <a href="/card" is="aurora-router-link" slot="link" data-template="/dist/showcase/card.html">Card</a>
+            <a href="/page2" is="aurora-router-link" slot="link" data-template="/dist/showcase/page2.html">page 2</a>
+        </nav>
+      </div>
+      <section class="content">
+        <div id="main">
+          <h2 class="headline">Overview</h2>
+        </div>
+        <footer></footer>
+      </section>
+      
+        
+
+        <script>
+            class AuroraRouterLink extends HTMLAnchorElement {
+              constructor() {
+                super();
+              }
+      
+              connectedCallback() {
+                this.addEventListener('click', e => {
+                  e.preventDefault();
+      
+                  this.dispatchEvent(new CustomEvent('route-change', {
+                    composed: true,
+                    bubbles: true,
+                    detail: {link: this}
+                  }));
+                })
+              }
+            }
+      
+            class AuroraRouter extends HTMLElement {
+              constructor() {
+                super();
+      
+                const shadowRoot = this.attachShadow({mode: 'open'});
+      
+                shadowRoot.innerHTML = `
+                  <style>
+                    :host {
+
+                    }
+                    ::slotted(a) {
+                      border-top: 1px solid #e0e6ed;
+                      display: block;
+                      color: #3c4858;
+                      text-decoration: none;
+                      padding: 20px 30px;
+                      font-size: 20px;
+                      float: left;
+                      width: 100%;
+                      box-sizing: border-box;
+                    }
+      
+                  </style>
+                  <slot name="link"></slot>
+                `;
+              }
+      
+              connectedCallback() {
+                this.outlet = document.querySelector(this.dataset.outlet);
+      
+                this.addEventListener('route-change', e => {
+                  this.handleRouteChange(e.detail.link)
+                });
+              }
+      
+              async handleRouteChange(link) {
+                const template = link.dataset.template;
+                const url = link.getAttribute('href');
+                const state = {template, url};
+      
+                const html = await (await fetch(template)).text();
+      
+                history.pushState(state, null, url);
+      
+                this.outlet.innerHTML = html;
+              }
+            }
+      
+            customElements.define('aurora-router', AuroraRouter, {extends: 'nav'});
+            customElements.define('aurora-router-link', AuroraRouterLink, {extends: 'a'});
+      
+          </script>
     </body>
 </html>
