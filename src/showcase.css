@@ -11,6 +11,11 @@ body {
       "nav content";
   }
 
+  .logo {
+    max-width: 200px;
+    display: block;
+    margin: 20px auto -10px auto;
+  }
   .claim {
     letter-spacing: 3px;
     font-size:10px;
