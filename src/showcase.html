@@ -11,10 +11,28 @@
         </a>
         <span class="claim">Showcase</span>
         <nav is="aurora-router" data-outlet="#main">
-            <a href="/" slot="link">Overview</a>
-            <a href="/card" is="aurora-router-link" slot="link" data-template="/dist/showcase/card.html">Card</a>
-            <a href="/page2" is="aurora-router-link" slot="link" data-template="/dist/showcase/page2.html">page 2</a>
-        </nav>
+          <aurora-accordion slot="link">
+            <aurora-accordion-item label="Overview">
+              <a href="/">Overview</a>
+            </aurora-accordion-item>
+            <aurora-accordion-item 
+              label="Interactions" 
+              style="display: none;">
+            </aurora-accordion-item>
+            <aurora-accordion-item label="Inputs">            
+            </aurora-accordion-item>
+            <aurora-accordion-item label="Visualisations">
+              <a 
+                href="/card" 
+                is="aurora-router-link" 
+                data-template="/dist/showcase/card.html">
+                Card
+              </a>
+            </aurora-accordion-item>
+            <aurora-accordion-item label="Layouts">             
+            </aurora-accordion-item>
+          </aurora-accordion>
+      </nav>
       </div>
       <section class="content">
         <div id="main">
