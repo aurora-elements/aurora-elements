@@ -25,6 +25,7 @@ body {
     float: left;
     text-align: center;
     padding-bottom: 40px;
+    border-bottom:1px solid var(--accordion-item-border-color, var(--border-color, #c1c1c1));
   }
 .nav { 
   --accordion-item-color-expanded: #484848;
