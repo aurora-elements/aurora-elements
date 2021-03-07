@@ -29,6 +29,7 @@ class AuroraRouter extends LitElement {
         });
 
         let routeStart = document.querySelector('[route-start]');
+        routeStart.classList.add('aurora-state-active');
         this.handleRouteChange(routeStart);
     }
 

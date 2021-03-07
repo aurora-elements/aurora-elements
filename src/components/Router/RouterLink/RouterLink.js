@@ -23,8 +23,14 @@ class AuroraRouterLink extends LitElement {
 
     connectedCallback() {
         super.connectedCallback();
-      this.addEventListener('click', e => {
+        this.addEventListener('click', e => {
         e.preventDefault();
+
+        let links = document.querySelectorAll('aurora-router-link');
+        for(let i = 0; i < links.length; i++) {
+            links[i].classList.remove('aurora-state-active');
+        }
+        this.classList.add('aurora-state-active');
 
         this.dispatchEvent(new CustomEvent('route-change', {
           composed: true,

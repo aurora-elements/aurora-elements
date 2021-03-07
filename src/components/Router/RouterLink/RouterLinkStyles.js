@@ -11,4 +11,8 @@ export const styles = css`
         outline: none!important;
         cursor: pointer;
     }
+    :host(.aurora-state-active) {
+        cursor: default;
+        color: var(--router-link-color-active, var(--color-accent, #00569c));
+    }
 `;
