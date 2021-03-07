@@ -27,7 +27,7 @@ body {
     padding-bottom: 40px;
   }
 .nav { 
-  --accordion-item-color-expanded: #3c4858;
+  --accordion-item-color-expanded: #484848;
   --accordion-item-border-color: #e0e6ed;
   grid-area: nav; 
   background-color: #fff;
@@ -64,11 +64,11 @@ body {
 #main .headline {
   font-size: 2.3rem;
   font-weight: 300;
-  color: #3c4858;
+  color: #484848;
   margin: 20px 0 80px 0;
 }
 #main .headline-sub {
-  color:#3c4858;
+  color:#484848;
   font-size: 20px;
   font-weight: 400;
   line-height: 34px;
