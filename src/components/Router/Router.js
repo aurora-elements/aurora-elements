@@ -20,13 +20,16 @@ class AuroraRouter extends LitElement {
         return template(this)
     }
 
-    connectedCallback() {
-        super.connectedCallback();
+    firstUpdated() {
+        super.firstUpdated();
         this.outlet = document.querySelector(this.routeOutlet);
 
         this.addEventListener('route-change', e => {
             this.handleRouteChange(e.detail.link)
         });
+
+        let routeStart = document.querySelector('[route-start]');
+        this.handleRouteChange(routeStart);
     }
 
     async handleRouteChange(link) {

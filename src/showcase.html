@@ -15,8 +15,10 @@
     <aurora-router route-outlet="#main">
       <aurora-accordion slot="link">
         <aurora-accordion-item label="Overview">
-          <a href="/">Introduction</a>
-          <aurora-router-link to="/" content="">
+          <aurora-router-link
+            route-start 
+            to="/" 
+            content="/dist/showcase/introduction.html">
             Introduction
           </aurora-router-link>
         </aurora-accordion-item>
@@ -25,7 +27,9 @@
         <aurora-accordion-item label="Inputs">
         </aurora-accordion-item>
         <aurora-accordion-item label="Visualisations">
-          <aurora-router-link to="/card" content="/dist/showcase/card.html">
+          <aurora-router-link 
+            to="/card" 
+            content="/dist/showcase/card.html">
             Card
           </aurora-router-link>
         </aurora-accordion-item>
@@ -36,7 +40,6 @@
   </div>
   <section class="content">
     <div id="main">
-      <h2 class="headline">Introduction</h2>
     </div>
     <footer></footer>
   </section>
