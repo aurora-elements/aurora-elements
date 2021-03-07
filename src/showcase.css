@@ -35,15 +35,6 @@ body {
   border-right: 1px solid #e0e6ed;
   overflow-y: auto;
 }
-.nav nav a {
-  text-decoration: none;
-  width: 100%;
-  display: block;
-  padding: 0 20px 10px 20px;
-  line-height: 24px;
-  color: #9c9c9c;
-  outline: none!important;
-}
 
 .content { 
     grid-area: content;
