@@ -20,7 +20,7 @@ body {
     letter-spacing: 3px;
     font-size:10px;
     text-transform: uppercase;
-    color:#8492a6;
+    color:#9c9c9c;
     width: 100%;
     float: left;
     text-align: center;
@@ -40,7 +40,7 @@ body {
   display: block;
   padding: 0 20px 10px 20px;
   line-height: 24px;
-  color: #8492a6;
+  color: #9c9c9c;
   outline: none!important;
 }
 
