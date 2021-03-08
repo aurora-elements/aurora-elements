@@ -32,7 +32,7 @@ class AuroraRouter extends LitElement {
         routeStart.classList.add('aurora-state-active');
         this.handleRouteChange(routeStart);
 
-        window.onpopstate = () => {
+        window.addEventListener('popstate', () => {
             let path = window.location.pathname;
             let links = document.querySelectorAll('aurora-router-link');
             let parents = document.querySelectorAll('aurora-accordion-item');
@@ -49,7 +49,13 @@ class AuroraRouter extends LitElement {
                     links[i].parentElement.setAttribute('expanded', '');
                 }
             }
-          };
+        });
+
+        window.addEventListener('unload', e => {
+            e.preventDefault();
+            window.location.href = "/";
+          });
+          
     }
 
     async handleRouteChange(link) {
