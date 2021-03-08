@@ -9,7 +9,7 @@
 <body>
   <div class="nav">
     <a href="/">
-      <img class="logo" src="/src/showcase/img/aurora-logo.png" />
+      <img class="logo" src="/dist/showcase/img/aurora-logo.png" />
     </a>
     <span class="claim">Showcase</span>
     <aurora-router route-outlet="#main">
@@ -20,6 +20,11 @@
             to="/" 
             content="/dist/showcase/introduction.html">
             Introduction
+          </aurora-router-link>
+          <aurora-router-link
+            to="/whats-new" 
+            content="/dist/showcase/whatsnew.html">
+            What's new
           </aurora-router-link>
         </aurora-accordion-item>
         <aurora-accordion-item label="Interactions">
