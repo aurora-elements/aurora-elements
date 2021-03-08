@@ -35,10 +35,18 @@ class AuroraRouter extends LitElement {
         window.onpopstate = () => {
             let path = window.location.pathname;
             let links = document.querySelectorAll('aurora-router-link');
+            let parents = document.querySelectorAll('aurora-accordion-item');
+
+            for(let i = 0; i < parents.length; i++) {
+                parents[i].removeAttribute('expanded');
+            }
 
             for(let i = 0; i < links.length; i++) {
+                links[i].classList.remove('aurora-state-active');
                 if( links[i].getAttribute('to') === path) {
-                    this.handleRouteChange(links[i])
+                    this.handleRouteChange(links[i]);
+                    links[i].classList.add('aurora-state-active');
+                    links[i].parentElement.setAttribute('expanded', '');
                 }
             }
           };
