@@ -31,6 +31,17 @@ class AuroraRouter extends LitElement {
         let routeStart = document.querySelector('[route-start]');
         routeStart.classList.add('aurora-state-active');
         this.handleRouteChange(routeStart);
+
+        window.onpopstate = () => {
+            let path = window.location.pathname;
+            let links = document.querySelectorAll('aurora-router-link');
+
+            for(let i = 0; i < links.length; i++) {
+                if( links[i].getAttribute('to') === path) {
+                    this.handleRouteChange(links[i])
+                }
+            }
+          };
     }
 
     async handleRouteChange(link) {
