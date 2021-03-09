@@ -47,6 +47,8 @@ class AuroraRouter extends LitElement {
                     this.handleRouteChange(links[i]);
                     links[i].classList.add('aurora-state-active');
                     links[i].parentElement.setAttribute('expanded', '');
+                    document.title = (links[i].pageTitle || links[i].label + ' - aurora showcase') || document.title;
+
                 }
             }
         });
@@ -59,13 +61,15 @@ class AuroraRouter extends LitElement {
     }
 
     async handleRouteChange(link) {
-        const template = link.content;
+        const template = link.content + '.html';
         const url = link.getAttribute('to');
         const state = { template, url };
 
         const html = await (await fetch(template)).text();
 
         history.pushState(state, null, url);
+        console.log('state: ', state);
+        console.log('url: ', url);
 
         this.outlet.innerHTML = html;
     }

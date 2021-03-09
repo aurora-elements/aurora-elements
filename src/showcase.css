@@ -36,6 +36,9 @@ body {
   border-right: 1px solid #e0e6ed;
   overflow-y: auto;
 }
+.nav aurora-accordion-item {
+  padding:0 20px 0 20px;
+}
 
 .content { 
     grid-area: content;
