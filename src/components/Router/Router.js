@@ -68,8 +68,6 @@ class AuroraRouter extends LitElement {
         const html = await (await fetch(template)).text();
 
         history.pushState(state, null, url);
-        console.log('state: ', state);
-        console.log('url: ', url);
 
         this.outlet.innerHTML = html;
     }
