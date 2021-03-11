@@ -31,6 +31,7 @@ class AuroraRouter extends LitElement {
         let routeStart = document.querySelector('[route-start]');
         routeStart.classList.add('aurora-state-active');
         this.handleRouteChange(routeStart);
+        document.title = (routeStart.pageTitle || routeStart.label + ' - aurora showcase') || document.title;
 
         window.addEventListener('popstate', () => {
             let path = window.location.pathname;

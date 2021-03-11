@@ -58,20 +58,28 @@ body {
 }
 
 #main .headline {
-  font-size: 2.3rem;
+  font-size: 2.375rem;
   font-weight: 300;
   color: #484848;
   margin: 20px 0 40px 0;
 }
 #main .headline-sub {
   color:#484848;
-  font-size: 20px;
-  font-weight: 400;
+  font-size: 24px;
+  font-weight: 300;
   line-height: 34px;
+  margin-top:60px;
 }
 #main .description {
   font-size: 20px;
   color: #9c9c9c;
   font-weight: 300;
+  line-height: 160%;
+}
+
+#main .description-sup {
+  color: #9c9c9c;
+  font-weight: 300;
+  font-size: 18px;
   line-height: 160%;
 }
