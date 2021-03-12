@@ -21,16 +21,10 @@ class AuroraCodeMirror extends LitElement {
         return template(this)
     }
 
-   /* createRenderRoot() {
-
-          return this;
-        }
-        */
-
-        /* Get root */
-        get root() {
-            return this.shadowRoot || this
-        }
+    /* Get root */
+    get root() {
+        return this.shadowRoot || this
+    }
 
     firstUpdated() {
         super.firstUpdated();
