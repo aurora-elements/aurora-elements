@@ -1,4 +1,5 @@
 import { LitElement } from "lit-element";
+import hljs from 'highlight.js';
 import { template } from "./CodeMirrorTemplate.js";
 import { styles } from './CodeMirrorStyles.js';
 
@@ -20,6 +21,12 @@ class AuroraCodeMirror extends LitElement {
         return template(this)
     }
 
+   /* createRenderRoot() {
+
+          return this;
+        }
+        */
+
         /* Get root */
         get root() {
             return this.shadowRoot || this
@@ -32,6 +39,10 @@ class AuroraCodeMirror extends LitElement {
         const content =     slot.assignedNodes()[0].textContent;
         const copyButton = this.root.getElementById('copyButton');
         const copySuccess = this.root.getElementById('copy-success');
+
+        document.querySelectorAll('aurora-code-mirror').forEach(block => {
+            hljs.highlightBlock(block);
+        });
 
         const copyTextHandler = () => {
             navigator.clipboard.writeText(content).then(() => {

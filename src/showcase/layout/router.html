@@ -11,115 +11,14 @@
     Sie erhält dann einen Hover-Effekt.
 </p>      
 
-<div class="container">
-    <p class="language">HTML</p>
-    <div class="code-wrapper">
-        <pre>
-            <code id="code">
-&lt;aurora-router route-outlet="#main" &gt; &lt;/aurora-router&gt;
-</code>
-</pre>
-        <button id="copyButton">Copy</button>
-    </div>
-    <span id="copy-success">Code copied! :)</span>
-</div>
-<aurora-code-mirror label="test">
-    &lt;aurora-router 
-        route-outlet="#main" &gt; 
-
-        &lt;aurora-accordion-item 
-        route-outlet="#main" &gt; 
-    &lt;/aurora-accordion-item&gt;
-
-    &lt;/aurora-router&gt;
+<aurora-code-mirror label="Code">   
+&lt;aurora-router 
+    route-outlet="#main"&gt;     
+    &lt;aurora-accordion-item 
+    route-outlet="#main"&gt; 
+    &lt;/aurora-accordion-item&gt;   
+&lt;/aurora-router&gt;  
 </aurora-code-mirror>
 
-<style>
-    .container {
-        width:100%;
-        overflow-x: auto;
-        margin:0;
-        padding:0;
-        box-sizing: border-box;
-    }
-    .language {
-        color: red;
-        background-color: #c1c1c1;
-        padding: 12px 16px;
-        border-radius: 5px 5px 0 0;
-        text-align:right;
-        margin:0;
-    }
-    .code-wrapper {
-        position: relative;
-    }
-    .code-wrapper  pre {
-        background-color: #e0e6ed;
-        color: #000;
-        padding: 8px 20px;
-        border-radius: 0 0 5px 5px;
-        margin:0;
-    }
-    #copyButton {
-        position: absolute;
-        top:8px;
-        right: 8px;
-        padding: 8px;
-        background-color: #ccc;
-        border: none;
-        outline: none;
-        color: #000;
-        border-radius: 5px;
-        cursor: pointer;
-        transition: all 0.2s ease-in;
-        opacity: 0;
-    }
-    #copyButton:hover {
-        background-color: red;
-    }
-    .code-wrapper:hover #copyButton {
-        opacity: 1;
-    }
-    #copy-success {
-        position: absolute;
-        bottom: 12px;
-        left: 50%;
-        transform: translateX(-50%);
-        background-color: red;
-        color: #fff;
-        padding: 16px 32px;
-        font-size: 24px;;
-        border-radius: 5px;
-        display: none;
-    }
-    #copy-success.show-message {
-        display: inline-block;
-    }
-</style>
-<script>
-    document.addEventListener('route-change', () => { console.log('route-change');
-        hljs.initHighlightingOnLoad();
-        const codeBlock = document.getElementById('code');
-        const copyButton = document.getElementById('copyButton');
-        const copySuccess = document.getElementById('copy-success');
 
-        const copyTextHandler = () => {
-            const text = codeBlock.innerText;
-
-            navigator.clipboard.writeText(text).then(() => {
-                copySuccess.classList.add('show-message');
-
-                setTimeout(() => {
-                    copySuccess.classList.remove('show-message');
-                }, 2500);
-
-            }), () => {
-                console.log('Error writing to the clipboard');
-            };
-        }
-
-        copyButton.addEventListener('click', copyTextHandler);
-        
-    })
-</script>
 

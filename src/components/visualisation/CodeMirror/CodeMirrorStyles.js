@@ -7,46 +7,44 @@ export const styles = css`
         margin:0;
         padding:0;
         box-sizing: border-box;
+        padding:0!important;
+        color: #484848;
+        background-color: #f5f5f5;
     }
     .language {
-        color: red;
-        background-color: #c1c1c1;
-        padding: 12px 16px;
-        border-radius: 5px 5px 0 0;
-        text-align:right;
-        margin:0;
+        background-color: #fff;
+        padding: 10px 0;
+        margin: 0;
+        text-transform: uppercase;
     }
-    .code-wrapper {
-        position: relative;
-    }
-    pre {
-        background-color: #e0e6ed;
-        color: #000;
-        padding: 20px;
-        border-radius: 0 0 5px 5px;
-        margin:0;
-    }
-    code {
-        margin: -15px 0 0 -30px;
+
+    slot {
+        white-space: pre;
         display: block;
+        padding: 0px 40px 30px 40px;
+        font-family: 'Roboto Mono', Consolas, Menlo, monospace;
+        line-height: 1.6;
     }
+
     #copyButton {
         position: absolute;
-        top:8px;
-        right: 8px;
+        top: 0;
+        right: 0;
         padding: 8px;
-        background-color: #ccc;
+        background-color: #c1c1c1;
         border: none;
         outline: none;
-        color: #000;
-        border-radius: 5px;
+        color: #484848;
         cursor: pointer;
         transition: all 0.2s ease-in;
         opacity: 0;
     }
     #copyButton:hover {
-        background-color: red;
+        background-color: var(--color-accent, #00569c);
+        color: #fff;
     }
+
+    .code-wrapper {position: relative;}
     .code-wrapper:hover #copyButton {
         opacity: 1;
     }
