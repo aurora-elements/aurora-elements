@@ -34,7 +34,7 @@ class AuroraRouterLink extends LitElement {
             this.classList.add('aurora-state-active');
             document.title = (this.pageTitle || this.label + ' - aurora showcase') || document.title;
 
-            this.dispatchEvent(new CustomEvent('route-change', {
+            this.dispatchEvent(new CustomEvent('route-change', { 
                 composed: true,
                 bubbles: true,
                 detail: {link: this}

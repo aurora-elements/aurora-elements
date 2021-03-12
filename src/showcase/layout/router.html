@@ -16,12 +16,23 @@
     <div class="code-wrapper">
         <pre>
             <code id="code">
-&lt;aurora-router route-outlet="#main" &gt; &lt;/aurora-router&gt;</code>
-        </pre>
-        <button id="copy-button">Copy</button>
+&lt;aurora-router route-outlet="#main" &gt; &lt;/aurora-router&gt;
+</code>
+</pre>
+        <button id="copyButton">Copy</button>
     </div>
     <span id="copy-success">Code copied! :)</span>
 </div>
+<aurora-code-mirror label="test">
+    &lt;aurora-router 
+        route-outlet="#main" &gt; 
+
+        &lt;aurora-accordion-item 
+        route-outlet="#main" &gt; 
+    &lt;/aurora-accordion-item&gt;
+
+    &lt;/aurora-router&gt;
+</aurora-code-mirror>
 
 <style>
     .container {
@@ -49,7 +60,7 @@
         border-radius: 0 0 5px 5px;
         margin:0;
     }
-    #copy-button {
+    #copyButton {
         position: absolute;
         top:8px;
         right: 8px;
@@ -63,10 +74,10 @@
         transition: all 0.2s ease-in;
         opacity: 0;
     }
-    #copy-button:hover {
+    #copyButton:hover {
         background-color: red;
     }
-    .code-wrapper:hover #copy-button {
+    .code-wrapper:hover #copyButton {
         opacity: 1;
     }
     #copy-success {
@@ -85,3 +96,30 @@
         display: inline-block;
     }
 </style>
+<script>
+    document.addEventListener('route-change', () => { console.log('route-change');
+        hljs.initHighlightingOnLoad();
+        const codeBlock = document.getElementById('code');
+        const copyButton = document.getElementById('copyButton');
+        const copySuccess = document.getElementById('copy-success');
+
+        const copyTextHandler = () => {
+            const text = codeBlock.innerText;
+
+            navigator.clipboard.writeText(text).then(() => {
+                copySuccess.classList.add('show-message');
+
+                setTimeout(() => {
+                    copySuccess.classList.remove('show-message');
+                }, 2500);
+
+            }), () => {
+                console.log('Error writing to the clipboard');
+            };
+        }
+
+        copyButton.addEventListener('click', copyTextHandler);
+        
+    })
+</script>
+
