@@ -7,6 +7,6 @@ export function template(data) {
             <slot> </slot>
             <button id="copyButton">Copy</button>
         </div>
-        <span id="copy-success">Code copied! :)</span>
+        <span id="copy-success">Code was copied!</span>
     `
 }

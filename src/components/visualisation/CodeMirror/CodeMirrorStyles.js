@@ -10,6 +10,7 @@ export const styles = css`
         padding:0!important;
         color: #484848;
         background-color: #f5f5f5;
+        position:relative;
     }
     .language {
         background-color: #fff;
@@ -50,15 +51,14 @@ export const styles = css`
     }
     #copy-success {
         position: absolute;
-        bottom: 12px;
-        left: 50%;
-        transform: translateX(-50%);
-        background-color: red;
-        color: #fff;
-        padding: 16px 32px;
-        font-size: 24px;;
-        border-radius: 5px;
+        top: 5px;
+        right: 0;
+        background-color: #f5f5f5;
+        padding: 5px 10px;
         display: none;
+        font-size:80%;
+        color: #9c9c9c;
+
     }
     #copy-success.show-message {
         display: inline-block;
