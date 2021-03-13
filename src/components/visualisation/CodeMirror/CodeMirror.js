@@ -7,7 +7,8 @@ class AuroraCodeMirror extends LitElement {
     /* Properties - LitElement */
     static get properties() {
         return {
-            label: { type: String }
+            label: { type: String },
+            language: { type: String, default: 'xml'}
         };
     }
 
@@ -28,7 +29,7 @@ class AuroraCodeMirror extends LitElement {
 
     firstUpdated() {
         super.firstUpdated();
-
+        this.classList.add(this.language);
         const head = document.getElementsByTagName('head')[0];
 
         if(document.getElementById('codemirror') == null) {
@@ -60,6 +61,11 @@ class AuroraCodeMirror extends LitElement {
         const copyButton =  this.root.getElementById('copyButton');
         const copySuccess = this.root.getElementById('copy-success');
 
+
+        hljs.configure({
+            tabReplace: '    ', // 4 spaces
+            languages: ['xml', 'html', 'js', 'javascript']
+          });
         document.querySelectorAll('aurora-code-mirror').forEach(block => {
             hljs.highlightBlock(block);
         });
