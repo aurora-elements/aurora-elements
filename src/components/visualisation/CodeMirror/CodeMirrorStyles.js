@@ -16,7 +16,6 @@ export const styles = css`
         background-color: #fff;
         padding: 10px 0;
         margin: 0;
-        text-transform: uppercase;
     }
 
     slot {

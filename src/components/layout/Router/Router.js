@@ -24,7 +24,7 @@ class AuroraRouter extends LitElement {
         super.firstUpdated();
         this.outlet = document.querySelector(this.routeOutlet);
 
-        this.addEventListener('route-change', e => { console.log('link');
+        this.addEventListener('route-change', e => {
             this.handleRouteChange(e.detail.link)
         });
 
