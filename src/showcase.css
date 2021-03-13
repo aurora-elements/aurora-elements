@@ -83,3 +83,6 @@ body {
   font-size: 18px;
   line-height: 160%;
 }
+aurora-code-mirror {
+  margin-bottom: 30px;
+}

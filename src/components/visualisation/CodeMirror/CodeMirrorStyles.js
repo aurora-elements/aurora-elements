@@ -57,7 +57,7 @@ export const styles = css`
         padding: 5px 10px;
         display: none;
         font-size:80%;
-        color: #9c9c9c;
+        color: var(--color-accent, #00569c);
 
     }
     #copy-success.show-message {
