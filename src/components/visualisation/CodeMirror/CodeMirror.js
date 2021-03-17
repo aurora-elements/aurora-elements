@@ -7,9 +7,28 @@ class AuroraCodeMirror extends LitElement {
     /* Properties - LitElement */
     static get properties() {
         return {
-            label: { type: String },
-            language: { type: String, default: 'xml'}
+            label: { 
+                type:       String 
+            },
+            language: { 
+                type:       String
+            },
+            copyButtonLabel: { 
+                type:       String, 
+                attribute:  'copy-button-label' 
+            },
+            copiedMsg: { 
+                Type:       String, 
+                attribute:  'copied-message' 
+            }
         };
+    }
+    constructor() {
+        super();
+
+        this.language =         'xml';
+        this.copyButtonLabel =  'Copy';
+        this.copiedMsg =        'Code was copied!';
     }
 
     /* Styles - LitElement */
@@ -31,21 +50,23 @@ class AuroraCodeMirror extends LitElement {
     onSlotchange() {
         this.requestUpdate();
 
-        let copyButton =            this.root.querySelector('.copy-button');
-        let copySuccess =           this.root.querySelector('.copy-success');
-        let slot =                  this.root.querySelector('slot');
-        let contentToCopy =         slot.assignedNodes();
-        let filteredContentToCopy = contentToCopy.filter((item) => item.nodeType!== 3);
-        let outputContentToCopyArray = [];
+        let copyButton =                this.root.querySelector('.copy-button');
+        let copySuccess =               this.root.querySelector('.copy-success');
+        let slot =                      this.root.querySelector('slot');
+        let contentToCopy =             slot.assignedNodes();
+        let filteredContentToCopy =     contentToCopy.filter((item) => item.nodeType!== 3);
+        let outputContentToCopyArray =  [];
 
         filteredContentToCopy.map(i => {
             outputContentToCopyArray.push(i.textContent);
         });
 
-        let outputContent = outputContentToCopyArray.join('\n');
+        let outputContent =             outputContentToCopyArray.join('\n');
 
         copyButton.addEventListener('click', () => {
+
             navigator.clipboard.writeText(outputContent).then(() => {
+
                 copySuccess.classList.add('show-message');
     
                 setTimeout(() => {
@@ -61,12 +82,17 @@ class AuroraCodeMirror extends LitElement {
 
     firstUpdated() {
         super.firstUpdated();
+
         this.classList.add(this.language);
+
         const head = document.getElementsByTagName('head')[0];
 
         if(document.getElementById('codemirror') == null) {
+
             const style = document.createElement('style');
+
             style.id= 'codemirror';
+
             style.innerHTML = `
                 .hljs{display:block;overflow-x:auto;padding:.5em;color:#333;background:#f8f8f8}
                 .hljs-comment,.hljs-quote{color:#998;font-style:italic}
@@ -89,9 +115,10 @@ class AuroraCodeMirror extends LitElement {
         }
 
         hljs.configure({
-            tabReplace: '', // 4 spaces
+            tabReplace: '',
             languages: ['xml', 'html', 'js', 'javascript']
           });
+
         document.querySelectorAll('aurora-code-mirror').forEach(block => {
             hljs.highlightBlock(block);
         });       
