@@ -26,12 +26,12 @@ export const styles = css`
         line-height: 1.6;
     }
 
-    #copyButton {
+    .copy-button {
         position: absolute;
         top: 0;
         right: 0;
         padding: 8px;
-        background-color: #c1c1c1;
+        background-color: #e0e6ed;
         border: none;
         outline: none;
         color: #484848;
@@ -39,16 +39,19 @@ export const styles = css`
         transition: all 0.2s ease-in;
         opacity: 0;
     }
-    #copyButton:hover {
+    .copy-button:hover {
         background-color: var(--color-accent, #00569c);
         color: #fff;
     }
 
-    .code-wrapper {position: relative;}
-    .code-wrapper:hover #copyButton {
+    .code-wrapper {
+        position: relative;
+        border-left: 3px solid #e0e6ed;
+    }
+    .code-wrapper:hover .copy-button {
         opacity: 1;
     }
-    #copy-success {
+    .copy-success {
         position: absolute;
         top: 5px;
         right: 0;
@@ -59,7 +62,7 @@ export const styles = css`
         color: var(--color-accent, #00569c);
 
     }
-    #copy-success.show-message {
+    .copy-success.show-message {
         display: inline-block;
     }
 `;

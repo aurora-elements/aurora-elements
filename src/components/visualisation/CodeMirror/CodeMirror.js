@@ -27,6 +27,38 @@ class AuroraCodeMirror extends LitElement {
         return this.shadowRoot || this
     }
 
+    /* Methods */
+    onSlotchange() {
+        this.requestUpdate();
+
+        let copyButton =            this.root.querySelector('.copy-button');
+        let copySuccess =           this.root.querySelector('.copy-success');
+        let slot =                  this.root.querySelector('slot');
+        let contentToCopy =         slot.assignedNodes();
+        let filteredContentToCopy = contentToCopy.filter((item) => item.nodeType!== 3);
+        let outputContentToCopyArray = [];
+
+        filteredContentToCopy.map(i => {
+            outputContentToCopyArray.push(i.textContent);
+        });
+
+        let outputContent = outputContentToCopyArray.join('\n');
+
+        copyButton.addEventListener('click', () => {
+            navigator.clipboard.writeText(outputContent).then(() => {
+                copySuccess.classList.add('show-message');
+    
+                setTimeout(() => {
+                    copySuccess.classList.remove('show-message');
+                }, 2500);
+    
+            }), () => {
+                console.log('Error writing to the clipboard');
+            };
+        });
+    }
+
+
     firstUpdated() {
         super.firstUpdated();
         this.classList.add(this.language);
@@ -56,36 +88,14 @@ class AuroraCodeMirror extends LitElement {
             head.append(style);
         }
 
-        const slot =        this.root.querySelector('slot');
-        const content =     slot.assignedNodes()[0].textContent;
-        const copyButton =  this.root.getElementById('copyButton');
-        const copySuccess = this.root.getElementById('copy-success');
-
-
         hljs.configure({
-            tabReplace: '    ', // 4 spaces
+            tabReplace: '', // 4 spaces
             languages: ['xml', 'html', 'js', 'javascript']
           });
         document.querySelectorAll('aurora-code-mirror').forEach(block => {
             hljs.highlightBlock(block);
-        });
-
-        const copyTextHandler = () => {
-            navigator.clipboard.writeText(content).then(() => {
-                copySuccess.classList.add('show-message');
-
-                setTimeout(() => {
-                    copySuccess.classList.remove('show-message');
-                }, 2500);
-
-            }), () => {
-                console.log('Error writing to the clipboard');
-            };
-        }
-
-        copyButton.addEventListener('click', copyTextHandler);
+        });       
     }  
-
 }
 
 customElements.define('aurora-code-mirror', AuroraCodeMirror);
