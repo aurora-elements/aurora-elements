@@ -1,0 +1,8 @@
+[
+    {
+        "property": "route-outlet",
+        "type": "String",
+        "defaultValue": "-",
+        "description": "Hier wird die \"id\" des Elements angegeben, in dem der Inhalt der seite angezeigt werden soll."   
+    }
+]

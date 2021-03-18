@@ -1,0 +1,32 @@
+[
+    {
+        "property": "route-start",
+        "type": "Boolean",
+        "defaultValue": "false",
+        "description": "Hier wird die \"id\" des Elements angegeben, in dem der Inhalt der seite angezeigt werden soll."   
+    },
+    {
+        "property": "label",
+        "type": "String",
+        "defaultValue": "-",
+        "description": "Hier wird die \"id\" des Elements angegeben, in dem der Inhalt der seite angezeigt werden soll."   
+    },
+    {
+        "property": "page-title",
+        "type": "String",
+        "defaultValue": "-",
+        "description": "Hier wird die \"id\" des Elements angegeben, in dem der Inhalt der seite angezeigt werden soll."   
+    },
+    {
+        "property": "content",
+        "type": "String",
+        "defaultValue": "-",
+        "description": "Hier wird die \"id\" des Elements angegeben, in dem der Inhalt der seite angezeigt werden soll."   
+    },
+    {
+        "property": "to",
+        "type": "String",
+        "defaultValue": "-",
+        "description": "Hier wird die \"id\" des Elements angegeben, in dem der Inhalt der seite angezeigt werden soll."   
+    }
+]
