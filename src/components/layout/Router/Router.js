@@ -6,8 +6,14 @@ class AuroraRouter extends LitElement {
     /* Properties - LitElement */
     static get properties() {
         return {
-            routeOutlet: { type: String, attribute: 'route-outlet' },
-            domainName: { type: String, attribute: 'domain-name'}
+            routeOutlet: { 
+                type: String, 
+                attribute: 'route-outlet' 
+            },
+            domainName: { 
+                type: String, 
+                attribute: 'domain-name'
+            }
         };
     }
 
@@ -35,7 +41,7 @@ class AuroraRouter extends LitElement {
             this.handleRouteChange(e.detail.link)
         });
 
-        let routeStart = document.querySelector('[route-start]');
+        let routeStart = document.querySelector('[is-route-start]');
         routeStart.classList.add('aurora-state-active');
         this.handleRouteChange(routeStart);
         document.title = (routeStart.pageTitle || routeStart.label + ' - ' + this.domainName) || document.title;

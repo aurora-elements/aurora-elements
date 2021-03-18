@@ -5,10 +5,23 @@ class AuroraRouterLink extends LitElement {
     /* Properties - LitElement */
     static get properties() {
         return {
-            to: { type: String },
-            content: { type: String },
-            pageTitle: { type: String, attribute: 'page-title' },
-            label: {type: String}
+            to: { 
+                type: String 
+            },
+            content: { 
+                type: String 
+            },
+            pageTitle: { 
+                type: String, 
+                attribute: 'page-title' 
+            },
+            label: {
+                type: String
+            },
+            isRouteStart: { 
+                type: Boolean, 
+                attribute: 'is-route-start'
+            }
         };
     }
 

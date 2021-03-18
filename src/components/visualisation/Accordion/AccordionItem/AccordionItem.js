@@ -14,9 +14,18 @@ class AuroraAccordionItem extends LitElement {
     /* Properties - LitElement */
     static get properties() {
         return {
-            label:              { type: String },
-            expanded:           { type: Boolean, reflect: true },
-            multipleSupport:    { type: Boolean, attribute: 'multiple-support', reflect: true }
+            label:              { 
+                type: String 
+            },
+            expanded:           { 
+                type: Boolean, 
+                reflect: true 
+            },
+            multipleSupport:    { 
+                type: Boolean, 
+                attribute: 'multiple-support', 
+                reflect: true 
+            }
         };
     }
 

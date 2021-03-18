@@ -5,8 +5,14 @@ class AuroraHeadlineBlock extends LitElement {
     /* Properties - LitElement */
     static get properties() {
         return {
-            headline:       { type: String },
-            isSubheadline:  { type: Boolean, attribute: 'is-subheadline', default: false }
+            headline:       { 
+                type: String 
+            },
+            isSubheadline:  { 
+                type: Boolean, 
+                attribute: 'is-subheadline', 
+                default: false 
+            }
         };
     }
 
