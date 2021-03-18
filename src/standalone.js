@@ -6,4 +6,4 @@ import './components/visualisation/Accordion/AccordionItem/AccordionItem';
 import './components/visualisation/CodeMirror/CodeMirror';
 import './components/visualisation/DataTable/DataTable';
 
-console.log("Aurora Components loaded")
+console.log("Aurora elements loaded")
