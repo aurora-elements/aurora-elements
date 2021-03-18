@@ -3,6 +3,12 @@
         "property": "route-outlet",
         "type": "String",
         "defaultValue": "-",
-        "description": "Hier wird die \"id\" des Elements angegeben, in dem der Inhalt der seite angezeigt werden soll."   
+        "description": "The \"id\" of the element in which the content of the page is to be displayed is specified here."   
+    },
+    {
+        "property": "domain-name",
+        "type": "String",
+        "defaultValue": "aurora elements",
+        "description": "The domain name that is displayed in the page title (tab) (page name - domain name)."   
     }
 ]

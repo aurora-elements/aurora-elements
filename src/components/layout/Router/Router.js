@@ -6,13 +6,20 @@ class AuroraRouter extends LitElement {
     /* Properties - LitElement */
     static get properties() {
         return {
-            routeOutlet: { type: String, attribute: 'route-outlet' }
+            routeOutlet: { type: String, attribute: 'route-outlet' },
+            domainName: { type: String, attribute: 'domain-name'}
         };
     }
 
     /* Styles - LitElement */
     static get styles() {
         return [styles]
+    }
+
+    constructor() {
+        super();
+
+        this.domainName = 'aurora elements';
     }
 
     /* Render template */
@@ -31,7 +38,7 @@ class AuroraRouter extends LitElement {
         let routeStart = document.querySelector('[route-start]');
         routeStart.classList.add('aurora-state-active');
         this.handleRouteChange(routeStart);
-        document.title = (routeStart.pageTitle || routeStart.label + ' - aurora showcase') || document.title;
+        document.title = (routeStart.pageTitle || routeStart.label + ' - ' + this.domainName) || document.title;
 
         window.addEventListener('popstate', () => {
             let path = window.location.pathname;
@@ -48,7 +55,7 @@ class AuroraRouter extends LitElement {
                     this.handleRouteChange(links[i]);
                     links[i].classList.add('aurora-state-active');
                     links[i].parentElement.setAttribute('expanded', '');
-                    document.title = (links[i].pageTitle || links[i].label + ' - aurora showcase') || document.title;
+                    document.title = (links[i].pageTitle || links[i].label + ' - ' + this.domainName) || document.title;
 
                 }
             }
@@ -71,6 +78,8 @@ class AuroraRouter extends LitElement {
         history.pushState(state, null, url);
 
         this.outlet.innerHTML = html;
+
+        document.title = (link.pageTitle || link.label + ' - ' + this.domainName) || document.title;
     }
 }
 

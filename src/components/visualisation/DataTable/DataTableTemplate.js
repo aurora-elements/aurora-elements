@@ -12,7 +12,7 @@ export function template(data) {
             </thead>
             <tbody>
                 ${until(
-                    fetch(data.columns)
+                    fetch(data.rows)
                     .then(res => res.json())
                     .then(items => html`                        
                         ${repeat(

@@ -10,7 +10,7 @@ class AuroraDataTable extends LitElement {
                 type: Array, 
                 attribute: 'columns-labels'
             },
-            columns: { type: String, reflect: true }
+            rows: { type: String, reflect: true }
         };
     }
     constructor() {
