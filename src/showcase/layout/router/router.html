@@ -6,6 +6,7 @@
     The router links (aurora-router-link) belong to the router, they represent the individual links. 
 </aurora-headline-block>     
 
+<!-- Router -->
 <aurora-headline-block 
     headline="The router" 
     is-subheadline>
@@ -18,11 +19,11 @@
     route-outlet="#main"&gt;  
 &lt;/aurora-router&gt;  
 </aurora-code-mirror>
-
 <aurora-data-table
     rows="/dist/showcase/layout/router/router.json">
 </aurora-data-table>
 
+<!-- Router link -->
 <aurora-headline-block 
     headline="The router link" 
     is-subheadline>
@@ -32,14 +33,42 @@
 <aurora-code-mirror 
     label="Code">   
 &lt;aurora-router-link
-    route-start
+    is-route-start
     label="Introduction"
     page-title="Introduction" 
     content="/dist/showcase/introduction"
     to="/"&gt;  
 &lt;/aurora-router-link&gt;  
 </aurora-code-mirror>
-
 <aurora-data-table 
     rows="/dist/showcase/layout/router/routerLink.json">
 </aurora-data-table>
+
+<!-- Code Beispiel -->
+<aurora-headline-block 
+    headline="Code Beispiel" 
+    is-subheadline>
+    Beispiel einer Navigation wie hie rim Showcase
+</aurora-headline-block>  
+<aurora-code-mirror 
+    label="Code">
+&lt;aurora-router
+    route-outlet="#main"&gt; 
+    &lt;aurora-accordion 
+        slot="link"&gt;
+        &lt;aurora-accordion-item 
+            label="Get Started"&gt;   
+            &lt;aurora-router-link
+                is-route-start
+                label="Introduction"
+                page-title="Introduction" 
+                content="/dist/showcase/introduction"
+                to="/"&gt;  
+            &lt;/aurora-router-link&gt;
+            ... 
+        &lt;/aurora-accordion-item&gt; 
+        ...
+    &lt;/aurora-accordion&gt;
+&lt;/aurora-router&gt;  
+</aurora-code-mirror>
+
