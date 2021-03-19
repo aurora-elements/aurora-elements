@@ -1,6 +1,6 @@
 [
     {
-        "property": "route-start",
+        "property": "is-route-start",
         "type": "Boolean",
         "defaultValue": "false",
         "description": "Hier wird die \"id\" des Elements angegeben, in dem der Inhalt der seite angezeigt werden soll."   
@@ -9,24 +9,24 @@
         "property": "label",
         "type": "String",
         "defaultValue": "-",
-        "description": "Hier wird die \"id\" des Elements angegeben, in dem der Inhalt der seite angezeigt werden soll."   
+        "description": "Router link label, which is also used as the title of the page."   
     },
     {
         "property": "page-title",
         "type": "String",
         "defaultValue": "-",
-        "description": "Hier wird die \"id\" des Elements angegeben, in dem der Inhalt der seite angezeigt werden soll."   
+        "description": "This value is optional and should only be set if the title of the page differs from the label of the router link."   
     },
     {
         "property": "content",
         "type": "String",
         "defaultValue": "-",
-        "description": "Hier wird die \"id\" des Elements angegeben, in dem der Inhalt der seite angezeigt werden soll."   
+        "description": "Link to the HTML file to be loaded."   
     },
     {
         "property": "to",
         "type": "String",
         "defaultValue": "-",
-        "description": "Hier wird die \"id\" des Elements angegeben, in dem der Inhalt der seite angezeigt werden soll."   
+        "description": "URL that is displayed in the browser bar."   
     }
 ]
