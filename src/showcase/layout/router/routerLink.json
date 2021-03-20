@@ -3,7 +3,7 @@
         "property": "is-route-start",
         "type": "Boolean",
         "defaultValue": "false",
-        "description": "Hier wird die \"id\" des Elements angegeben, in dem der Inhalt der seite angezeigt werden soll."   
+        "description": "This attribute may only be used once, it marks the start page."   
     },
     {
         "property": "label",

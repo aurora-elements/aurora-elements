@@ -2,29 +2,25 @@ import { css } from "lit-element";
 
 export const styles = css`
     :host {
-
-    }
-    h2, h3 {
-        border-bottom: 1px solid #e0e6ed;
+        display: block;
     }
     h2 {
         font-size: 2.8125rem;
         font-weight: 300;
         color: #484848;
-        margin: 20px 0 10px 0;  
-        padding-bottom: 10px;     
+        line-height: 160%;
+        margin: 20px 0 0 0;  
     }
     h3 {
         color:#484848;
-        font-size: 24px;
-        font-weight: 400;
-        line-height: 34px;
+        font-size: 2rem;
+        font-weight: 300;
+        line-height: 160%;
         margin-top:80px;
-        margin-bottom:10px;  
-        padding-bottom: 10px;      
+        margin-bottom:0;  
     }
     p {
-        font-size: 20px;
+        font-size: 1.25rem;
         color: #9c9c9c;
         font-weight: 300;
         line-height: 160%;
@@ -33,7 +29,7 @@ export const styles = css`
     :host([is-subheadline]) p {
         color: #9c9c9c;
         font-weight: 300;
-        font-size: 18px;
+        font-size: 1.125rem;
         line-height: 160%;       
     }
 `;
