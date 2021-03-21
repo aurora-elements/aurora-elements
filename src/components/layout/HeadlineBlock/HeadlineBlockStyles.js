@@ -25,6 +25,7 @@ export const styles = css`
         font-weight: 300;
         line-height: 160%;
         margin-top:0;
+        text-align: justify;
     }
     :host([is-subheadline]) p {
         color: #9c9c9c;

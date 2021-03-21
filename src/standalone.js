@@ -5,5 +5,6 @@ import './components/visualisation/Accordion/Accordion';
 import './components/visualisation/Accordion/AccordionItem/AccordionItem';
 import './components/visualisation/CodeMirror/CodeMirror';
 import './components/visualisation/DataTable/DataTable';
+import './components/interaction/ScrollTop/ScrollTop';
 
 console.log("Aurora elements loaded")

@@ -10,10 +10,10 @@ export const styles = css`
         border-spacing: 0;
         width: 100%;
         border-bottom: 1px solid #e0e6ed;
+        text-align: justify;
       }
       table thead th {
         box-sizing: border-box;
-        text-align: left;
         font-size: 80%;
         line-height: 1.3;
         min-height: 12px;

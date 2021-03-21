@@ -7,7 +7,7 @@ body {
     text-rendering: optimizeLegibility;
     font-size: 15px;
     display: grid;
-    grid-template-columns: 380px 1fr;
+    grid-template-columns: minmax(200px, 380px) minmax(600px, 1fr);
     grid-template-areas:
       "nav content";
   }
