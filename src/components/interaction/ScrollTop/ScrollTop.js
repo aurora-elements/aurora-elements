@@ -4,12 +4,15 @@ import { styles } from './ScrollTopStyles.js';
 
 class AuroraScrollTop extends LitElement {
 
-        /* Properties - LitElement */
-        static get properties() {
-            return {
-                scrollContainer:      { type: String, attribute: 'scroll-container' }
-            };
-        }
+    /* Properties - LitElement */
+    static get properties() {
+        return {
+            scrollContainer: { 
+                type: String, 
+                attribute: 'scroll-container' 
+            }
+        };
+    }
 
     /* Styles - LitElement */
     static get styles() {

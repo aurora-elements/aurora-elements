@@ -12,6 +12,10 @@ class AuroraHeadlineBlock extends LitElement {
                 type: Boolean, 
                 attribute: 'is-subheadline', 
                 default: false 
+            },
+            scrollid: {
+                type: String,
+                reflect: true
             }
         };
     }
@@ -25,6 +29,7 @@ class AuroraHeadlineBlock extends LitElement {
     render() {
         return template(this)
     }
+
 }
 
 customElements.define('aurora-headline-block', AuroraHeadlineBlock);

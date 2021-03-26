@@ -1,4 +1,10 @@
-<aurora-headline-block 
+<aurora-scroll-navigation
+    scroll-container="#content" 
+    scroll-elements="aurora-headline-block">
+</aurora-scroll-navigation>
+<!-- Idee: Leiste fixed, mit aktivstatus für aktuellen bereich auf seite, beim scrollen seiten titel in bar -->
+<aurora-headline-block
+    scrollid="router"
     headline="Router">
     The router (aurora-router) contains the links to the individual sub-pages. 
     This component can be used in combination with other components, such as the Accordion component. 
@@ -7,7 +13,8 @@
 </aurora-headline-block>     
 
 <!-- Router -->
-<aurora-headline-block 
+<aurora-headline-block
+scrollid="routerElement" 
     headline="Router element" 
     is-subheadline>
     Eine gesamte Card kann als interaktive Fläche angelegt werden, wenn sie sonst keine interaktiven Elemente enthält. 
@@ -25,6 +32,7 @@
 
 <!-- Router link -->
 <aurora-headline-block 
+scrollid="routerLink"
     headline="Router link" 
     is-subheadline>
     The router link loads the linked page. 
@@ -46,7 +54,8 @@
 </aurora-data-table>
 
 <!-- Code Beispiel -->
-<aurora-headline-block 
+<aurora-headline-block
+scrollid="codeExample" 
     headline="Code example" 
     is-subheadline>
     Example of a navigation like here in the showcase. A combination of router, router link and accordion.

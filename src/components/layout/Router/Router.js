@@ -38,7 +38,7 @@ class AuroraRouter extends LitElement {
         this.outlet = document.querySelector(this.routeOutlet);
 
         this.addEventListener('route-change', e => {
-            this.handleRouteChange(e.detail.link)
+            this.handleRouteChange(e.detail.link);
         });
 
         let routeStart = document.querySelector('[is-route-start]');
@@ -81,11 +81,17 @@ class AuroraRouter extends LitElement {
 
         const html = await (await fetch(template)).text();
 
+        this.outlet.classList.remove('route-change-done');
+        this.outlet.classList.add('route-change-start');
+
         history.pushState(state, null, url);
 
         this.outlet.innerHTML = html;
 
         document.title = (link.pageTitle || link.label + ' - ' + this.domainName) || document.title;
+
+        this.outlet.classList.remove('route-change-start');
+        this.outlet.classList.add('route-change-done');
     }
 }
 

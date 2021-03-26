@@ -3,6 +3,7 @@ import { css } from 'lit-element'
 export const styles = css`
     :host {
         display: block;
+        outline: none!important;
     }
     header {
         transition: color 300ms linear;

@@ -7,7 +7,7 @@ body {
     text-rendering: optimizeLegibility;
     font-size: 15px;
     display: grid;
-    grid-template-columns: minmax(200px, 380px) minmax(600px, 1fr);
+    grid-template-columns: minmax(250px, 380px) minmax(600px, 1fr);
     grid-template-areas:
       "nav content";
   }
@@ -44,8 +44,29 @@ body {
     grid-area: content;
     overflow-y:auto;
 }
+aurora-scroll-navigation {
+  position: fixed;
+  top: 0;
+  z-index:100;
+  background: #fff;
+  width: 100%;
+}
 .content #main {
-  padding: 60px;
+  transition: opacity 5s linear 0s;
+  padding: 0 60px 60px;
+  opacity: 1;
+}
+#main.route-change {
+  opacity: 0;
+  animation: fade 5s linear 0;
+}
+@keyframes fade {
+  0% {
+    opacity:0;
+  }
+  100% {
+    opacity: 50%;
+  }
 }
 .content footer {
   padding: 0 60px 60px 60px;

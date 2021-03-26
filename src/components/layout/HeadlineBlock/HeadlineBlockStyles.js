@@ -9,15 +9,16 @@ export const styles = css`
         font-weight: 300;
         color: #484848;
         line-height: 160%;
-        margin: 20px 0 0 0;  
+        margin: 0;  
+        padding-top:60px;
     }
     h3 {
         color:#484848;
         font-size: 2rem;
         font-weight: 300;
         line-height: 160%;
-        margin-top:80px;
-        margin-bottom:0;  
+        padding-top:80px;
+        margin:0;  
     }
     p {
         font-size: 1.25rem;
