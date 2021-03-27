@@ -16,6 +16,11 @@ class AuroraHeadlineBlock extends LitElement {
             scrollid: {
                 type: String,
                 reflect: true
+            },
+            scrollLabel: {
+                type: String,
+                attribute: 'scroll-label',
+                reflect: true,
             }
         };
     }
@@ -28,6 +33,13 @@ class AuroraHeadlineBlock extends LitElement {
     /* Render template */
     render() {
         return template(this)
+    }
+
+    firstUpdated() {
+        super.firstUpdated();
+        if(!this.scrollLabel) {
+            this.scrollLabel = this.headline;
+        }
     }
 
 }

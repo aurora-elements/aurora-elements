@@ -19,9 +19,21 @@ class AuroraScrollNavigation extends LitElement {
                     type: String, 
                     attribute: 'sticky-position' 
                 },
-                linkLabel: { 
+                visible: { 
+                    type: Boolean, 
+                    attribute: 'is-visible' 
+                },
+                visiblePos: { 
                     type: String, 
-                    attribute: 'link-label' 
+                    attribute: 'visible-position' 
+                },
+                labelLink: { 
+                    type: String, 
+                    attribute: 'label-link' 
+                },
+                label: { 
+                    type: String, 
+                    attribute: 'label'
                 }
             };
         }
@@ -51,17 +63,29 @@ class AuroraScrollNavigation extends LitElement {
         
         const scrollCon = document.querySelector(this.scrollContainer);
         const stickyPos = this.stickyPos || 0;
+        const visiblePos = this.visiblePos || 50;
 
         if(stickyPos !== 0) {
-            scrollCon.onscroll = () => {
+            scrollCon.addEventListener('scroll', () => {
                 if (scrollCon.scrollTop > stickyPos) {
                     this.setAttribute('is-sticky', '');
                 } else {
                     this.removeAttribute('is-sticky');
                 }
-            }
+            })
         } else {
             this.setAttribute('is-sticky', '');    
+        }
+        if(!this.visible) {
+            scrollCon.addEventListener('scroll', () => {
+                if (scrollCon.scrollTop > visiblePos) {
+                    this.setAttribute('is-visible', '');
+                } else {
+                    this.removeAttribute('is-visible');
+                }
+            })
+        } else {
+            this.setAttribute('is-visible', '');    
         }
     }
 }

@@ -35,13 +35,13 @@ class AuroraScrollTop extends LitElement {
 
         const scrollCon = document.querySelector(this.scrollContainer);
 
-        scrollCon.onscroll = () => {
+        scrollCon.addEventListener('scroll', () => { console.log('test')
             if (scrollCon.scrollTop > 50) {
                 this.setAttribute('is-active', '');
             } else {
                 this.removeAttribute('is-active');
             }
-        }
+        });
 
         this.addEventListener('click', () => {
             scrollCon.scrollTo({

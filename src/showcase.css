@@ -1,3 +1,29 @@
+:root {
+  --grey-ligthest: #f8f8f8;
+  --grey-middle: #e0e6ed;
+  --grey-dark: #9c9c9c;
+}
+/* Works on Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--grey-dark) var(--grey-middle);
+}
+
+/* Works on Chrome, Edge, and Safari */
+*::-webkit-scrollbar {
+  width: 12px;
+}
+
+*::-webkit-scrollbar-track {
+  background: var(--grey-middle);
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: var(--grey-dark);
+  border-radius: 20px;
+  border: 3px solid var(--grey-middle);
+}
+
 body {
     margin:0;
     height:100vh;
@@ -10,7 +36,7 @@ body {
     grid-template-columns: minmax(250px, 380px) minmax(600px, 1fr);
     grid-template-areas:
       "nav content";
-  }
+}
 
   .logo {
     max-width: 200px;
@@ -44,12 +70,20 @@ body {
     grid-area: content;
     overflow-y:auto;
 }
+
 aurora-scroll-navigation {
   position: fixed;
   top: 0;
   z-index:100;
-  background: #fff;
   width: 100%;
+  display: grid;
+  grid-template-columns: minmax(250px, 380px) minmax(600px, 1fr);
+  left:0;
+}
+aurora-scroll-navigation::part(scroll-items) {
+  background: #fff;
+  border-bottom: 1px solid #e0e6ed;
+  padding-left: 60px;
 }
 .content #main {
   transition: opacity 5s linear 0s;
@@ -77,6 +111,6 @@ aurora-scroll-navigation {
   box-sizing: border-box;
   max-width: 1080px;
 }
-aurora-code-mirror, aurora-headline-block {
+aurora-code-mirror, aurora-headline-block[is-subheadline] {
   margin-bottom: 40px;
 }
