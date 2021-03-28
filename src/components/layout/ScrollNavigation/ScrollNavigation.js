@@ -58,12 +58,20 @@ class AuroraScrollNavigation extends LitElement {
         event.target.setAttribute('is-active', '');    
       }
 
+    /* Get root */
+    get root() {
+        return this.shadowRoot || this
+    }
+
     firstUpdated() {
         super.firstUpdated();
         
         const scrollCon = document.querySelector(this.scrollContainer);
         const stickyPos = this.stickyPos || 0;
         const visiblePos = this.visiblePos || 50;
+
+        let scrollElements = document.querySelectorAll(this.scrollElements); console.log('scrollElements: ',scrollElements);
+        let scrollLinks = this.root.querySelectorAll('span'); console.log('scrollLinks: ',scrollLinks);
 
         if(stickyPos !== 0) {
             scrollCon.addEventListener('scroll', () => {

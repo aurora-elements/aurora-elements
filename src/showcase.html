@@ -18,13 +18,25 @@
         <aurora-accordion-item label="Get Started">
           <aurora-router-link
             is-route-start 
-            label="Introduction"
+            label="Welcome"
             to="/" 
-            content="/dist/showcase/introduction" />
+            content="/dist/showcase/welcome">
+          </aurora-router-link>
+          <aurora-router-link
+            label="Introduction"
+            to="/introduction" 
+            content="/dist/showcase/introduction">
+          </aurora-router-link>
           <aurora-router-link
             label="What's new"
             to="/whats-new" 
-            content="/dist/showcase/whatsnew" />
+            content="/dist/showcase/whatsnew">
+          </aurora-router-link>
+          <aurora-router-link
+            label="Development"
+            to="/development" 
+            content="/dist/showcase/development">
+          </aurora-router-link>
         </aurora-accordion-item>
 
         <aurora-accordion-item label="Interaction">
@@ -37,14 +49,16 @@
           <aurora-router-link 
             label="Card"
             to="/visualisation/card" 
-            content="/dist/showcase/visualisation/card" />
+            content="/dist/showcase/visualisation/card">
+          </aurora-router-link>
         </aurora-accordion-item>
 
         <aurora-accordion-item label="Layout">
           <aurora-router-link 
             label="Router"
             to="/layout/router" 
-            content="/dist/showcase/layout/router/router" />
+            content="/dist/showcase/layout/router/router">
+          </aurora-router-link>
         </aurora-accordion-item>
       </aurora-accordion>
     </aurora-router>
