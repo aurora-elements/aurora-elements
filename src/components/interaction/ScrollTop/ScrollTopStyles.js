@@ -14,7 +14,7 @@ export const styles = css`
         position:fixed;
         display: block;
         bottom:20px;
-        right:40px;
+        right:60px;
         height:40px;
         contain: content;
         width:40px;
