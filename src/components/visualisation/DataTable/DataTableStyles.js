@@ -52,6 +52,11 @@ export const styles = css`
         min-height: 20px;
         color: #9c9c9c;
       }
+      td ul {
+        margin: 0;
+        padding: 0;
+        list-style-position: inside;
+      }
       tr td:first-child {
         padding: 14px 20px 14px 40px;
       }

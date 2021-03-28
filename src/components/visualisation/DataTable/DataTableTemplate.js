@@ -1,6 +1,7 @@
 import { html } from "lit-element";
 import { until } from 'lit-html/directives/until';
 import { repeat } from 'lit-html/directives/repeat.js';
+import { unsafeHTML } from 'lit-html/directives/unsafe-html.js';
 
 export function template(data) {
     return html`
@@ -18,12 +19,19 @@ export function template(data) {
                         ${repeat(
                             items,
                             item => item.id,
-                            ({ property, type, defaultValue, description }, index) => html`
+                            ({ col1, col2, col3, col4, col5, col6, col7, col8, col9, col10 }, index) => html`
                                 <tr id=${index + 1}>
-                                    <td><strong>${property}</strong></td>
-                                    <td>${type}</td>
-                                    <td>${defaultValue}</td>
-                                    <td>${description}</td>
+                                    ${col1? html`<td><strong>${col1}</strong></td>`: ''}
+                                    ${col2? html`<td>${unsafeHTML(col2)}</td>`: ''}
+                                    ${col3? html`<td>${unsafeHTML(col3)}</td>`: ''}
+                                    ${col4? html`<td>${unsafeHTML(col4)}</td>`: ''}
+                                    ${col5? html`<td>${unsafeHTML(col5)}</td>`: ''}
+                                    ${col6? html`<td>${unsafeHTML(col6)}</td>`: ''}
+                                    ${col7? html`<td>${unsafeHTML(col7)}</td>`: ''}
+                                    ${col8? html`<td>${unsafeHTML(col8)}</td>`: ''}
+                                    ${col9? html`<td>${unsafeHTML(col9)}</td>`: ''}
+                                    ${col10? html`<td>${unsafeHTML(col10)}</td>`: ''}
+
                                 </tr>
                             `,
                          )}

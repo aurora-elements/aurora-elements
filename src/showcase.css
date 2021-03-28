@@ -3,13 +3,12 @@
   --grey-middle: #e0e6ed;
   --grey-dark: #9c9c9c;
 }
-/* Works on Firefox */
+/* scrollbar */
 * {
   scrollbar-width: thin;
   scrollbar-color: var(--grey-dark) var(--grey-middle);
 }
 
-/* Works on Chrome, Edge, and Safari */
 *::-webkit-scrollbar {
   width: 12px;
 }
@@ -22,6 +21,11 @@
   background-color: var(--grey-dark);
   border-radius: 20px;
   border: 3px solid var(--grey-middle);
+}
+
+/* helpers */
+.space-bottom-m40 {
+  margin-bottom: 40px;
 }
 
 body {

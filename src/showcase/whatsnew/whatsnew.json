@@ -1,0 +1,12 @@
+[
+    {
+        "col1": "28.03.2021",
+        "col2": "data-table",
+        "col3": "<ul><li>Added support for 10 columns</li><li>Added support for unsafe HTML</li></ul>"   
+    },
+    {
+        "col1": "28.03.2021",
+        "col2": "scroll-navigation",
+        "col3": "<ul><li>Changed layout</li><li>Added page title</li></ul>"   
+    }
+]
