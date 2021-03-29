@@ -2,7 +2,7 @@
     {
         "col1": "28.03.2021",
         "col2": "data-table",
-        "col3": "<ul><li>Added support for 10 columns</li><li>Added support for unsafe HTML</li></ul>"   
+        "col3": "<ul><li>Added support for more columns</li><li>Added support for unsafe HTML</li><li>Bug fix for column-labels</ul>"   
     },
     {
         "col1": "28.03.2021",

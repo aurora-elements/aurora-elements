@@ -6,9 +6,9 @@ class AuroraDataTable extends LitElement {
     /* Properties - LitElement */
     static get properties() {
         return {
-            columnsLabels: { 
+            columnLabels: { 
                 type: Array, 
-                attribute: 'columns-labels'
+                attribute: 'column-labels'
             },
             rows: { 
                 type: String, 
@@ -18,7 +18,7 @@ class AuroraDataTable extends LitElement {
     }
     constructor() {
         super();
-        this.columnsLabels = ["Property","Type","Default Value","Description"];
+        this.columnLabels = ["Property","Type","Default Value","Description"];
     }
 
 

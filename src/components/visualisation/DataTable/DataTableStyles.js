@@ -56,6 +56,7 @@ export const styles = css`
         margin: 0;
         padding: 0;
         list-style-position: inside;
+        list-style-type: square;
       }
       tr td:first-child {
         padding: 14px 20px 14px 40px;

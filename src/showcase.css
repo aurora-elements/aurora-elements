@@ -2,6 +2,7 @@
   --grey-ligthest: #f8f8f8;
   --grey-middle: #e0e6ed;
   --grey-dark: #9c9c9c;
+  --font-color-primary: #484848;
 }
 /* scrollbar */
 * {
@@ -51,7 +52,7 @@ body {
     letter-spacing: 3px;
     font-size:10px;
     text-transform: uppercase;
-    color:#9c9c9c;
+    color:var(--grey-dark);
     width: 100%;
     float: left;
     text-align: center;
@@ -59,11 +60,11 @@ body {
     border-bottom:1px solid var(--accordion-item-border-color, var(--border-color, #c1c1c1));
   }
 .nav { 
-  --accordion-item-color-expanded: #484848;
-  --accordion-item-border-color: #e0e6ed;
+  --accordion-item-color-expanded: var(--font-color-primary);
+  --accordion-item-border-color: var(--grey-middle);
   grid-area: nav; 
-  background-color: #fff;
-  border-right: 1px solid #e0e6ed;
+  background-color: var(--grey-ligthest);
+  border-right: 1px solid var(--grey-middle);
   overflow-y: auto;
 }
 .nav aurora-accordion-item {
@@ -87,7 +88,7 @@ aurora-scroll-navigation {
 }
 aurora-scroll-navigation::part(scroll-items) {
   background: #fff;
-  border-bottom: 1px solid #e0e6ed;
+  border-bottom: 1px solid var(--grey-middle);
   padding-left: 60px;
 }
 .content #main {

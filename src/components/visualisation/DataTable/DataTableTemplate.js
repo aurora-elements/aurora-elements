@@ -7,7 +7,7 @@ export function template(data) {
     return html`
         <table>
             <thead>
-                ${data.columnsLabels.map((item, index) =>
+                ${data.columnLabels.map((item, index) =>
                     html`<th id=${index + 1}>${item}</th>`
                 )}               
             </thead>
