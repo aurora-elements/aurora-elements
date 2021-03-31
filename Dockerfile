@@ -4,7 +4,7 @@ COPY package*.json /aurora
 RUN npm install
 COPY webpack.config.js /aurora
 COPY src /aurora
-RUN npm run build
+RUN npm run dev
 
 FROM nginx:stable-alpine AS production
 RUN rm /etc/nginx/conf.d/default.conf
