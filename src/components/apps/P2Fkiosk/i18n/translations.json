@@ -1,0 +1,10 @@
+{
+    "en":{
+     "No balance": "Balance is not updated yet",
+     "No web3": "Not connected to Ethereum"
+    },
+    "ru":{
+     "No balance": "Баланс неизвестен",
+     "No web3": "Нет подключения к Ethereum"
+    }
+}

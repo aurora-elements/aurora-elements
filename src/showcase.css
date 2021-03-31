@@ -1,8 +1,14 @@
-:root {
+body {
   --grey-ligthest: #f8f8f8;
   --grey-middle: #e0e6ed;
   --grey-dark: #9c9c9c;
   --font-color-primary: #484848;
+}
+body.dark {
+  --grey-ligthest: #212121;
+  --grey-middle: #000;
+  --grey-dark: #9c9c9c;
+  --font-color-primary: #fafafa; 
 }
 /* scrollbar */
 * {

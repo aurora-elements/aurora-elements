@@ -1,0 +1,1664 @@
+[
+    {
+        "id": 1485,
+        "meta": {
+            "itemType": "p2fDocumentItem",
+            "created": "2020-12-15T13:50:54.147Z",
+            "updated": "2021-03-26T13:25:17.583273Z",
+            "spaceKey": "wolfenbuettlerschaufenster",
+            "publish": {
+                "state": "PUBLISHED",
+                "start": "2020-12-15T13:51:24.677873Z"
+            }
+        },
+        "name": "Sonderbeilagenplan",
+        "asset": {
+            "id": 596,
+            "hidden": true,
+            "title": "Beilagenplan",
+            "formats": [
+                {
+                    "status": "ready",
+                    "mimeType": "application/pdf",
+                    "created": "2020-11-18T16:04:06.287025Z",
+                    "name": "source",
+                    "filename": "Beilagenplan.pdf",
+                    "size": 155710,
+                    "downloadUri": "spo://space/wolfenbuettlerschaufenster/asset/596/format/source/?download",
+                    "meta": {
+                        "warnings": [
+                            "Meta info not generated yet for this format. Starting generation now"
+                        ]
+                    }
+                },
+                {
+                    "status": "ready",
+                    "mimeType": "inode/directory",
+                    "created": "2020-11-18T16:04:06.287042Z",
+                    "name": "p2fdocument",
+                    "filename": "p2fdocument",
+                    "size": 1678732,
+                    "downloadUri": "spo://space/wolfenbuettlerschaufenster/asset/596/format/p2fdocument/?download",
+                    "meta": {
+                        "warnings": [
+                            "Meta info not generated yet for this format. Starting generation now"
+                        ]
+                    }
+                }
+            ],
+            "meta": {
+                "created": "2020-11-18T17:04:06.278",
+                "updated": "2021-03-05T13:18:03.761071",
+                "creator": {
+                    "id": 242,
+                    "firstname": "Philipp",
+                    "lastname": "Treder"
+                },
+                "itemType": "p2fdocument",
+                "spaceKey": "wolfenbuettlerschaufenster",
+                "aliases": []
+            },
+            "thumbnailUri": "spo://space/wolfenbuettlerschaufenster/asset/596/thumbnail"
+        },
+        "category": {
+            "id": 1493,
+            "meta": {
+                "itemType": "p2fDocumentCategory",
+                "created": "2020-12-15T15:52:38.189Z",
+                "updated": "2020-12-15T15:52:46.671484Z",
+                "spaceKey": "wolfenbuettlerschaufenster"
+            },
+            "name": "Verlag",
+            "embedded": true
+        }
+    },
+    {
+        "id": 1499,
+        "meta": {
+            "itemType": "p2fDocumentItem",
+            "created": "2020-12-15T15:53:33.390Z",
+            "updated": "2020-12-15T15:53:59.685036Z",
+            "spaceKey": "wolfenbuettlerschaufenster",
+            "publish": {
+                "state": "PUBLISHED",
+                "start": "2020-12-15T15:53:59.685040Z"
+            }
+        },
+        "name": "AGB",
+        "asset": {
+            "id": 590,
+            "hidden": true,
+            "title": "AGB_Wolfenbuetteler_Schaufenster",
+            "formats": [
+                {
+                    "status": "ready",
+                    "mimeType": "application/pdf",
+                    "created": "2020-11-18T16:02:57.323733Z",
+                    "name": "source",
+                    "filename": "AGB_Wolfenbuetteler_Schaufenster.pdf",
+                    "size": 1470621,
+                    "downloadUri": "spo://space/wolfenbuettlerschaufenster/asset/590/format/source/?download",
+                    "meta": {
+                        "warnings": [
+                            "Meta info not generated yet for this format. Starting generation now"
+                        ]
+                    }
+                },
+                {
+                    "status": "ready",
+                    "mimeType": "inode/directory",
+                    "created": "2020-11-18T16:02:57.323770Z",
+                    "name": "p2fdocument",
+                    "filename": "p2fdocument",
+                    "size": 11564110,
+                    "downloadUri": "spo://space/wolfenbuettlerschaufenster/asset/590/format/p2fdocument/?download",
+                    "meta": {
+                        "warnings": [
+                            "Meta info not generated yet for this format. Starting generation now"
+                        ]
+                    }
+                }
+            ],
+            "meta": {
+                "created": "2020-11-18T17:02:57.311",
+                "updated": "2021-03-05T13:18:03.877533",
+                "creator": {
+                    "id": 242,
+                    "firstname": "Philipp",
+                    "lastname": "Treder"
+                },
+                "itemType": "p2fdocument",
+                "spaceKey": "wolfenbuettlerschaufenster",
+                "aliases": []
+            },
+            "thumbnailUri": "spo://space/wolfenbuettlerschaufenster/asset/590/thumbnail"
+        },
+        "category": {
+            "id": 1493,
+            "meta": {
+                "itemType": "p2fDocumentCategory",
+                "created": "2020-12-15T15:52:38.189Z",
+                "updated": "2020-12-15T15:52:46.671484Z",
+                "spaceKey": "wolfenbuettlerschaufenster"
+            },
+            "name": "Verlag",
+            "embedded": true
+        }
+    },
+    {
+        "id": 2306,
+        "meta": {
+            "itemType": "p2fDocumentItem",
+            "created": "2021-03-17T12:16:46.157Z",
+            "updated": "2021-03-26T17:16:25.114835Z",
+            "spaceKey": "wolfenbuettlerschaufenster",
+            "publish": {
+                "state": "DRAFT"
+            }
+        },
+        "name": "Möbelhof Adersheim 11/21",
+        "asset": {
+            "id": 2304,
+            "hidden": true,
+            "title": "Moebelhof_Adersheim_ALL0121_Online",
+            "formats": [
+                {
+                    "status": "ready",
+                    "mimeType": "application/pdf",
+                    "created": "2021-03-17T12:17:48.033650Z",
+                    "name": "source",
+                    "filename": "Moebelhof_Adersheim_ALL0121_Online.pdf",
+                    "size": 3724181,
+                    "downloadUri": "spo://space/wolfenbuettlerschaufenster/asset/2304/format/source/?download",
+                    "meta": {
+                        "warnings": [
+                            "Meta info not generated yet for this format. Starting generation now"
+                        ]
+                    }
+                },
+                {
+                    "status": "ready",
+                    "mimeType": "inode/directory",
+                    "created": "2021-03-17T12:17:48.074984Z",
+                    "name": "p2fdocument",
+                    "filename": "p2fdocument",
+                    "size": 50786417,
+                    "downloadUri": "spo://space/wolfenbuettlerschaufenster/asset/2304/format/p2fdocument/?download",
+                    "meta": {
+                        "warnings": [
+                            "Meta info not generated yet for this format. Starting generation now"
+                        ]
+                    }
+                }
+            ],
+            "meta": {
+                "created": "2021-03-17T13:17:48.018",
+                "updated": "2021-03-17T15:19:16.565526",
+                "creator": {
+                    "id": 1535,
+                    "firstname": "Steffen",
+                    "lastname": "Maschke"
+                },
+                "itemType": "p2fdocument",
+                "spaceKey": "wolfenbuettlerschaufenster",
+                "aliases": []
+            },
+            "thumbnailUri": "spo://space/wolfenbuettlerschaufenster/asset/2304/thumbnail"
+        },
+        "category": {
+            "id": 1353,
+            "meta": {
+                "itemType": "p2fDocumentCategory",
+                "created": "2020-12-15T12:51:56.841Z",
+                "updated": "2020-12-15T12:52:12.774086Z",
+                "spaceKey": "wolfenbuettlerschaufenster"
+            },
+            "name": "Beilagen",
+            "embedded": true
+        }
+    },
+    {
+        "id": 2473,
+        "meta": {
+            "itemType": "p2fDocumentItem",
+            "created": "2021-03-26T12:19:58.229Z",
+            "updated": "2021-03-26T12:54:58.023664Z",
+            "spaceKey": "wolfenbuettlerschaufenster",
+            "publish": {
+                "state": "PUBLISHED",
+                "start": "2021-03-26T12:20:41.771381Z"
+            }
+        },
+        "name": "03.01.21",
+        "asset": {
+            "id": 2311,
+            "hidden": true,
+            "title": "03012021",
+            "formats": [
+                {
+                    "status": "ready",
+                    "mimeType": "application/pdf",
+                    "created": "2021-03-17T12:21:53.893784Z",
+                    "name": "source",
+                    "filename": "03012021.pdf",
+                    "size": 46377706,
+                    "downloadUri": "spo://space/wolfenbuettlerschaufenster/asset/2311/format/source/?download",
+                    "meta": {
+                        "warnings": [
+                            "Meta info not generated yet for this format. Starting generation now"
+                        ]
+                    }
+                },
+                {
+                    "status": "ready",
+                    "mimeType": "inode/directory",
+                    "created": "2021-03-17T12:21:55.485207Z",
+                    "name": "p2fdocument",
+                    "filename": "p2fdocument",
+                    "size": 314985110,
+                    "downloadUri": "spo://space/wolfenbuettlerschaufenster/asset/2311/format/p2fdocument/?download",
+                    "meta": {
+                        "warnings": [
+                            "Meta info not generated yet for this format. Starting generation now"
+                        ]
+                    }
+                }
+            ],
+            "meta": {
+                "created": "2021-03-17T13:21:53.828",
+                "updated": "2021-03-17T15:19:17.624309",
+                "creator": {
+                    "id": 1535,
+                    "firstname": "Steffen",
+                    "lastname": "Maschke"
+                },
+                "itemType": "p2fdocument",
+                "spaceKey": "wolfenbuettlerschaufenster",
+                "aliases": []
+            },
+            "thumbnailUri": "spo://space/wolfenbuettlerschaufenster/asset/2311/thumbnail"
+        },
+        "category": {
+            "id": 1345,
+            "meta": {
+                "itemType": "p2fDocumentCategory",
+                "created": "2020-12-15T12:03:11.677Z",
+                "updated": "2020-12-15T12:03:17.721631Z",
+                "spaceKey": "wolfenbuettlerschaufenster"
+            },
+            "name": "Schaufenster aktuell",
+            "embedded": true
+        }
+    },
+    {
+        "id": 2477,
+        "meta": {
+            "itemType": "p2fDocumentItem",
+            "created": "2021-03-26T12:20:59.223Z",
+            "updated": "2021-03-26T12:55:14.109413Z",
+            "spaceKey": "wolfenbuettlerschaufenster",
+            "publish": {
+                "state": "PUBLISHED",
+                "start": "2021-03-26T12:51:51.115456Z"
+            }
+        },
+        "name": "10.01.21",
+        "asset": {
+            "id": 2445,
+            "hidden": false,
+            "title": "10.01.2021",
+            "formats": [
+                {
+                    "status": "ready",
+                    "mimeType": "application/pdf",
+                    "created": "2021-03-24T16:54:08.216506Z",
+                    "name": "source",
+                    "filename": "10012021.pdf",
+                    "size": 38119775,
+                    "downloadUri": "spo://space/wolfenbuettlerschaufenster/asset/2445/format/source/?download",
+                    "meta": {
+                        "warnings": [
+                            "Meta info not generated yet for this format. Starting generation now"
+                        ]
+                    }
+                },
+                {
+                    "status": "converting",
+                    "created": "2021-03-24T16:54:10.264097Z",
+                    "name": "p2fdocument",
+                    "downloadUri": "spo://space/wolfenbuettlerschaufenster/asset/2445/format/p2fdocument/?download"
+                }
+            ],
+            "meta": {
+                "created": "2021-03-24T17:54:08.158",
+                "updated": "2021-03-24T17:54:32.955492",
+                "creator": {
+                    "id": 1535,
+                    "firstname": "Steffen",
+                    "lastname": "Maschke"
+                },
+                "itemType": "p2fdocument",
+                "spaceKey": "wolfenbuettlerschaufenster",
+                "aliases": []
+            },
+            "thumbnailUri": "spo://space/wolfenbuettlerschaufenster/asset/2445/thumbnail"
+        },
+        "category": {
+            "id": 1345,
+            "meta": {
+                "itemType": "p2fDocumentCategory",
+                "created": "2020-12-15T12:03:11.677Z",
+                "updated": "2020-12-15T12:03:17.721631Z",
+                "spaceKey": "wolfenbuettlerschaufenster"
+            },
+            "name": "Schaufenster aktuell",
+            "embedded": true
+        }
+    },
+    {
+        "id": 2479,
+        "meta": {
+            "itemType": "p2fDocumentItem",
+            "created": "2021-03-26T12:21:35.237Z",
+            "updated": "2021-03-26T12:55:23.545469Z",
+            "spaceKey": "wolfenbuettlerschaufenster",
+            "publish": {
+                "state": "PUBLISHED",
+                "start": "2021-03-26T12:21:53.256249Z"
+            }
+        },
+        "name": "17.01.21",
+        "asset": {
+            "id": 2418,
+            "hidden": false,
+            "title": "17012021",
+            "formats": [
+                {
+                    "status": "ready",
+                    "mimeType": "application/pdf",
+                    "created": "2021-03-24T16:47:05.993570Z",
+                    "name": "source",
+                    "filename": "17012021.pdf",
+                    "size": 37644263,
+                    "downloadUri": "spo://space/wolfenbuettlerschaufenster/asset/2418/format/source/?download",
+                    "meta": {
+                        "warnings": [
+                            "Meta info not generated yet for this format. Starting generation now"
+                        ]
+                    }
+                },
+                {
+                    "status": "ready",
+                    "mimeType": "inode/directory",
+                    "created": "2021-03-24T16:47:06.731474Z",
+                    "name": "p2fdocument",
+                    "filename": "p2fdocument",
+                    "size": 264082454,
+                    "downloadUri": "spo://space/wolfenbuettlerschaufenster/asset/2418/format/p2fdocument/?download",
+                    "meta": {
+                        "warnings": [
+                            "Meta info not generated yet for this format. Starting generation now"
+                        ]
+                    }
+                }
+            ],
+            "meta": {
+                "created": "2021-03-24T17:47:05.94",
+                "updated": "2021-03-24T17:48:55.746116",
+                "creator": {
+                    "id": 1535,
+                    "firstname": "Steffen",
+                    "lastname": "Maschke"
+                },
+                "itemType": "p2fdocument",
+                "spaceKey": "wolfenbuettlerschaufenster",
+                "aliases": []
+            },
+            "thumbnailUri": "spo://space/wolfenbuettlerschaufenster/asset/2418/thumbnail"
+        },
+        "category": {
+            "id": 1345,
+            "meta": {
+                "itemType": "p2fDocumentCategory",
+                "created": "2020-12-15T12:03:11.677Z",
+                "updated": "2020-12-15T12:03:17.721631Z",
+                "spaceKey": "wolfenbuettlerschaufenster"
+            },
+            "name": "Schaufenster aktuell",
+            "embedded": true
+        }
+    },
+    {
+        "id": 2484,
+        "meta": {
+            "itemType": "p2fDocumentItem",
+            "created": "2021-03-26T12:25:19.081Z",
+            "updated": "2021-03-26T12:55:31.687409Z",
+            "spaceKey": "wolfenbuettlerschaufenster",
+            "publish": {
+                "state": "PUBLISHED",
+                "start": "2021-03-26T12:25:44.732577Z"
+            }
+        },
+        "name": "24.01.21",
+        "asset": {
+            "id": 2482,
+            "hidden": true,
+            "title": "24012021",
+            "formats": [
+                {
+                    "status": "ready",
+                    "mimeType": "application/pdf",
+                    "created": "2021-03-26T12:24:41.583614Z",
+                    "name": "source",
+                    "filename": "24012021.pdf",
+                    "size": 62352100,
+                    "downloadUri": "spo://space/wolfenbuettlerschaufenster/asset/2482/format/source/?download",
+                    "meta": {
+                        "warnings": [
+                            "Meta info not generated yet for this format. Starting generation now"
+                        ]
+                    }
+                },
+                {
+                    "status": "ready",
+                    "mimeType": "inode/directory",
+                    "created": "2021-03-26T12:24:43.685722Z",
+                    "name": "p2fdocument",
+                    "filename": "p2fdocument",
+                    "size": 403950956,
+                    "downloadUri": "spo://space/wolfenbuettlerschaufenster/asset/2482/format/p2fdocument/?download",
+                    "meta": {
+                        "warnings": [
+                            "Meta info not generated yet for this format. Starting generation now"
+                        ]
+                    }
+                }
+            ],
+            "meta": {
+                "created": "2021-03-26T13:24:41.489",
+                "updated": "2021-03-26T13:45:59.41484",
+                "creator": {
+                    "id": 1535,
+                    "firstname": "Steffen",
+                    "lastname": "Maschke"
+                },
+                "itemType": "p2fdocument",
+                "spaceKey": "wolfenbuettlerschaufenster",
+                "aliases": []
+            },
+            "thumbnailUri": "spo://space/wolfenbuettlerschaufenster/asset/2482/thumbnail"
+        },
+        "category": {
+            "id": 1345,
+            "meta": {
+                "itemType": "p2fDocumentCategory",
+                "created": "2020-12-15T12:03:11.677Z",
+                "updated": "2020-12-15T12:03:17.721631Z",
+                "spaceKey": "wolfenbuettlerschaufenster"
+            },
+            "name": "Schaufenster aktuell",
+            "embedded": true
+        }
+    },
+    {
+        "id": 2491,
+        "meta": {
+            "itemType": "p2fDocumentItem",
+            "created": "2021-03-26T12:27:30.092Z",
+            "updated": "2021-03-26T12:55:40.432104Z",
+            "spaceKey": "wolfenbuettlerschaufenster",
+            "publish": {
+                "state": "PUBLISHED",
+                "start": "2021-03-26T12:51:03.130389Z"
+            }
+        },
+        "name": "31.01.21",
+        "asset": {
+            "id": 2489,
+            "hidden": false,
+            "title": "31012021",
+            "formats": [
+                {
+                    "status": "ready",
+                    "mimeType": "application/pdf",
+                    "created": "2021-03-26T12:27:11.198685Z",
+                    "name": "source",
+                    "filename": "31012021.pdf",
+                    "size": 38154413,
+                    "downloadUri": "spo://space/wolfenbuettlerschaufenster/asset/2489/format/source/?download",
+                    "meta": {
+                        "warnings": [
+                            "Meta info not generated yet for this format. Starting generation now"
+                        ]
+                    }
+                },
+                {
+                    "status": "ready",
+                    "mimeType": "inode/directory",
+                    "created": "2021-03-26T12:27:13.287600Z",
+                    "name": "p2fdocument",
+                    "filename": "p2fdocument",
+                    "size": 237860092,
+                    "downloadUri": "spo://space/wolfenbuettlerschaufenster/asset/2489/format/p2fdocument/?download",
+                    "meta": {
+                        "warnings": [
+                            "Meta info not generated yet for this format. Starting generation now"
+                        ]
+                    }
+                }
+            ],
+            "meta": {
+                "created": "2021-03-26T13:27:11.126",
+                "updated": "2021-03-26T13:55:52.132109",
+                "creator": {
+                    "id": 1535,
+                    "firstname": "Steffen",
+                    "lastname": "Maschke"
+                },
+                "itemType": "p2fdocument",
+                "spaceKey": "wolfenbuettlerschaufenster",
+                "aliases": []
+            },
+            "thumbnailUri": "spo://space/wolfenbuettlerschaufenster/asset/2489/thumbnail"
+        },
+        "category": {
+            "id": 1345,
+            "meta": {
+                "itemType": "p2fDocumentCategory",
+                "created": "2020-12-15T12:03:11.677Z",
+                "updated": "2020-12-15T12:03:17.721631Z",
+                "spaceKey": "wolfenbuettlerschaufenster"
+            },
+            "name": "Schaufenster aktuell",
+            "embedded": true
+        }
+    },
+    {
+        "id": 2499,
+        "meta": {
+            "itemType": "p2fDocumentItem",
+            "created": "2021-03-26T12:28:12.197Z",
+            "updated": "2021-03-26T12:50:27.316750Z",
+            "spaceKey": "wolfenbuettlerschaufenster",
+            "publish": {
+                "state": "PUBLISHED",
+                "start": "2021-03-26T12:50:27.316753Z"
+            }
+        },
+        "name": "07.02.21",
+        "asset": {
+            "id": 2495,
+            "hidden": true,
+            "title": "07022021",
+            "formats": [
+                {
+                    "status": "ready",
+                    "mimeType": "application/pdf",
+                    "created": "2021-03-26T12:29:26.543684Z",
+                    "name": "source",
+                    "filename": "07022021.pdf",
+                    "size": 67843478,
+                    "downloadUri": "spo://space/wolfenbuettlerschaufenster/asset/2495/format/source/?download",
+                    "meta": {
+                        "warnings": [
+                            "Meta info not generated yet for this format. Starting generation now"
+                        ]
+                    }
+                },
+                {
+                    "status": "ready",
+                    "mimeType": "inode/directory",
+                    "created": "2021-03-26T12:29:28.306343Z",
+                    "name": "p2fdocument",
+                    "filename": "p2fdocument",
+                    "size": 389661879,
+                    "downloadUri": "spo://space/wolfenbuettlerschaufenster/asset/2495/format/p2fdocument/?download",
+                    "meta": {
+                        "warnings": [
+                            "Meta info not generated yet for this format. Starting generation now"
+                        ]
+                    }
+                }
+            ],
+            "meta": {
+                "created": "2021-03-26T13:29:26.418",
+                "updated": "2021-03-26T13:52:45.213248",
+                "creator": {
+                    "id": 1535,
+                    "firstname": "Steffen",
+                    "lastname": "Maschke"
+                },
+                "itemType": "p2fdocument",
+                "spaceKey": "wolfenbuettlerschaufenster",
+                "aliases": []
+            },
+            "thumbnailUri": "spo://space/wolfenbuettlerschaufenster/asset/2495/thumbnail"
+        },
+        "category": {
+            "id": 1345,
+            "meta": {
+                "itemType": "p2fDocumentCategory",
+                "created": "2020-12-15T12:03:11.677Z",
+                "updated": "2020-12-15T12:03:17.721631Z",
+                "spaceKey": "wolfenbuettlerschaufenster"
+            },
+            "name": "Schaufenster aktuell",
+            "embedded": true
+        }
+    },
+    {
+        "id": 2518,
+        "meta": {
+            "itemType": "p2fDocumentItem",
+            "created": "2021-03-26T12:56:07.694Z",
+            "updated": "2021-03-26T12:57:20.207540Z",
+            "spaceKey": "wolfenbuettlerschaufenster",
+            "publish": {
+                "state": "PUBLISHED",
+                "start": "2021-03-26T12:57:20.207543Z"
+            }
+        },
+        "name": "14.02.21",
+        "asset": {
+            "id": 2516,
+            "hidden": true,
+            "title": "14022021",
+            "formats": [
+                {
+                    "status": "ready",
+                    "mimeType": "application/pdf",
+                    "created": "2021-03-26T12:56:50.478232Z",
+                    "name": "source",
+                    "filename": "14022021.pdf",
+                    "size": 44706229,
+                    "downloadUri": "spo://space/wolfenbuettlerschaufenster/asset/2516/format/source/?download",
+                    "meta": {
+                        "warnings": [
+                            "Meta info not generated yet for this format. Starting generation now"
+                        ]
+                    }
+                },
+                {
+                    "status": "ready",
+                    "mimeType": "inode/directory",
+                    "created": "2021-03-26T12:56:52.565661Z",
+                    "name": "p2fdocument",
+                    "filename": "p2fdocument",
+                    "size": 269950923,
+                    "downloadUri": "spo://space/wolfenbuettlerschaufenster/asset/2516/format/p2fdocument/?download",
+                    "meta": {
+                        "warnings": [
+                            "Meta info not generated yet for this format. Starting generation now"
+                        ]
+                    }
+                }
+            ],
+            "meta": {
+                "created": "2021-03-26T13:56:50.406",
+                "updated": "2021-03-26T14:11:43.870786",
+                "creator": {
+                    "id": 1535,
+                    "firstname": "Steffen",
+                    "lastname": "Maschke"
+                },
+                "itemType": "p2fdocument",
+                "spaceKey": "wolfenbuettlerschaufenster",
+                "aliases": []
+            },
+            "thumbnailUri": "spo://space/wolfenbuettlerschaufenster/asset/2516/thumbnail"
+        },
+        "category": {
+            "id": 1345,
+            "meta": {
+                "itemType": "p2fDocumentCategory",
+                "created": "2020-12-15T12:03:11.677Z",
+                "updated": "2020-12-15T12:03:17.721631Z",
+                "spaceKey": "wolfenbuettlerschaufenster"
+            },
+            "name": "Schaufenster aktuell",
+            "embedded": true
+        }
+    },
+    {
+        "id": 2526,
+        "meta": {
+            "itemType": "p2fDocumentItem",
+            "created": "2021-03-26T13:00:59.991Z",
+            "updated": "2021-03-26T13:02:20.049118Z",
+            "spaceKey": "wolfenbuettlerschaufenster",
+            "publish": {
+                "state": "PUBLISHED",
+                "start": "2021-03-26T13:02:20.049122Z"
+            }
+        },
+        "name": "21.02.21",
+        "asset": {
+            "id": 2524,
+            "hidden": true,
+            "title": "21022021",
+            "formats": [
+                {
+                    "status": "ready",
+                    "mimeType": "application/pdf",
+                    "created": "2021-03-26T13:01:52.954136Z",
+                    "name": "source",
+                    "filename": "21022021.pdf",
+                    "size": 49305678,
+                    "downloadUri": "spo://space/wolfenbuettlerschaufenster/asset/2524/format/source/?download",
+                    "meta": {
+                        "warnings": [
+                            "Meta info not generated yet for this format. Starting generation now"
+                        ]
+                    }
+                },
+                {
+                    "status": "ready",
+                    "mimeType": "inode/directory",
+                    "created": "2021-03-26T13:01:55.022893Z",
+                    "name": "p2fdocument",
+                    "filename": "p2fdocument",
+                    "size": 307331407,
+                    "downloadUri": "spo://space/wolfenbuettlerschaufenster/asset/2524/format/p2fdocument/?download",
+                    "meta": {
+                        "warnings": [
+                            "Meta info not generated yet for this format. Starting generation now"
+                        ]
+                    }
+                }
+            ],
+            "meta": {
+                "created": "2021-03-26T14:01:52.874",
+                "updated": "2021-03-26T14:11:41.864698",
+                "creator": {
+                    "id": 1535,
+                    "firstname": "Steffen",
+                    "lastname": "Maschke"
+                },
+                "itemType": "p2fdocument",
+                "spaceKey": "wolfenbuettlerschaufenster",
+                "aliases": []
+            },
+            "thumbnailUri": "spo://space/wolfenbuettlerschaufenster/asset/2524/thumbnail"
+        },
+        "category": {
+            "id": 1345,
+            "meta": {
+                "itemType": "p2fDocumentCategory",
+                "created": "2020-12-15T12:03:11.677Z",
+                "updated": "2020-12-15T12:03:17.721631Z",
+                "spaceKey": "wolfenbuettlerschaufenster"
+            },
+            "name": "Schaufenster aktuell",
+            "embedded": true
+        }
+    },
+    {
+        "id": 2533,
+        "meta": {
+            "itemType": "p2fDocumentItem",
+            "created": "2021-03-26T13:02:32.765Z",
+            "updated": "2021-03-26T13:04:16.082893Z",
+            "spaceKey": "wolfenbuettlerschaufenster",
+            "publish": {
+                "state": "PUBLISHED",
+                "start": "2021-03-26T13:04:16.082897Z"
+            }
+        },
+        "name": "28.02.21",
+        "asset": {
+            "id": 2529,
+            "hidden": true,
+            "title": "28022021",
+            "formats": [
+                {
+                    "status": "ready",
+                    "mimeType": "application/pdf",
+                    "created": "2021-03-26T13:03:18.176023Z",
+                    "name": "source",
+                    "filename": "28022021.pdf",
+                    "size": 48319761,
+                    "downloadUri": "spo://space/wolfenbuettlerschaufenster/asset/2529/format/source/?download",
+                    "meta": {
+                        "warnings": [
+                            "Meta info not generated yet for this format. Starting generation now"
+                        ]
+                    }
+                },
+                {
+                    "status": "ready",
+                    "mimeType": "inode/directory",
+                    "created": "2021-03-26T13:03:19.780124Z",
+                    "name": "p2fdocument",
+                    "filename": "p2fdocument",
+                    "size": 291523886,
+                    "downloadUri": "spo://space/wolfenbuettlerschaufenster/asset/2529/format/p2fdocument/?download",
+                    "meta": {
+                        "warnings": [
+                            "Meta info not generated yet for this format. Starting generation now"
+                        ]
+                    }
+                }
+            ],
+            "meta": {
+                "created": "2021-03-26T14:03:18.098",
+                "updated": "2021-03-26T14:11:39.858564",
+                "creator": {
+                    "id": 1535,
+                    "firstname": "Steffen",
+                    "lastname": "Maschke"
+                },
+                "itemType": "p2fdocument",
+                "spaceKey": "wolfenbuettlerschaufenster",
+                "aliases": []
+            },
+            "thumbnailUri": "spo://space/wolfenbuettlerschaufenster/asset/2529/thumbnail"
+        },
+        "category": {
+            "id": 1345,
+            "meta": {
+                "itemType": "p2fDocumentCategory",
+                "created": "2020-12-15T12:03:11.677Z",
+                "updated": "2020-12-15T12:03:17.721631Z",
+                "spaceKey": "wolfenbuettlerschaufenster"
+            },
+            "name": "Schaufenster aktuell",
+            "embedded": true
+        }
+    },
+    {
+        "id": 2540,
+        "meta": {
+            "itemType": "p2fDocumentItem",
+            "created": "2021-03-26T13:04:55.338Z",
+            "updated": "2021-03-26T13:06:10.871979Z",
+            "spaceKey": "wolfenbuettlerschaufenster",
+            "publish": {
+                "state": "PUBLISHED",
+                "start": "2021-03-26T13:06:10.871986Z"
+            }
+        },
+        "name": "07.03.21",
+        "asset": {
+            "id": 2538,
+            "hidden": true,
+            "title": "07032021",
+            "formats": [
+                {
+                    "status": "ready",
+                    "mimeType": "application/pdf",
+                    "created": "2021-03-26T13:05:49.244366Z",
+                    "name": "source",
+                    "filename": "07032021.pdf",
+                    "size": 47833581,
+                    "downloadUri": "spo://space/wolfenbuettlerschaufenster/asset/2538/format/source/?download",
+                    "meta": {
+                        "warnings": [
+                            "Meta info not generated yet for this format. Starting generation now"
+                        ]
+                    }
+                },
+                {
+                    "status": "ready",
+                    "mimeType": "inode/directory",
+                    "created": "2021-03-26T13:05:51.339462Z",
+                    "name": "p2fdocument",
+                    "filename": "p2fdocument",
+                    "size": 309397057,
+                    "downloadUri": "spo://space/wolfenbuettlerschaufenster/asset/2538/format/p2fdocument/?download",
+                    "meta": {
+                        "warnings": [
+                            "Meta info not generated yet for this format. Starting generation now"
+                        ]
+                    }
+                }
+            ],
+            "meta": {
+                "created": "2021-03-26T14:05:49.164",
+                "updated": "2021-03-26T14:11:37.814055",
+                "creator": {
+                    "id": 1535,
+                    "firstname": "Steffen",
+                    "lastname": "Maschke"
+                },
+                "itemType": "p2fdocument",
+                "spaceKey": "wolfenbuettlerschaufenster",
+                "aliases": []
+            },
+            "thumbnailUri": "spo://space/wolfenbuettlerschaufenster/asset/2538/thumbnail"
+        },
+        "category": {
+            "id": 1345,
+            "meta": {
+                "itemType": "p2fDocumentCategory",
+                "created": "2020-12-15T12:03:11.677Z",
+                "updated": "2020-12-15T12:03:17.721631Z",
+                "spaceKey": "wolfenbuettlerschaufenster"
+            },
+            "name": "Schaufenster aktuell",
+            "embedded": true
+        }
+    },
+    {
+        "id": 2547,
+        "meta": {
+            "itemType": "p2fDocumentItem",
+            "created": "2021-03-26T13:06:51.431Z",
+            "updated": "2021-03-26T13:09:06.929700Z",
+            "spaceKey": "wolfenbuettlerschaufenster",
+            "publish": {
+                "state": "PUBLISHED",
+                "start": "2021-03-26T13:09:06.929705Z"
+            }
+        },
+        "name": "14.03.21",
+        "asset": {
+            "id": 2545,
+            "hidden": true,
+            "title": "14032021",
+            "formats": [
+                {
+                    "status": "ready",
+                    "mimeType": "application/pdf",
+                    "created": "2021-03-26T13:07:50.870661Z",
+                    "name": "source",
+                    "filename": "14032021.pdf",
+                    "size": 59455013,
+                    "downloadUri": "spo://space/wolfenbuettlerschaufenster/asset/2545/format/source/?download",
+                    "meta": {
+                        "warnings": [
+                            "Meta info not generated yet for this format. Starting generation now"
+                        ]
+                    }
+                },
+                {
+                    "status": "ready",
+                    "mimeType": "inode/directory",
+                    "created": "2021-03-26T13:07:52.961861Z",
+                    "name": "p2fdocument",
+                    "filename": "p2fdocument",
+                    "size": 393927056,
+                    "downloadUri": "spo://space/wolfenbuettlerschaufenster/asset/2545/format/p2fdocument/?download",
+                    "meta": {
+                        "warnings": [
+                            "Meta info not generated yet for this format. Starting generation now"
+                        ]
+                    }
+                }
+            ],
+            "meta": {
+                "created": "2021-03-26T14:07:50.781",
+                "updated": "2021-03-26T14:11:37.154004",
+                "creator": {
+                    "id": 1535,
+                    "firstname": "Steffen",
+                    "lastname": "Maschke"
+                },
+                "itemType": "p2fdocument",
+                "spaceKey": "wolfenbuettlerschaufenster",
+                "aliases": []
+            },
+            "thumbnailUri": "spo://space/wolfenbuettlerschaufenster/asset/2545/thumbnail"
+        },
+        "category": {
+            "id": 1345,
+            "meta": {
+                "itemType": "p2fDocumentCategory",
+                "created": "2020-12-15T12:03:11.677Z",
+                "updated": "2020-12-15T12:03:17.721631Z",
+                "spaceKey": "wolfenbuettlerschaufenster"
+            },
+            "name": "Schaufenster aktuell",
+            "embedded": true
+        }
+    },
+    {
+        "id": 2554,
+        "meta": {
+            "itemType": "p2fDocumentItem",
+            "created": "2021-03-26T13:09:34.874Z",
+            "updated": "2021-03-26T13:11:24.177695Z",
+            "spaceKey": "wolfenbuettlerschaufenster",
+            "publish": {
+                "state": "PUBLISHED",
+                "start": "2021-03-26T13:11:24.177699Z"
+            }
+        },
+        "name": "21.03.21",
+        "asset": {
+            "id": 2552,
+            "hidden": true,
+            "title": "21032021",
+            "formats": [
+                {
+                    "status": "ready",
+                    "mimeType": "application/pdf",
+                    "created": "2021-03-26T13:10:54.202817Z",
+                    "name": "source",
+                    "filename": "21032021.pdf",
+                    "size": 49930487,
+                    "downloadUri": "spo://space/wolfenbuettlerschaufenster/asset/2552/format/source/?download",
+                    "meta": {
+                        "warnings": [
+                            "Meta info not generated yet for this format. Starting generation now"
+                        ]
+                    }
+                },
+                {
+                    "status": "ready",
+                    "mimeType": "inode/directory",
+                    "created": "2021-03-26T13:10:55.354526Z",
+                    "name": "p2fdocument",
+                    "filename": "p2fdocument",
+                    "size": 294422990,
+                    "downloadUri": "spo://space/wolfenbuettlerschaufenster/asset/2552/format/p2fdocument/?download",
+                    "meta": {
+                        "warnings": [
+                            "Meta info not generated yet for this format. Starting generation now"
+                        ]
+                    }
+                }
+            ],
+            "meta": {
+                "created": "2021-03-26T14:10:54.109",
+                "updated": "2021-03-26T14:15:43.764714",
+                "creator": {
+                    "id": 1535,
+                    "firstname": "Steffen",
+                    "lastname": "Maschke"
+                },
+                "itemType": "p2fdocument",
+                "spaceKey": "wolfenbuettlerschaufenster",
+                "aliases": []
+            },
+            "thumbnailUri": "spo://space/wolfenbuettlerschaufenster/asset/2552/thumbnail"
+        },
+        "category": {
+            "id": 1345,
+            "meta": {
+                "itemType": "p2fDocumentCategory",
+                "created": "2020-12-15T12:03:11.677Z",
+                "updated": "2020-12-15T12:03:17.721631Z",
+                "spaceKey": "wolfenbuettlerschaufenster"
+            },
+            "name": "Schaufenster aktuell",
+            "embedded": true
+        }
+    },
+    {
+        "id": 2565,
+        "meta": {
+            "itemType": "p2fDocumentItem",
+            "created": "2021-03-26T13:20:06.675Z",
+            "updated": "2021-03-26T13:21:06.894529Z",
+            "spaceKey": "wolfenbuettlerschaufenster",
+            "publish": {
+                "state": "PUBLISHED",
+                "start": "2021-03-26T13:21:06.894531Z"
+            }
+        },
+        "name": "Gesundheitsmagazin",
+        "asset": {
+            "id": 2563,
+            "hidden": true,
+            "title": "Gesundheitsmagazin",
+            "formats": [
+                {
+                    "status": "ready",
+                    "mimeType": "application/pdf",
+                    "created": "2021-03-26T13:20:35.256789Z",
+                    "name": "source",
+                    "filename": "Gesundheitsmagazin.pdf",
+                    "size": 18540010,
+                    "downloadUri": "spo://space/wolfenbuettlerschaufenster/asset/2563/format/source/?download",
+                    "meta": {
+                        "warnings": [
+                            "Meta info not generated yet for this format. Starting generation now"
+                        ]
+                    }
+                },
+                {
+                    "status": "ready",
+                    "mimeType": "inode/directory",
+                    "created": "2021-03-26T13:20:37.142931Z",
+                    "name": "p2fdocument",
+                    "filename": "p2fdocument",
+                    "size": 124192658,
+                    "downloadUri": "spo://space/wolfenbuettlerschaufenster/asset/2563/format/p2fdocument/?download",
+                    "meta": {
+                        "warnings": [
+                            "Meta info not generated yet for this format. Starting generation now"
+                        ]
+                    }
+                }
+            ],
+            "meta": {
+                "created": "2021-03-26T14:20:35.221",
+                "updated": "2021-03-26T14:22:24.011374",
+                "creator": {
+                    "id": 1535,
+                    "firstname": "Steffen",
+                    "lastname": "Maschke"
+                },
+                "itemType": "p2fdocument",
+                "spaceKey": "wolfenbuettlerschaufenster",
+                "aliases": []
+            },
+            "thumbnailUri": "spo://space/wolfenbuettlerschaufenster/asset/2563/thumbnail"
+        },
+        "category": {
+            "id": 1395,
+            "meta": {
+                "itemType": "p2fDocumentCategory",
+                "created": "2020-12-15T13:05:05.304Z",
+                "updated": "2020-12-15T13:05:18.032319Z",
+                "spaceKey": "wolfenbuettlerschaufenster"
+            },
+            "name": "Sonderbeilagen",
+            "embedded": true
+        }
+    },
+    {
+        "id": 2572,
+        "meta": {
+            "itemType": "p2fDocumentItem",
+            "created": "2021-03-26T13:21:16.912Z",
+            "updated": "2021-03-26T13:22:13.867515Z",
+            "spaceKey": "wolfenbuettlerschaufenster",
+            "publish": {
+                "state": "PUBLISHED",
+                "start": "2021-03-26T13:22:13.867517Z"
+            }
+        },
+        "name": "Braunschweiger Blick",
+        "asset": {
+            "id": 2570,
+            "hidden": true,
+            "title": "BS_Blick",
+            "formats": [
+                {
+                    "status": "ready",
+                    "mimeType": "application/pdf",
+                    "created": "2021-03-26T13:21:42.203468Z",
+                    "name": "source",
+                    "filename": "BS_Blick.pdf",
+                    "size": 17990314,
+                    "downloadUri": "spo://space/wolfenbuettlerschaufenster/asset/2570/format/source/?download",
+                    "meta": {
+                        "warnings": [
+                            "Meta info not generated yet for this format. Starting generation now"
+                        ]
+                    }
+                },
+                {
+                    "status": "ready",
+                    "mimeType": "inode/directory",
+                    "created": "2021-03-26T13:21:44.272524Z",
+                    "name": "p2fdocument",
+                    "filename": "p2fdocument",
+                    "size": 142353076,
+                    "downloadUri": "spo://space/wolfenbuettlerschaufenster/asset/2570/format/p2fdocument/?download",
+                    "meta": {
+                        "warnings": [
+                            "Meta info not generated yet for this format. Starting generation now"
+                        ]
+                    }
+                }
+            ],
+            "meta": {
+                "created": "2021-03-26T14:21:42.169",
+                "updated": "2021-03-26T14:27:45.451828",
+                "creator": {
+                    "id": 1535,
+                    "firstname": "Steffen",
+                    "lastname": "Maschke"
+                },
+                "itemType": "p2fdocument",
+                "spaceKey": "wolfenbuettlerschaufenster",
+                "aliases": []
+            },
+            "thumbnailUri": "spo://space/wolfenbuettlerschaufenster/asset/2570/thumbnail"
+        },
+        "category": {
+            "id": 1395,
+            "meta": {
+                "itemType": "p2fDocumentCategory",
+                "created": "2020-12-15T13:05:05.304Z",
+                "updated": "2020-12-15T13:05:18.032319Z",
+                "spaceKey": "wolfenbuettlerschaufenster"
+            },
+            "name": "Sonderbeilagen",
+            "embedded": true
+        }
+    },
+    {
+        "id": 2579,
+        "meta": {
+            "itemType": "p2fDocumentItem",
+            "created": "2021-03-26T13:22:33.629Z",
+            "updated": "2021-03-26T13:23:32.203820Z",
+            "spaceKey": "wolfenbuettlerschaufenster",
+            "publish": {
+                "state": "PUBLISHED",
+                "start": "2021-03-26T13:23:32.203823Z"
+            }
+        },
+        "name": "Journal",
+        "asset": {
+            "id": 2577,
+            "hidden": true,
+            "title": "Veranstaltungsjournal",
+            "formats": [
+                {
+                    "status": "ready",
+                    "mimeType": "application/pdf",
+                    "created": "2021-03-26T13:23:04.320344Z",
+                    "name": "source",
+                    "filename": "Veranstaltungsjournal.pdf",
+                    "size": 18820110,
+                    "downloadUri": "spo://space/wolfenbuettlerschaufenster/asset/2577/format/source/?download",
+                    "meta": {
+                        "warnings": [
+                            "Meta info not generated yet for this format. Starting generation now"
+                        ]
+                    }
+                },
+                {
+                    "status": "ready",
+                    "mimeType": "inode/directory",
+                    "created": "2021-03-26T13:23:06.258664Z",
+                    "name": "p2fdocument",
+                    "filename": "p2fdocument",
+                    "size": 125127681,
+                    "downloadUri": "spo://space/wolfenbuettlerschaufenster/asset/2577/format/p2fdocument/?download",
+                    "meta": {
+                        "warnings": [
+                            "Meta info not generated yet for this format. Starting generation now"
+                        ]
+                    }
+                }
+            ],
+            "meta": {
+                "created": "2021-03-26T14:23:04.281",
+                "updated": "2021-03-26T14:27:43.398253",
+                "creator": {
+                    "id": 1535,
+                    "firstname": "Steffen",
+                    "lastname": "Maschke"
+                },
+                "itemType": "p2fdocument",
+                "spaceKey": "wolfenbuettlerschaufenster",
+                "aliases": []
+            },
+            "thumbnailUri": "spo://space/wolfenbuettlerschaufenster/asset/2577/thumbnail"
+        },
+        "category": {
+            "id": 1395,
+            "meta": {
+                "itemType": "p2fDocumentCategory",
+                "created": "2020-12-15T13:05:05.304Z",
+                "updated": "2020-12-15T13:05:18.032319Z",
+                "spaceKey": "wolfenbuettlerschaufenster"
+            },
+            "name": "Sonderbeilagen",
+            "embedded": true
+        }
+    },
+    {
+        "id": 2586,
+        "meta": {
+            "itemType": "p2fDocumentItem",
+            "created": "2021-03-26T13:23:44.829Z",
+            "updated": "2021-03-26T13:24:20.492618Z",
+            "spaceKey": "wolfenbuettlerschaufenster",
+            "publish": {
+                "state": "PUBLISHED",
+                "start": "2021-03-26T13:24:20.492620Z"
+            }
+        },
+        "name": "Zuhause",
+        "asset": {
+            "id": 2584,
+            "hidden": true,
+            "title": "Zuhause",
+            "formats": [
+                {
+                    "status": "ready",
+                    "mimeType": "application/pdf",
+                    "created": "2021-03-26T13:23:58.156247Z",
+                    "name": "source",
+                    "filename": "Zuhause.pdf",
+                    "size": 8232463,
+                    "downloadUri": "spo://space/wolfenbuettlerschaufenster/asset/2584/format/source/?download",
+                    "meta": {
+                        "warnings": [
+                            "Meta info not generated yet for this format. Starting generation now"
+                        ]
+                    }
+                },
+                {
+                    "status": "ready",
+                    "mimeType": "inode/directory",
+                    "created": "2021-03-26T13:23:58.977274Z",
+                    "name": "p2fdocument",
+                    "filename": "p2fdocument",
+                    "size": 79662765,
+                    "downloadUri": "spo://space/wolfenbuettlerschaufenster/asset/2584/format/p2fdocument/?download",
+                    "meta": {
+                        "warnings": [
+                            "Meta info not generated yet for this format. Starting generation now"
+                        ]
+                    }
+                }
+            ],
+            "meta": {
+                "created": "2021-03-26T14:23:58.133",
+                "updated": "2021-03-26T14:27:41.346604",
+                "creator": {
+                    "id": 1535,
+                    "firstname": "Steffen",
+                    "lastname": "Maschke"
+                },
+                "itemType": "p2fdocument",
+                "spaceKey": "wolfenbuettlerschaufenster",
+                "aliases": []
+            },
+            "thumbnailUri": "spo://space/wolfenbuettlerschaufenster/asset/2584/thumbnail"
+        },
+        "category": {
+            "id": 1395,
+            "meta": {
+                "itemType": "p2fDocumentCategory",
+                "created": "2020-12-15T13:05:05.304Z",
+                "updated": "2020-12-15T13:05:18.032319Z",
+                "spaceKey": "wolfenbuettlerschaufenster"
+            },
+            "name": "Sonderbeilagen",
+            "embedded": true
+        }
+    },
+    {
+        "id": 2592,
+        "meta": {
+            "itemType": "p2fDocumentItem",
+            "created": "2021-03-26T13:25:52.770Z",
+            "updated": "2021-03-26T13:26:21.780388Z",
+            "spaceKey": "wolfenbuettlerschaufenster",
+            "publish": {
+                "state": "PUBLISHED",
+                "start": "2021-03-26T13:26:21.780391Z"
+            }
+        },
+        "name": "Priv. Kleinanzeigen",
+        "asset": {
+            "id": 607,
+            "hidden": true,
+            "title": "Kleinanzeigen-Coupon_Schaufenster_Wolfenbuettel",
+            "formats": [
+                {
+                    "status": "ready",
+                    "mimeType": "application/pdf",
+                    "created": "2020-11-18T16:05:34.219623Z",
+                    "name": "source",
+                    "filename": "Kleinanzeigen-Coupon_Schaufenster_Wolfenbuettel.pdf",
+                    "size": 1500368,
+                    "downloadUri": "spo://space/wolfenbuettlerschaufenster/asset/607/format/source/?download",
+                    "meta": {
+                        "warnings": [
+                            "Meta info not generated yet for this format. Starting generation now"
+                        ]
+                    }
+                },
+                {
+                    "status": "ready",
+                    "mimeType": "inode/directory",
+                    "created": "2020-11-18T16:05:34.219641Z",
+                    "name": "p2fdocument",
+                    "filename": "p2fdocument",
+                    "size": 2670772,
+                    "downloadUri": "spo://space/wolfenbuettlerschaufenster/asset/607/format/p2fdocument/?download",
+                    "meta": {
+                        "warnings": [
+                            "Meta info not generated yet for this format. Starting generation now"
+                        ]
+                    }
+                }
+            ],
+            "meta": {
+                "created": "2020-11-18T17:05:34.209",
+                "updated": "2021-03-05T13:18:03.700081",
+                "creator": {
+                    "id": 242,
+                    "firstname": "Philipp",
+                    "lastname": "Treder"
+                },
+                "itemType": "p2fdocument",
+                "spaceKey": "wolfenbuettlerschaufenster",
+                "aliases": []
+            },
+            "thumbnailUri": "spo://space/wolfenbuettlerschaufenster/asset/607/thumbnail"
+        },
+        "category": {
+            "id": 1493,
+            "meta": {
+                "itemType": "p2fDocumentCategory",
+                "created": "2020-12-15T15:52:38.189Z",
+                "updated": "2020-12-15T15:52:46.671484Z",
+                "spaceKey": "wolfenbuettlerschaufenster"
+            },
+            "name": "Verlag",
+            "embedded": true
+        }
+    },
+    {
+        "id": 2599,
+        "meta": {
+            "itemType": "p2fDocumentItem",
+            "created": "2021-03-26T13:26:31.334Z",
+            "updated": "2021-03-26T13:27:29.650811Z",
+            "spaceKey": "wolfenbuettlerschaufenster",
+            "publish": {
+                "state": "PUBLISHED",
+                "start": "2021-03-26T13:27:29.650814Z"
+            }
+        },
+        "name": "Mediadaten",
+        "asset": {
+            "id": 2595,
+            "hidden": true,
+            "title": "Mediadaten_3:21",
+            "formats": [
+                {
+                    "status": "ready",
+                    "mimeType": "application/pdf",
+                    "created": "2021-03-26T13:27:07.922446Z",
+                    "name": "source",
+                    "filename": "Mediadaten_3:21.pdf",
+                    "size": 4502102,
+                    "downloadUri": "spo://space/wolfenbuettlerschaufenster/asset/2595/format/source/?download",
+                    "meta": {
+                        "warnings": [
+                            "Meta info not generated yet for this format. Starting generation now"
+                        ]
+                    }
+                },
+                {
+                    "status": "ready",
+                    "mimeType": "inode/directory",
+                    "created": "2021-03-26T13:27:07.984905Z",
+                    "name": "p2fdocument",
+                    "filename": "p2fdocument",
+                    "size": 17144157,
+                    "downloadUri": "spo://space/wolfenbuettlerschaufenster/asset/2595/format/p2fdocument/?download",
+                    "meta": {
+                        "warnings": [
+                            "Meta info not generated yet for this format. Starting generation now"
+                        ]
+                    }
+                }
+            ],
+            "meta": {
+                "created": "2021-03-26T14:27:07.904",
+                "updated": "2021-03-26T14:27:40.496628",
+                "creator": {
+                    "id": 1535,
+                    "firstname": "Steffen",
+                    "lastname": "Maschke"
+                },
+                "itemType": "p2fdocument",
+                "spaceKey": "wolfenbuettlerschaufenster",
+                "aliases": []
+            },
+            "thumbnailUri": "spo://space/wolfenbuettlerschaufenster/asset/2595/thumbnail"
+        },
+        "category": {
+            "id": 1493,
+            "meta": {
+                "itemType": "p2fDocumentCategory",
+                "created": "2020-12-15T15:52:38.189Z",
+                "updated": "2020-12-15T15:52:46.671484Z",
+                "spaceKey": "wolfenbuettlerschaufenster"
+            },
+            "name": "Verlag",
+            "embedded": true
+        }
+    },
+    {
+        "id": 2694,
+        "meta": {
+            "itemType": "p2fDocumentItem",
+            "created": "2021-03-29T06:40:20.718Z",
+            "updated": "2021-03-29T06:40:47.424481Z",
+            "spaceKey": "wolfenbuettlerschaufenster",
+            "publish": {
+                "state": "PUBLISHED",
+                "start": "2021-03-29T06:40:47.424484Z"
+            }
+        },
+        "name": "Rewe Test",
+        "asset": {
+            "id": 1580,
+            "hidden": true,
+            "title": "REWE 02:21",
+            "formats": [
+                {
+                    "status": "ready",
+                    "mimeType": "application/pdf",
+                    "created": "2021-01-18T08:34:41.833191Z",
+                    "name": "source",
+                    "filename": "REWE 02:21.pdf",
+                    "size": 40856476,
+                    "downloadUri": "spo://space/wolfenbuettlerschaufenster/asset/1580/format/source/?download",
+                    "meta": {
+                        "warnings": [
+                            "Meta info not generated yet for this format. Starting generation now"
+                        ]
+                    }
+                },
+                {
+                    "status": "ready",
+                    "mimeType": "inode/directory",
+                    "created": "2021-01-18T08:34:41.833218Z",
+                    "name": "p2fdocument",
+                    "filename": "p2fdocument",
+                    "size": 199497630,
+                    "downloadUri": "spo://space/wolfenbuettlerschaufenster/asset/1580/format/p2fdocument/?download",
+                    "meta": {
+                        "warnings": [
+                            "Meta info not generated yet for this format. Starting generation now"
+                        ]
+                    }
+                }
+            ],
+            "meta": {
+                "created": "2021-01-18T09:34:41.756",
+                "updated": "2021-03-05T13:18:07.745709",
+                "creator": {
+                    "id": 1535,
+                    "firstname": "Steffen",
+                    "lastname": "Maschke"
+                },
+                "itemType": "p2fdocument",
+                "spaceKey": "wolfenbuettlerschaufenster",
+                "aliases": []
+            },
+            "thumbnailUri": "spo://space/wolfenbuettlerschaufenster/asset/1580/thumbnail"
+        },
+        "category": {
+            "id": 1353,
+            "meta": {
+                "itemType": "p2fDocumentCategory",
+                "created": "2020-12-15T12:51:56.841Z",
+                "updated": "2020-12-15T12:52:12.774086Z",
+                "spaceKey": "wolfenbuettlerschaufenster"
+            },
+            "name": "Beilagen",
+            "embedded": true
+        }
+    },
+    {
+        "id": 2718,
+        "meta": {
+            "itemType": "p2fDocumentItem",
+            "created": "2021-03-30T08:53:35.372Z",
+            "updated": "2021-03-30T08:59:14.079805Z",
+            "spaceKey": "wolfenbuettlerschaufenster",
+            "publish": {
+                "state": "PUBLISHED",
+                "start": "2021-03-30T08:59:14.079808Z"
+            }
+        },
+        "name": "28.03.21",
+        "asset": {
+            "id": 2706,
+            "hidden": true,
+            "title": "28032021",
+            "formats": [
+                {
+                    "status": "ready",
+                    "mimeType": "application/pdf",
+                    "created": "2021-03-30T08:55:06.622890Z",
+                    "name": "source",
+                    "filename": "28032021.pdf",
+                    "size": 63340965,
+                    "downloadUri": "spo://space/wolfenbuettlerschaufenster/asset/2706/format/source/?download",
+                    "meta": {
+                        "warnings": [
+                            "Meta info not generated yet for this format. Starting generation now"
+                        ]
+                    }
+                },
+                {
+                    "status": "converting",
+                    "created": "2021-03-30T08:55:08.537604Z",
+                    "name": "p2fdocument",
+                    "downloadUri": "spo://space/wolfenbuettlerschaufenster/asset/2706/format/p2fdocument/?download"
+                }
+            ],
+            "meta": {
+                "created": "2021-03-30T10:55:06.536",
+                "updated": "2021-03-30T10:55:08.547835",
+                "creator": {
+                    "id": 1535,
+                    "firstname": "Steffen",
+                    "lastname": "Maschke"
+                },
+                "itemType": "p2fdocument",
+                "spaceKey": "wolfenbuettlerschaufenster",
+                "aliases": []
+            },
+            "thumbnailUri": "spo://space/wolfenbuettlerschaufenster/asset/2706/thumbnail"
+        },
+        "category": {
+            "id": 1345,
+            "meta": {
+                "itemType": "p2fDocumentCategory",
+                "created": "2020-12-15T12:03:11.677Z",
+                "updated": "2020-12-15T12:03:17.721631Z",
+                "spaceKey": "wolfenbuettlerschaufenster"
+            },
+            "name": "Schaufenster aktuell",
+            "embedded": true
+        }
+    }
+]
