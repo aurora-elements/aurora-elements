@@ -1,8 +1,8 @@
 {
-  "name": "aurora-components",
+  "name": "@aurora/elements",
   "version": "0.0.0",
   "dependencies": {
-    "highlight.js": "^10.6.0",
+    "highlight.js": "10.6.0",
     "lit-element": "2.4.0"
   },
   "devDependencies": {
