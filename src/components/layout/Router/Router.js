@@ -74,7 +74,7 @@ class AuroraRouter extends LitElement {
           
     }
 
-    async handleRouteChange(link) {
+    async handleRouteChange(link) {console.log('handleRouteChange link', link);
         const template = link.content + '.html';
         const url = link.getAttribute('to');
         const state = { template, url };
@@ -84,14 +84,12 @@ class AuroraRouter extends LitElement {
         this.outlet.classList.remove('route-change-done');
         this.outlet.classList.add('route-change-start');
 
-        //history.pushState(state, null, url);
+        history.pushState(state, null, url);
+        console.log(history.pushState(state, null, url))
 
         this.outlet.innerHTML = html;
 
         document.title = (link.pageTitle || link.label + ' - ' + this.domainName) || document.title;
-
-        this.outlet.classList.remove('route-change-start');
-        this.outlet.classList.add('route-change-done');
     }
 }
 
