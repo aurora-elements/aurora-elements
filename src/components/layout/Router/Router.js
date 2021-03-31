@@ -84,7 +84,7 @@ class AuroraRouter extends LitElement {
         this.outlet.classList.remove('route-change-done');
         this.outlet.classList.add('route-change-start');
 
-        history.pushState(state, null, url);
+        //history.pushState(state, null, url);
 
         this.outlet.innerHTML = html;
 
