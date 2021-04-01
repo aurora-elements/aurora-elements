@@ -35,29 +35,29 @@ class AuroraRouter extends LitElement {
 
     firstUpdated() {
         super.firstUpdated();
-        this.outlet = document.querySelector(this.routeOutlet);
+        this.outlet = document.querySelector(this.routeOutlet); console.log('outlet: ', this.routeOutlet);
 
-        this.addEventListener('route-change', e => {
-            this.handleRouteChange(e.detail.link);
+        this.addEventListener('route-change', e => { console.log('route change event');
+            this.handleRouteChange(e.detail.link); console.log('route change event detail link: ', e.detail.link);
         });
 
-        let routeStart = document.querySelector('[is-route-start]');
+        let routeStart = document.querySelector('[is-route-start]');console.log('routestart: ', routeStart);
         routeStart.classList.add('aurora-state-active');
         this.handleRouteChange(routeStart);
-        document.title = (routeStart.pageTitle || routeStart.label + ' - ' + this.domainName) || document.title;
+        // document.title = (routeStart.pageTitle || routeStart.label + ' - ' + this.domainName) || document.title;
 
-        window.addEventListener('popstate', () => {
-            let path = window.location.pathname;
-            let links = document.querySelectorAll('aurora-router-link');
-            let parents = document.querySelectorAll('aurora-accordion-item');
+        window.addEventListener('popstate', () => { console.log('popstate');
+            let path = window.location.pathname; console.log('popstate path: ', path);
+            let links = document.querySelectorAll('aurora-router-link'); console.log('popstate links: ', links);
+            let parents = document.querySelectorAll('aurora-accordion-item'); console.log('popstate parents: ', parents);
 
-            for(let i = 0; i < parents.length; i++) {
+            for(let i = 0; i < parents.length; i++) { console.log('popstate parents remove expanded');
                 parents[i].removeAttribute('expanded');
             }
 
-            for(let i = 0; i < links.length; i++) {
+            for(let i = 0; i < links.length; i++) { console.log('popstate for links');
                 links[i].classList.remove('aurora-state-active');
-                if( links[i].getAttribute('to') === path) {
+                if( links[i].getAttribute('to') === path) { console.log('popstate for links if');
                     this.handleRouteChange(links[i]);
                     links[i].classList.add('aurora-state-active');
                     links[i].parentElement.setAttribute('expanded', '');
@@ -67,7 +67,7 @@ class AuroraRouter extends LitElement {
             }
         });
 
-        window.addEventListener('unload', e => {
+        window.addEventListener('unload', e => { console.log('unload');
             e.preventDefault();
             window.location.href = "/";
           });
@@ -82,7 +82,7 @@ class AuroraRouter extends LitElement {
         const html = await (await fetch(template)).text(); console.log('html: ', html);
 
         history.pushState(state, null, url);
-        console.log(history.pushState(state, null, url))
+        console.log('history push: ', history.pushState(state, null, url))
 
         this.outlet.innerHTML = html;
 
