@@ -41,10 +41,10 @@ class AuroraRouter extends LitElement {
             this.handleRouteChange(e.detail.link); console.log('route change event detail link: ', e.detail.link);
         });
 
-        let routeStart = document.querySelector('[is-route-start]');console.log('routestart: ', routeStart);
+        let routeStart = document.querySelector('[is-route-start]');console.log('routestart: ', routestart);
         routeStart.classList.add('aurora-state-active');
         this.handleRouteChange(routeStart);
-        // document.title = (routeStart.pageTitle || routeStart.label + ' - ' + this.domainName) || document.title;
+        document.title = (routeStart.pageTitle || routeStart.label + ' - ' + this.domainName) || document.title;
 
         window.addEventListener('popstate', () => { console.log('popstate');
             let path = window.location.pathname; console.log('popstate path: ', path);
@@ -81,12 +81,12 @@ class AuroraRouter extends LitElement {
 
         const html = await (await fetch(template)).text(); console.log('html: ', html);
 
-       // history.pushState(state, null, url);
+        history.pushState(state, null, url);
         console.log('history push: ', history.pushState(state, null, url))
 
         this.outlet.innerHTML = html;
 
-        // document.title = (link.pageTitle || link.label + ' - ' + this.domainName) || document.title;
+        document.title = (link.pageTitle || link.label + ' - ' + this.domainName) || document.title;
     }
 }
 

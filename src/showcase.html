@@ -8,67 +8,13 @@
 </head>
 
 <body>
+  <app-container></app-container>
   <div class="nav">
     <a href="/">
       <img class="logo" src="/dist/showcase/img/aurora-logo.png" />
     </a>
     <span class="claim">ELEMENTS</span>
-    <aurora-router route-outlet="#main">
-      <aurora-accordion slot="link">
-        <aurora-accordion-item label="Get Started">
-          <aurora-router-link
-            is-route-start 
-            label="Welcome"
-            to="/" 
-            content="/dist/showcase/welcome">
-          </aurora-router-link>
-          <aurora-router-link
-            label="Introduction"
-            to="/introduction" 
-            content="/dist/showcase/introduction">
-          </aurora-router-link>
-          <aurora-router-link
-            label="What's new"
-            to="/whats-new" 
-            content="/dist/showcase/whatsnew">
-          </aurora-router-link>
-          <aurora-router-link
-            label="Development"
-            to="/development" 
-            content="/dist/showcase/development">
-          </aurora-router-link>
-        </aurora-accordion-item>
 
-        <aurora-accordion-item label="Interaction">
-        </aurora-accordion-item>
-
-        <aurora-accordion-item label="Form">
-        </aurora-accordion-item>
-
-        <aurora-accordion-item label="Visualisation">
-          <aurora-router-link 
-            label="Card"
-            to="/visualisation/card" 
-            content="/dist/showcase/visualisation/card">
-          </aurora-router-link>
-        </aurora-accordion-item>
-
-        <aurora-accordion-item label="Layout">
-          <aurora-router-link 
-            label="Router"
-            to="/layout/router" 
-            content="/dist/showcase/layout/router/router">
-          </aurora-router-link>
-        </aurora-accordion-item>
-        <aurora-accordion-item label="Apps">
-          <aurora-router-link 
-            label="PAGE2FLIP Kiosk"
-            to="/apps/p2f-kiosk" 
-            content="/dist/showcase/apps/P2Fkiosk/P2Fkiosk">
-          </aurora-router-link>
-        </aurora-accordion-item>
-      </aurora-accordion>
-    </aurora-router>
   </div>
   <section id="content" class="content">
     <div id="main">
