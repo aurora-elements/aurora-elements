@@ -1,20 +1,23 @@
 import { css } from "lit-element";
-export const NavLinkStyles = css`
-  .nav-link {
+export const styles = css`
+  :host {
+    display: block;
+  }
+  a {
     text-decoration: none;
-    border: solid 2px black;
-    color: black;
-    padding: 5px;
-    margin-right: 5px;
-    border-radius: 5px;
-    display: inline-block;
-    text-align: center;
+    width: 100%;
+    display: block;
+    padding: 0 20px 10px 20px;
+    line-height: 24px;
+    color: #9c9c9c;
+    outline: none !important;
+    cursor: pointer;
   }
-  slot {
-    font-weight: bold;
+  :host([route-active]) a {
+    cursor: default;
+    color: #00569c;
   }
-  .nav-link:hover {
-    color: #ffffff;
-    background-color: #000000;
+  :host(:hover) a {
+    color: #00569c;
   }
 `;

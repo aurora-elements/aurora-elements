@@ -33,7 +33,7 @@ class AuroraScrollTop extends LitElement {
     firstUpdated() {
         super.firstUpdated();
 
-        const scrollCon = document.querySelector(this.scrollContainer);
+        const scrollCon = this.parentNode.querySelector(this.scrollContainer);
 
         scrollCon.addEventListener('scroll', () => {
             if (scrollCon.scrollTop > 50) {

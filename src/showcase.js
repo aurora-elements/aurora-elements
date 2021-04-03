@@ -1,19 +1,22 @@
-import { LitElement, html, css } from "lit-element";
+import { LitElement, html} from "lit-element";
 import { router } from "lit-element-router";
+import { showcaseStyles } from './showcase.styles.js'
+import { template } from "./showcase.template";
 import "./standalone"
-import "./showcase.css"
-import { AppStyles } from './standalone.styles.js'
+
 
 //Components
 import "./showcase/components/navigation/nav-link.component";
 import "./router-outlet";
 
-//pages
-import "./showcase/pages/home/home.page";
-import "./showcase/pages/contact/contact.page";
-import "./showcase/pages/about/about.page";
 
-class App extends router(LitElement) {
+//pages
+import "./showcase/pages/welcome/welcome.page";
+import "./showcase/pages/contact/contact.page";
+import "./showcase/pages/whatsNew/whatsNew.page";
+import "./showcase/pages/notFound/notFound.page";
+
+class AuroraElementsShowcase extends router(LitElement) {
     static get properties() {
       return {
         route: { type: String },
@@ -23,27 +26,30 @@ class App extends router(LitElement) {
     }
 
     static get styles() {
-      return [css``, AppStyles];
+      return [showcaseStyles];
+    }
+
+    /* Render template */
+    render() {
+      return template(this)
     }
   
     static get routes() {
       return [
         {
-          name: "home",
+          name: "welcome",
           pattern: "",
-          data: { title: "Home" },
+          data: { title: "Welcome" }
         },
         {
-          name: "about",
-          pattern: "about",
-        },
-        {
-          name: "contact",
-          pattern: "contact",
+          name: "whatsnew",
+          pattern: "whatsnew",
+          data: { title: "What's new" }
         },
         {
           name: "not-found",
           pattern: "*",
+          data: { title: "404 Not found" }
         },
       ];
     }
@@ -59,28 +65,14 @@ class App extends router(LitElement) {
       this.route = route;
       this.params = params;
       this.query = query;
-      console.log(route, params, query, data);
+      document.title = data.title ? data.title + ' - aurora-elements showcase' : 'aurora-elements showcase';
+      
+
     }
   
-    render() {
-      return html`
-        <div class="nav-container">
-          <nav-link href="/">Home</nav-link>
-          <nav-link href="/contact">Contact</nav-link>
-          <nav-link href="/about">About</nav-link>
-        </div>
-  
-        <router-outlet active-route=${this.route}>
-          <home-page route="home"></home-page>
-          <about-page route="about"></about-page>
-          <contact-page route="contact"></contact-page>
-          <h1 route="not-found">Not Found</h1>
-        </router-outlet>
-      `;
-    }
   }
   
-  customElements.define("app-container", App);
+  customElements.define("aurora-elements-showcase", AuroraElementsShowcase);
 
 
 console.log("Aurora elements Showcase loaded")
