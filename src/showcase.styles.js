@@ -135,7 +135,7 @@ export const showcaseStyles = css`
   [route] {
     display: block;
   }
-  [route][route-active] {
+  [route]:not([style*="display: none"]) {
     animation: slide-down 0.5s cubic-bezier(0.75, 0.02, 0.5, 1);
   }
   @keyframes slide-down {
