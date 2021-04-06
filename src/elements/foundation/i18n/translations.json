@@ -1,0 +1,9 @@
+[{
+    "en":{
+     "test": "Balance is not updated yet"
+    },
+    "de":{
+     "test": "Баланс неизвестен",
+     "No web3": "Нет подключения к Ethereum"
+    }
+}]

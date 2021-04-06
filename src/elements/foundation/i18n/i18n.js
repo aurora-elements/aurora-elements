@@ -1,3 +1,4 @@
+import { strings } from "./translations";
 const defaultLocale = "en";
 const supportedLocales = [
   { key: "en", flag: "🇬🇧" },
@@ -46,13 +47,10 @@ export function pluralize(translationArr) {
  * @param translationKey {string} the translation key
  */
 export function i18n(translationKey) { 
-  console.log('strings i18n: ', strings);
-  console.log('strings i18n test: ', strings);
-  const translations = async () => {
-    await strings[translationKey];
-  }
 
-  if (translations) { console.log('if: ', translations)
+  const translations = strings[translationKey];
+  
+  if (translations) { 
     const localized = translations[locale];
     const defaultString = translations[defaultLocale];
     if (localized) {
@@ -64,6 +62,7 @@ export function i18n(translationKey) {
 
   return "";
 }
+
 
 function getStoredLocale() {
   // try getting the locale from local storage
@@ -91,7 +90,7 @@ export function setLocale(newLocale) {
   } catch (e) {}
 }
 
-/*const strings = {
+/*let strings = {
   all_categories: {
     en: "All categories",
     de: "Alle Kategorien"
@@ -121,18 +120,6 @@ export function setLocale(newLocale) {
     fr: "Changer la langue"
   }
 };*/
-const strings = fetch(`/showcase/apps/P2Fkiosk/i18n/translations.json`)
-    .then((response) => response.json())
-    .then((strings) => {
-      console.log('strings fetch: ', strings);
-      console.log('strings cats: ', strings.all_categories.de);
-      return strings;
-    })
-    .catch(() => {
-      console.error(`Could not load translations.json.`);
-    });
-
-    console.log('strings after fetch: ', strings);
 
 class AuroraI18n {
   constructor() {
