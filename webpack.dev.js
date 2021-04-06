@@ -1,4 +1,5 @@
 const HtmlWebpackPlugin = require("html-webpack-plugin");
+const CopyWebpackPlugin = require("copy-webpack-plugin");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 
 module.exports = {
@@ -11,22 +12,18 @@ module.exports = {
     showcase: './src/showcase.js'
   },
   output: {
+    clean: true,
     publicPath: '/'
  },
- module: {
-    rules: [
-        {
-            test: /\.css$/,
-            use: ["style-loader", "css-loader"]
-        }
-    ]
-},
   devtool: "inline-source-map",
   plugins: [
-   /* new CleanWebpackPlugin({ 
+    new CleanWebpackPlugin({ 
         cleanStaleWebpackAssets: false,
         patterns: [{from: './src/showcase', to: 'showcase'}] 
-    }),*/
+    }),
+    new CopyWebpackPlugin({
+      patterns: [{from: './src/showcase', to: 'showcase'}]
+    }),
     new HtmlWebpackPlugin({
         chunks: ['showcase'],
         template: './src/showcase.html'
