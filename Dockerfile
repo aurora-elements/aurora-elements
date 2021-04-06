@@ -2,9 +2,9 @@ FROM node:15 AS builder
 WORKDIR /aurora
 COPY package*.json /aurora
 RUN npm install
-COPY webpack.config.js /aurora
+COPY webpack.prod.js /aurora
 COPY src /aurora/src
-RUN npm run dev
+RUN npm run build-prod
 
 FROM nginx:stable-alpine AS production
 RUN rm /etc/nginx/conf.d/default.conf

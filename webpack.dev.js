@@ -23,10 +23,10 @@ module.exports = {
 },
   devtool: "inline-source-map",
   plugins: [
-    new CleanWebpackPlugin({ 
+   /* new CleanWebpackPlugin({ 
         cleanStaleWebpackAssets: false,
         patterns: [{from: './src/showcase', to: 'showcase'}] 
-    }),
+    }),*/
     new HtmlWebpackPlugin({
         chunks: ['showcase'],
         template: './src/showcase.html'

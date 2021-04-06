@@ -1,7 +1,10 @@
 import { LitElement } from "lit-element";
-import hljs from 'highlight.js';
+import hljs from 'highlight.js/lib/highlight';
+import xml from 'highlight.js/lib/languages/xml';
 import { template } from "./CodeMirrorTemplate.js";
 import { styles } from './CodeMirrorStyles.js';
+
+hljs.registerLanguage('xml', xml);
 
 class AuroraCodeMirror extends LitElement {
     /* Properties - LitElement */

@@ -1,9 +1,10 @@
 import { html } from "lit-element";
+import { until } from 'lit-html/directives/until';
+import { repeat } from 'lit-html/directives/repeat.js';
 import { i18n } from "../../../elements/foundation/i18n/i18n"
 import { test } from "../../../elements/foundation/i18n/translations"
 
 export function template(data) {
-    let t = test('greeting');
     return html`
         <div style="margin:80px 0 0 0;max-width: calc(100% + 338px);">
             <svg style="max-height: 70vh;max-width: 100%;height: auto;" id="4bb361e0-c198-4236-8a2c-16fdc74357b9" data-name="Layer 1"
@@ -416,23 +417,27 @@ export function template(data) {
                 <ellipse cx="466.34" cy="752.14" rx="22.99" ry="2.57" fill="#00569c" opacity="0.1" />
             </svg>
         </div>
-
-        <aurora-headline-block headline="Aurora elements">
-            ${i18n('all_categories')}<br />
-            ${i18n('greeting')} 
-
-            Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore
-            magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd
-            gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing
-            elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero
-            eos
-            et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum
-            dolor
-            sit amet.
-        </aurora-headline-block>
-
-        <aurora-headline-block headline="Made with aurora-elements" is-subheadline>
-            Mit aurora-elements umgesetzt.
-        </aurora-headline-block>
+        ${until(
+            fetch(`/dist/showcase/pages/welcome/welcome.content.${data.lang}.json`)
+            .then(res => res.json())
+            .then(items => html`                        
+                ${repeat(
+                    items,
+                    item => item.id,
+                    ({ headline, text }, index) => html`
+                        <aurora-headline-block 
+                            ?is-subheadline=${index !== 0}
+                            headline="${headline}">
+                            ${text}
+                        </aurora-headline-block>
+                    `,
+                    )}
+            `),
+            html`
+                <div>
+                    <span>Loading...</span>
+                </div>
+            `
+        )}  
     `
 }

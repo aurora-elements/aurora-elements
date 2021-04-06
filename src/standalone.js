@@ -1,3 +1,5 @@
+import './elements/foundation/translater/translater.component';
+
 import './elements/layout/HeadlineBlock/HeadlineBlock';
 import './elements/layout/ScrollNavigation/ScrollNavigation';
 import './elements/visualisation/Accordion/Accordion';
