@@ -1,5 +1,4 @@
-
- !groovy
+#!groovy
  pipeline {
    agent 'docker'
    stages {
