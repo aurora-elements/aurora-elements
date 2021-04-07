@@ -50,6 +50,9 @@ export const showcaseStyles = css`
     grid-template-columns: minmax(250px, 380px) minmax(600px, 1fr);
     grid-template-areas: 'nav content';
   }
+  ::part(space-bottom-m40) {
+    margin-bottom: 40px;
+  }
 
   .logo {
     max-width: 200px;
@@ -100,6 +103,7 @@ export const showcaseStyles = css`
     border-bottom: 1px solid var(--grey-middle);
     padding-left: 60px;
   }
+
   .content #main {
     transition: opacity 5s linear 0s;
     padding: 0 60px 60px;
