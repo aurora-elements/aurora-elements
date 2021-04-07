@@ -1,8 +1,7 @@
 import { html } from "lit-element";
 import { until } from 'lit-html/directives/until';
 import { repeat } from 'lit-html/directives/repeat.js';
-import { i18n } from "../../../elements/foundation/i18n/i18n"
-import { test } from "../../../elements/foundation/i18n/translations"
+import { locale, localesPath } from '../../../elements/foundation/translater/translater.component'
 
 export function template(data) {
     return html`
@@ -418,17 +417,17 @@ export function template(data) {
             </svg>
         </div>
         ${until(
-            fetch(`/dist/showcase/pages/welcome/welcome.content.${data.lang}.json`)
+            fetch(`${localesPath}welcome${locale}`)
             .then(res => res.json())
             .then(items => html`                        
                 ${repeat(
                     items,
                     item => item.id,
-                    ({ headline, text }, index) => html`
+                    ({ headlineblock }, index) => html`
                         <aurora-headline-block 
                             ?is-subheadline=${index !== 0}
-                            headline="${headline}">
-                            ${text}
+                            headline="${headlineblock.headline}">
+                            ${headlineblock.text}
                         </aurora-headline-block>
                     `,
                     )}

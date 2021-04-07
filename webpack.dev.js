@@ -12,7 +12,6 @@ module.exports = {
     showcase: './src/showcase.js'
   },
   output: {
-    clean: true,
     publicPath: '/'
  },
   devtool: "inline-source-map",
