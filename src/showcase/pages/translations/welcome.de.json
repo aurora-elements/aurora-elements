@@ -1,8 +1,20 @@
 [
     {
         "headlineblock": {
-            "headline": "Aurora elements",
-            "text": "Willkommen bei aurora elements"    
+            "headline": "aurora-elements",
+            "text": "<p>Aurora-elements ist eine Komponenten Bibliothek die aus Web-Komponenten entwickelt wird. Diese Komponenten sind überall einsatzfähig.</p><p>Diese Bibliothek wird entwickelt, um Produkte effizienter für unsere Kunden zu entwickeln. Aurora-elements wird für Produktteams etabliert, die weltweit an unseren Produkten arbeiten.</p><p>So wird ermöglicht das die verschiedenen Teams, schnell, konsistent und qualitativ entwerfen und entwickeln können.</p>"    
+        }
+    },
+    {
+        "headlineblock": {
+            "headline": "Die Komponenten",
+            "text": "Die Basisversion der verschiedenen Komponenten wird in einem space.one Design entwickelt, dadurch stellen wir ein einheitliches Erscheinungsbild sicher.Allerdings sind die Komponenten in der UI sehr flexibel und können ohne größeren Aufwand angepasst werden.</p><>Diese Bibliothek wird kontinuierlich weiterentwickelt und ergänzt."
+        }
+    },
+    {
+        "headlineblock": {
+            "headline": "Dieser Showcase",
+            "text": "Dieser Showcase ist ein direkter und unkomplizierter Weg für den Umgang mit den Komponenten.Hier findest du viele Beispiele, die inspirieren, das Wesentliche vermitteln und vor allem direkt verwendet werden können."
         }
     },
     {

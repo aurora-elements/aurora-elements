@@ -1,6 +1,7 @@
 import { html } from "lit-element";
 import { until } from 'lit-html/directives/until';
 import { repeat } from 'lit-html/directives/repeat.js';
+import { unsafeHTML } from 'lit-html/directives/unsafe-html.js';
 import { locale, localesPath } from '../../../elements/foundation/translater/translater.component'
 
 export function template(data) {
@@ -427,7 +428,7 @@ export function template(data) {
                         <aurora-headline-block 
                             ?is-subheadline=${index !== 0}
                             headline="${headlineblock.headline}">
-                            ${headlineblock.text}
+                            ${unsafeHTML(headlineblock.text)}
                         </aurora-headline-block>
                     `,
                     )}

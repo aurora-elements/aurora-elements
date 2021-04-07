@@ -35,4 +35,6 @@ export const styles = css`
         font-size: 1.125rem;
         line-height: 160%;       
     }
+    ::slotted(p:first-child) {margin-top:5px;} 
+    ::slotted(p:last-child) {margin-bottom:0;} 
 `;
