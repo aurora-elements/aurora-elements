@@ -3,6 +3,7 @@ import { html } from "lit-element";
 export function template(data) {
     return html`
         <header
+            part="header"
             id="button-${data.convertLabel(data.label)}"
             tabindex="-1"
             @click=${data.toggle}>
@@ -14,6 +15,7 @@ export function template(data) {
             </svg>
         </header>
         <div
+            part="content"
             id="item-${data.convertLabel(data.label)}"
             class="content ${!data.expanded ? '' : 'open'}">
             <slot></slot>

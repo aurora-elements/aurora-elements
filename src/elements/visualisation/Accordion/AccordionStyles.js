@@ -14,4 +14,7 @@ export const styles = css`
     ::slotted(aurora-accordion-item:last-child) {
         border-bottom: none;
     }
+    ::slotted([visible=true]:last-child) {
+        border:10px solid red!important;
+    }
 `;

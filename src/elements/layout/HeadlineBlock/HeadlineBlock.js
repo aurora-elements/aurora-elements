@@ -1,7 +1,7 @@
 import { LitElement } from "lit-element";
 import { template } from "./HeadlineBlockTemplate.js";
 import { styles } from './HeadlineBlockStyles.js';
-class AuroraHeadlineBlock extends LitElement {
+class AeHeadlineBlock extends LitElement {
     /* Properties - LitElement */
     static get properties() {
         return {
@@ -44,4 +44,4 @@ class AuroraHeadlineBlock extends LitElement {
 
 }
 
-customElements.define('aurora-headline-block', AuroraHeadlineBlock);
+customElements.define('ae-headline-block', AeHeadlineBlock);

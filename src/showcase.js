@@ -12,7 +12,6 @@ import "./router-outlet";
 
 //pages
 import "./showcase/pages/welcome/welcome.page";
-import "./showcase/pages/contact/contact.page";
 import "./showcase/pages/whatsNew/whatsNew.page";
 import "./showcase/pages/notFound/notFound.page";
 

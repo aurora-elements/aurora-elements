@@ -82,6 +82,9 @@ export const showcaseStyles = css`
   .nav aurora-accordion-item {
     padding: 0 20px 0 20px;
   }
+  .nav aurora-accordion-item[visible=false] {
+    display: none;
+  }
 
   .content {
     grid-area: content;

@@ -1,0 +1,45 @@
+[
+    {
+        "label": "Get Started",
+        "visible": true,
+        "items": [
+            {
+                "href":"/",
+                "label": "Welcome"
+            }, {
+                "href": "/whatsnew",
+                "label": "What's new"
+            }
+        ]
+    },
+    {
+        "label": "Interaction",
+        "visible": false,
+        "items": [
+        ]
+    }, 
+    {
+        "label": "Form",
+        "visible": false,
+        "items": [
+        ]
+    },
+    {
+        "label": "Visiualisation",
+        "visible": false,
+        "items": [
+        ]
+    },
+    {
+        "label": "Layout",
+        "visible": false,
+        "items": [
+        ]
+    },
+    {
+        "label": "Apps",
+        "visible": false,
+        "items": [
+        ]
+    }
+]

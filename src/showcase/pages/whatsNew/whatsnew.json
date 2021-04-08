@@ -1,8 +1,13 @@
 [
     {
+        "col1": "08.04.2021",
+        "col2": "accordion",
+        "col3": "<ul><li>Change Prefix to ae</li><li>Added part attributes</li></ul>"   
+    },
+    {
         "col1": "28.03.2021",
         "col2": "data-table",
-        "col3": "<ul><li>Added support for more columns</li><li>Added support for unsafe HTML</li><li>Bug fix for column-labels</ul>"   
+        "col3": "<ul><li>Added support for more columns</li><li>Added support for unsafe HTML</li><li>Bug fix for column-labels</li></ul>"   
     },
     {
         "col1": "28.03.2021",

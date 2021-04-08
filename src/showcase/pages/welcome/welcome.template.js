@@ -418,18 +418,18 @@ export function template(data) {
             </svg>
         </div>
         ${until(
-            fetch(`${localesPath}welcome${locale}`)
+            fetch(`${localesPath}welcome/${locale}`)
             .then(res => res.json())
             .then(items => html`                        
                 ${repeat(
                     items,
                     item => item.id,
                     ({ headlineblock }, index) => html`
-                        <aurora-headline-block 
+                        <ae-headline-block 
                             ?is-subheadline=${index !== 0}
                             headline="${headlineblock.headline}">
                             ${unsafeHTML(headlineblock.text)}
-                        </aurora-headline-block>
+                        </ae-headline-block>
                     `,
                     )}
             `),

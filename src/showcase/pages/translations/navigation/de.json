@@ -1,0 +1,45 @@
+[
+    {
+        "label": "Los geht's",
+        "visible": true,
+        "items": [
+            {
+                "href":"/",
+                "label": "Willkommen"
+            }, {
+                "href": "/whatsnew",
+                "label": "Was gibt's neues"
+            }
+        ]
+    },
+    {
+        "label": "Interaktion",
+        "visible": false,
+        "items": [
+        ]
+    }, 
+    {
+        "label": "Formular",
+        "visible": false,
+        "items": [
+        ]
+    },
+    {
+        "label": "Darstellung",
+        "visible": false,
+        "items": [
+        ]
+    },
+    {
+        "label": "Layout",
+        "visible": false,
+        "items": [
+        ]
+    },
+    {
+        "label": "Apps",
+        "visible": false,
+        "items": [
+        ]
+    }
+]
