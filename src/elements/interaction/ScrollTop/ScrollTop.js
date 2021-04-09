@@ -2,7 +2,7 @@ import { LitElement } from "lit-element";
 import { template } from "./ScrollTopTemplate.js";
 import { styles } from './ScrollTopStyles.js';
 
-class AuroraScrollTop extends LitElement {
+class AeScrollTop extends LitElement {
 
     /* Properties - LitElement */
     static get properties() {
@@ -51,4 +51,4 @@ class AuroraScrollTop extends LitElement {
         })
     }
 }
-customElements.define('aurora-scroll-top', AuroraScrollTop);
+customElements.define('ae-scroll-top', AeScrollTop);

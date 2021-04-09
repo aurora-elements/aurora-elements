@@ -1,4 +1,4 @@
-import { LitElement, html} from "lit-element";
+import { LitElement } from "lit-element";
 import { router } from "lit-element-router";
 import { showcaseStyles } from './showcase.styles.js'
 import { template } from "./showcase.template";
@@ -15,7 +15,7 @@ import "./showcase/pages/welcome/welcome.page";
 import "./showcase/pages/whatsNew/whatsNew.page";
 import "./showcase/pages/notFound/notFound.page";
 
-class AuroraElementsShowcase extends router(LitElement) {
+class AeShowcase extends router(LitElement) {
     static get properties() {
       return {
         route: { type: String },
@@ -71,7 +71,7 @@ class AuroraElementsShowcase extends router(LitElement) {
   
   }
   
-  customElements.define("aurora-elements-showcase", AuroraElementsShowcase);
+  customElements.define("ae-showcase", AeShowcase);
 
 
 console.log("Aurora elements Showcase loaded")
