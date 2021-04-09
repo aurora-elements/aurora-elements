@@ -12,7 +12,16 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.(png|jpe?g|gif|json)$/i,
+        test: /\.(png|jpe?g|gif)$/i,
+        use: [
+          {
+            loader: 'file-loader',
+          },
+        ],
+      },
+      {
+        test: /\.(json)$/i,
+        type: 'javascript/auto',
         use: [
           {
             loader: 'file-loader',
