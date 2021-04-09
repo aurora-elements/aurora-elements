@@ -1,4 +1,5 @@
 import {html} from 'lit-element';
+import changelog0 from './whatsnew.json';
 
 export function template(data) {
   return html`
@@ -13,7 +14,7 @@ export function template(data) {
     </ae-headline-block>
     <ae-data-table
       column-labels='["Date","Component","Description"]'
-      rows="/dist/showcase/pages/whatsnew/whatsnew.json">
+      rows="${changelog0}">
     </ae-data-table>
   `;
 }

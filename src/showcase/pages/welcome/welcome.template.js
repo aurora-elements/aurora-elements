@@ -2,7 +2,9 @@ import { html } from "lit-element";
 import { until } from 'lit-html/directives/until';
 import { repeat } from 'lit-html/directives/repeat.js';
 import { unsafeHTML } from 'lit-html/directives/unsafe-html.js';
-import { locale, localesPath } from '../../../elements/foundation/translater/translater.component'
+import { locale } from '../../../elements/foundation/translater/translater.component'
+import translation_de from '../translations/welcome/de.json';
+import translation_en from '../translations/welcome/en.json';
 
 export function template(data) {
     return html`
@@ -418,7 +420,7 @@ export function template(data) {
             </svg>
         </div>
         ${until(
-            fetch(`${localesPath}welcome/${locale}`)
+            fetch(`${locale === 'de' ? translation_de : translation_en}`)
             .then(res => res.json())
             .then(items => html`                        
                 ${repeat(

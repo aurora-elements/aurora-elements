@@ -32,5 +32,4 @@ function setLocale() {
 setLocale();
 
 // export globale locale
-export const locale = localStorage.getItem('locale') + '.json';
-export const localesPath = '/dist/showcase/pages/translations/';
+export const locale = localStorage.getItem('locale');

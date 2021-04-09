@@ -1,9 +1,12 @@
 import { html } from "lit-element";
 import { until } from 'lit-html/directives/until';
 import { repeat } from 'lit-html/directives/repeat.js';
-import { locale, localesPath } from './elements/foundation/translater/translater.component';
+import { locale } from './elements/foundation/translater/translater.component';
+import logo from './showcase/img/aurora-logo.png';
+import translate_de from './showcase/pages/translations/navigation/de.json';
+import translate_en from './showcase/pages/translations/navigation/en.json';
 
-const requestUrl = `${localesPath}navigation/${locale}`;
+const requestUrl = `${locale === 'de' ? translate_de : translate_en}`;
 
 const nav = fetch(requestUrl).then(res => res.json());
 
@@ -25,7 +28,7 @@ export function template(data) {
     return html`
         <div class="nav">
             <a href="/">
-                <img class="logo" src="/dist/showcase/img/aurora-logo.png" />
+                <img class="logo" src="${logo}" />
             </a>
             <span class="claim">ELEMENTS</span>
             <ae-accordion slot="link">

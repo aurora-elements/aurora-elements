@@ -9,6 +9,18 @@ module.exports = {
     standalone: './src/standalone.js',
     showcase: './src/showcase.js'
   },
+  module: {
+    rules: [
+      {
+        test: /\.(png|jpe?g|gif|json)$/i,
+        use: [
+          {
+            loader: 'file-loader',
+          },
+        ],
+      },
+    ],
+  },
   plugins: [
     new CleanWebpackPlugin({
         patterns: [{from: './src/showcase', to: 'showcase'}]

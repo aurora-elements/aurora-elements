@@ -11,6 +11,27 @@ module.exports = {
     standalone: './src/standalone.js',
     showcase: './src/showcase.js'
   },
+  module: {
+    rules: [
+      {
+        test: /\.(png|jpe?g|gif)$/i,
+        use: [
+          {
+            loader: 'file-loader',
+          },
+        ],
+      },
+      {
+        test: /\.(json)$/i,
+        type: 'javascript/auto',
+        use: [
+          {
+            loader: 'file-loader',
+          },
+        ],
+      },
+    ],
+  },
   output: {
     publicPath: '/'
  },
