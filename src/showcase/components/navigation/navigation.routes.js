@@ -1,0 +1,22 @@
+export const routes = [
+  {
+    name: "welcome",
+    pattern: "",
+    data: { title: "Welcome" }
+  },
+  {
+    name: "whatsnew",
+    pattern: "whatsnew",
+    data: { title: "What's new" }
+  },
+  {
+    name: "imprint",
+    pattern: "imprint",
+    data: { title: "Imprint" }
+  },
+  {
+    name: "not-found",
+    pattern: "*",
+    data: { title: "404 Not found" }
+  },
+];

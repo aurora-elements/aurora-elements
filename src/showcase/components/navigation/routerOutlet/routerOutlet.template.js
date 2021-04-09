@@ -1,6 +1,6 @@
 import { html } from "lit-element";
 
-export function template(data) {
+export function template() {
     return html`
       <welcome-page route="welcome"></welcome-page>
       <whatsnew-page route="whatsnew"></whatsnew-page>

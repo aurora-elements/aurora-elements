@@ -2,19 +2,15 @@ import { LitElement } from "lit-element";
 import { router } from "lit-element-router";
 import { showcaseStyles } from './showcase.styles.js'
 import { template } from "./showcase.template";
+import { routes } from "./showcase/components/navigation/navigation.routes";
 import "./standalone"
 
-
 //Components
-import "./showcase/components/navigation/nav-link.component";
+import "./showcase/components/navigation/link/link.component";
 import "./showcase/components/navigation/routerOutlet/routerOutlet.component";
 
-
 //pages
-import "./showcase/pages/welcome/welcome.page";
-import "./showcase/pages/whatsNew/whatsNew.page";
-import "./showcase/pages/imprint/imprint.page";
-import "./showcase/pages/notFound/notFound.page";
+import "./showcase/components/navigation/pages.imports";
 
 class AeShowcase extends router(LitElement) {
     static get properties() {
@@ -29,34 +25,12 @@ class AeShowcase extends router(LitElement) {
       return [showcaseStyles];
     }
 
-    /* Render template */
     render() {
       return template(this)
     }
   
     static get routes() {
-      return [
-        {
-          name: "welcome",
-          pattern: "",
-          data: { title: "Welcome" }
-        },
-        {
-          name: "whatsnew",
-          pattern: "whatsnew",
-          data: { title: "What's new" }
-        },
-        {
-          name: "imprint",
-          pattern: "imprint",
-          data: { title: "Imprint" }
-        },
-        {
-          name: "not-found",
-          pattern: "*",
-          data: { title: "404 Not found" }
-        },
-      ];
+      return routes;
     }
   
     constructor() {
@@ -71,8 +45,6 @@ class AeShowcase extends router(LitElement) {
       this.params = params;
       this.query = query;
       document.title = data.title ? data.title + ' - aurora-elements showcase' : 'aurora-elements showcase';
-      
-
     }
   
   }

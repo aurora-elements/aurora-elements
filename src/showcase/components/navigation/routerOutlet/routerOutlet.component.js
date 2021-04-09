@@ -9,9 +9,9 @@ class RouterOutlet extends outlet(LitElement) {
   }
 
   render() {
-    return template(this)
+    return template()
   }
-  
+
 }
 
 customElements.define("router-outlet", RouterOutlet);

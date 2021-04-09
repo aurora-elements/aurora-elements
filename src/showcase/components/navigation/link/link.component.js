@@ -1,6 +1,6 @@
 import { LitElement, html } from "lit-element";
 import { navigator } from "lit-element-router";
-import { styles } from "./nav-link.styles";
+import { styles } from "./link.styles";
 
 class NavLink extends navigator(LitElement) {
   static get properties() {
