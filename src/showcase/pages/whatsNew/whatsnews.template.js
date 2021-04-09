@@ -11,9 +11,9 @@ export function template(data) {
       part="space-bottom-m40"
       headline="Version 0.0.0">
     </ae-headline-block>
-    <aurora-data-table
+    <ae-data-table
       column-labels='["Date","Component","Description"]'
       rows="/dist/showcase/pages/whatsnew/whatsnew.json">
-    </aurora-data-table>
+    </ae-data-table>
   `;
 }

@@ -11,7 +11,7 @@ export function template(data) {
                 <img class="logo" src="/dist/showcase/img/aurora-logo.png" />
             </a>
             <span class="claim">ELEMENTS</span>
-            <aurora-accordion slot="link">
+            <ae-accordion slot="link">
                 ${until(
                     fetch(`${localesPath}navigation/${locale}`)
                     .then(res => res.json())
@@ -22,7 +22,7 @@ export function template(data) {
                         ({ items, label, visible }, index) => html`
                             ${visible?
                                 html`
-                                    <aurora-accordion-item
+                                    <ae-accordion-item
                                         ?expanded=${index === 0} 
                                         label="${label}">
                                         ${repeat(
@@ -32,7 +32,7 @@ export function template(data) {
                                                 <nav-link href="${href}">${label}</nav-link>
                                             `,
                                         )}
-                                    </aurora-accordion-item>
+                                    </ae-accordion-item>
                                 `:
                                 html``
                             }
@@ -42,7 +42,7 @@ export function template(data) {
                     html`
                     `
                 )}  
-            </aurora-accordion>
+            </ae-accordion>
         </div>
         <section id="content" class="content">
             <div id="main">

@@ -2,7 +2,7 @@ import { LitElement } from "lit-element";
 import { template } from "./DataTableTemplate.js";
 import { styles } from './DataTableStyles.js';
 
-class AuroraDataTable extends LitElement {
+class AeDataTable extends LitElement {
     /* Properties - LitElement */
     static get properties() {
         return {
@@ -37,4 +37,4 @@ class AuroraDataTable extends LitElement {
         return this.shadowRoot || this
     }
 }
-customElements.define('aurora-data-table', AuroraDataTable);
+customElements.define('ae-data-table', AeDataTable);

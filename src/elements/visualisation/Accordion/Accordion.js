@@ -2,7 +2,7 @@ import { LitElement } from "lit-element";
 import { template } from "./AccordionTemplate.js";
 import { styles } from './AccordionStyles.js';
 
-class AuroraAccordion extends LitElement {
+class AeAccordion extends LitElement {
     constructor() {
         super();
 
@@ -69,4 +69,4 @@ class AuroraAccordion extends LitElement {
 
 }
 
-customElements.define('aurora-accordion', AuroraAccordion);
+customElements.define('ae-accordion', AeAccordion);
