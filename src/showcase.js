@@ -7,7 +7,7 @@ import "./standalone"
 
 //Components
 import "./showcase/components/navigation/nav-link.component";
-import "./router-outlet";
+import "./showcase/components/navigation/router-outlet";
 
 
 //pages

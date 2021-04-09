@@ -3,7 +3,11 @@ import { outlet } from "lit-element-router";
 
 class RouterOutlet extends outlet(LitElement) {
   render() {
-    return html` <slot></slot> `;
+    return html`
+      <welcome-page route="welcome"></welcome-page>
+      <whatsnew-page route="whatsnew"></whatsnew-page>
+      <not-found-page route="not-found"></not-found-page>
+    `;
   }
 }
 

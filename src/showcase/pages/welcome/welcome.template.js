@@ -3,8 +3,21 @@ import { until } from 'lit-html/directives/until';
 import { repeat } from 'lit-html/directives/repeat.js';
 import { unsafeHTML } from 'lit-html/directives/unsafe-html.js';
 import { locale } from '../../../elements/foundation/translater/translater.component'
-import translation_de from '../translations/welcome/de.json';
-import translation_en from '../translations/welcome/en.json';
+import translation_de from './translations/de.json';
+import translation_en from './translations/en.json';
+
+const headlineBlockTemplate = (headlineblock, index) => html`
+    <ae-headline-block 
+        ?is-subheadline=${index !== 0}
+        headline="${headlineblock.headline}">
+        ${unsafeHTML(headlineblock.text)}
+    </ae-headline-block>
+`;
+const headlineBlockTemplateLoading = () => html`
+    <div>
+        <span>${locale === 'de' ? 'Daten werden geladen...' : 'Loading...'}</span>
+    </div>
+`;
 
 export function template(data) {
     return html`
@@ -427,19 +440,11 @@ export function template(data) {
                     items,
                     item => item.id,
                     ({ headlineblock }, index) => html`
-                        <ae-headline-block 
-                            ?is-subheadline=${index !== 0}
-                            headline="${headlineblock.headline}">
-                            ${unsafeHTML(headlineblock.text)}
-                        </ae-headline-block>
+                        ${headlineBlockTemplate(headlineblock, index)}
                     `,
                     )}
             `),
-            html`
-                <div>
-                    <span>Loading...</span>
-                </div>
-            `
+            html`${headlineBlockTemplateLoading()}`
         )}  
     `
 }

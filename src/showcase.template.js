@@ -3,8 +3,8 @@ import { until } from 'lit-html/directives/until';
 import { repeat } from 'lit-html/directives/repeat.js';
 import { locale } from './elements/foundation/translater/translater.component';
 import logo from './showcase/img/aurora-logo.png';
-import translate_de from './showcase/pages/translations/navigation/de.json';
-import translate_en from './showcase/pages/translations/navigation/en.json';
+import translate_de from './showcase/components/navigation/translations/de.json';
+import translate_en from './showcase/components/navigation/translations/en.json';
 
 const requestUrl = `${locale === 'de' ? translate_de : translate_en}`;
 
@@ -52,9 +52,6 @@ export function template(data) {
         <section id="content" class="content">
             <div id="main">
                 <router-outlet active-route=${data.route}>
-                    <welcome-page route="welcome"></welcome-page>
-                    <whatsnew-page route="whatsnew"></whatsnew-page>
-                    <not-found-page route="not-found"></not-found-page>
                 </router-outlet>
             </div>
             <footer></footer>
