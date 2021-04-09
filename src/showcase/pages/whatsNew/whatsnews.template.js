@@ -1,5 +1,6 @@
 import {html} from 'lit-element';
-import changelog_0_0_0 from './changelog_0_0_0.json';
+import changelog_0_0_1 from './changelog_0_0_1.json';
+import changelog_0_0_2 from './changelog_0_0_2.json';
 
 export function template(data) {
   return html`
@@ -10,11 +11,20 @@ export function template(data) {
     <ae-headline-block
       is-subheadline 
       part="space-bottom-m40"
-      headline="Version 0.0.0">
+      headline="Version 0.0.2">
     </ae-headline-block>
     <ae-data-table
       column-labels='["Date","Component","Description"]'
-      rows="${changelog_0_0_0}">
+      rows="${changelog_0_0_2}">
+    </ae-data-table>
+    <ae-headline-block
+      is-subheadline 
+      part="space-bottom-m40"
+      headline="Version 0.0.1">
+    </ae-headline-block>
+    <ae-data-table
+      column-labels='["Date","Component","Description"]'
+      rows="${changelog_0_0_1}">
     </ae-data-table>
   `;
 }

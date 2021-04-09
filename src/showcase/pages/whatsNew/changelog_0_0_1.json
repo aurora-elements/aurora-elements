@@ -1,6 +1,11 @@
 [
     {
         "col1": "09.04.2021",
+        "col2": " ",
+        "col3": "Released version 0.0.1"   
+    },
+    {
+        "col1": "09.04.2021",
         "col2": "scroll-top",
         "col3": "<ul><li>Change Prefix to ae</li><li>Added part attributes</li><li>Added slot to optional replace icon</li></ul>"   
     },
