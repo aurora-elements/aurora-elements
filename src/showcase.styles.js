@@ -95,6 +95,9 @@ export const showcaseStyles = css`
     font-weight: 400;
     color: var(--grey-dark);
   }
+  .copyright span, .copyright nav-link {
+    float: left; 
+  }
 
   .content {
     grid-area: content;
@@ -147,22 +150,5 @@ export const showcaseStyles = css`
   aurora-code-mirror,
   aurora-headline-block[is-subheadline] {
     margin-bottom: 40px;
-  }
-
-  [route] {
-    display: block;
-  }
-  [route]:not([style*="display: none"]) {
-    animation: slide-down 0.5s cubic-bezier(0.75, 0.02, 0.5, 1);
-  }
-  @keyframes slide-down {
-    0% {
-      opacity: 0;
-      transform: translateY(50px) scale(1.1);
-    }
-    100% {
-      opacity: 1;
-      transform: translateY(0) scale(1);
-    }
   }
 `;

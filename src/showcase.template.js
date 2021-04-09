@@ -48,7 +48,10 @@ export function template(data) {
                     html``
                 )}  
             </ae-accordion>
-            <span class="copyright">&copy;2021 Marcus Kramer</span>
+            <div class="copyright">
+                <span>&copy;2021 Marcus Kramer</span>
+                <nav-link href="/imprint">Imprint</nav-link>  
+            </div>
         </div>
         <section id="content" class="content">
             <div id="main">

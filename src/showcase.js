@@ -7,12 +7,13 @@ import "./standalone"
 
 //Components
 import "./showcase/components/navigation/nav-link.component";
-import "./showcase/components/navigation/router-outlet";
+import "./showcase/components/navigation/routerOutlet/routerOutlet.component";
 
 
 //pages
 import "./showcase/pages/welcome/welcome.page";
 import "./showcase/pages/whatsNew/whatsNew.page";
+import "./showcase/pages/imprint/imprint.page";
 import "./showcase/pages/notFound/notFound.page";
 
 class AeShowcase extends router(LitElement) {
@@ -44,6 +45,11 @@ class AeShowcase extends router(LitElement) {
           name: "whatsnew",
           pattern: "whatsnew",
           data: { title: "What's new" }
+        },
+        {
+          name: "imprint",
+          pattern: "imprint",
+          data: { title: "Imprint" }
         },
         {
           name: "not-found",
