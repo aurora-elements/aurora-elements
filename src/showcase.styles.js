@@ -78,12 +78,22 @@ export const showcaseStyles = css`
     background-color: var(--grey-ligthest);
     border-right: 1px solid var(--grey-middle);
     overflow-y: auto;
+    position: relative;
   }
   .nav aurora-accordion-item {
     padding: 0 20px 0 20px;
   }
   .nav aurora-accordion-item[visible=false] {
     display: none;
+  }
+  .copyright {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    font-size: 80%;
+    opacity: .5;
+    font-weight: 400;
+    color: var(--grey-dark);
   }
 
   .content {
