@@ -9,6 +9,4 @@ import './elements/visualisation/DataTable/DataTable';
 import './elements/visualisation/Card/Card';
 import './elements/interaction/ScrollTop/ScrollTop';
 
-import './elements/apps/P2Fkiosk/P2Fkiosk';
-
 console.log("Aurora elements loaded")

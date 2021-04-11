@@ -12,6 +12,19 @@ import "./showcase/components/navigation/routerOutlet/routerOutlet.component";
 //pages
 import "./showcase/components/navigation/pages.imports";
 
+// register sw
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', () => {
+    navigator.serviceWorker.register('/service-worker.js').then(registration => {
+      console.log('SW registered: ', registration);
+    }).catch(registrationError => {
+      console.log('SW registration failed: ', registrationError);
+    });
+  });
+
+}
+
+
 class AeShowcase extends router(LitElement) {
     static get properties() {
       return {
