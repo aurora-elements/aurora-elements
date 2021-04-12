@@ -60,7 +60,6 @@ module.exports = {
       background_color: '#ffffff',
       inject: true,
       fingerprints: true,
-      crossorigin: 'use-credentials',
       icons: [
         {
           src: path.resolve('src/showcase/img/aurora-logo.png'),
