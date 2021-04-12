@@ -58,6 +58,7 @@ module.exports = {
       short_name: 'aurora',
       description: 'aurora elements showcase',
       background_color: '#ffffff',
+      theme_color: '#ffffff',
       inject: true,
       fingerprints: true,
       icons: [
