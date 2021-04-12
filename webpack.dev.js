@@ -62,9 +62,9 @@ module.exports = {
     }),
     new WebpackPwaManifest({
       filename: "manifest.json",
-      name: 'My Progressive Web App',
-      short_name: 'MyPWA',
-      description: 'My awesome Progressive Web App!',
+      name: 'aurora-elements',
+      short_name: 'ae',
+      description: 'aurora elements showcase',
       background_color: '#ffffff',
       inject: true,
       fingerprints: true,

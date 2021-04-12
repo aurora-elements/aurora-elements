@@ -32,10 +32,6 @@ module.exports = {
       },
     ],
   },
-  output: {
-    path: path.resolve(__dirname, "dist"),
-    publicPath: '/'
- },
   plugins: [
     new CleanWebpackPlugin({
         cleanStaleWebpackAssets: false,
@@ -58,21 +54,21 @@ module.exports = {
     }),
     new WebpackPwaManifest({
       filename: "manifest.json",
-      name: 'My Progressive Web App',
-      short_name: 'MyPWA',
-      description: 'My awesome Progressive Web App!',
+      name: 'aurora-elements',
+      short_name: 'ae',
+      description: 'aurora elements showcase',
       background_color: '#ffffff',
       inject: true,
       fingerprints: true,
-      crossorigin: 'use-credentials', //can be null, use-credentials or anonymous
+      crossorigin: 'use-credentials',
       icons: [
         {
           src: path.resolve('src/showcase/img/aurora-logo.png'),
-          sizes: [96, 128, 192, 256, 384, 512] // multiple sizes
+          sizes: [96, 128, 192, 256, 384, 512] 
         },
         {
           src: path.resolve('src/showcase/img/aurora-logo.png'),
-          size: '1024x1024' // you can also use the specifications pattern
+          size: '1024x1024' 
         },
         {
           src: path.resolve('src/showcase/img/aurora-logo.png'),
@@ -85,5 +81,6 @@ module.exports = {
   output: {
     filename: "[name].bundle.js",
     path: path.resolve(__dirname, "dist"),
+    publicPath: '/'
   },
 };
