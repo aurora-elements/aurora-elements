@@ -55,7 +55,7 @@ module.exports = {
     new WebpackPwaManifest({
       filename: "manifest.json",
       name: 'aurora-elements',
-      short_name: 'ae',
+      short_name: 'aurora',
       description: 'aurora elements showcase',
       background_color: '#ffffff',
       inject: true,
