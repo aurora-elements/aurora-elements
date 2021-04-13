@@ -23,7 +23,7 @@ export const styles = css`
         cursor: pointer;
     }
     :host(:hover) svg {
-        fill: var(--color-accent, #00569c);
+        fill: var(--scrollTop-color-hover, var(--color-accent-primary, #00569c));
     }
     :host([is-active]) {
         transform: translateX(0);

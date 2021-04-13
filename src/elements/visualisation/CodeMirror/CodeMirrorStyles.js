@@ -40,7 +40,7 @@ export const styles = css`
         opacity: 0;
     }
     .copy-button:hover {
-        background-color: var(--color-accent, #00569c);
+        background-color: var(--codeMirror-color-hover, var(--color-accent-primary, #00569c));
         color: #fff;
     }
 
@@ -59,7 +59,7 @@ export const styles = css`
         padding: 5px 10px;
         display: none;
         font-size:80%;
-        color: var(--color-accent, #00569c);
+        color: var(--codeMirror-success-color, var(--color-accent-primary, #00569c));
 
     }
     .copy-success.show-message {

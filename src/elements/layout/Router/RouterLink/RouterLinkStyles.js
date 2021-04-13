@@ -13,6 +13,6 @@ export const styles = css`
     }
     :host(.aurora-state-active) {
         cursor: default;
-        color: var(--router-link-color-active, var(--color-accent, #00569c));
+        color: var(--routerLink-color-active, var(--color-accent-primary, #00569c));
     }
 `;

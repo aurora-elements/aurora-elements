@@ -15,9 +15,9 @@ export const styles = css`
   }
   :host([route-active]) a {
     cursor: default;
-    color: #00569c;
+    color: var(--link-color-active, var(--color-accent-primary, #00569c)
   }
   :host(:hover) a {
-    color: #00569c;
+    color: var(--link-color-hover, var(--color-accent-primary, #00569c)
   }
 `;

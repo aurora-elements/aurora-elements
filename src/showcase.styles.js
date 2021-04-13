@@ -5,12 +5,22 @@ export const showcaseStyles = css`
     --grey-middle: #e0e6ed;
     --grey-dark: #9c9c9c;
     --font-color-primary: #484848;
+    --color-accent-primary: #00569c;
+
+    --background-color-primary: #fff;
+    --color-text-primary: #484848;
+    --color-text-secondary: #9c9c9c;
   }
   :host(.dark) {
-    --grey-ligthest: #212121;
-    --grey-middle: #000;
+    --grey-ligthest: #242526;
+    --grey-middle: #38393a;
     --grey-dark: #9c9c9c;
     --font-color-primary: #fafafa;
+    --color-accent-primary: #3470b0;
+
+    --background-color-primary: #18191a;
+    --color-text-primary: #b0b3b8;
+    --color-text-secondary: #e4e6eb;
   }
   /* scrollbar */
   * {
@@ -42,6 +52,7 @@ export const showcaseStyles = css`
     height: 100vh;
     width: 100%;
     outline: none;
+    background-color: var(--background-color-primary, #fff);
     font-family: Roboto, -apple-system, BlinkMacSystemFont, 'Segoe UI',
       Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
     text-rendering: optimizeLegibility;
@@ -151,4 +162,12 @@ export const showcaseStyles = css`
   aurora-headline-block[is-subheadline] {
     margin-bottom: 40px;
   }
+
+  @media screen and (max-width: 900px) {
+    :host {
+      grid-template-columns: 1fr;
+      grid-template-areas: 'content';  
+    }
+    .nav {display: none;}
+  })
 `;
