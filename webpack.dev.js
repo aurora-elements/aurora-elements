@@ -71,15 +71,15 @@ module.exports = {
       fingerprints: true,
       icons: [
         {
-          src: path.resolve('src/showcase/img/aurora-logo.png'),
+          src: path.resolve('src/showcase/img/logoOriginal.png'),
           sizes: [96, 128, 192, 256, 384, 512] // multiple sizes
         },
         {
-          src: path.resolve('src/showcase/img/aurora-logo.png'),
+          src: path.resolve('src/showcase/img/logoOriginal.png'),
           size: '1024x1024' // you can also use the specifications pattern
         },
         {
-          src: path.resolve('src/showcase/img/aurora-logo.png'),
+          src: path.resolve('src/showcase/img/logoOriginal.png'),
           size: '1024x1024',
           purpose: 'maskable'
         }

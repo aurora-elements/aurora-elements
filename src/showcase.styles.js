@@ -196,5 +196,8 @@ export const showcaseStyles = css`
       grid-template-areas: 'content';  
     }
     .nav {display: none;}
+    .content #main, .content footer {
+      padding: 0 20px 20px 20px;  
+    } 
   })
 `;

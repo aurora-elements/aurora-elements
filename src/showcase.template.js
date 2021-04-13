@@ -30,7 +30,7 @@ export function template(data) {
             <a href="/">
                 <img class="logo" src="${logo}" />
             </a>
-            <span class="claim">ELEMENTS</span>
+            <span class="claim">AURORA-ELEMENTS</span>
             <ae-accordion slot="link">
                 ${until(
                     nav
