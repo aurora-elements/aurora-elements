@@ -1,6 +1,6 @@
 import {css} from 'lit-element';
 export const showcaseStyles = css`
-  :host {
+  :root {
     --grey-ligthest: #f8f8f8;
     --grey-middle: #e0e6ed;
     --grey-dark: #9c9c9c;
@@ -11,7 +11,7 @@ export const showcaseStyles = css`
     --color-text-primary: #484848;
     --color-text-secondary: #9c9c9c;
   }
-  :host(.dark) {
+  :root(.dark) {
     --grey-ligthest: #242526;
     --grey-middle: #38393a;
     --grey-dark: #9c9c9c;
@@ -23,7 +23,7 @@ export const showcaseStyles = css`
     --color-text-secondary: #e4e6eb;
   }
   @media (prefers-color-scheme: dark) {
-    :host {
+    :root {
       --grey-ligthest: #242526;
       --grey-middle: #38393a;
       --grey-dark: #9c9c9c;
@@ -35,7 +35,7 @@ export const showcaseStyles = css`
       --color-text-secondary: #e4e6eb;
     }
 
-    :host(.light) {
+    :root(.light) {
       --grey-ligthest: #f8f8f8;
       --grey-middle: #e0e6ed;
       --grey-dark: #9c9c9c;

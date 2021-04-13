@@ -13,11 +13,11 @@ export const styles = css`
     outline: none !important;
     cursor: pointer;
   }
-  :host([route-active]) a {
+  a[route-active] {
     cursor: default;
-    color: var(--link-color-active, var(--color-accent-primary, #00569c)
+    color: var(--link-color-hover, var(--color-accent-primary, #00569c));
   }
-  :host(:hover) a {
-    color: var(--link-color-hover, var(--color-accent-primary, #00569c)
+  a:hover {
+    color: var(--link-color-hover, var(--color-accent-primary, #00569c));
   }
 `;

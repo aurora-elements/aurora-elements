@@ -27,10 +27,12 @@ class NavLink extends navigator(LitElement) {
     e.preventDefault();
     let links = this.parentNode.querySelectorAll('nav-link');
     for(let i = 0;i < links.length; i++ ) {
-        links[i].removeAttribute('route-active');
+        let link = links[i].shadowRoot.querySelector('a');
+        link.removeAttribute('route-active');
     }
     this.navigate(this.href);
-    this.setAttribute('route-active', '');
+    let link = links[i].shadowRoot.querySelector('a');
+        link.setAttribute('route-active', '');
    // document.title = 'hallo';
   }
 
@@ -39,9 +41,11 @@ class NavLink extends navigator(LitElement) {
 
     for(let i = 0;i < links.length; i++ ) {
         if(links[i].href === window.location.pathname) { 
-          links[i].setAttribute('route-active', '');  
+          let link = links[i].shadowRoot.querySelector('a');
+          link.setAttribute('route-active', '');  
         } else {
-          links[i].removeAttribute('route-active');
+          let link = links[i].shadowRoot.querySelector('a');
+          link.removeAttribute('route-active');
         }
     }
   }
