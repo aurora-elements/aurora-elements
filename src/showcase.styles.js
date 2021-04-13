@@ -22,6 +22,33 @@ export const showcaseStyles = css`
     --color-text-primary: #b0b3b8;
     --color-text-secondary: #e4e6eb;
   }
+  @media (prefers-color-scheme: dark) {
+    :host {
+      --grey-ligthest: #242526;
+      --grey-middle: #38393a;
+      --grey-dark: #9c9c9c;
+      --font-color-primary: #fafafa;
+      --color-accent-primary: #3470b0;
+  
+      --background-color-primary: #18191a;
+      --color-text-primary: #b0b3b8;
+      --color-text-secondary: #e4e6eb;
+    }
+
+    :host(.light) {
+      --grey-ligthest: #f8f8f8;
+      --grey-middle: #e0e6ed;
+      --grey-dark: #9c9c9c;
+      --font-color-primary: #484848;
+      --color-accent-primary: #00569c;
+  
+      --background-color-primary: #fff;
+      --color-text-primary: #484848;
+      --color-text-secondary: #9c9c9c;
+    }
+  }
+
+
   /* scrollbar */
   * {
     scrollbar-width: thin;
