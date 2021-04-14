@@ -4,6 +4,7 @@ import { showcaseStyles } from './showcase.styles.js'
 import { template } from "./showcase.template";
 import { routes } from "./showcase/components/navigation/navigation.routes";
 import "./standalone"
+import "./elements/foundation/themeSwitcher/themeSwitcher.component.js";
 
 //Components
 import "./showcase/components/navigation/link/link.component";

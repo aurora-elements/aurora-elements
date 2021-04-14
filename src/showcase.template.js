@@ -54,6 +54,7 @@ export function template(data) {
             </div>
         </div>
         <section id="content" class="content">
+            <ae-theme-switcher target="ae-showcase"></ae-theme-switcher>
             <div id="main">
                 <router-outlet active-route=${data.route}>
                 </router-outlet>

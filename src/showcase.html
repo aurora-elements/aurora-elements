@@ -29,7 +29,8 @@
     --color-text-primary: #484848;
     --color-text-secondary: #9c9c9c;
   }
-  :root(.dark) {
+  [theme-dark] {
+    transition: background-color 300ms cubic-bezier(0.22, 0.61, 0.36, 1) 0s, color 300ms cubic-bezier(0.22, 0.61, 0.36, 1) 0s;
     --grey-ligthest: #242526;
     --grey-middle: #38393a;
     --grey-dark: #9c9c9c;
@@ -42,6 +43,7 @@
   }
   @media (prefers-color-scheme: dark) {
     :root {
+      transition: background-color 300ms cubic-bezier(0.22, 0.61, 0.36, 1) 0s, color 300ms cubic-bezier(0.22, 0.61, 0.36, 1) 0s;
       --grey-ligthest: #242526;
       --grey-middle: #38393a;
       --grey-dark: #9c9c9c;
@@ -53,7 +55,8 @@
       --color-text-secondary: #e4e6eb;
     }
 
-    :root(.light) {
+    [theme-light] {
+      transition: background-color 300ms linear 0s, color 300ms linear 0s;
       --grey-ligthest: #f8f8f8;
       --grey-middle: #e0e6ed;
       --grey-dark: #9c9c9c;
