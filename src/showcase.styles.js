@@ -3,7 +3,7 @@ export const showcaseStyles = css`
  /* scrollbar */
   * {
     scrollbar-width: thin;
-    scrollbar-color: var(--grey-dark) var(--grey-middle);
+    scrollbar-color: var(--scrollbar-color-bg, var(--grey-dark)) var(--scroll-bar-color, var(--grey-middle));
   }
 
   *::-webkit-scrollbar {
