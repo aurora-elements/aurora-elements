@@ -3,21 +3,22 @@ export const showcaseStyles = css`
  /* scrollbar */
   * {
     scrollbar-width: thin;
-    scrollbar-color: var(--scrollbar-color-bg, var(--grey-dark)) var(--scroll-bar-color, var(--grey-middle));
+    scrollbar-color: 
+    var(--showcase-scrollBar--bg, var(--ae-scrollBar--bg, #9c9c9c)); 
+    var(--showcase-scrollBar--color, var(--ae-scrollBar--color, #e0e6ed));
   }
-
   *::-webkit-scrollbar {
     width: 12px;
   }
 
   *::-webkit-scrollbar-track {
-    background: var(--grey-middle);
+    background: var(--showcase-scrollBar--color, var(--ae-scrollBar--color, #e0e6ed));
   }
 
   *::-webkit-scrollbar-thumb {
-    background-color: var(--grey-dark);
+    background-color: var(--showcase-scrollBar--bg, var(--ae-scrollBar--bg, #9c9c9c)); 
     border-radius: 20px;
-    border: 3px solid var(--grey-middle);
+    border: 3px solid var(--showcase-scrollBar--color, var(--ae-scrollBar--color, #e0e6ed));
   }
 
   /* helpers */
@@ -30,9 +31,8 @@ export const showcaseStyles = css`
     height: 100vh;
     width: 100%;
     outline: none;
-    background-color: var(--background-color-primary, #fff);
-    font-family: Roboto, -apple-system, BlinkMacSystemFont, 'Segoe UI',
-      Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
+    background-color: var(--showcase--bg, var(--showcase-white--1, #ffffff));
+    font-family: var(--showcase--fontFamily, var(--ae--fontFamily, Roboto, -apple-system, BlinkMacSystemFont, 'Segoe UI', Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif));
     text-rendering: optimizeLegibility;
     font-size: 15px;
     display: grid;
@@ -52,7 +52,7 @@ export const showcaseStyles = css`
     letter-spacing: 3px;
     font-size: 10px;
     text-transform: uppercase;
-    color: var(--grey-dark);
+    color: var(--showcase-claim-color, var(--grey-dark));
     width: 100%;
     float: left;
     text-align: center;

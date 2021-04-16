@@ -1,7 +1,12 @@
 [
     {
         "col1": "14.04.2021",
+        "col2": "headline-block",
+        "col3": "<ul><li>Add CSS Api</li></ul>"   
+    },
+    {
+        "col1": "14.04.2021",
         "col2": "theme-switcher",
-        "col3": "Add component"   
+        "col3": "<ul><li>Add component</li></ul>"   
     }
 ]

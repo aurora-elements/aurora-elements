@@ -52,6 +52,7 @@ class AeShowcase extends router(LitElement) {
       this.route = "";
       this.params = {};
       this.query = {};
+      this.styles = { color: 'green', fontFamily: 'Roboto' };
     }
   
     router(route, params, query, data) {
