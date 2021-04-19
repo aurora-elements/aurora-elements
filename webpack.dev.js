@@ -11,11 +11,16 @@ module.exports = {
     historyApiFallback: true,
   },
   entry: {
-    standalone: './src/standalone.js',
-    showcase: './src/showcase.js'
+    standalone: './src/standalone.ts',
+    showcase: './src/showcase.ts'
   },
   module: {
     rules: [
+      {
+        test: /\.tsx?$/,
+        use: 'ts-loader',
+        exclude: /node_modules/,
+      },
       {
         test: /\.(png|jpe?g|gif)$/i,
         use: [
@@ -86,4 +91,7 @@ module.exports = {
       ]
     }),
   ],
+  resolve: {
+    extensions: ['.tsx', '.ts', '.js']
+}
 };
