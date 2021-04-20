@@ -7,7 +7,7 @@ export function template(data) {
     return html`
         <figure .hidden=${!data.image}>
             <slot name="image">
-                <img src="${data.image}" />
+                <img loading="lazy" src="${data.image}" />
             </slot>
         </figure>
         <header .hidden=${!data.label}>
