@@ -15,6 +15,39 @@ export const styles = css`
     }
     :host([actions=true]) {}
 
+    :host([loaded]) {
+        overflow: hidden;
+    }
+    img {
+        opacity: 0;
+        transition: opacity 300ms ease;
+        max-width: 100%;
+        max-height: 400px;
+    }
+    :host([loaded]) img {
+        opacity: 1;
+        display: block;
+        margin: 0 auto;
+    }
+
+    svg {
+        width:100px;
+        height:100px;
+        display: block;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%;);
+    }
+    svg circle {
+        fill: var(--color-accent, #888);
+    }
+    :host([loaded]) svg {
+        display: none;
+    }
+
+
+
     /* header */
     header {
         padding: calc(var(--basic-space) / 2) var(--basic-space);

@@ -29,5 +29,12 @@ class AuroraCard extends LitElement {
         get root() {
             return this.shadowRoot || this
         }
+
+        firstUpdated() {
+            const image = this.root.querySelector('img');
+            image.addEventListener('load', () => {
+                this.setAttribute('loaded', '');
+            })   
+        }
 }
 customElements.define('aurora-card', AuroraCard);
