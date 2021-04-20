@@ -33,7 +33,7 @@ class AuroraCard extends LitElement {
         firstUpdated() {
             const image = this.root.querySelector('img');
             image.addEventListener('load', () => {
-                this.root.setAttribute('loaded', '');
+                this.parentNode.setAttribute('loaded', '');
             })   
         }
 }

@@ -15,7 +15,7 @@ export const styles = css`
     }
     :host([actions=true]) {}
 
-    :host([loaded]) {
+    [loaded] {
         overflow: hidden;
     }
     img {
@@ -24,7 +24,7 @@ export const styles = css`
         max-width: 100%;
         max-height: 400px;
     }
-    :host([loaded]) img {
+    [loaded] img {
         opacity: 1;
         display: block;
         margin: 0 auto;
@@ -42,7 +42,7 @@ export const styles = css`
     svg circle {
         fill: var(--color-accent, #888);
     }
-    :host([loaded]) svg {
+    [loaded] svg {
         display: none;
     }
 
