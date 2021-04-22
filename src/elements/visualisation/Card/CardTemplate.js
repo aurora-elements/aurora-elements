@@ -2,13 +2,17 @@ import { html } from "lit-element";
 
 export function template(data) {
     return html`
-        ${data.href? html`<a href="${data.href}" target="${data.target}"></a>` : ''}
-        <figure .hidden=${!data.image}>
+        ${data.href? 
+            html`<a part="card-link" href="${data.href}" target="${data.target}"></a>` : 
+            ''
+        }
+        <figure part="card-figure" .hidden=${!data.image}>
             <svg
                 version="1.1"
                 id="L4"
                 x="0px"
                 y="0px"
+                part="card-loading-svg"
                 viewBox="0 0 100 100"
                 enable-background="new 0 0 0 0"
                 xml:space="preserve">
@@ -38,11 +42,11 @@ export function template(data) {
                 </circle>
             </svg>
             <slot name="image">
-                <img loading="lazy" src="${data.image}" />
+                <img part="card-img" loading="lazy" src="${data.image}" />
             </slot>
         </figure>
-        <header .hidden=${!data.label}>
-            <h3 part="label">${data.label}</h3>
+        <header part="card-header" .hidden=${!data.label}>
+            <h3 part="card-label">${data.label}</h3>
         </header>
     `;
 }
