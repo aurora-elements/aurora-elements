@@ -1,6 +1,11 @@
 [
     {
         "col1": "22.04.2021",
+        "col2": " ",
+        "col3": "<ul><li>Released version 0.0.2</li></ul>"   
+    },
+    {
+        "col1": "22.04.2021",
         "col2": "card",
         "col3": "<ul><li>Add href and target attributes</li><li>Add loading animation</li></ul>"   
     },
