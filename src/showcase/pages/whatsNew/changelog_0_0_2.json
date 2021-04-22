@@ -1,5 +1,10 @@
 [
     {
+        "col1": "22.04.2021",
+        "col2": "card",
+        "col3": "<ul><li>Add href and target attributes</li><li>Add loading animation</li></ul>"   
+    },
+    {
         "col1": "14.04.2021",
         "col2": "headline-block",
         "col3": "<ul><li>Add CSS Api</li></ul>"   
