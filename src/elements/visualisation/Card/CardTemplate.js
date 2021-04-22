@@ -1,10 +1,8 @@
-import { html, nothing } from "lit-element";
-import { until } from 'lit-html/directives/until';
-import { repeat } from 'lit-html/directives/repeat.js';
-import { unsafeHTML } from 'lit-html/directives/unsafe-html.js';
+import { html } from "lit-element";
 
 export function template(data) {
     return html`
+        ${data.href? html`<a href="${data.href}" target="${data.target}"></a>` : ''}
         <figure .hidden=${!data.image}>
             <svg
                 version="1.1"

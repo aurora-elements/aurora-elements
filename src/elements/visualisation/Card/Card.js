@@ -11,6 +11,12 @@ class AuroraCard extends LitElement {
                 },
                 image: { 
                     type: String, 
+                },
+                href: { 
+                    type: String, 
+                },
+                target: { 
+                    type: String, 
                 }
             };
         }   
