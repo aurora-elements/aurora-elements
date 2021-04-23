@@ -3,16 +3,25 @@ import { html } from "lit-element";
 export function template(data) {
     return html`
         ${data.href? 
-            html`<a part="card-link" href="${data.href}" target="${data.target}"></a>` : 
-            ''
+            html`
+            <a 
+                part="${data.partLinkSelector? 
+                    data.partLinkSelector : 'card-link'}" 
+                href="${data.href}" 
+                target="${data.target}"></a>` 
+                : ''
         }
-        <figure part="card-figure" .hidden=${!data.image}>
+        <figure 
+            part="${data.partFigureSelector?
+                data.partFigureSelector: 'card-figure'}"
+            .hidden=${!data.image}>
             <svg
                 version="1.1"
                 id="L4"
                 x="0px"
                 y="0px"
-                part="card-loading-svg"
+                part="${data.partLoadingSvgSelector?
+                    data.partLoadingSvgSelector: 'card-loading-svg'}"
                 viewBox="0 0 100 100"
                 enable-background="new 0 0 0 0"
                 xml:space="preserve">
@@ -42,11 +51,22 @@ export function template(data) {
                 </circle>
             </svg>
             <slot name="image">
-                <img part="card-img" loading="lazy" src="${data.image}" />
+                <img 
+                    part="${data.partImgSelector?
+                        data.partImgSelector: 'card-img'}" 
+                    loading="lazy" 
+                    src="${data.image}" />
             </slot>
         </figure>
-        <header part="card-header" .hidden=${!data.label}>
-            <h3 part="card-label">${data.label}</h3>
+        <header 
+            part="${data.partHeaderSelector?
+                data.partHeaderSelector: 'card-header'}" 
+            .hidden=${!data.label}>
+            <h3 
+                part="${data.partLabelSelector?
+                    data.partLabelSelector: 'card-label'}">
+                ${data.label}
+            </h3>
         </header>
     `;
 }

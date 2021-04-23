@@ -17,6 +17,30 @@ class AuroraCard extends LitElement {
                 },
                 target: { 
                     type: String, 
+                },
+                partLinkSelector: {
+                    Type: String,
+                    attribute: 'part-link-selector'
+                },
+                partFigureSelector: {
+                    type: String,
+                    attribute: 'part-figure-selector'
+                },
+                partLoadingSvgSelector: {
+                    Type: String,
+                    attribute: 'part-loading-svg-selector'
+                },
+                partImgSelector: {
+                    Type: String,
+                    attribute: 'part-img-selector'
+                },
+                partHeaderSelector: {
+                    Type: String,
+                    attribute: 'part-header-selector'
+                },
+                partLabelSelector: {
+                    Type: String,
+                    attribute: 'part-label-selector'
                 }
             };
         }   
