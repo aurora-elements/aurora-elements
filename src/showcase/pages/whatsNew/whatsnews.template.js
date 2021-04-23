@@ -14,7 +14,7 @@ export function template(data) {
     <ae-headline-block
       is-subheadline 
       part="space-bottom-m40"
-      headline="Version 0.0.4">
+      headline="Version 0.0.5">
     </ae-headline-block>
     <ae-data-table
       column-labels='["Date","Component","Description"]'
