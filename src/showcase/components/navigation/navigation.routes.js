@@ -15,6 +15,11 @@ export const routes = [
     data: { title: "Imprint" }
   },
   {
+    name: "card",
+    pattern: "visualisation/card",
+    data: { title: "Imprint" }
+  },
+  {
     name: "not-found",
     pattern: "*",
     data: { title: "404 Not found" }

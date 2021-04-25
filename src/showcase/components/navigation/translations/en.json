@@ -16,6 +16,10 @@
         "label": "Interaction",
         "visible": false,
         "items": [
+            {
+                "href":"/visualisation/card",
+                "label": "Card"
+            }
         ]
     }, 
     {
@@ -26,7 +30,7 @@
     },
     {
         "label": "Visiualisation",
-        "visible": false,
+        "visible": true,
         "items": [
         ]
     },

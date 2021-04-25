@@ -31,7 +31,6 @@ class NavLink extends navigator(LitElement) {
     }
     this.navigate(this.href);
     this.setAttribute('route-active', '');
-   // document.title = 'hallo';
   }
 
   firstUpdated() {
