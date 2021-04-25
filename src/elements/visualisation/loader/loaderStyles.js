@@ -7,7 +7,6 @@ export const styles = css`
     }
     svg {
         width:100px;
-        height:100px;
         display: block;
     }
     svg circle {

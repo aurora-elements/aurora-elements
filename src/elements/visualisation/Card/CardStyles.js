@@ -34,7 +34,7 @@ export const styles = css`
         opacity: 0;
         transition: opacity 300ms ease;
         max-width: 100%;
-        max-height: 400px;
+        max-height: 100%;
     }
     :host([loaded]) img {
         opacity: 1;
@@ -42,19 +42,15 @@ export const styles = css`
         margin: 0 auto;
     }
 
-    svg {
+    ae-loader {
         width:100px;
-        height:100px;
         display: block;
         position: absolute;
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
     }
-    svg circle {
-        fill: var(--card-loading-svg--fill, var(--ae--accentColor, #888888));
-    }
-    :host([loaded]) svg {
+    :host([loaded]) ae-loader {
         display: none;
     }
 
@@ -67,9 +63,10 @@ export const styles = css`
         ;
     }
     h3 {
-        font-size: var(--card-label--fontSize, var(--ae--fontSize, 21px));
+        font-size: var(--card-label--fontSize, var(--ae--fontSize, inherit));
         color: var(--card-label--color, var(--ae--color, #484848));
-        line-height: 140%;
+        line-height: 130%;
         font-weight: 400;
+        margin:0;
     }
 `;
