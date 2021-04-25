@@ -2,7 +2,7 @@ import { LitElement } from "lit-element";
 import { template } from "./CardTemplate.js";
 import { styles } from './CardStyles.js';
 
-class AuroraCard extends LitElement {
+class AeCard extends LitElement {
         /* Properties - LitElement */
         static get properties() {
             return {
@@ -68,4 +68,4 @@ class AuroraCard extends LitElement {
             })   
         }
 }
-customElements.define('aurora-card', AuroraCard);
+customElements.define('ae-card', AeCard);

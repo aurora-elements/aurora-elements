@@ -1,8 +1,9 @@
 import {html} from 'lit-element';
-import changelog_0_0_1 from './changelog_0_0_1.json';
-import changelog_0_0_2 from './changelog_0_0_2.json';
-import changelog_0_0_3 from './changelog_0_0_3.json';
-import changelog_0_0_4 from './changelog_0_0_4.json';
+import changelog_0_0_1 from './changelog/changelog_0_0_1.json';
+import changelog_0_0_2 from './changelog/changelog_0_0_2.json';
+import changelog_0_0_3 from './changelog/changelog_0_0_3.json';
+import changelog_0_0_5 from './changelog/changelog_0_0_5.json';
+import changelog_0_0_6 from './changelog/changelog_0_0_6.json';
 
 export function template(data) {
   return html`
@@ -14,11 +15,21 @@ export function template(data) {
     <ae-headline-block
       is-subheadline 
       part="space-bottom-m40"
+      headline="Version 0.0.6">
+    </ae-headline-block>
+    <ae-data-table
+      column-labels='["Date","Component","Description"]'
+      rows="${changelog_0_0_6}">
+    </ae-data-table>
+
+    <ae-headline-block
+      is-subheadline 
+      part="space-bottom-m40"
       headline="Version 0.0.5">
     </ae-headline-block>
     <ae-data-table
       column-labels='["Date","Component","Description"]'
-      rows="${changelog_0_0_4}">
+      rows="${changelog_0_0_5}">
     </ae-data-table>
 
     <ae-headline-block
