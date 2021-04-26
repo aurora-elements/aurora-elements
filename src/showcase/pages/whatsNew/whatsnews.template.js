@@ -4,6 +4,7 @@ import changelog_0_0_2 from './changelog/changelog_0_0_2.json';
 import changelog_0_0_3 from './changelog/changelog_0_0_3.json';
 import changelog_0_0_5 from './changelog/changelog_0_0_5.json';
 import changelog_0_0_6 from './changelog/changelog_0_0_6.json';
+import changelog_0_0_7 from './changelog/changelog_0_0_7.json';
 
 export function template(data) {
   return html`
@@ -11,6 +12,16 @@ export function template(data) {
       This chronological list shows all of the components that have been added
       or updated in the aurora elements library.
     </ae-headline-block>
+
+    <ae-headline-block
+      is-subheadline 
+      part="space-bottom-m40"
+      headline="Version 0.0.7">
+    </ae-headline-block>
+    <ae-data-table
+      column-labels='["Date","Component","Description"]'
+      rows="${changelog_0_0_7}">
+    </ae-data-table>
 
     <ae-headline-block
       is-subheadline 
