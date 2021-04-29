@@ -1,8 +1,8 @@
-import { html } from "lit-element";
-import { nothing } from 'lit-html';
-import { until } from 'lit-html/directives/until';
-import { repeat } from 'lit-html/directives/repeat.js';
-import { unsafeHTML } from 'lit-html/directives/unsafe-html.js';
+import { html } from "lit";
+import { nothing } from 'lit';
+import { until } from 'lit/directives/until';
+import { repeat } from 'lit/directives/repeat.js';
+import { unsafeHTML } from 'lit/directives/unsafe-html.js';
 import { locale } from '../../foundation/translater/translater.component';
 
 const tableTemplate = (col1, col2, col3, col4, col5, col6, col7, col8, col9, col10, index) => html`

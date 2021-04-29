@@ -1,6 +1,6 @@
-import { html } from "lit-element";
-import { until } from 'lit-html/directives/until';
-import { repeat } from 'lit-html/directives/repeat.js';
+import { html } from "lit";
+import { until } from 'lit/directives/until';
+import { repeat } from 'lit/directives/repeat.js';
 import { locale } from './elements/foundation/translater/translater.component';
 import logo from './showcase/img/aurora-logo.png';
 import translate_de from  './showcase/components/navigation/translations/de.json';
@@ -11,7 +11,7 @@ const requestUrl = `${locale === 'de' ? translate_de : translate_en}`;
 
 const nav = fetch(requestUrl).then(res => res.json());
 
-const navItemTemplate = (items: Iterable<{ href: string; label: string; id: number }>, label: string, index: number) => html`
+const navItemTemplate = (items, label, index) => html`
     <ae-accordion-item
         ?expanded=${index === 0} 
         label="${label}">
@@ -25,7 +25,7 @@ const navItemTemplate = (items: Iterable<{ href: string; label: string; id: numb
     </ae-accordion-item>
 `;
 
-export function template(data: AeShowcase) {
+export function template(data) {
     return html`
         <div class="nav">
             <a href="/">

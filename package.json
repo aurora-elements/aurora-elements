@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "dependencies": {
     "highlight.js": "9.18.1",
-    "lit-element": "2.4.0",
+    "lit": "*",
     "lit-element-router": "2.0.3"
   },
   "devDependencies": {

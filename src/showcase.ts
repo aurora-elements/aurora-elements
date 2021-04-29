@@ -1,7 +1,8 @@
-import { LitElement, customElement, property } from "lit-element";
+import { LitElement } from "lit";
+import { customElement, property } from "lit/decorators.js";
 import { router } from "lit-element-router";
 import { showcaseStyles } from './showcase.styles'
-import { template } from "./showcase.template";
+import { template } from "./showcase.template.js";
 import { routes } from "./showcase/components/navigation/navigation.routes";
 import "./standalone"
 import "./elements/foundation/themeSwitcher/themeSwitcher.component.js";

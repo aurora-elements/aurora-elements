@@ -1,7 +1,7 @@
-import { html } from "lit-element";
-import { until } from 'lit-html/directives/until';
-import { repeat } from 'lit-html/directives/repeat.js';
-import { unsafeHTML } from 'lit-html/directives/unsafe-html.js';
+import { html } from "lit";
+import { until } from 'lit/directives/until';
+import { repeat } from 'lit/directives/repeat.js';
+import { unsafeHTML } from 'lit/directives/unsafe-html.js';
 import { locale } from '../../../elements/foundation/translater/translater.component'
 import translation_de from './translations/de.json';
 import translation_en from './translations/en.json';

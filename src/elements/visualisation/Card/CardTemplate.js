@@ -1,7 +1,4 @@
-import { html, nothing } from "lit-element";
-import { until } from 'lit-html/directives/until';
-import { repeat } from 'lit-html/directives/repeat.js';
-import { unsafeHTML } from 'lit-html/directives/unsafe-html.js';
+import { html } from "lit";
 
 export function template(data) {
     return html`
