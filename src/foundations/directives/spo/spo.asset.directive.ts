@@ -1,4 +1,4 @@
-export function spoAssetPipe(
+export function spoAssetThumbnail(
     apiUrl: string, 
     id: number, 
     scopeKey: string, 
