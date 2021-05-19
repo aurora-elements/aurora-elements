@@ -26,8 +26,12 @@
     },
     {
         "label": "Darstellung",
-        "visible": false,
+        "visible": true,
         "items": [
+            {
+                "href":"/wizard",
+                "label": "Wizard"
+            }
         ]
     },
     {
