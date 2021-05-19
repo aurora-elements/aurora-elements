@@ -1,7 +1,7 @@
 import {LitElement, html} from 'lit';
 import {Wizard} from '../../../elements/visualisation/wizard/wizard';
 import {property} from '@lit/reactive-element/decorators/property';
-import { spoAssetThumbnail } from '../../../foundations/directives/spo/spo.asset.directive';
+import { spoAssetThumbnail } from '../../../foundations/directives/spo/spo.asset.thumbnail';
 
 class WizardPage extends LitElement {
   /* Properties */
