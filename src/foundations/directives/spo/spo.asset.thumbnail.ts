@@ -1,7 +1,7 @@
 export function spoAssetThumbnail(
     apiUrl: string, 
+    scopeKey: string,
     id: number, 
-    scopeKey: string, 
     height?: number, 
     width?: number
 )  {

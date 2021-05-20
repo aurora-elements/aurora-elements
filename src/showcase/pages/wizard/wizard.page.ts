@@ -2,6 +2,9 @@ import {LitElement, html} from 'lit';
 import {Wizard} from '../../../elements/visualisation/wizard/wizard';
 import {property} from '@lit/reactive-element/decorators/property';
 import { spoAssetThumbnail } from '../../../foundations/directives/spo/spo.asset.thumbnail';
+import { spoP2fCreatorUrl } from '../../../foundations/directives/spo/spo.p2f.creator.url';
+const apiUrl = 'https://kreativburschen.customer.space.one/api';
+const scopeKey = 'wolfenbuettlerschaufenster';
 
 class WizardPage extends LitElement {
   /* Properties */
@@ -14,7 +17,15 @@ class WizardPage extends LitElement {
       <ae-wizard>
         <ae-wizard-tab header="Auswählen">
           <h1>Auswählen</h1>
-          <img src=${spoAssetThumbnail('https://kreativburschen.customer.space.one/api', 596, 'wolfenbuettlerschaufenster', 500)} />
+
+
+
+          <a href target="_blank" href="${spoP2fCreatorUrl(undefined, apiUrl, scopeKey, 3231)}">
+            <img src=${spoAssetThumbnail(apiUrl, scopeKey, 596, 500)} />
+          </a>
+
+
+
           <a id="test" @click=${this.nextWizardStep} href="#">next</a>
         </ae-wizard-tab>
         <ae-wizard-tab header="Anreichern">
