@@ -3,6 +3,7 @@ import {Wizard} from '../../../elements/visualisation/wizard/wizard';
 import {property} from '@lit/reactive-element/decorators/property';
 import { spoAssetThumbnail } from '../../../foundations/directives/spo/spo.asset.thumbnail';
 import { spoP2fCreatorUrl } from '../../../foundations/directives/spo/spo.p2f.creator.url';
+import { spoP2fViewerUrl } from '../../../foundations/directives/spo/spo.p2f.viewer.url';
 const apiUrl = 'https://kreativburschen.customer.space.one/api';
 const scopeKey = 'wolfenbuettlerschaufenster';
 
@@ -24,7 +25,9 @@ class WizardPage extends LitElement {
             <img src=${spoAssetThumbnail(apiUrl, scopeKey, 596, 500)} />
           </a>
 
-
+          <a href target="_blank" href="${spoP2fViewerUrl(apiUrl, scopeKey, 3231)}">
+            <img src=${spoAssetThumbnail(apiUrl, scopeKey, 596, 500)} />
+          </a>
 
           <a id="test" @click=${this.nextWizardStep} href="#">next</a>
         </ae-wizard-tab>
