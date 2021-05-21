@@ -1,8 +1,8 @@
-import { AssetFormat } from './asset.format';
-import { UserAccount } from './user-account';
+import { SpoAssetFormat } from './spo.asset.format';
+import { UserAccount } from '../user-account';
 
-export interface Asset {
-  formats: AssetFormat[];
+export interface SpoAsset {
+  formats: SpoAssetFormat[];
   hidden: boolean;
   id: number;
   meta: {

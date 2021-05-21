@@ -1,4 +1,4 @@
-export interface AssetFormat {
+export interface SpoAssetFormat {
     created: string;
     downloadUri: string;
     filename?: string;
