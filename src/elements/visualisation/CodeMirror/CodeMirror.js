@@ -1,4 +1,4 @@
-import { LitElement } from "lit-element";
+import { LitElement } from "lit";
 import hljs from 'highlight.js/lib/highlight';
 //import xml from 'highlight.js/lib/languages/xml';
 import { template } from "./CodeMirrorTemplate.js";

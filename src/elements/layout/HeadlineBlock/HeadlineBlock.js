@@ -1,4 +1,4 @@
-import { LitElement } from "lit-element";
+import { LitElement } from "lit";
 import { template } from "./HeadlineBlockTemplate.js";
 import { styles } from './HeadlineBlockStyles.js';
 class AeHeadlineBlock extends LitElement {

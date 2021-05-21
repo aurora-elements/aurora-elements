@@ -1,4 +1,4 @@
-import { LitElement } from "lit-element";
+import { LitElement } from "lit";
 import { template } from "./ScrollNavigationTemplate.js";
 import { styles } from './ScrollNavigationStyles.js';
 

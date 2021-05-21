@@ -1,4 +1,4 @@
-import { LitElement, html } from "lit-element";
+import { LitElement } from "lit";
 import { outlet } from "lit-element-router";
 import { template } from './routerOutlet.template';
 import { styles } from './routerOutlet.styles';

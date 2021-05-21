@@ -1,4 +1,4 @@
-import {html} from 'lit-element';
+import {html} from 'lit';
 import changelog_0_0_1 from './changelog/changelog_0_0_1.json';
 import changelog_0_0_2 from './changelog/changelog_0_0_2.json';
 import changelog_0_0_3 from './changelog/changelog_0_0_3.json';

@@ -1,4 +1,4 @@
-import { LitElement } from "lit-element";
+import { LitElement } from "lit";
 import { template } from "./CardTemplate.js";
 import { styles } from './CardStyles.js';
 

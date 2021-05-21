@@ -1,4 +1,4 @@
-import { LitElement, html } from "lit-element";
+import { LitElement, html } from "lit";
 import { navigator } from "lit-element-router";
 import { styles } from "./link.styles";
 

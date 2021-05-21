@@ -1,6 +1,6 @@
-import { html } from "lit-element";
-import { until } from 'lit-html/directives/until';
-import { repeat } from 'lit-html/directives/repeat.js';
+import { html } from "lit";
+import { until } from 'lit/directives/until';
+import { repeat } from 'lit/directives/repeat.js';
 import { i18n } from '../../foundation/i18n/i18n.js';
 
 export function template(data) {

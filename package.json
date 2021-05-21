@@ -3,7 +3,7 @@
   "version": "0.0.7",
   "dependencies": {
     "highlight.js": "9.18.1",
-    "lit-element": "2.4.0",
+    "lit": "*",
     "lit-element-router": "2.0.3"
   },
   "devDependencies": {
@@ -14,6 +14,8 @@
     "html-webpack-plugin": "5.3.1",
     "npm-check-updates": "11.3.0",
     "style-loader": "2.0.0",
+    "ts-loader": "8.1.0",
+    "typescript": "4.2.4",
     "webpack": "5.30.0",
     "webpack-bundle-analyser": "1.4.0",
     "webpack-cli": "4.6.0",
@@ -24,6 +26,7 @@
   "scripts": {
     "start": "webpack serve --hot --inline --config webpack.dev.js",
     "build": "webpack --config webpack.dev.js",
+    "watch": "webpack --watch",
     "build-prod": "webpack --config webpack.prod.js",
     "dev": "webpack serve --mode development --env development"
   }

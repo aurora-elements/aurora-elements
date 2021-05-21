@@ -8,6 +8,7 @@ import './elements/visualisation/CodeMirror/CodeMirror';
 import './elements/visualisation/DataTable/DataTable';
 import './elements/visualisation/Card/Card';
 import './elements/visualisation/loader/loader';
+import './elements/visualisation/wizard/wizard';
 import './elements/interaction/ScrollTop/ScrollTop';
 
 console.log("Aurora elements loaded")

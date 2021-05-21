@@ -1,10 +1,11 @@
-import { html } from "lit-element";
-import { until } from 'lit-html/directives/until';
-import { repeat } from 'lit-html/directives/repeat.js';
+import { html } from "lit";
+import { until } from 'lit/directives/until';
+import { repeat } from 'lit/directives/repeat.js';
 import { locale } from './elements/foundation/translater/translater.component';
 import logo from './showcase/img/aurora-logo.png';
-import translate_de from './showcase/components/navigation/translations/de.json';
+import translate_de from  './showcase/components/navigation/translations/de.json';
 import translate_en from './showcase/components/navigation/translations/en.json';
+import { AeShowcase } from "./showcase";
 
 const requestUrl = `${locale === 'de' ? translate_de : translate_en}`;
 
