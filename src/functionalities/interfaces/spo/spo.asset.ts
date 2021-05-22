@@ -1,5 +1,5 @@
 import { SpoAssetFormat } from './spo.asset.format';
-import { UserAccount } from '../user-account';
+import { UserAccount } from './spo.user.account';
 
 export interface SpoAsset {
   formats: SpoAssetFormat[];
