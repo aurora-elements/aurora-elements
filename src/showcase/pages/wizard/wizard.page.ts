@@ -1,12 +1,12 @@
 import {LitElement, html} from 'lit';
 import {until} from 'lit/directives/until.js';
-import {repeat} from 'lit/directives/repeat.js';
 import {Wizard} from '../../../elements/visualisation/wizard/wizard';
 import {property} from '@lit/reactive-element/decorators/property';
 import { spoAssetThumbnail } from '../../../functionalities/directives/spo/spo.asset.thumbnail';
 import { spoP2fCreatorUrl } from '../../../functionalities/directives/spo/spo.p2f.creator.url';
 import { spoP2fViewerUrl } from '../../../functionalities/directives/spo/spo.p2f.viewer.url';
 import spoApiFetch  from '../../../functionalities/directives/spo/spo.api.fetch';
+import { spoUriConverter } from '../../../functionalities/directives/spo/spo.uri.converter';
 
 const apiUrl = 'https://kreativburschen.customer.space.one/api';
 const scopeKey = 'wolfenbuettlerschaufenster';
@@ -40,7 +40,7 @@ class WizardPage extends LitElement {
                     <ae-card
                       label="${document.name}"
                       part="document"
-                      image="${spoAssetThumbnail(apiUrl, scopeKey, 596, 500)}"
+                      image="${spoUriConverter(apiUrl, document.asset.thumbnailUri)}"
                       published-date="${document.meta.publish.start}"
                       filter-values="${document.name}"
                       category-id="${document.category.id}" 

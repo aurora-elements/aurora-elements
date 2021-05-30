@@ -1,8 +1,13 @@
-import { LitElement } from "lit";
+import { LitElement, html } from "lit";
 import { customElement, property } from "lit/decorators.js";
 import { router } from "lit-element-router";
+import { until } from 'lit/directives/until';
+import { repeat } from 'lit/directives/repeat.js';
+import { locale } from './elements/foundation/translater/translater.component';
+import logo from './showcase/img/aurora-logo.png';
+import translate_de from  './showcase/components/navigation/translations/de.json';
+import translate_en from './showcase/components/navigation/translations/en.json';
 import { showcaseStyles } from './showcase.styles'
-import { template } from "./showcase.template.js";
 import { routes } from "./showcase/components/navigation/navigation.routes";
 import "./standalone"
 import "./elements/foundation/themeSwitcher/themeSwitcher.component.js";
@@ -13,6 +18,10 @@ import "./showcase/components/navigation/routerOutlet/routerOutlet.component";
 
 //pages
 import "./showcase/components/navigation/pages.imports";
+
+const requestUrl = `${locale === 'de' ? translate_de : translate_en}`;
+
+const nav = fetch(requestUrl).then(res => res.json());
 
 // register sw
 if ('serviceWorker' in navigator) {
@@ -38,14 +47,62 @@ export class AeShowcase extends router(LitElement) {
   }
 
   render() {
-    return template(this)
+    return html`
+        <div class="nav">
+            <a href="/">
+                <img class="logo" src="${logo}" />
+            </a>
+            <span class="claim">AURORA-ELEMENTS</span>
+            <ae-accordion slot="link">
+                ${until(
+                    nav
+                    .then(items => html`                        
+                      ${repeat(items, (item:any) => item.id, (item, index) => html`
+                        ${item.visible?
+                              html`    
+                                <ae-accordion-item
+                                  ?expanded=${index === 0} 
+                                  label="${item.label}">
+                                  ${repeat(item.items, (item:any) => item.id, (item) => html`
+                                      <nav-link href="${item.href}">${item.label}</nav-link> 
+                                    `                                            
+                                  )}
+                                </ae-accordion-item>`
+                              : html``
+                            }
+                      `)}
+                    `),
+                    html``
+                )}  
+            </ae-accordion>
+            <div class="copyright">
+                <span>&copy;2021 Marcus Kramer</span>
+                <nav-link href="/imprint">Imprint</nav-link>  
+            </div>
+        </div>
+        <section id="content" class="content">
+            <ae-theme-switcher target="ae-showcase"></ae-theme-switcher>
+            <div id="main">
+                <router-outlet active-route=${this.route}>
+                </router-outlet>
+            </div>
+            <footer></footer>
+        </section>
+        <ae-scroll-top scroll-container="#content"></ae-scroll-top>
+    `
   }
 
   static get routes() {
     return routes;
   }
 
-  router(route: string, params: {}, query: {}, data: { title: string; }) {
+  router(
+    route: string, 
+    params: {}, 
+    query: {}, 
+    data: { 
+      title: string; 
+    }) {
     this.route = route;
     this.params = params;
     this.query = query;
