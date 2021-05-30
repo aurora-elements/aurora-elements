@@ -960,8 +960,9 @@ export class Welcome extends LitElement {
           ),
         html`
           <div>
-        <span
-            >${locale === 'de' ? 'Daten werden geladen...' : 'Loading...'}</span>
+        	<span>
+				${locale === 'de' ? 'Daten werden geladen...' : 'Loading...'}
+			</span>
         </div>
         `
       )}
