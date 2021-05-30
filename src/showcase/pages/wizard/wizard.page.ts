@@ -7,12 +7,14 @@ import { spoP2fCreatorUrl } from '../../../functionalities/directives/spo/spo.p2
 import { spoP2fViewerUrl } from '../../../functionalities/directives/spo/spo.p2f.viewer.url';
 import spoApiFetch  from '../../../functionalities/directives/spo/spo.api.fetch';
 import { spoUriConverter } from '../../../functionalities/directives/spo/spo.uri.converter';
+import { customElement } from 'lit/decorators.js';
 
 const apiUrl = 'https://kreativburschen.customer.space.one/api';
 const scopeKey = 'wolfenbuettlerschaufenster';
 const spoP2fDocumentsUrl = `${apiUrl}/scope/${scopeKey}/items/p2fDocumentItem`;
 
-class WizardPage extends LitElement {
+@customElement('wizard-page')
+export class WizardPage extends LitElement {
   /* Properties */
   @property({attribute: false})
   wizard: Wizard = new Wizard();
@@ -84,6 +86,3 @@ class WizardPage extends LitElement {
     this.wizard.nextStep();
   }
 }
-
-customElements.define('wizard-page', WizardPage);
-
