@@ -1,3 +1,4 @@
+// @ts-nocheck
 // default locale
 const defaultLocale = "en";
 
