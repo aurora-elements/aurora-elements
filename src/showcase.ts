@@ -3,14 +3,14 @@ import { customElement, property } from "lit/decorators.js";
 import { router } from "lit-element-router";
 import { until } from 'lit/directives/until';
 import { repeat } from 'lit/directives/repeat.js';
-import { locale } from './elements/foundation/translater/translater.component';
+import { locale } from './functionalities/directives/translater';
 import logo from './showcase/img/aurora-logo.png';
 import translate_de from  './showcase/components/navigation/translations/de.json';
 import translate_en from './showcase/components/navigation/translations/en.json';
 import { showcaseStyles } from './showcase.styles'
 import { routes } from "./showcase/components/navigation/navigation.routes";
 import "./standalone"
-import "./elements/foundation/themeSwitcher/themeSwitcher.component";
+import "./elements/foundation/themeSwitcher/theme.switcher";
 
 //Components
 import "./showcase/components/navigation/link/link.component";

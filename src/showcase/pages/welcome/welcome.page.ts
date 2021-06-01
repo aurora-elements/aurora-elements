@@ -3,7 +3,7 @@ import {customElement} from 'lit/decorators.js';
 import {until} from 'lit/directives/until';
 import {unsafeHTML} from 'lit/directives/unsafe-html.js';
 import {repeat} from 'lit/directives/repeat.js';
-import {locale} from '../../../elements/foundation/translater/translater.component';
+import {locale} from '../../../functionalities/directives/translater';
 import translation_de from './translations/de.json';
 import translation_en from './translations/en.json';
 
