@@ -1,6 +1,14 @@
-import { css } from "lit";
+import {
+    LitElement,
+    html,
+    css
+} from "lit";
+import {
+    customElement,
+    property
+} from 'lit/decorators.js';
 
-export const styles = css`
+const styles = css`
     :host {
         display: block;
     }
@@ -47,3 +55,56 @@ export const styles = css`
     ::slotted(p:first-child) {margin-top:5px;} 
     ::slotted(p:last-child) {margin-bottom:0;} 
 `;
+
+@customElement('ae-headline-block')
+export class AeHeadlineBlock extends LitElement {
+    /* Properties - LitElement */
+    @property()
+    headline?: string;
+
+    @property({ reflect: true })
+    scrollid?: string;
+
+    @property({ 
+        attribute: 'scroll-label', 
+        reflect: true 
+    })
+    scrollLabel?: string
+
+    @property({ 
+        attribute: 'is-subheadline', 
+        type: Boolean 
+    })
+    isSubheadline?: boolean = false;
+
+
+    /* Styles - LitElement */
+    static get styles() {
+        return [styles]
+    }
+
+    /* Render template */
+    render() {
+        return html`
+            ${this.isSubheadline ?
+                html`<h3>${this.headline}</h3>` :
+                html`<h2>${this.headline}</h2>`
+            }
+            <p><slot></slot></p>
+        `;
+    }
+
+    firstUpdated() {
+        if (!this.scrollLabel) {
+            this.scrollLabel = this.headline;
+        }
+    }
+
+}
+
+declare global {
+    interface HTMLElementTagNameMap {
+        'ae-headline-block': AeHeadlineBlock
+    }
+}
+

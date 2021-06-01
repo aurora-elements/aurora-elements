@@ -146,3 +146,9 @@ export class AeThemeSwitcher extends LitElement {
         }
     }
 }
+
+declare global {
+    interface HTMLElementTagNameMap {
+        'ae-theme-switcher': AeThemeSwitcher
+    }
+}

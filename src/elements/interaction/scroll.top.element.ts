@@ -1,8 +1,7 @@
 import { LitElement, html, css } from "lit";
 import {
     customElement,
-    property,
-    query
+    property
   } from 'lit/decorators.js';
 
 const styles = css`
@@ -92,5 +91,11 @@ export class AeScrollTop extends LitElement {
                 behavior: "smooth"
               })
         })
+    }
+}
+
+declare global {
+    interface HTMLElementTagNameMap {
+        'ae-scroll-top': AeScrollTop
     }
 }
