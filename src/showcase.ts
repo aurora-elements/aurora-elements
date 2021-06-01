@@ -10,7 +10,7 @@ import translate_en from './showcase/components/navigation/translations/en.json'
 import { showcaseStyles } from './showcase.styles'
 import { routes } from "./showcase/components/navigation/navigation.routes";
 import "./standalone"
-import "./elements/foundation/themeSwitcher/theme.switcher.element";
+import "./elements/interaction/themeSwitcher/theme.switcher.element";
 
 //Components
 import "./showcase/components/navigation/link/link.component";
