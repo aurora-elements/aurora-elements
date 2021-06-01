@@ -9,6 +9,6 @@ import './elements/visualisation/DataTable/DataTable';
 import './elements/visualisation/Card/Card';
 import './elements/visualisation/loader/loader';
 import './elements/visualisation/wizard/wizard';
-import './elements/interaction/scrollTop/scroll.top.element';
+import './elements/interaction/scroll.top.element';
 
 console.log("Aurora elements loaded")
