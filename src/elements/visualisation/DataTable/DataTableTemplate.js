@@ -3,7 +3,7 @@ import { nothing } from 'lit';
 import { until } from 'lit/directives/until';
 import { repeat } from 'lit/directives/repeat.js';
 import { unsafeHTML } from 'lit/directives/unsafe-html.js';
-import { locale } from '../../../functionalities/directives/translater';
+import { locale } from '../../../functionalities/directives/translater.directive';
 
 const tableTemplate = (col1, col2, col3, col4, col5, col6, col7, col8, col9, col10, index) => html`
     <tr part="tr" id=${index + 1}>

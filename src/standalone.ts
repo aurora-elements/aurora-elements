@@ -1,4 +1,4 @@
-import './functionalities/directives/translater';
+import './functionalities/directives/translater.directive';
 
 import './elements/layout/HeadlineBlock/HeadlineBlock';
 import './elements/layout/ScrollNavigation/ScrollNavigation';
@@ -9,6 +9,6 @@ import './elements/visualisation/DataTable/DataTable';
 import './elements/visualisation/Card/Card';
 import './elements/visualisation/loader/loader';
 import './elements/visualisation/wizard/wizard';
-import './elements/interaction/scrollTop/scroll.top';
+import './elements/interaction/scrollTop/scroll.top.element';
 
 console.log("Aurora elements loaded")

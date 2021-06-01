@@ -1,4 +1,4 @@
-import { SpoSpaceFeature } from "./spo.space.feature";
+import { SpoSpaceFeature } from "./spo.space.feature.interface";
 
 export interface SpoSpace {
     urlKey: string,
