@@ -1,7 +1,6 @@
 import './functionalities/directives/translater.directive';
 
 import './elements/layout/headlineBlock';
-import './elements/layout/ScrollNavigation/ScrollNavigation';
 import './elements/visualisation/Accordion/Accordion';
 import './elements/visualisation/Accordion/AccordionItem/AccordionItem';
 import './elements/visualisation/CodeMirror/CodeMirror';
