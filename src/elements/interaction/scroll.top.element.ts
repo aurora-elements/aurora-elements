@@ -60,7 +60,7 @@ export class AeScrollTop extends LitElement {
 
     /* Properties - LitElement */
     @property({attribute: 'scroll-container'})
-    scrollContainer!:string;
+    scrollContainer?:string;
 
     /* Styles - LitElement */
     static get styles() {
@@ -74,23 +74,24 @@ export class AeScrollTop extends LitElement {
 
     /* First updated - LitElement */
     firstUpdated() {
+        let scrollCon:any;
+        if(this.scrollContainer) {
+            scrollCon = this.parentNode?.querySelector(this.scrollContainer);
 
-        const scrollCon = this.parentNode!.querySelector(this.scrollContainer);
-
-        scrollCon!.addEventListener('scroll', () => {
-            if (scrollCon!.scrollTop > 50) {
-                this.setAttribute('is-active', '');
-            } else {
-                this.removeAttribute('is-active');
-            }
-        });
-
-        this.addEventListener('click', () => {
-            scrollCon!.scrollTo({
-                top: 0,
-                behavior: "smooth"
-              })
-        })
+            scrollCon?.addEventListener('scroll', () => {
+                if (scrollCon.scrollTop > 50) {
+                    this.setAttribute('is-active', '');
+                } else {
+                    this.removeAttribute('is-active');
+                }
+            });
+            this.addEventListener('click', () => {
+                scrollCon.scrollTo({
+                    top: 0,
+                    behavior: "smooth"
+                  })
+            })
+        }
     }
 }
 
