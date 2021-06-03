@@ -1,5 +1,7 @@
+const spoP2fCreatorBaseUrl = 'https://creator.page2flip.devdock.space.one';
+
 export function spoP2fCreatorUrl(
-    creatorUrl: string = 'https://creator.page2flip.devdock.space.one/wizard/hotspot-editor-standalone/1?p=', 
+    creatorUrl: string = `${spoP2fCreatorBaseUrl}/wizard/hotspot-editor-standalone/1?p=`, 
     apiUrl: string,
     scopeKey: string,
     id: number

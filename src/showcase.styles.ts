@@ -99,20 +99,6 @@ export const showcaseStyles = css`
     right: 40px;
     top: 20px;
   }
-  aurora-scroll-navigation {
-    position: fixed;
-    top: 0;
-    z-index: 100;
-    width: 100%;
-    display: grid;
-    grid-template-columns: minmax(250px, 380px) minmax(600px, 1fr);
-    left: 0;
-  }
-  aurora-scroll-navigation::part(scroll-items) {
-    background: #fff;
-    border-bottom: 1px solid var(--grey-middle);
-    padding-left: 60px;
-  }
 
   .content #main {
     transition: opacity 5s linear 0s;
