@@ -8,8 +8,8 @@ const WebpackPwaManifest = require('webpack-pwa-manifest');
 module.exports = {
   mode: "production",
   entry: {
-    standalone: './src/standalone.js',
-    showcase: './src/showcase.js'
+    standalone: './src/standalone.ts',
+    showcase: './src/showcase.ts'
   },
   module: {
     rules: [
