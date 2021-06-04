@@ -62,15 +62,6 @@ export class AeHeadlineBlock extends LitElement {
     @property()
     headline?: string;
 
-    @property({ reflect: true })
-    scrollid?: string;
-
-    @property({ 
-        attribute: 'scroll-label', 
-        reflect: true 
-    })
-    scrollLabel?: string
-
     @property({ 
         attribute: 'is-subheadline', 
         type: Boolean 
@@ -92,12 +83,6 @@ export class AeHeadlineBlock extends LitElement {
             }
             <p><slot></slot></p>
         `;
-    }
-
-    firstUpdated() {
-        if (!this.scrollLabel) {
-            this.scrollLabel = this.headline;
-        }
     }
 
 }
