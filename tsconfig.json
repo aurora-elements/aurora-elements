@@ -14,10 +14,15 @@
       "allowJs": true,
     },
     "files": [
+      "src/standalone.ts",
       "src/showcase.ts",
-      "src/standalone.ts"
+      "src/showcase.styles.ts",
+      "src/elements/interaction/scroll.top.element.ts",
+      "src/elements/interaction/theme.switcher.element.ts",
+      "src/elements/layout/Card.ts",
+      "src/elements/layout/headlineBlock.ts",
     ],
     "include": [
-      "./global.d.ts"
+      "global.d.ts"
     ]
 }
