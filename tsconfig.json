@@ -9,5 +9,10 @@
       "moduleResolution": "node",
       "jsx": "react",
       "allowJs": true,
-    }
-  }
+    },
+    "files": [
+      "./global.d.ts",
+      "./src/standalone.ts",
+      "./src/showcase.ts"
+    ]
+}
