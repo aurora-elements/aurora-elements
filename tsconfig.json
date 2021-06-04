@@ -10,9 +10,9 @@
       "jsx": "react",
       "allowJs": true,
     },
-    "files": [
+    "include": [
       "./global.d.ts",
-      "./src/standalone.ts",
-      "./src/showcase.ts",
-    ]
+      "src"
+    ],
+    "compileOnSave": false
 }
