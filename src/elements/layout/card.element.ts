@@ -8,6 +8,7 @@ import {
   property, 
   query 
 } from 'lit/decorators.js';
+import { ifDefined } from 'lit/directives/if-defined.js';
 
 const styles = css`
   :host {
@@ -23,13 +24,10 @@ const styles = css`
       var(--ae--shadow, 0 0.133rem rgba(0, 0, 0, 0.05))
     );
   }
-  :host([vertical]) {
-  }
+
   :host([embedded]) {
     box-shadow: none;
     border-radius: none;
-  }
-  :host([actions='true']) {
   }
 
   :host([loaded]) {
@@ -146,7 +144,7 @@ export class AeCard extends LitElement {
                 <a 
                     part="${this.partLinkSelector ? this.partLinkSelector : 'card-link'}" 
                     href="${this.href}" 
-                    target="${this.target}">
+                    target!="${ifDefined(this.target)}">
                 </a>
             `
             : ''}
@@ -160,7 +158,7 @@ export class AeCard extends LitElement {
                     <img 
                         part="${this.partImgSelector ? this.partImgSelector : 'card-img'}" 
                         loading="lazy" 
-                        src="${this.image}" />
+                        src="${ifDefined(this.image)}" />
                 </slot>
             </figure>
             <header 
@@ -186,3 +184,5 @@ declare global {
         'ae-card': AeCard;
     }
 }
+
+

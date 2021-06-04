@@ -1,23 +1,23 @@
 {
-    "compilerOptions": {
-      "outDir": "./dist/",
-      "experimentalDecorators": true,
-      "declaration": true,
-      "declarationMap": true,
-      "strict": true,
-      "sourceMap": true,
-      "module": "es2015",
-      "target": "es2019",
-      "moduleResolution": "node",
-      "lib": ["es2019", "dom"],
-      "jsx": "react",
-      "allowJs": true,
-    },
-    "files": [
-      "src/standalone.ts",
-      "src/showcase.ts"
-    ],
-    "include": [
-      "global.d.ts"
-    ]
+  "compilerOptions": {
+    "outDir": "./dist/",
+    "experimentalDecorators": true,
+    "declaration": true,
+    "declarationMap": true,
+    "strict": true,
+    "sourceMap": true,
+    "module": "es2015",
+    "target": "es2019",
+    "moduleResolution": "node",
+    "lib": ["es2019", "dom"],
+    "jsx": "react",
+    "allowJs": true,
+  },
+  "files": [
+    "src/standalone.ts",
+    "src/showcase.ts"
+  ],
+  "include": [
+    "global.d.ts"
+  ]
 }
