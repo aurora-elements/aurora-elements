@@ -13,11 +13,7 @@
     "jsx": "react",
     "allowJs": true,
   },
-  "files": [
-    "src/standalone.ts",
-    "src/showcase.ts"
-  ],
   "include": [
-    "global.d.ts"
+    "src/**/*"
   ]
 }
