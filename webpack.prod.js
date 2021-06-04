@@ -8,11 +8,16 @@ const WebpackPwaManifest = require('webpack-pwa-manifest');
 module.exports = {
   mode: "production",
   entry: {
-    standalone: './src/standalone.js',
-    showcase: './src/showcase.js'
+    standalone: './src/standalone.ts',
+    showcase: './src/showcase.ts'
   },
   module: {
     rules: [
+      {
+        test: /\.tsx?$/,
+        use: 'ts-loader',
+        exclude: /node_modules/,
+      },
       {
         test: /\.(png|jpe?g|gif)$/i,
         use: [
@@ -78,6 +83,9 @@ module.exports = {
       ]
     }),
   ],
+  resolve: {
+    extensions: ['.tsx', '.ts', '.js']
+  },
   output: {
     filename: "[name].bundle.js",
     path: path.resolve(__dirname, "dist"),
