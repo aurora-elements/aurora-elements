@@ -12,5 +12,12 @@
       "lib": ["es2019", "dom"],
       "jsx": "react",
       "allowJs": true,
-    }
+    },
+    "files": [
+      "src/showcase.ts",
+      "src/standalone.ts"
+    ],
+    "include": [
+      "./global.d.ts"
+    ]
 }
