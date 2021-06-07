@@ -1,13 +1,5 @@
-import { 
-  LitElement, 
-  html, 
-  css 
-} from 'lit';
-import { 
-  customElement, 
-  property, 
-  query 
-} from 'lit/decorators.js';
+import { LitElement, html, css } from 'lit';
+import { customElement, property, query } from 'lit/decorators.js';
 import { ifDefined } from 'lit/directives/if-defined.js';
 
 const styles = css`
@@ -85,7 +77,8 @@ const styles = css`
 
 @customElement('ae-card')
 export class AeCard extends LitElement {
-    /* Properties - LitElement */
+	
+/* Properties - LitElement */
     @property()
     label?: string;
 
@@ -127,17 +120,20 @@ export class AeCard extends LitElement {
       attribute: 'part-label-selector' 
     })
     partLabelSelector?: string;
+/* End of properties */
 
-    /* Queries */
+/* Queries */
     @query('img')
-    imageEl!: HTMLImageElement;
+    imageEl?: HTMLImageElement;
+/* End of queries */
 
-    /* Styles - LitElement */
+/* Styles - LitElement */
     static get styles() {
         return [styles];
     }
+/* End of styles */
 
-    /* Render template */
+/* Render template */
     render() {
         return html`
             ${this.href ? html`
@@ -170,13 +166,16 @@ export class AeCard extends LitElement {
             </header>
         `;
     }
+/* End of render template */
 
+/* First updated */
     firstUpdated() {
         const el = this;
-        this.imageEl.addEventListener('load', () => {
+        this.imageEl!.addEventListener('load', () => {
             el.setAttribute('loaded', '');
         });
     }
+/* End of first updated */
 }
 
 declare global {

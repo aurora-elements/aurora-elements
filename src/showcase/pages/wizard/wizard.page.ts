@@ -1,6 +1,6 @@
 import {LitElement, html} from 'lit';
 import {until} from 'lit/directives/until.js';
-import {Wizard} from '../../../elements/visualisation/wizard/wizard';
+import {Wizard} from '../../../elements/layout/wizard/wizard.element';
 import {property} from '@lit/reactive-element/decorators/property';
 import { spoAssetThumbnail } from '../../../functionalities/directives/spo/spo.asset.thumbnail.directive';
 import { spoP2fCreatorUrl } from '../../../functionalities/directives/spo/spo.p2f.creator.url.directive';
