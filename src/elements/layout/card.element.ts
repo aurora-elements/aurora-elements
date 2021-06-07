@@ -77,63 +77,31 @@ const styles = css`
 
 @customElement('ae-card')
 export class AeCard extends LitElement {
-	
-/* Properties - LitElement */
-    @property()
-    label?: string;
 
-    @property()
-    image?: string;
+    @property() label?: string;
 
-    @property()
-    href?: string;
+    @property() image?: string;
 
-    @property()
-    target?: string;
+    @property() href?: string;
 
-    @property({ 
-      attribute: 'part-link-selector' 
-    })
-    partLinkSelector?: string;
+    @property() target?: string;
 
-    @property({ 
-      attribute: 'part-figure-selector' 
-    })
-    partFigureSelector?: string;
+    @property({ attribute: 'part-link-selector' }) partLinkSelector?: string;
+    
+    @property({ attribute: 'part-figure-selector' }) partFigureSelector?: string;
 
-    @property({ 
-      attribute: 'part-loading-svg-selector' 
-    })
-    partLoadingSvgSelector?: string;
+    @property({ attribute: 'part-loading-svg-selector' }) partLoadingSvgSelector?: string;
+    
+    @property({ attribute: 'part-img-selector' }) partImgSelector?: string;
 
-    @property({ 
-      attribute: 'part-img-selector' 
-    })
-    partImgSelector?: string;
+    @property({ attribute: 'part-header-selector' }) partHeaderSelector?: string;
 
-    @property({ 
-      attribute: 'part-header-selector' 
-    })
-    partHeaderSelector?: string;
+    @property({ attribute: 'part-label-selector' }) partLabelSelector?: string;
 
-    @property({ 
-      attribute: 'part-label-selector' 
-    })
-    partLabelSelector?: string;
-/* End of properties */
+    @query('img') imageEl?: HTMLImageElement;
 
-/* Queries */
-    @query('img')
-    imageEl?: HTMLImageElement;
-/* End of queries */
+    static get styles() { return [styles] }
 
-/* Styles - LitElement */
-    static get styles() {
-        return [styles];
-    }
-/* End of styles */
-
-/* Render template */
     render() {
         return html`
             ${this.href ? html`
@@ -166,16 +134,14 @@ export class AeCard extends LitElement {
             </header>
         `;
     }
-/* End of render template */
 
-/* First updated */
     firstUpdated() {
         const el = this;
         this.imageEl!.addEventListener('load', () => {
             el.setAttribute('loaded', '');
         });
     }
-/* End of first updated */
+
 }
 
 declare global {
