@@ -5,8 +5,8 @@ import { until } from 'lit/directives/until';
 import { repeat } from 'lit/directives/repeat.js';
 import { locale } from './functionalities/directives/translater.directive';
 import logo from './showcase/img/aurora-logo.png';
-import translate_de from  './showcase/components/navigation/translations/de.json';
-import translate_en from './showcase/components/navigation/translations/en.json';
+import * as translate_de from  './showcase/components/navigation/translations/de.json';
+import * as translate_en from './showcase/components/navigation/translations/en.json';
 import { showcaseStyles } from './showcase.styles'
 import { routes } from "./showcase/components/navigation/navigation.routes";
 import "./standalone"

@@ -1,7 +1,7 @@
 {
   "name": "@aurora/elements",
   "version": "0.0.7",
-  "types":"./global.d.ts",
+  "type": "module",
   "dependencies": {
     "highlight.js": "^9.18.1",
     "lit": "^2.0.0-rc.2",

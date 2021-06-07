@@ -1,11 +1,11 @@
 import { LitElement, html } from 'lit';
 import { customElement } from 'lit/decorators.js';
-import changelog_0_0_1 from './changelog/changelog_0_0_1.json';
-import changelog_0_0_2 from './changelog/changelog_0_0_2.json';
-import changelog_0_0_3 from './changelog/changelog_0_0_3.json';
-import changelog_0_0_5 from './changelog/changelog_0_0_5.json';
-import changelog_0_0_6 from './changelog/changelog_0_0_6.json';
-import changelog_0_0_7 from './changelog/changelog_0_0_7.json';
+import * as changelog_0_0_1 from './changelog/changelog_0_0_1.json';
+import * as changelog_0_0_2 from './changelog/changelog_0_0_2.json';
+import * as changelog_0_0_3 from './changelog/changelog_0_0_3.json';
+import * as changelog_0_0_5 from './changelog/changelog_0_0_5.json';
+import * as changelog_0_0_6 from './changelog/changelog_0_0_6.json';
+import * as changelog_0_0_7 from './changelog/changelog_0_0_7.json';
 
 @customElement('whatsnew-page')
 export class Whatsnew extends LitElement {
@@ -26,7 +26,7 @@ export class Whatsnew extends LitElement {
       </ae-headline-block>
       <ae-data-table column-labels='["Date","Component","Description"]' rows="${changelog_0_0_6}">
       </ae-data-table>
-      
+    
       <ae-headline-block is-subheadline part="space-bottom-m40" headline="Version 0.0.5">
       </ae-headline-block>
       <ae-data-table column-labels='["Date","Component","Description"]' rows="${changelog_0_0_5}">

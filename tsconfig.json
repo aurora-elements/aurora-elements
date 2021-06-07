@@ -2,6 +2,7 @@
   "compilerOptions": {
     "outDir": "./dist/",
     "experimentalDecorators": true,
+    "resolveJsonModule": true,
     "declaration": true,
     "declarationMap": true,
     "strict": true,
@@ -14,6 +15,7 @@
     "allowJs": true,
   },
   "include": [
-    "src/**/*"
+    "src/**/*.ts",
+    "src/**/*.js"
   ]
 }
