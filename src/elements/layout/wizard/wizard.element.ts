@@ -1,10 +1,5 @@
 import { LitElement, html, css } from 'lit';
-import {
-    customElement,
-    property,
-    query,
-    queryAssignedNodes
-} from 'lit/decorators.js';
+import { customElement, property, query, queryAssignedNodes } from 'lit/decorators.js';
 
 import './tab.wizard.element';
 
