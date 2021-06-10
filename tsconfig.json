@@ -2,20 +2,12 @@
   "compilerOptions": {
     "outDir": "./dist/",
     "experimentalDecorators": true,
-    "resolveJsonModule": true,
-    "declaration": true,
-    "declarationMap": true,
     "strict": true,
     "sourceMap": true,
-    "module": "es2015",
-    "target": "es2019",
+    "module": "es6",
+    "target": "es6",
     "moduleResolution": "node",
-    "lib": ["es2019", "dom"],
     "jsx": "react",
     "allowJs": true,
-  },
-  "include": [
-    "src/**/*.ts",
-    "src/**/*.js"
-  ]
+  }
 }

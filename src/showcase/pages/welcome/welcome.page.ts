@@ -4,8 +4,8 @@ import {until} from 'lit/directives/until';
 import {unsafeHTML} from 'lit/directives/unsafe-html.js';
 import {repeat} from 'lit/directives/repeat.js';
 import {locale} from '../../../functionalities/directives/translater.directive';
-import * as translation_de from './translations/de.json';
-import * as translation_en from './translations/en.json';
+import translation_de from './translations/de.json';
+import translation_en from './translations/en.json';
 
 @customElement('welcome-page')
 export class Welcome extends LitElement {
