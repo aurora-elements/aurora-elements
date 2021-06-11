@@ -19,32 +19,32 @@ export class Whatsnew extends LitElement {
       
       <ae-headline-block is-subheadline part="space-bottom-m40" headline="Version 0.0.7">
       </ae-headline-block>
-      <ae-data-table column-labels='["Date","Component","Description"]' rows="${changelog_0_0_7}">
+      <ae-data-table rows="${changelog_0_0_7}">
       </ae-data-table>
       
       <ae-headline-block is-subheadline part="space-bottom-m40" headline="Version 0.0.6">
       </ae-headline-block>
-      <ae-data-table column-labels='["Date","Component","Description"]' rows="${changelog_0_0_6}">
+      <ae-data-table rows="${changelog_0_0_6}">
       </ae-data-table>
     
       <ae-headline-block is-subheadline part="space-bottom-m40" headline="Version 0.0.5">
       </ae-headline-block>
-      <ae-data-table column-labels='["Date","Component","Description"]' rows="${changelog_0_0_5}">
+      <ae-data-table rows="${changelog_0_0_5}">
       </ae-data-table>
       
       <ae-headline-block is-subheadline part="space-bottom-m40" headline="Version 0.0.3">
       </ae-headline-block>
-      <ae-data-table column-labels='["Date","Component","Description"]' rows="${changelog_0_0_3}">
+      <ae-data-table rows="${changelog_0_0_3}">
       </ae-data-table>
       
       <ae-headline-block is-subheadline part="space-bottom-m40" headline="Version 0.0.2">
       </ae-headline-block>
-      <ae-data-table column-labels='["Date","Component","Description"]' rows="${changelog_0_0_2}">
+      <ae-data-table rows="${changelog_0_0_2}">
       </ae-data-table>
       
       <ae-headline-block is-subheadline part="space-bottom-m40" headline="Version 0.0.1">
       </ae-headline-block>
-      <ae-data-table column-labels='["Date","Component","Description"]' rows="${changelog_0_0_1}">
+      <ae-data-table rows="${changelog_0_0_1}">
       </ae-data-table>
   `;
   }
