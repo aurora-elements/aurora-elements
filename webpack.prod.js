@@ -13,14 +13,20 @@ module.exports = {
     showcase: './src/showcase.ts'
   },
   module: {
+    loaders: [
+      // All files with a '.ts' or '.tsx' extension will be handled by 'ts-loader'.
+      {test: /\.tsx?$/, loader: "ts-loader"}
+  ],
+
+  preLoaders: [
+      // All output '.js' files will have any sourcemaps re-processed by 'source-map-loader'.
+      {test: /\.js$/, loader: "source-map-loader"}
+  ],
     rules: [
       {
         test: /\.tsx?$/,
         use: [{
           loader: 'ts-loader',
-          options: {
-            transpileOnly: true
-          }
         }],
         exclude: /node_modules/,
       },

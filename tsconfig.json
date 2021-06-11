@@ -9,5 +9,6 @@
     "moduleResolution": "node",
     "jsx": "react",
     "allowJs": true,
+    "noImplicitAny": true,
   }
 }
