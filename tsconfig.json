@@ -19,6 +19,9 @@
     "declaration": false,
     "downlevelIteration": true,
   },
+  "files": [
+    "src/showcase.ts"
+  ],
   "include": [
     "src/**/*"
   ]
