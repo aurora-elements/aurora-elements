@@ -1,5 +1,7 @@
 {
+  "compileOnSave": false,
   "compilerOptions": {
+    "baseUrl": "./",
     "outDir": "./dist/",
     "experimentalDecorators": true,
     "strict": true,
@@ -10,6 +12,12 @@
     "jsx": "react",
     "allowJs": true,
     "noImplicitAny": true,
+    "importHelpers": true,
+    "forceConsistentCasingInFileNames": true,
+    "noImplicitReturns": true,
+    "noFallthroughCasesInSwitch": true,
+    "declaration": false,
+    "downlevelIteration": true,
   },
   "include": [
     "src/**/*"
