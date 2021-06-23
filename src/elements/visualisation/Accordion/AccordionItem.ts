@@ -58,13 +58,13 @@ class AeAccordionItem extends LitElement {
 
     /* Properties - LitElement */
     @property() 
-    label: string = '';
+    label = '';
 
     @property({reflect: true,  type: Boolean}) 
-    expanded: boolean = false;
+    expanded = false;
 
     @property({attribute: 'multiple-support', reflect: true, type: Boolean}) 
-    multipleSupport: boolean = false;
+    multipleSupport = false;
 
     /* Styles - LitElement */
     static get styles() {
