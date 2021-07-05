@@ -115,13 +115,9 @@ const tableTemplate = (
 @customElement('ae-data-table')
 export class AeDataTable extends LitElement {
 
-    @property({ attribute: 'column-labels', type: Array }) columnLabels? = ["Date","Component","Description"];
+    @property({ attribute: 'column-labels', type: Array }) columnLabels = ["Date","Component","Description"];
     
     @property({ type: String }) rows?:string;
-
-firstUpdated() {
-    console.log('rows: ', this.rows)
-}
 
     /* Styles - LitElement */
     static get styles() {

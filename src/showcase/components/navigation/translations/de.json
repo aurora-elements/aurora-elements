@@ -13,19 +13,33 @@
         ]
     },
     {
+        "label": "Funtionalitäten",
+        "visible": true,
+        "items": [
+            {
+                "href":"/functionalities/dircetives",
+                "label": "Direktiven"
+            },
+            {
+                "href":"/functionalities/interfaces",
+                "label": "Interfaces"
+            }
+        ]
+    },
+    {
         "label": "Interaktion",
-        "visible": false,
+        "visible": true,
         "items": [
         ]
     }, 
     {
         "label": "Formular",
-        "visible": false,
+        "visible": true,
         "items": [
         ]
     },
     {
-        "label": "Darstellung",
+        "label": "Visualisierung",
         "visible": true,
         "items": [
             {
@@ -36,18 +50,6 @@
                 "href":"/wizard",
                 "label": "Wizard"
             }
-        ]
-    },
-    {
-        "label": "Layout",
-        "visible": false,
-        "items": [
-        ]
-    },
-    {
-        "label": "Apps",
-        "visible": false,
-        "items": [
         ]
     }
 ]

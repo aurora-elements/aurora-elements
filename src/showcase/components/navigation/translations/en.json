@@ -13,8 +13,22 @@
         ]
     },
     {
+        "label": "Funtionalities",
+        "visible": true,
+        "items": [
+            {
+                "href":"/functionalities/dircetives",
+                "label": "Directives"
+            },
+            {
+                "href":"/functionalities/interfaces",
+                "label": "Interfaces"
+            }
+        ]
+    },
+    {
         "label": "Interaction",
-        "visible": false,
+        "visible": true,
         "items": [
             {
                 "href":"/visualisation/card",
@@ -24,7 +38,7 @@
     }, 
     {
         "label": "Form",
-        "visible": false,
+        "visible": true,
         "items": [
         ]
     },
@@ -36,18 +50,6 @@
                 "href":"/wizard",
                 "label": "Wizard"
             }
-        ]
-    },
-    {
-        "label": "Layout",
-        "visible": false,
-        "items": [
-        ]
-    },
-    {
-        "label": "Apps",
-        "visible": false,
-        "items": [
         ]
     }
 ]

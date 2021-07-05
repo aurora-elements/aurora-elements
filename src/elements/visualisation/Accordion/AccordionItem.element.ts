@@ -104,8 +104,12 @@ class AeAccordionItem extends LitElement {
         let parent = this.parentNode;
         let expanded = parent!.querySelector("[expanded]");
 
+   
+
         if(!this.multipleSupport) {
-            expanded!.removeAttribute('expanded');
+            if(expanded !== null) {
+                expanded!.removeAttribute('expanded');
+            }
             this.setAttribute('expanded', '');
         } else {
             if(this.expanded) {

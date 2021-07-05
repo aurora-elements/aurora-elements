@@ -29,25 +29,25 @@ function generateErrorResponse(message: string) {
     };
   }
 
-function publicGet(apiUrl: string) {
+function get(apiUrl: string) {
     return request(apiUrl);
 }
 
-function publicCreate(apiUrl: string) {
+function create(apiUrl: string) {
     return request(apiUrl, 'POST');
 }
 
-function publicUpdate(apiUrl: string) {
+function update(apiUrl: string) {
     return request(apiUrl, 'PUT');
 }
 
-function publicRemove(apiUrl: string) {
+function remove(apiUrl: string) {
     return request(apiUrl, 'DELETE');
 }
 
 export default {
-    publicGet,
-    publicCreate,
-    publicUpdate,
-    publicRemove
+    get,
+    create,
+    update,
+    remove
 }

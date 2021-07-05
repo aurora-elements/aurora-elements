@@ -5,7 +5,7 @@ import { customElement, property } from 'lit/decorators.js';
 export class AeLoader extends LitElement {
       /* Properties */
     @property({attribute: 'part-loader-svg-selector'})
-    partLoaderSvgSelector!: string; 
+    partLoaderSvgSelector?: string; 
     
     /* Styles - LitElement */
     static get styles() {
@@ -65,5 +65,11 @@ export class AeLoader extends LitElement {
                 </circle>
             </svg>           
         `;
+    }
+}
+
+declare global {
+    interface HTMLElementTagNameMap {
+        'ae-loader': AeLoader;
     }
 }
