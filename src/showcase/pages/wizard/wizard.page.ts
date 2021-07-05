@@ -36,7 +36,7 @@ export class WizardPage extends LitElement {
                   headline="Ausgaben">
                 </ae-headline-block>
                 <ae-data-table
-                  rows="${juli2021}">
+                  rows="${juli2021}"></ae-data-table>
                 </ae-data-table>
               </ae-accordion-item>
             </ae-accordion>

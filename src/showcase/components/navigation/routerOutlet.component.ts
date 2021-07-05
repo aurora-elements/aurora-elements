@@ -6,7 +6,6 @@ import "../../pages/welcome/welcome.page";
 import "../../pages/whatsNew/whatsNew.page";
 import "../../pages/imprint/imprint.page";
 import "../../pages/visualisation/card/card.page";
-import "../../pages/wizard/wizard.page";
 import "../../pages/notFound/notFound.page";
 
 /* Routes */
@@ -30,11 +29,6 @@ export const routes = [
       name: "card",
       pattern: "visualisation/card",
       data: { title: "Imprint" }
-    },
-    {
-      name: "wizard",
-      pattern: "wizard",
-      data: { title: "Wizard" }
     },
     {
       name: "not-found",
@@ -73,7 +67,6 @@ export class RouterOutlet extends outlet(LitElement) {
             <whatsnew-page route="whatsnew"></whatsnew-page>
             <imprint-page route="imprint"></imprint-page>
             <card-page route="card"></card-page>
-            <wizard-page route="wizard"></wizard-page>
             <not-found-page route="not-found"></not-found-page>
         `;
     }
