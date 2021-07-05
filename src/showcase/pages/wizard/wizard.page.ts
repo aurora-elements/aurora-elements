@@ -5,7 +5,6 @@ import { property } from '@lit/reactive-element/decorators/property';
 import publicApi from '../../../functionalities/directives/spo/spo.api.fetch.public.directive';
 import { spoUriConverter } from '../../../functionalities/directives/spo/spo.uri.converter.directive';
 import { customElement } from 'lit/decorators.js';
-import juli2021 from './reports/juli2021.json';
 
 const apiUrl = 'https://lyreco.devdock.space.one/api';
 const scopeKey = 'lyreco';
@@ -27,20 +26,6 @@ export class WizardPage extends LitElement {
 		return html`
       <ae-wizard>
         <ae-wizard-tab header="Auswählen">
-          <ae-headline-block class="space-bottom-m40" headline="Finanzen">
-            <ae-accordion>
-              <ae-accordion-item label="Juli 2021">
-                <ae-headline-block 
-                  is-subheadline 
-                  part="space-bottom-m40" 
-                  headline="Ausgaben">
-                </ae-headline-block>
-                <ae-data-table
-                  rows="${juli2021}"></ae-data-table>
-                </ae-data-table>
-              </ae-accordion-item>
-            </ae-accordion>
-          </ae-headline-block>
           <ae-headline-block class="space-bottom-m40" headline="Public API with cards">
             <div style="display: grid; grid-template-columns: repeat(auto-fill,minmax(300px,1fr));grid-gap:20px;">
                 ${until(
