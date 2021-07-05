@@ -40,37 +40,36 @@ export const routes = [
 /* Router outlet */  
 @customElement('router-outlet')
 export class RouterOutlet extends outlet(LitElement) {
-    static get styles() {
-        return css`
-            [route] {
-                display: block;
-            }
-            [route]:not([style*="display: none"]) {
-                animation: slide-down 0.5s cubic-bezier(0.75, 0.02, 0.5, 1);
-            }
-            @keyframes slide-down {
-                0% {
-                opacity: 0;
-                transform: translateY(50px) scale(1.1);
-                }
-                100% {
-                opacity: 1;
-                transform: translateY(0) scale(1);
-                }
-            }
-        `;
-    }
+  render() {
+    return html`
+        <welcome-page route="welcome"></welcome-page>
+        <whatsnew-page route="whatsnew"></whatsnew-page>
+        <imprint-page route="imprint"></imprint-page>
+        <card-page route="card"></card-page>
+        <not-found-page route="not-found"></not-found-page>
+    `;
+}
 
-    render() {
-        return html`
-            <welcome-page route="welcome"></welcome-page>
-            <whatsnew-page route="whatsnew"></whatsnew-page>
-            <imprint-page route="imprint"></imprint-page>
-            <card-page route="card"></card-page>
-            <not-found-page route="not-found"></not-found-page>
-        `;
-    }
-
+static get styles() {
+    return css`
+        [route] {
+            display: block;
+        }
+        [route]:not([style*="display: none"]) {
+            animation: slide-down 0.5s cubic-bezier(0.75, 0.02, 0.5, 1);
+        }
+        @keyframes slide-down {
+            0% {
+            opacity: 0;
+            transform: translateY(50px) scale(1.1);
+            }
+            100% {
+            opacity: 1;
+            transform: translateY(0) scale(1);
+            }
+        }
+    `;
+  }
 }
 
 declare global {
