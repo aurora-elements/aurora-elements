@@ -1,1 +1,0 @@
-{"version":3,"file":"spo.p2f.document.interface.d.ts","sourceRoot":"","sources":["spo.p2f.document.interface.ts"],"names":[],"mappings":"AAAA,OAAO,EAAE,QAAQ,EAAE,MAAM,uBAAuB,CAAC;AACjD,OAAO,EAAE,WAAW,EAAE,MAAM,8BAA8B,CAAC;AAC3D,OAAO,EAAE,YAAY,EAAE,MAAM,sBAAsB,CAAC;AAEpD,MAAM,WAAW,WAAY,SAAQ,YAAY;IAC/C,KAAK,EAAE,QAAQ,CAAC;IAChB,QAAQ,EAAE,WAAW,CAAC;IACtB,IAAI,EAAE,MAAM,CAAC;CACd"}

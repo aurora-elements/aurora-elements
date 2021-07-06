@@ -1,1 +1,0 @@
-{"version":3,"file":"DataTable.element.d.ts","sourceRoot":"","sources":["DataTable.element.ts"],"names":[],"mappings":"AAAA,OAAO,EAAE,UAAU,EAAsB,MAAM,KAAK,CAAC;AAkHrD,qBACa,WAAY,SAAQ,UAAU;IAEgB,YAAY,WAAsC;IAE7E,IAAI,CAAC,EAAC,MAAM,CAAC;IAGzC,MAAM,KAAK,MAAM,mCAEhB;IAGD,MAAM;CAqCT;AAED,OAAO,CAAC,MAAM,CAAC;IACX,UAAU,qBAAqB;QAC3B,eAAe,EAAE,WAAW,CAAC;KAChC;CACJ"}
