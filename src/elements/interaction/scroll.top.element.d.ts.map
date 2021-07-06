@@ -1,0 +1,1 @@
+{"version":3,"file":"scroll.top.element.d.ts","sourceRoot":"","sources":["scroll.top.element.ts"],"names":[],"mappings":"AAAA,OAAO,EAAE,UAAU,EAAa,MAAM,KAAK,CAAC;AAyD5C,qBACa,WAAY,SAAQ,UAAU;IAIvC,eAAe,CAAC,EAAC,MAAM,CAAC;IAGxB,MAAM,KAAK,MAAM,mCAEhB;IAGD,MAAM;IAKN,YAAY;CAoBf;AAED,OAAO,CAAC,MAAM,CAAC;IACX,UAAU,qBAAqB;QAC3B,eAAe,EAAE,WAAW,CAAA;KAC/B;CACJ"}

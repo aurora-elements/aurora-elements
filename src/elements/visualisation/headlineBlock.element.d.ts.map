@@ -1,0 +1,1 @@
+{"version":3,"file":"headlineBlock.element.d.ts","sourceRoot":"","sources":["headlineBlock.element.ts"],"names":[],"mappings":"AAAA,OAAO,EACH,UAAU,EAGb,MAAM,KAAK,CAAC;AAsDb,qBACa,eAAgB,SAAQ,UAAU;IAG3C,QAAQ,CAAC,EAAE,MAAM,CAAC;IAMlB,aAAa,CAAC,EAAE,OAAO,CAAS;IAIhC,MAAM,KAAK,MAAM,mCAEhB;IAGD,MAAM;CAUT;AAED,OAAO,CAAC,MAAM,CAAC;IACX,UAAU,qBAAqB;QAC3B,mBAAmB,EAAE,eAAe,CAAA;KACvC;CACJ"}
