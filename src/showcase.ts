@@ -89,12 +89,30 @@ const styles = css`
     overflow-y: auto;
     position: relative;
   }
-  .nav aurora-accordion-item {
-    padding: 0 20px 0 20px;
+  .nav nav {
+    padding: 40px;
+    float:left;
+    width:100%;
+    box-sizing: border-box;
   }
-  .nav aurora-accordion-item[visible=false] {
-    display: none;
+  nav span {
+      width:100%;
+      float:left;
+      margin-bottom:10px;
+      text-transform: uppercase;
+      opacity:.3;
   }
+  nav div {
+      margin-bottom:20px;
+      float:left;
+      width:100%;
+  }
+  nav nav-link {
+      float:left;
+      width:100%;
+      margin-bottom:10px;
+  }
+
   .copyright {
     font-weight: 400;
     color: var(--grey-dark);
@@ -107,6 +125,7 @@ const styles = css`
     float: left; 
     font-size: 80%;
     padding-bottom:0;
+    margin-left:20px;
   }
 
   .content {
@@ -196,29 +215,30 @@ export class AeShowcase extends router(LitElement) {
                     <img class="logo" src="${logo}" />
                 </a>
                 <span class="claim">AURORA-ELEMENTS</span>
-                <ae-accordion slot="link">
+                <nav>
                     ${until(
                         nav
                         .then(items => html`                        
                             ${repeat(items, (item: any) => item.id, (item, index) => html`
                                 ${item.visible ?
                                     html`    
-                                            <ae-accordion-item
-                                                ?expanded=${index === 0}
-                                                label="${item.label}">
-                                                ${repeat(item.items, (item: any) => item.id, (item) => html`
-                                                    <nav-link href="${item.href}">
-                                                        ${item.label}
-                                                    </nav-link> 
-                                                `)}
-                                            </ae-accordion-item>`
+                                        <div>
+                                            <span>${item.label}</span>
+                                            ${repeat(item.items, (item: any) => item.id, (item) => html`
+                                                <nav-link href="${item.href}">
+                                                    ${item.label}
+                                                </nav-link> 
+                                            `)}
+                                        </div>`
+
                                     : html``
                                 }
                             `)}
                         `),
                         html``
                     )}  
-                </ae-accordion>
+                </nav>
+                
             </div>
             <section id="content" class="content">
                 <ae-theme-switcher target="ae-showcase"></ae-theme-switcher>

@@ -45,10 +45,6 @@
             {
                 "href":"/visualisation/card",
                 "label": "Card"
-            },
-            {
-                "href":"/wizard",
-                "label": "Wizard"
             }
         ]
     }

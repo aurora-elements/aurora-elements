@@ -16,7 +16,6 @@ export class NavLink extends navigator(LitElement) {
                 text-decoration: none;
                 width: 100%;
                 display: block;
-                padding: 0 20px 10px 20px;
                 line-height: 24px;
                 color: #9c9c9c;
                 outline: none !important;
@@ -24,6 +23,7 @@ export class NavLink extends navigator(LitElement) {
             }
             a[route-active] {
                 cursor: default;
+                font-weight: bold;
                 color: var(--link-color-hover, var(--color-accent-primary, #00569c));
             }
             a:hover {
@@ -46,16 +46,9 @@ export class NavLink extends navigator(LitElement) {
     handleClick(e:Event) {
         e.preventDefault();
 
-        let accordionItem = this.parentNode as HTMLElement;
-        let accordion = accordionItem.parentNode as HTMLElement;
+        let navItemGroup = this.parentNode as HTMLElement;
 
-        let links = accordionItem.querySelectorAll('nav-link');
-
-        let test = accordion.querySelectorAll('ae-accordion-item');
-
-        for (let i = 0; i < test.length; i++) { console.log('test[i]', test[i]);
-            test[i].removeAttribute('expanded');
-        }
+        let links = navItemGroup.querySelectorAll('nav-link');
 
         for (let i = 0; i < links.length; i++) {
             links[i].removeAttribute('route-active');
@@ -65,28 +58,18 @@ export class NavLink extends navigator(LitElement) {
 
         this.setAttribute('route-active', '');
 
-        accordionItem.setAttribute('expanded', '');
     }
 
     firstUpdated() {
-        let accordionItem = this.parentNode as HTMLElement;
-        let accordion = accordionItem.parentNode as HTMLElement;
+        let navItemGroup = this.parentNode as HTMLElement;
 
-        let links = accordionItem.querySelectorAll('nav-link');
-
-        let test = accordion.querySelectorAll('ae-accordion-item');
-
-        for (let i = 0; i < test.length; i++) {
-            test[i].removeAttribute('expanded');
-        }
+        let links = navItemGroup.querySelectorAll('nav-link');
 
         for (let i = 0; i < links.length; i++) {
             let link = links[i].shadowRoot.querySelector('a');
             if (link !== null) {
                 if (links[i].href === window.location.pathname) {
                     link.setAttribute('route-active', '');
-                    let parentEl = links[i].parentNode as HTMLElement;
-                    parentEl.setAttribute('expanded', '')
                 } else {
                     link.removeAttribute('route-active');
                 }

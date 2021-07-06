@@ -30,10 +30,7 @@
         "label": "Interaction",
         "visible": true,
         "items": [
-            {
-                "href":"/visualisation/card",
-                "label": "Card"
-            }
+
         ]
     }, 
     {
@@ -47,8 +44,8 @@
         "visible": true,
         "items": [
             {
-                "href":"/wizard",
-                "label": "Wizard"
+                "href":"/visualisation/card",
+                "label": "Card"
             }
         ]
     }
