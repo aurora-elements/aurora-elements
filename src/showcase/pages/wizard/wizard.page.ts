@@ -1,9 +1,7 @@
 import { LitElement, html } from 'lit';
 import { until } from 'lit/directives/until.js';
-import { Wizard } from '../../../elements/visualisation/wizard/wizard.element';
-import { property } from '@lit/reactive-element/decorators/property';
-import publicApi from '../../../functionalities/directives/spo/spo.api.fetch.public.directive';
-import { spoUriConverter } from '../../../functionalities/directives/spo/spo.uri.converter.directive';
+import publicApi from '../../../../src/functionalities/directives/spo/spo.api.fetch.public.directive';
+import { spoUriConverter } from '../../../../src/functionalities/directives/spo/spo.uri.converter.directive';
 import { customElement } from 'lit/decorators.js';
 
 const apiUrl = 'https://lyreco.devdock.space.one/api';
@@ -12,9 +10,6 @@ const spoP2fDocumentsUrl = `${apiUrl}/scope/${scopeKey}/items/p2fDocumentItem`;
 
 @customElement('wizard-page')
 export class WizardPage extends LitElement {
-	/* Properties */
-	@property({ attribute: false })
-	wizard: Wizard = new Wizard();
 
 
 	firstUpdated() {
@@ -24,8 +19,7 @@ export class WizardPage extends LitElement {
 		const articles = publicApi.get(spoP2fDocumentsUrl);
     let test = ["Bezeichung","Betrag","Anmerkung"];
 		return html`
-      <ae-wizard>
-        <ae-wizard-tab header="Auswählen">
+
           <ae-headline-block class="space-bottom-m40" headline="Public API with cards">
             <div style="display: grid; grid-template-columns: repeat(auto-fill,minmax(300px,1fr));grid-gap:20px;">
                 ${until(
@@ -52,24 +46,7 @@ export class WizardPage extends LitElement {
               </div>
           </ae-headline-block>
 
-
-          <a id="test" @click=${this.nextWizardStep} href="#">next</a>
-        </ae-wizard-tab>
-        <ae-wizard-tab header="Anreichern">
-          <h1>Anreichern</h1>
-        </ae-wizard-tab>
-        <ae-wizard-tab header="Bearbeiten">
-          <h1>Bearbeiten</h1>
-        </ae-wizard-tab>
-        <ae-wizard-tab header="Veröffentlichen">
-          <h1>Veröffentlichen</h1>
-        </ae-wizard-tab>
-      </ae-wizard>
     `;
 	}
 
-	/* Methods */
-	nextWizardStep() {
-		this.wizard.nextStep();
-	}
 }

@@ -1,0 +1,1 @@
+{"version":3,"file":"spo.p2f.category.interface.d.ts","sourceRoot":"","sources":["spo.p2f.category.interface.ts"],"names":[],"mappings":"AAAA,OAAO,EAAE,QAAQ,EAAE,MAAM,uBAAuB,CAAC;AACjD,OAAO,EAAE,YAAY,EAAE,MAAM,sBAAsB,CAAC;AAEpD,MAAM,WAAW,WAAY,SAAQ,YAAY;IAC/C,KAAK,CAAC,EAAE,QAAQ,CAAC;IACjB,QAAQ,EAAE,OAAO,CAAC;IAClB,IAAI,CAAC,EAAE,MAAM,CAAC;CACf"}
