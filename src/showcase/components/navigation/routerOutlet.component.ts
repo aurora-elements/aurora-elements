@@ -1,5 +1,5 @@
 import { LitElement, html, css } from "lit";
-import { customElement } from 'lit/decorators.js';
+import { customElement, property, query } from 'lit/decorators.js';
 import { outlet } from "lit-element-router";
 /* Pages */
 import "../../pages/welcome/welcome.page";
@@ -40,36 +40,43 @@ export const routes = [
 /* Router outlet */  
 @customElement('router-outlet')
 export class RouterOutlet extends outlet(LitElement) {
-  render() {
-    return html`
-        <welcome-page route="welcome"></welcome-page>
-        <whatsnew-page route="whatsnew"></whatsnew-page>
-        <imprint-page route="imprint"></imprint-page>
-        <card-page route="card"></card-page>
-        <not-found-page route="not-found"></not-found-page>
-    `;
-}
+    @property({ type: String, attribute: 'route-active' })
+    routeActive: string;
 
-static get styles() {
-    return css`
-        [route] {
-            display: block;
-        }
-        [route]:not([style*="display: none"]) {
-            animation: slide-down 0.5s cubic-bezier(0.75, 0.02, 0.5, 1);
-        }
-        @keyframes slide-down {
-            0% {
-            opacity: 0;
-            transform: translateY(50px) scale(1.1);
+    render() {
+        return html`
+            <welcome-page route="welcome"></welcome-page>
+            <whatsnew-page route="whatsnew"></whatsnew-page>
+            <imprint-page route="imprint"></imprint-page>
+            <card-page route="card"></card-page>
+            <not-found-page route="not-found"></not-found-page>
+        `;
+    }
+
+    static get styles() {
+        return css`
+            [route] {
+                display: block;
             }
-            100% {
-            opacity: 1;
-            transform: translateY(0) scale(1);
+            [route]:not([style*="display: none"]) {
+                animation: slide-down 0.5s cubic-bezier(0.75, 0.02, 0.5, 1);
             }
-        }
-    `;
-  }
+            @keyframes slide-down {
+                0% {
+                opacity: 0;
+                transform: translateY(50px) scale(1.1);
+                }
+                100% {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+                }
+            }
+        `;
+    }
+
+    updated() {
+        this.dispatchEvent(new CustomEvent('route-change-event', {bubbles: true, composed: true}));
+    }
 }
 
 declare global {

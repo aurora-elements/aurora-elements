@@ -1,5 +1,5 @@
 import { LitElement, html, css } from "lit";
-import { customElement, property } from "lit/decorators.js";
+import { customElement, property, query } from "lit/decorators.js";
 import { router } from "lit-element-router";
 import { until } from 'lit/directives/until';
 import { repeat } from 'lit/directives/repeat.js';
@@ -205,6 +205,9 @@ export class AeShowcase extends router(LitElement) {
     @property({ type: Object }) params = {};
     @property({ type: Object }) query = {};
 
+    @query('#content')
+    content: HTMLElement;
+
 
     static get styles() {
         return [styles];
@@ -275,10 +278,12 @@ export class AeShowcase extends router(LitElement) {
           this.params = params;
           this.query = query;
           document.title = data.title ? data.title + ' - aurora-elements showcase' : 'aurora-elements showcase';
-          window.scrollTo({
-            top: 0,
-            behavior: "auto"
-          })
+    }
+
+    firstUpdated() {
+        this.addEventListener('route-change-event', () => {
+            this.content.scrollTop = 0;
+        })
     }
 
 }
