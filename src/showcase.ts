@@ -98,7 +98,7 @@ const styles = css`
   nav span {
       width:100%;
       float:left;
-      margin-bottom:10px;
+      margin-bottom:5px;
       text-transform: uppercase;
       opacity: .2;
       font-weight: 700;
@@ -113,7 +113,6 @@ const styles = css`
   nav nav-link {
       float:left;
       width:100%;
-      margin-bottom:10px;
   }
 
   .copyright {
