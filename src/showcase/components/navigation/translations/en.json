@@ -27,20 +27,7 @@
         ]
     },
     {
-        "label": "Interaction",
-        "visible": true,
-        "items": [
-
-        ]
-    }, 
-    {
-        "label": "Form",
-        "visible": true,
-        "items": [
-        ]
-    },
-    {
-        "label": "Visiualisation",
+        "label": "Elements",
         "visible": true,
         "items": [
             {

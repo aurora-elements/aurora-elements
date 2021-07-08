@@ -100,7 +100,10 @@ const styles = css`
       float:left;
       margin-bottom:10px;
       text-transform: uppercase;
-      opacity:.3;
+      opacity: .2;
+      font-weight: 700;
+      font-size: 80%;
+      letter-spacing: .03em;
   }
   nav div {
       margin-bottom:20px;

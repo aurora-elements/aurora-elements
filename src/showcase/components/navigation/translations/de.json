@@ -27,19 +27,7 @@
         ]
     },
     {
-        "label": "Interaktion",
-        "visible": true,
-        "items": [
-        ]
-    }, 
-    {
-        "label": "Formular",
-        "visible": true,
-        "items": [
-        ]
-    },
-    {
-        "label": "Visualisierung",
+        "label": "Elemente",
         "visible": true,
         "items": [
             {
