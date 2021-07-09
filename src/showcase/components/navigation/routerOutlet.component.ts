@@ -40,8 +40,7 @@ export const routes = [
 /* Router outlet */  
 @customElement('router-outlet')
 export class RouterOutlet extends outlet(LitElement) {
-    @property({ type: String, attribute: 'route-active' })
-    routeActive: string;
+    @property({ type: String, attribute: 'route-active' }) routeActive!: string;
 
     render() {
         return html`
