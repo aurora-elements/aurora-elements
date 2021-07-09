@@ -127,6 +127,8 @@ const styles = css`
     float: left; 
     font-size: 80%;
     padding-bottom:0;
+  }
+  footer nav-link {
     margin-left:20px;
   }
 
@@ -205,8 +207,7 @@ export class AeShowcase extends router(LitElement) {
     @property({ type: Object }) params = {};
     @property({ type: Object }) query = {};
 
-    @query('#content')
-    content: HTMLElement;
+    @query('#content') content!: HTMLElement;
 
 
     static get styles() {
