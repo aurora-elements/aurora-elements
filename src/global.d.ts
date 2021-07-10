@@ -1,9 +1,14 @@
 declare module "*.jpg" {
-  export default "" as string;
+  const content: string
+  export default content
 }
-declare module "*.png" {
-  export default "" as string;
-}
+
 declare module "*.json" {
-  export default "" as string;
+  const content: string
+  export default content
+}
+
+declare module '*.png' {
+  const content: string
+  export default content
 }
