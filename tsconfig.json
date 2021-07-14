@@ -12,10 +12,10 @@
     "experimentalDecorators": true,
     "esModuleInterop": true
   },
-  "include": [
-    "./src/"
+  "files": [
+    "src/showcase.ts"
   ],
-  "exclude": [
-    "node_modules"
+  "include": [
+    "src/**/*.d.ts"
   ]
 }
