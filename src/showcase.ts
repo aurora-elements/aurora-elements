@@ -3,21 +3,20 @@ import { customElement, property, query } from "lit/decorators.js";
 import { router } from "lit-element-router";
 import { until } from 'lit/directives/until';
 import { repeat } from 'lit/directives/repeat.js';
-import { locale } from './functionalities/directives/translater.directive';
 import logo from './showcase/img/aurora-logo.png';
-import translate_de from './showcase/components/navigation/translations/de.json';
-import translate_en from './showcase/components/navigation/translations/en.json';
 import { routes } from "./showcase/components/navigation/routerOutlet.component";
-import "./standalone"
-import "./elements/theme.switcher.element";
+// Aurora elements
+import "./standalone";
 
-//Components
+// Showcase components
 import "./showcase/components/navigation/link.component";
 import "./showcase/components/navigation/routerOutlet.component";
+import './showcase/components/headlineBlock.component';
+import './showcase/components/dataTable.component';
+import './showcase/components/codeMirror.component';
 
-const requestUrl = `${locale === 'de' ? translate_de : translate_en}`;
-
-const nav = fetch(requestUrl).then(res => res.json());
+// Showcase configuration
+import { nav } from "./showcase.config";
 
 const styles = css`
  /* scrollbar */
