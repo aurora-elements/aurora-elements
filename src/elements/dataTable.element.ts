@@ -3,7 +3,7 @@ import { until } from 'lit/directives/until';
 import { repeat } from 'lit/directives/repeat.js';
 import { unsafeHTML } from 'lit/directives/unsafe-html.js';
 import { customElement, property } from 'lit/decorators.js';
-import { locale } from '../../../functionalities/directives/translater.directive';
+import { locale } from '../functionalities/directives/translater.directive';
 
 const styles = css`
     :host {

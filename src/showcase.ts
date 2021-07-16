@@ -9,7 +9,7 @@ import translate_de from './showcase/components/navigation/translations/de.json'
 import translate_en from './showcase/components/navigation/translations/en.json';
 import { routes } from "./showcase/components/navigation/routerOutlet.component";
 import "./standalone"
-import "./elements/interaction/theme.switcher.element";
+import "./elements/theme.switcher.element";
 
 //Components
 import "./showcase/components/navigation/link.component";
@@ -171,8 +171,8 @@ const styles = css`
     box-sizing: border-box;
     max-width: 1080px;
   }
-  aurora-code-mirror,
-  aurora-headline-block[is-subheadline] {
+  ae-code-mirror,
+  ae-headline-block[is-subheadline] {
     margin-bottom: 40px;
   }
 
