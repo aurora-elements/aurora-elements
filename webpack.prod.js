@@ -2,8 +2,6 @@ const path = require("path");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const CopyWebpackPlugin = require("copy-webpack-plugin");
-const WorkboxPlugin = require('workbox-webpack-plugin');
-const WebpackPwaManifest = require('webpack-pwa-manifest');
 
 module.exports = {
   mode: "production",
@@ -53,36 +51,6 @@ module.exports = {
     new CopyWebpackPlugin({
       patterns: [
         {from: './src/showcase', to: 'showcase'},
-      ]
-    }),
-    new WorkboxPlugin.GenerateSW({
-      clientsClaim: true,
-      skipWaiting: true,
-      maximumFileSizeToCacheInBytes: 5*1024*1024,
-    }),
-    new WebpackPwaManifest({
-      filename: "manifest.json",
-      name: 'aurora-elements',
-      short_name: 'aurora',
-      description: 'aurora elements showcase',
-      background_color: '#ffffff',
-      theme_color: '#ffffff',
-      inject: true,
-      fingerprints: true,
-      icons: [
-        {
-          src: path.resolve('src/showcase/img/logoOriginal.png'),
-          sizes: [96, 128, 192, 256, 384, 512] 
-        },
-        {
-          src: path.resolve('src/showcase/img/logoOriginal.png'),
-          size: '1024x1024' 
-        },
-        {
-          src: path.resolve('src/showcase/img/logoOriginal.png'),
-          size: '1024x1024',
-          purpose: 'maskable'
-        }
       ]
     }),
   ],

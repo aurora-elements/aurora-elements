@@ -11,11 +11,5 @@
     "removeComments": true,
     "experimentalDecorators": true,
     "esModuleInterop": true
-  },
-  "files": [
-    "src/showcase.ts"
-  ],
-  "include": [
-    "src/**/*.d.ts"
-  ]
+  }
 }

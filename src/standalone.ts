@@ -1,3 +1,6 @@
+// spo api fetch
+import './functionalities/directives/spo/spo.api.fetch.directive';
+import './functionalities/directives/spo/spo.api.fetch.public.directive';
 // Card
 import './elements/card.element';
 // Loader
