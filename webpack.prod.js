@@ -5,7 +5,6 @@ const CopyWebpackPlugin = require("copy-webpack-plugin");
 
 module.exports = {
   mode: "production",
-  devtool: 'inline-source-map',
   entry: {
     standalone: './src/standalone.ts',
     showcase: './src/showcase.ts'

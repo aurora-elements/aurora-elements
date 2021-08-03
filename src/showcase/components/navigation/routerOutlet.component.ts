@@ -1,5 +1,5 @@
 import { LitElement, html, css } from "lit";
-import { customElement, property, query } from 'lit/decorators.js';
+import { customElement, property } from 'lit/decorators.js';
 import { outlet } from "lit-element-router";
 /* Pages */
 import "../../pages/welcome/welcome.page";

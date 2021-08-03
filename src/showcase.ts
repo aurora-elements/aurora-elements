@@ -224,7 +224,7 @@ export class AeShowcase extends router(LitElement) {
                     ${until(
                         nav
                         .then(items => html`                        
-                            ${repeat(items, (item: any) => item.id, (item, index) => html`
+                            ${repeat(items, (item: any) => item.id, (item) => html`
                                 ${item.visible ?
                                     html`    
                                         <div>
