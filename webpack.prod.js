@@ -6,7 +6,7 @@ const CopyWebpackPlugin = require("copy-webpack-plugin");
 module.exports = {
   mode: "production",
   entry: {
-    standalone: './src/standalone.ts',
+    standalone: './src/aurora-elements.ts',
     showcase: './src/showcase.ts'
   },
   module: {
