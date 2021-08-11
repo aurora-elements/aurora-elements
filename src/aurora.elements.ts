@@ -12,3 +12,5 @@ import './elements/theme.switcher.element';
 // Accordion
 import './elements/accordion/accordion.element';
 import './elements/accordion/accordionItem.element';
+// Dropdown button
+import './elements/dropdown.button.element';

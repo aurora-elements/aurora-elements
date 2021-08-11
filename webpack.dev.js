@@ -1,8 +1,6 @@
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const CopyWebpackPlugin = require("copy-webpack-plugin");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
-const WorkboxPlugin = require('workbox-webpack-plugin');
-const WebpackPwaManifest = require('webpack-pwa-manifest');
 const path = require("path");
 
 module.exports = {
@@ -11,7 +9,7 @@ module.exports = {
     historyApiFallback: true,
   },
   entry: {
-    standalone: './src/standalone.ts',
+    standalone: './src/aurora.elements.ts',
     showcase: './src/showcase.ts'
   },
   module: {
@@ -59,36 +57,6 @@ module.exports = {
     new HtmlWebpackPlugin({
         chunks: ['showcase'],
         template: './src/showcase.html'
-    }),
-    new WorkboxPlugin.GenerateSW({
-      clientsClaim: true,
-      skipWaiting: true,
-      maximumFileSizeToCacheInBytes: 5*1024*1024,
-    }),
-    new WebpackPwaManifest({
-      filename: "manifest.json",
-      name: 'aurora-elements',
-      short_name: 'aurora',
-      description: 'aurora elements showcase',
-      background_color: '#ffffff',
-      theme_color: '#ffffff',
-      inject: true,
-      fingerprints: true,
-      icons: [
-        {
-          src: path.resolve('src/showcase/img/logoOriginal.png'),
-          sizes: [96, 128, 192, 256, 384, 512] // multiple sizes
-        },
-        {
-          src: path.resolve('src/showcase/img/logoOriginal.png'),
-          size: '1024x1024' // you can also use the specifications pattern
-        },
-        {
-          src: path.resolve('src/showcase/img/logoOriginal.png'),
-          size: '1024x1024',
-          purpose: 'maskable'
-        }
-      ]
     }),
   ],
   resolve: {
