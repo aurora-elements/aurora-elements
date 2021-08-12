@@ -9,10 +9,10 @@ const styles = css`
         grid-template-rows: auto;
         width: 100%;
     }
-    ::slotted(aurora-accordion-item){
+    ::slotted(ae-accordion-item){
         border-bottom: 1px solid var(--accordion-item-border-color, var(--border-color, #c1c1c1));
     }
-    ::slotted(aurora-accordion-item:last-child) {
+    ::slotted(ae-accordion-item:last-child) {
         border-bottom: none;
     }
     ::slotted([visible=true]:last-child) {
