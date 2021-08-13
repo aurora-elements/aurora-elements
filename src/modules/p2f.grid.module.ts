@@ -27,12 +27,13 @@ export class AeP2fGrid extends LitElement {
   }
 
   render() {
+
     const spoP2fDocumentsUrl = `${this.url}/api/scope/${this.scopeKey}/items/p2fDocumentItem`;
-    const articles = publicApi.get(spoP2fDocumentsUrl);
+    const apiResponse = publicApi.get(spoP2fDocumentsUrl);
 
     return html`
       ${until(
-        articles.then(
+        apiResponse.then(
           (documents) => html`
             ${documents.map(
               (document: any) =>
@@ -44,8 +45,7 @@ export class AeP2fGrid extends LitElement {
                       this.url + '/api',
                       document.asset.thumbnailUri
                     )}"
-                    id=${document.id}
-                  >
+                    id=${document.id}>
                   </ae-card>
                 `
             )}
