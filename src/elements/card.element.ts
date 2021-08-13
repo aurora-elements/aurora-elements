@@ -1,3 +1,5 @@
+
+import "./loader.element";
 import { LitElement, html, css } from 'lit';
 import { customElement, property, query } from 'lit/decorators.js';
 import { ifDefined } from 'lit/directives/if-defined.js';

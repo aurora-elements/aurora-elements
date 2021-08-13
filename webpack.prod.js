@@ -5,6 +5,7 @@ const CopyWebpackPlugin = require("copy-webpack-plugin");
 
 module.exports = {
   mode: "production",
+  devtool: 'source-map',
   entry: {
     aurora: './src/standalone.ts',
     showcase: './src/showcase.ts'
