@@ -6,6 +6,7 @@ import "../../pages/welcome/welcome.page";
 import "../../pages/whatsNew/whatsNew.page";
 import "../../pages/imprint/imprint.page";
 import "../../pages/visualisation/card/card.page";
+import "../../pages/page2flip/p2f.grid.page";
 import "../../pages/notFound/notFound.page";
 
 /* Routes */
@@ -28,7 +29,12 @@ export const routes = [
     {
       name: "card",
       pattern: "visualisation/card",
-      data: { title: "Imprint" }
+      data: { title: "Card" }
+    },
+    {
+      name: "p2fgrid",
+      pattern: "/modules/page2flip/grid",
+      data: { title: "page2flip Grid" }
     },
     {
       name: "not-found",
@@ -48,6 +54,7 @@ export class RouterOutlet extends outlet(LitElement) {
             <whatsnew-page route="whatsnew"></whatsnew-page>
             <imprint-page route="imprint"></imprint-page>
             <card-page route="card"></card-page>
+            <p2f-grid-page route="p2fgrid"></p2f-grid-page>
             <not-found-page route="not-found"></not-found-page>
         `;
     }

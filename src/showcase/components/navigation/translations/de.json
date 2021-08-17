@@ -35,5 +35,15 @@
                 "label": "Card"
             }
         ]
+    },
+    {
+        "label": "Module",
+        "visible": true,
+        "items": [
+            {
+                "href":"/modules/page2flip/grid",
+                "label": "page2flip Grid"
+            }
+        ]
     }
 ]

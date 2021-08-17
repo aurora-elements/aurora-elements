@@ -135,6 +135,7 @@ const styles = css`
     grid-area: content;
     overflow-y: auto;
     overflow-x: hidden;
+    position:relative;
   }
 
   ae-theme-switcher {
@@ -186,19 +187,6 @@ const styles = css`
     } 
   }
 `;
-
-
-// register sw
-if ('serviceWorker' in navigator) {
-    window.addEventListener('load', () => {
-        navigator.serviceWorker.register('/service-worker.js').then(registration => {
-            console.log('SW registered: ', registration);
-        }).catch(registrationError => {
-            console.log('SW registration failed: ', registrationError);
-        });
-    });
-
-}
 
 @customElement('ae-showcase')
 export class AeShowcase extends router(LitElement) {

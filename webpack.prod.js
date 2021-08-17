@@ -7,8 +7,9 @@ module.exports = {
   mode: "production",
   devtool: 'source-map',
   entry: {
-    aurora: './src/standalone.ts',
-    showcase: './src/showcase.ts'
+    'aurora.elements': './src/standalone.ts',
+    showcase: './src/showcase.ts',
+    'aurora.modules': './src/modules.ts'
   },
   module: {
     rules: [
