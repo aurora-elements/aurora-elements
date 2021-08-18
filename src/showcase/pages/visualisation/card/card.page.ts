@@ -1,5 +1,5 @@
 
-import "../../../../modules/p2f.grid.module";
+import "../../../../modules/p2f/grid/p2f.grid.module";
 import "../../../../elements/card.element";
 import "../../../../elements/loader.element";
 import "../../../components/headlineBlock.component";
