@@ -61,9 +61,6 @@ export class AeP2fGrid extends LitElement {
   @property({type:String, attribute: 'action-edit'})
   actionEdit: string;
 
-  @property({type:String, attribute: 'action-delete'})
-  actionDelete: any = 'removeItem';
-
   @property({type:String, attribute: 'action-label-preview'})
   actionLabelPreview: string = 'Preview';
 
@@ -72,9 +69,6 @@ export class AeP2fGrid extends LitElement {
 
   @property({type:String, attribute: 'action-label-delete'})
   actionLabelDelete: string = 'Delete';
-
-  @property({type:String, attribute: 'action-delete-description'})
-  actionDeleteDescription: string = 'Are you sure you want to delete the "{}" document?';
 
   static get styles() {
     return [styles];
@@ -145,10 +139,6 @@ export class AeP2fGrid extends LitElement {
           </slot>
         `
       )}
-      <ae-confirm-dialog
-        description="${this.actionDeleteDescription}"
-        action="${this.actionDelete}">
-    </ae-confirm-dialog>
     `;
   }
 }

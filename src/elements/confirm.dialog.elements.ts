@@ -23,7 +23,7 @@ export class AeConfirmDialog extends LitElement {
     btnLabelSubmit: string = 'Yes';
 
     @property({attribute: 'action'})
-    deleteAction: any;
+    deleteAction: any = 'removeItem';
 
     @property({type: String, attribute: false})
     deleteTargetName: string;
