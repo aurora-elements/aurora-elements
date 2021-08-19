@@ -99,7 +99,8 @@ export const styles = css`
   .p2f-grid-item-actions a.action-primary span {
     width:                  100%;
     display:                block;
-    text-align:             center;                         
+    text-align:             center;
+    user-select:            none;                         
   }
   .p2f-grid-item-actions.failed a.action-viewer,
   .p2f-grid-item-actions.failed a.action-hotspots,

@@ -14,3 +14,5 @@ import './elements/accordion/accordion.element';
 import './elements/accordion/accordionItem.element';
 // Dropdown button
 import './elements/dropdown.button.element';
+// Confirm dialog
+import './elements/confirm.dialog.element';
