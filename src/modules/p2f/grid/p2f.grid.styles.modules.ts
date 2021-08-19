@@ -101,6 +101,13 @@ export const styles = css`
     display:                block;
     text-align:             center;                         
   }
+  .p2f-grid-item-actions.failed a.action-viewer,
+  .p2f-grid-item-actions.failed a.action-hotspots,
+  .p2f-grid-item-actions.converting a.action-viewer,
+  .p2f-grid-item-actions.converting a.action-hotspots {
+    pointer-events:         none;
+    filter:                 grayscale(1);
+  }
   ae-card:hover .p2f-grid-item-actions {
     opacity:                1;
   }
@@ -111,7 +118,7 @@ export const styles = css`
     left:                   0;
     padding:                7px 8px 0px 9px;
     background:           #888;
-    z-index:                1;
+    z-index:                10;
     color:                #fff;
     font-size:              20px;
   }
@@ -127,5 +134,28 @@ export const styles = css`
     font-weight:            400;
     width:                  100%;
     box-sizing:             border-box;
+  }
+  .converting-status {
+    padding:                10.5px 20px;
+    font-size:              12px;
+    color:                #fff;
+    font-weight:            700;
+    text-align:             left;
+    display:                block;
+    position:               absolute;
+    top:                    0;
+    right:                  0;
+    width:                  100%;
+    box-sizing:             border-box;
+    z-index:                1;
+    overflow:               hidden;
+    text-overflow:          ellipsis;
+    white-space:            nowrap;
+  }
+  .converting-status.failed {
+    background:               #ed5565;
+  }
+  .converting-status.converting {
+    background:               #f57c00;
   }
 `;

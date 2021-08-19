@@ -24,56 +24,65 @@ export function publishStateTemplate(document: P2fDocument) {
 }
 
 export function actionsTemplate(t:any, document: P2fDocument) {
-    return html`
-      <div class="p2f-grid-item-actions" slot="bottom">
-        <a 
-          href="#"
-          onclick="${t.actionEdit ? t.actionEdit : 'editItem(' + document.id + ')'}"
-          class="${t.actionPrimary === 'edit' ? 'action-primary' : ''}">
-          <svg 
-            viewBox="0 0 24 24">
-            <path 
-              fill="currentColor" 
-              d="M16.84,2.73C16.45,2.73 16.07,2.88 15.77,3.17L13.65,5.29L18.95,10.6L21.07,8.5C21.67,7.89 21.67,6.94 21.07,6.36L17.9,3.17C17.6,2.88 17.22,2.73 16.84,2.73M12.94,6L4.84,14.11L7.4,14.39L7.58,16.68L9.86,16.85L10.15,19.41L18.25,11.3M4.25,15.04L2.5,21.73L9.2,19.94L8.96,17.78L6.65,17.61L6.47,15.29" />
-          </svg>
-          <span>${t.actionLabelEdit}</span>
-        </a>
-        <a 
-          href="${t.url +'/api/scope/' + t.scopeKey + '/asset/' + document.asset.id + '/format/p2fdocument/content/index.html'}" 
-          class="${t.actionPrimary === 'viewer' ? 'action-primary' : ''}">
-          <svg 
-            viewBox="0 0 24 24">
-            <path 
-              fill="currentColor" 
-              d="M17,18C17.56,18 18,18.44 18,19C18,19.56 17.56,20 17,20C16.44,20 16,19.56 16,19C16,18.44 16.44,18 17,18M17,15C14.27,15 11.94,16.66 11,19C11.94,21.34 14.27,23 17,23C19.73,23 22.06,21.34 23,19C22.06,16.66 19.73,15 17,15M17,21.5A2.5,2.5 0 0,1 14.5,19A2.5,2.5 0 0,1 17,16.5A2.5,2.5 0 0,1 19.5,19A2.5,2.5 0 0,1 17,21.5M9.27,20H6V4H13V9H18V13.07C18.7,13.15 19.36,13.32 20,13.56V8L14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H10.5C10,21.41 9.59,20.73 9.27,20Z" />
-          </svg>
-          <span>${t.actionLabelPreview}</span>
-        </a> 
-        <a 
-          href="${'https://creator.page2flip.customer.space.one/wizard/hotspot-editor-standalone?p=' + t.url + '/api/scope/' + t.scopeKey + '/asset/' + document.asset.id +'/format/p2fdocument/content/'}"
-          class="${t.actionPrimary === 'hotspots' ? 'action-primary' : ''}">
-          <svg 
-            viewBox="0 0 24 24">
-            <path 
-              fill="currentColor" 
-              d="M22.08,11.04H20.08V4H13.05V2H11.04V4H4V11.04H2V13.05H4V20.08H11.04V22.08H13.05V20.08H20.08V13.05H22.08V11.04M18.07,18.07H13.05V16.06H11.04V18.07H6V13.05H8.03V11.04H6V6H11.04V8.03H13.05V6H18.07V11.04H16.06V13.05H18.07V18.07M13.05,12.05A1,1 0 0,1 12.05,13.05C11.5,13.05 11.04,12.6 11.04,12.05C11.04,11.5 11.5,11.04 12.05,11.04C12.6,11.04 13.05,11.5 13.05,12.05Z" />
-          </svg>
-          <span>${t.actionLabelHotspots}</span>
-        </a>
-        <a 
-          href="#"                      
-          @click="${(e:Event) => t.delete(e,document.id, document.name)}"
-          class="${t.actionPrimary === 'delete' ? 'action-primary' : ''}">
-          <svg 
-            viewBox="0 0 24 24">
-            <path 
-              fill="currentColor" 
-              d="M14.12,10.47L12,12.59L9.87,10.47L8.46,11.88L10.59,14L8.47,16.12L9.88,17.53L12,15.41L14.12,17.53L15.53,16.12L13.41,14L15.53,11.88L14.12,10.47M15.5,4L14.5,3H9.5L8.5,4H5V6H19V4H15.5M6,19A2,2 0 0,0 8,21H16A2,2 0 0,0 18,19V7H6V19M8,9H16V19H8V9Z" />
-          </svg>
-          <span>${t.actionLabelDelete}</span>
-        </a>                    
-      </div>
-    `;
+
+  let convertingStatus: string;
+
+  document.asset.formats.map((format) => {
+    if(format.name === 'p2fdocument'){
+        convertingStatus = format.status;
+    }
+  });
+
+  return html`
+    <div class="p2f-grid-item-actions ${convertingStatus}" slot="bottom">
+      <a 
+        href="#"
+        onclick="event.preventDefault();${t.actionEdit ? t.actionEdit : 'editItem(' + document.id + ')'}"
+        class="${t.actionPrimary === 'edit' ? 'action-primary' : ''} action-edit">
+        <svg 
+          viewBox="0 0 24 24">
+          <path 
+            fill="currentColor" 
+            d="M16.84,2.73C16.45,2.73 16.07,2.88 15.77,3.17L13.65,5.29L18.95,10.6L21.07,8.5C21.67,7.89 21.67,6.94 21.07,6.36L17.9,3.17C17.6,2.88 17.22,2.73 16.84,2.73M12.94,6L4.84,14.11L7.4,14.39L7.58,16.68L9.86,16.85L10.15,19.41L18.25,11.3M4.25,15.04L2.5,21.73L9.2,19.94L8.96,17.78L6.65,17.61L6.47,15.29" />
+        </svg>
+        <span>${t.actionLabelEdit}</span>
+      </a>
+      <a 
+        href="${t.url +'/api/scope/' + t.scopeKey + '/asset/' + document.asset.id + '/format/p2fdocument/content/index.html'}" 
+        class="${t.actionPrimary === 'viewer' ? 'action-primary' : ''} action-viewer">
+        <svg 
+          viewBox="0 0 24 24">
+          <path 
+            fill="currentColor" 
+            d="M17,18C17.56,18 18,18.44 18,19C18,19.56 17.56,20 17,20C16.44,20 16,19.56 16,19C16,18.44 16.44,18 17,18M17,15C14.27,15 11.94,16.66 11,19C11.94,21.34 14.27,23 17,23C19.73,23 22.06,21.34 23,19C22.06,16.66 19.73,15 17,15M17,21.5A2.5,2.5 0 0,1 14.5,19A2.5,2.5 0 0,1 17,16.5A2.5,2.5 0 0,1 19.5,19A2.5,2.5 0 0,1 17,21.5M9.27,20H6V4H13V9H18V13.07C18.7,13.15 19.36,13.32 20,13.56V8L14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H10.5C10,21.41 9.59,20.73 9.27,20Z" />
+        </svg>
+        <span>${t.actionLabelPreview}</span>
+      </a> 
+      <a 
+        href="${'https://creator.page2flip.customer.space.one/wizard/hotspot-editor-standalone?p=' + t.url + '/api/scope/' + t.scopeKey + '/asset/' + document.asset.id +'/format/p2fdocument/content/'}"
+        class="${t.actionPrimary === 'hotspots' ? 'action-primary' : ''} action-hotspots">
+        <svg 
+          viewBox="0 0 24 24">
+          <path 
+            fill="currentColor" 
+            d="M22.08,11.04H20.08V4H13.05V2H11.04V4H4V11.04H2V13.05H4V20.08H11.04V22.08H13.05V20.08H20.08V13.05H22.08V11.04M18.07,18.07H13.05V16.06H11.04V18.07H6V13.05H8.03V11.04H6V6H11.04V8.03H13.05V6H18.07V11.04H16.06V13.05H18.07V18.07M13.05,12.05A1,1 0 0,1 12.05,13.05C11.5,13.05 11.04,12.6 11.04,12.05C11.04,11.5 11.5,11.04 12.05,11.04C12.6,11.04 13.05,11.5 13.05,12.05Z" />
+        </svg>
+        <span>${t.actionLabelHotspots}</span>
+      </a>
+      <a 
+        href="#"                      
+        @click="${(e:Event) => t.delete(e,document.id, document.name)}"
+        class="${t.actionPrimary === 'delete' ? 'action-primary' : ''} action-delete">
+        <svg 
+          viewBox="0 0 24 24">
+          <path 
+            fill="currentColor" 
+            d="M14.12,10.47L12,12.59L9.87,10.47L8.46,11.88L10.59,14L8.47,16.12L9.88,17.53L12,15.41L14.12,17.53L15.53,16.12L13.41,14L15.53,11.88L14.12,10.47M15.5,4L14.5,3H9.5L8.5,4H5V6H19V4H15.5M6,19A2,2 0 0,0 8,21H16A2,2 0 0,0 18,19V7H6V19M8,9H16V19H8V9Z" />
+        </svg>
+        <span>${t.actionLabelDelete}</span>
+      </a>                    
+    </div>
+  `;
 }
 
 export function categoryTemplate(document: P2fDocument) {
@@ -83,6 +92,40 @@ export function categoryTemplate(document: P2fDocument) {
       class="category">
       ${document.category != null ? document.category.name : 'Category not specified'}
     </span>
+  `;
+}
+
+export function convertingStatusTemplate(t:any, document: P2fDocument) {
+
+  let convertingStatus: string;
+
+  document.asset.formats.map((format) => {
+    if(format.name === 'p2fdocument'){
+        convertingStatus = format.status;
+    }
+  });
+
+  return html`
+    <div slot="top">
+      ${convertingStatus === 'failed' ? 
+        html`
+          <span 
+            class="converting-status failed" 
+            style="${document.meta.publish.state === 'PUBLISHED' ? 'padding-left: 55px;' :''}">
+            ${t.convertingStatusLabelFailed}
+          </span>` 
+        : html``
+      }
+      ${convertingStatus === 'converting' ? 
+        html`
+          <span 
+            class="converting-status converting"
+            style="${document.meta.publish.state === 'PUBLISHED' ? 'padding-left: 55px;' :''}">
+            ${t.convertingStatusLabelConverting}
+          </span>` 
+        : html``
+      }
+    </div>
   `;
 }
 

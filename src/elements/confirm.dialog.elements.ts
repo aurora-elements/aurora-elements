@@ -39,7 +39,7 @@ const styles = css`
         background: #fff;
         box-shadow: 0px 20px 30px -20px rgba(0, 0, 0, 0.1);
         display: grid;
-        grid-template-rows: 40px 1fr 40px;
+        grid-template-rows: 41px 1fr 45px;
         max-width:300px;
         user-select:none;
     }
@@ -51,18 +51,24 @@ const styles = css`
         margin:0;
     }
     header, div, footer {
-        padding: 10px 20px;
+        padding: 12px 20px;
     }
     footer {
         text-align: right;
-        padding-right:10px;
+        padding:10px 10px 20px 10px;
     }
     footer a {
         text-transform: uppercase;
+        transition: opacity 300 ms linear 0s;
         text-decoration: none;
         padding: 10px;
         font-weight: 700;
-        
+        color: #ed5565;
+        opacity: .7;      
+    }
+    footer a:hover {opacity:1;}
+    footer a[part=ae-confirm-dialog-action-cancel] {
+        color: #888;
     }
 `;
 
@@ -90,12 +96,14 @@ export class AeConfirmDialog extends LitElement {
     @property({type: Number, attribute: false})
     deleteTargetId: number;
 
-    cancel() {
+    cancel(e:Event) {
+        e.preventDefault();
         this.removeAttribute('visible');
         document.body.style.removeProperty('overflow');
     }
 
-    submit() {
+    submit(e:Event) {
+        e.preventDefault();
         let deletedEvent = new CustomEvent('ae-deleted-event', { 
             detail: {
               id: this.deleteTargetId
@@ -103,7 +111,7 @@ export class AeConfirmDialog extends LitElement {
             bubbles: true, 
             composed: true });
         this.dispatchEvent(deletedEvent); 
-        this.cancel();
+        this.cancel(e);
     }
 
     firstUpdated() {

@@ -7,7 +7,7 @@ import publicApi from "../../../functionalities/directives/spo/spo.api.fetch.pub
 import { spoUriConverter } from "../../../functionalities/directives/spo/spo.uri.converter.directive";
 import { until } from "lit/directives/until";
 import { styles } from './p2f.grid.styles.modules'
-import { publishStateTemplate, actionsTemplate, categoryTemplate } from './p2f.grid.templates';
+import { publishStateTemplate, actionsTemplate, categoryTemplate, convertingStatusTemplate } from './p2f.grid.templates';
 import {P2fDocument} from '../../../functionalities/interfaces/p2f/p2f.document.interface';
 
 /**
@@ -69,6 +69,12 @@ export class AeP2fGrid extends LitElement {
   @property({type:String, attribute: 'action-label-delete'})
   actionLabelDelete: string = 'Delete';
 
+  @property({type:String, attribute: 'converting-status-label-failed'})
+  convertingStatusLabelFailed: string = 'PDF conversion failed';
+
+  @property({type:String, attribute: 'converting-status-label-converting'})
+  convertingStatusLabelConverting: string = 'The PDF is converted';
+
   static get styles() {
     return [styles];
   }
@@ -127,6 +133,7 @@ export class AeP2fGrid extends LitElement {
                     ${publishStateTemplate(document)}
                     ${actionsTemplate(this, document)}
                     ${categoryTemplate(document)}
+                    ${convertingStatusTemplate(this, document)}
                   </ae-card>
                 `
             )}
