@@ -1,4 +1,3 @@
-
 import "../../../elements/confirm.dialog.elements";
 import "../../../elements/card.element";
 import "../../../elements/loader.element";
@@ -8,7 +7,7 @@ import publicApi from "../../../functionalities/directives/spo/spo.api.fetch.pub
 import { spoUriConverter } from "../../../functionalities/directives/spo/spo.uri.converter.directive";
 import { until } from "lit/directives/until";
 import { styles } from './p2f.grid.styles.modules'
-import { publishStateTemplate, actionsTemplate } from './p2f.grid.templates';
+import { publishStateTemplate, actionsTemplate, categoryTemplate } from './p2f.grid.templates';
 import {P2fDocument} from '../../../functionalities/interfaces/p2f/p2f.document.interface';
 
 /**
@@ -86,10 +85,9 @@ export class AeP2fGrid extends LitElement {
     this.dispatchEvent(deleteRequestEvent); 
   }
 
-      /* Get root */
-      get root() {
-        return this.shadowRoot || this
-    }
+  get root() {
+      return this.shadowRoot || this
+  }
 
   firstUpdated() {
     document.addEventListener('ae-deleted-event', (e:any) => {
@@ -128,6 +126,7 @@ export class AeP2fGrid extends LitElement {
                     id="document_${document.id}">
                     ${publishStateTemplate(document)}
                     ${actionsTemplate(this, document)}
+                    ${categoryTemplate(document)}
                   </ae-card>
                 `
             )}

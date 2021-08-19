@@ -1,9 +1,68 @@
 import { LitElement, html, css } from "lit";
 import { customElement, property } from "lit/decorators.js";
 
+/**
+ * Confirm dialog
+ * @description:                                          This element provides a confirm dialog.
+ * @version:                                              0.0.8.
+ * 
+ * Javascript____________________________________________
+ * @property {string} url                               - Rest-Api Endpoint for p2f documents. 
+ * Methods
+ * 
+ * CSS___________________________________________________
+ * Grid
+ * @property {css} --p2f-grid-column-min                - Minimum width of an item.
+ */
+
 const styles = css`
     :host {
-        display:block;
+        transition: opacitiy 500ms ease-in-out 0s;
+        display:none;
+        background: rgba(0,0,0,.5);
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: -1;
+        width: 100%;
+        height: 100%;
+        align-items: center;
+        justify-items: center;
+        opacity:0;
+    }
+    :host([visible]) {
+        display:grid;
+        opacity:1;
+        z-index:99999;
+    }
+    section {
+        background: #fff;
+        box-shadow: 0px 20px 30px -20px rgba(0, 0, 0, 0.1);
+        display: grid;
+        grid-template-rows: 40px 1fr 40px;
+        max-width:300px;
+        user-select:none;
+    }
+    header {
+        background-color: #ed5565;
+        color: #fff;
+    }
+    header h5 {
+        margin:0;
+    }
+    header, div, footer {
+        padding: 10px 20px;
+    }
+    footer {
+        text-align: right;
+        padding-right:10px;
+    }
+    footer a {
+        text-transform: uppercase;
+        text-decoration: none;
+        padding: 10px;
+        font-weight: 700;
+        
     }
 `;
 
@@ -20,7 +79,7 @@ export class AeConfirmDialog extends LitElement {
     btnLabelCancel: string = 'No';
 
     @property({type: String, attribute: 'label-submit'})
-    btnLabelSubmit: string = 'Yes';
+    btnLabelSubmit: string = 'Yes, delete';
 
     @property({attribute: 'action'})
     deleteAction: any = 'removeItem';
@@ -32,7 +91,8 @@ export class AeConfirmDialog extends LitElement {
     deleteTargetId: number;
 
     cancel() {
-
+        this.removeAttribute('visible');
+        document.body.style.removeProperty('overflow');
     }
 
     submit() {
@@ -42,11 +102,17 @@ export class AeConfirmDialog extends LitElement {
             },
             bubbles: true, 
             composed: true });
-          this.dispatchEvent(deletedEvent); 
+        this.dispatchEvent(deletedEvent); 
+        this.cancel();
     }
 
     firstUpdated() {
         document.addEventListener('ae-delete-request-event', (e:any) => {
+
+            this.setAttribute('visible', '');
+
+            document.body.style.overflow = 'hidden';
+
             let name:string = e.detail.name;
             let id:number = e.detail.id;
 
@@ -72,22 +138,28 @@ export class AeConfirmDialog extends LitElement {
     }
     render() {   
         return html`
-            <header>
-                <h5>
-                    ${this.headline}
-                </h5>
-            </header>
-            <div>
-                ${this.description}
-            </div>
-            <footer>
-                <a href="#" @click=${this.cancel}>${this.btnLabelCancel}</a>
-                <a href="#" 
-                    onclick="${this.deleteAction}(${this.deleteTargetId});" 
-                    @click=${this.submit}>
-                    ${this.btnLabelSubmit}
-                </a>
-            </footer>
+            <section part="ae-confirm-dialog">
+                <header part="ae-confirm-dialog-header">
+                    <h5 part="ae-confirm-dialog-headline">
+                        ${this.headline}
+                    </h5>
+                </header>
+                <div part="ae-confirm-dialog-description">
+                    ${this.description}
+                </div>
+                <footer part="ae-confirm-dialog-footer">
+                    <a 
+                        href="#"
+                        part="ae-confirm-dialog-action-cancel" 
+                        @click=${this.cancel}>${this.btnLabelCancel}</a>
+                    <a href="#" 
+                        part="ae-confirm-dialog-action-submit"
+                        onclick="${this.deleteAction}(${this.deleteTargetId});" 
+                        @click=${this.submit}>
+                        ${this.btnLabelSubmit}
+                    </a>
+                </footer>
+            </section>
         `;
     }
 }

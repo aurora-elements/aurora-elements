@@ -12,20 +12,21 @@ export const styles = css`
   ae-card {
       transition:           transform .3s ease-in-out;
       box-shadow:           var(--p2f-grid-item-shadow, 0px 20px 30px -20px rgba(0, 0, 0, 0.1));
-      padding:              var(--p2f-grid-item-padding, 20px);
       display:              block;
   }
   ::part(card-figure) {
-    aspect-ratio:           var(--p2f-grid-item-image-aspect-ration, 1 / 1.5);
+    aspect-ratio:           var(--p2f-grid-item-image-aspect-ration, 1 / 1);
   }
-  ::part(card-img) {
-    object-fit:             cover;
-    width:                  100%;
+  ::part(card-slot-image) {
+    display:                grid;
+    align-items:            center;
+    justify-items:          center;
     height:                 100%;
+    background-color:       var(--p2f-grid-item-image-bg, #f3f4f7);
+    padding:                var(--p2f-grid-item-padding, 20px);
   }
   ::part(card-header) {
-    padding-left:           0;
-    padding-right:          0;
+    padding:                12px var(--p2f-grid-item-padding, 20px);
   }
   ::part(card-label) {
     font-weight:            700;
@@ -108,17 +109,23 @@ export const styles = css`
     position:               absolute;
     top:                    0;
     left:                   0;
-    padding:                7px 15px 7px 9px;
+    padding:                7px 8px 0px 9px;
     background:           #888;
     z-index:                1;
-    border-radius:          0 0 99px 0;
     color:                #fff;
     font-size:              20px;
   }
   .doc-status.published {
     background-color:       var(--color-accent);
   }
-  .doc-status.draft {
-    background-color:       orange;
+  .category {
+    float:                  left;
+    background:             var(--p2f-grid-item-category-bg, var(--p2f-grid-item-image-bg, #f3f4f7));
+    padding:                calc(var(--p2f-grid-item-padding, 20px) / 2) var(--p2f-grid-item-padding, 20px);
+    border-radius:          0;
+    font-size:              12px;
+    font-weight:            400;
+    width:                  100%;
+    box-sizing:             border-box;
   }
 `;

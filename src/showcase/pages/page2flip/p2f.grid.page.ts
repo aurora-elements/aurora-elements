@@ -29,6 +29,7 @@ class P2fGridPage extends LitElement {
         spoql-query="at 'thenewp2f' select item from 'p2fDocumentItem' where %7Bitems publishedstate eq 'PUBLISHED'%7D orderby %7Bcreated descending%7D limit 4"
         space-key="thenewp2f">
       </ae-p2f-grid>
+      <ae-confirm-dialog></ae-confirm-dialog>
   `;
   }
 }

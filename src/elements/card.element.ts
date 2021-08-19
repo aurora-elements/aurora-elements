@@ -146,7 +146,7 @@ export class AeCard extends LitElement {
                 ? this.partLoadingSvgSelector
                 : "card-loading-svg"}">
             </ae-loader>
-            <slot name="image">
+            <slot name="image" part="card-slot-image">
               <img
                 part="${this.partImgSelector ? this.partImgSelector : "card-img"}"
                 loading="lazy"
