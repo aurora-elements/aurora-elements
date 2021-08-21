@@ -48,7 +48,8 @@ export function actionsTemplate(t:any, document: P2fDocument) {
         <span>${t.actionLabelEdit}</span>
       </a>
       <a 
-        href="${t.url +'/api/scope/' + t.scopeKey + '/asset/' + document.asset.id + '/format/p2fdocument/content/index.html'}" 
+        href="#"
+        @click="${(e:Event) => t.openViewer(e, document.asset.id)}"
         class="${t.actionPrimary === 'viewer' ? 'action-primary' : ''} action-viewer">
         <svg 
           viewBox="0 0 24 24">
@@ -59,7 +60,7 @@ export function actionsTemplate(t:any, document: P2fDocument) {
         <span>${t.actionLabelPreview}</span>
       </a> 
       <a 
-        href="${'https://creator.page2flip.customer.space.one/wizard/hotspot-editor-standalone?p=' + t.url + '/api/scope/' + t.scopeKey + '/asset/' + document.asset.id +'/format/p2fdocument/content/'}"
+        href="${'https://creator.page2flip.customer.space.one/wizard/hotspot-editor-standalone?p=' + t.baseUrl + '/api/scope/' + t.scopeKey + '/asset/' + document.asset.id +'/format/p2fdocument/content/'}"
         class="${t.actionPrimary === 'hotspots' ? 'action-primary' : ''} action-hotspots">
         <svg 
           viewBox="0 0 24 24">

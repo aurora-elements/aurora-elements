@@ -37,6 +37,16 @@
         ]
     },
     {
+        "label": "Dashboard",
+        "visible": true,
+        "items": [
+            {
+                "href":"/dashboard/dashlets",
+                "label": "Dashlets"
+            }
+        ]
+    },
+    {
         "label": "Modules",
         "visible": true,
         "items": [

@@ -9,7 +9,8 @@ module.exports = {
   entry: {
     'aurora.elements': './src/standalone.ts',
     showcase: './src/showcase.ts',
-    'aurora.modules': './src/modules.ts'
+    'aurora.modules': './src/modules.ts',
+    'aurora.dashboard': './src/dashboard.ts'
   },
   module: {
     rules: [

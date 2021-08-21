@@ -1,4 +1,5 @@
 
+import "../../../elements/dashboard/number.dashlet.element";
 import "../../components/headlineBlock.component";
 import "../../../modules/p2f/grid/p2f.grid.module";
 import "../../../elements/card.element";
@@ -24,6 +25,9 @@ class P2fGridPage extends LitElement {
   /* Render template */
   render() {
     return html`
+
+      <ae-number-dashlet number-value="32" label="Dokumente"></ae-number-dashlet>
+
       <ae-p2f-grid
         url="https://page2flip-staging.customer.space.one"
         spoql-query="at 'thenewp2f' select item from 'p2fDocumentItem' where %7Bitems publishedstate eq 'PUBLISHED'%7D orderby %7Bcreated descending%7D limit 4"

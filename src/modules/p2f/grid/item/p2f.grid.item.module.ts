@@ -1,14 +1,7 @@
-import "../../../elements/confirm.dialog.element";
-import "../../../elements/card.element";
-import "../../../elements/loader.element";
+
 import { LitElement, html } from "lit";
 import { customElement, property } from "lit/decorators.js";
-import publicApi from "../../../functionalities/directives/spo/spo.api.fetch.public.directive";
-import { spoUriConverter } from "../../../functionalities/directives/spo/spo.uri.converter.directive";
-import { until } from "lit/directives/until";
-import { styles } from './p2f.grid.styles.modules'
-import { publishStateTemplate, actionsTemplate, categoryTemplate, convertingStatusTemplate } from './p2f.grid.templates';
-import {P2fDocument} from '../../../functionalities/interfaces/p2f/p2f.document.interface';
+import { styles } from '../p2f.grid.styles.modules'
 
 /**
  * page2flip Grid Module
@@ -37,19 +30,8 @@ import {P2fDocument} from '../../../functionalities/interfaces/p2f/p2f.document.
  * @property {css} --p2f-grid-item-radius               - Corner radius of the items.
  */
 
-@customElement("ae-p2f-grid")
-export class AeP2fGrid extends LitElement {
-  @property({type: String, attribute: 'base-url'})
-  baseUrl: string = window.location.origin;
-
-  @property({type: String, attribute: 'space-key'})
-  scopeKey: string;
-
-  @property({type: String, attribute: 'spoql-query'})
-  spoQlQuery: string;
-
-  @property({type:Number})
-  size:number = 100000;
+@customElement("ae-p2f-grid-item")
+export class AeP2fGridItem extends LitElement {
 
   @property({type:String, attribute: 'action-primary'})
   actionPrimary: string = 'edit';
@@ -91,17 +73,6 @@ export class AeP2fGrid extends LitElement {
     this.dispatchEvent(deleteRequestEvent); 
   }
 
-  openViewer(e:Event, assetId:number) {
-    e.preventDefault();
-    let deleteRequestEvent = new CustomEvent('ae-p2f-viewer-event', { 
-      detail: { 
-        assetId: assetId
-      },
-      bubbles: true, 
-      composed: true });
-    this.dispatchEvent(deleteRequestEvent); 
-  }
-
   get root() {
       return this.shadowRoot || this
   }
@@ -113,55 +84,17 @@ export class AeP2fGrid extends LitElement {
         deletedItem.remove();
       }
     });
-    document.addEventListener('afterViewUpdate', () => {
-      this.requestUpdate();
-    });
   }
 
   render() {
-
-    let apiResponse:any;
-
-    if(!this.spoQlQuery) {
-      apiResponse = publicApi.get(`${this.baseUrl}/api/scope/${this.scopeKey}/items/p2fDocumentItem`);
-    } else {
-      apiResponse = publicApi.get(`${this.baseUrl}/api/spoql?q=${this.spoQlQuery}`);
-    }
-
     return html`
-      ${until(
-        apiResponse.then(
-          (documents:any) => html`
-            ${documents.map(
-              (document:P2fDocument) =>
-                html`
-                  <ae-card
-                    label="${document.name ? document.name : 'Name not specified'}"
-                    part="document"
-                    target="_blank"             
-                    image="${spoUriConverter(this.baseUrl + '/api', document.asset.thumbnailUri)}"
-                    id="document_${document.id}">
-                    ${publishStateTemplate(document)}
-                    ${actionsTemplate(this, document)}
-                    ${categoryTemplate(document)}
-                    ${convertingStatusTemplate(this, document)}
-                  </ae-card>
-                `
-            )}
-          `
-        ),
-        html`
-          <slot name="documents-loading-information">
-            <ae-loader part="documents-loading-information"></ae-loader>
-          </slot>
-        `
-      )}
+
     `;
   }
 }
 
 declare global {
   interface HTMLElementTagNameMap {
-    "ae-p2f-grid": AeP2fGrid;
+    "ae-p2f-grid-item": AeP2fGridItem;
   }
 }
