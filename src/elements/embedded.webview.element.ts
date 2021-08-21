@@ -38,31 +38,33 @@ export class AeEmbeddedWebview extends LitElement {
   }
 
   firstUpdated() {
-
-
-    document.addEventListener('ae-p2f-viewer-event', (e:any) => {
+    document.addEventListener('ae-p2f-embedded-webview-event', (e:any) => {
       this.assetId= e.detail.assetId;
       this.name= e.detail.documentName;
 
-      this.src = `${this.baseUrl}/api/scope/${this.spaceKey}/asset/${this.assetId}/format/p2fdocument/content/index.html`;
+      if(e.detail.app === 'viewer') {
+        this.src = `${this.baseUrl}/api/scope/${this.spaceKey}/asset/${this.assetId}/format/p2fdocument/content/index.html`;
+      }
+      else if(e.detail.app === 'creator') {
+        this.src=`https://creator.page2flip.customer.space.one/wizard/hotspot-editor-standalone?p=${this.baseUrl}/api/scope/${this.spaceKey}/asset/${this.assetId}/format/p2fdocument/content/`;
+      }
 
       let embeddedWebviewName:HTMLElement = document.querySelector('#embeddedWebviewName');
       if(embeddedWebviewName !== null) {
         embeddedWebviewName.innerHTML = this.name;
-      }
+      } 
 
       this.frame.addEventListener('load', () => {
-        let viewerLoadedEvent = new CustomEvent('ae-p2f-viewer-loaded-event', { 
-          bubbles: true, 
-          composed: true 
-        });
-        this.dispatchEvent(viewerLoadedEvent); 
+        if(this.src.includes('http')) {
+          let viewerLoadedEvent = new CustomEvent('ae-p2f-embedded-webview-loaded-event', { 
+            bubbles: true, 
+            composed: true 
+          });
+          this.dispatchEvent(viewerLoadedEvent); 
+        }
       });
 
-    });
-
-
-    
+    });   
   }
 
   render() {

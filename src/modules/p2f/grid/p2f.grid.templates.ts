@@ -49,7 +49,7 @@ export function actionsTemplate(t:any, document: P2fDocument) {
       </a>
       <a 
         href="#"
-        @click="${(e:Event) => t.openViewer(e, document.asset.id)}"
+        @click="${(e:Event) => t.openEmbeddedWebview(e, document.asset.id, document.name, 'viewer')}"
         class="${t.actionPrimary === 'viewer' ? 'action-primary' : ''} action-viewer">
         <svg 
           viewBox="0 0 24 24">
@@ -61,6 +61,7 @@ export function actionsTemplate(t:any, document: P2fDocument) {
       </a> 
       <a 
         href="${'https://creator.page2flip.customer.space.one/wizard/hotspot-editor-standalone?p=' + t.baseUrl + '/api/scope/' + t.scopeKey + '/asset/' + document.asset.id +'/format/p2fdocument/content/'}"
+        @click="${(e:Event) => t.openEmbeddedWebview(e, document.asset.id, document.name, 'creator')}"
         class="${t.actionPrimary === 'hotspots' ? 'action-primary' : ''} action-hotspots">
         <svg 
           viewBox="0 0 24 24">

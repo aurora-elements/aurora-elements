@@ -91,15 +91,17 @@ export class AeP2fGrid extends LitElement {
     this.dispatchEvent(deleteRequestEvent); 
   }
 
-  openViewer(e:Event, assetId:number) {
+  openEmbeddedWebview(e:Event, assetId:number, documentName:string, app:string) {
     e.preventDefault();
-    let deleteRequestEvent = new CustomEvent('ae-p2f-viewer-event', { 
+    let embeddedWebviewEvent = new CustomEvent('ae-p2f-embedded-webview-event', { 
       detail: { 
-        assetId: assetId
+        assetId: assetId,
+        documentName: documentName,
+        app: app
       },
       bubbles: true, 
       composed: true });
-    this.dispatchEvent(deleteRequestEvent); 
+    this.dispatchEvent(embeddedWebviewEvent); 
   }
 
   get root() {
