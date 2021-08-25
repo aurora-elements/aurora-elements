@@ -1,7 +1,10 @@
 
+import "../../../../elements/card.element";
 import { LitElement, html } from "lit";
 import { customElement, property } from "lit/decorators.js";
 import { styles } from '../p2f.grid.styles.modules'
+import { actionsTemplate, categoryTemplate, convertingStatusTemplate, publishStateTemplate } from "./p2f.grid.item.templates";
+import { aeEvent } from "../../../../functionalities/directives/event.directive";
 
 /**
  * page2flip Grid Module
@@ -56,6 +59,15 @@ export class AeP2fGridItem extends LitElement {
 
   @property({type:String, attribute: 'converting-status-label-converting'})
   convertingStatusLabelConverting: string = 'The PDF is converted';
+ 
+  @property()
+  image: any;
+  
+  @property({type: String})
+  label: string;
+  
+  @property()
+  document: any;
 
   static get styles() {
     return [styles];
@@ -63,14 +75,19 @@ export class AeP2fGridItem extends LitElement {
 
   delete(e:Event, id:number, name:string) {
     e.preventDefault();
-    let deleteRequestEvent = new CustomEvent('ae-delete-request-event', { 
-      detail: { 
-        name: name,
-        id: id
-      },
-      bubbles: true, 
-      composed: true });
-    this.dispatchEvent(deleteRequestEvent); 
+    aeEvent(this, 'p2f-grid', '*', 'delete-request', { 
+      name: name,
+      id: id
+    }, true);
+  }
+
+  openEmbeddedWebview(e:Event, assetId:number, documentName:string, app:string) {
+    e.preventDefault();
+    aeEvent(this, 'p2f-grid', 'ae-embedded-webview', 'push', {
+      assetId: assetId,
+      documentName: documentName,
+      app: app
+    }, true);
   }
 
   get root() {
@@ -88,7 +105,16 @@ export class AeP2fGridItem extends LitElement {
 
   render() {
     return html`
-
+      <ae-card
+        label="${this.label}"
+        part="document"            
+        image="${this.image}"
+        id="document_${this.id}">
+        ${publishStateTemplate(this.document)}
+        ${actionsTemplate(this, this.document)}
+        ${categoryTemplate(this.document)}
+        ${convertingStatusTemplate(this, this.document)}
+      </ae-card>
     `;
   }
 }

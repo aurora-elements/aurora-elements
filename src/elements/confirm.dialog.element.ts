@@ -1,5 +1,6 @@
 import { LitElement, html, css } from "lit";
 import { customElement, property } from "lit/decorators.js";
+import { aeEvent } from "../functionalities/directives/event.directive";
 
 /**
  * Confirm dialog
@@ -104,18 +105,14 @@ export class AeConfirmDialog extends LitElement {
 
     submit(e:Event) {
         e.preventDefault();
-        let deletedEvent = new CustomEvent('ae-deleted-event', { 
-            detail: {
-              id: this.deleteTargetId
-            },
-            bubbles: true, 
-            composed: true });
-        this.dispatchEvent(deletedEvent); 
+        aeEvent(this, 'confirm-dialog', '*', 'deleted', {
+            id: this.deleteTargetId
+        }, true)
         this.cancel(e);
     }
 
     firstUpdated() {
-        document.addEventListener('ae-delete-request-event', (e:any) => {
+        document.addEventListener('ae-delete-request-event', (e:CustomEvent) => {
 
             this.setAttribute('visible', '');
 

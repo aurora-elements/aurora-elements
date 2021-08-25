@@ -9,6 +9,7 @@ import { until } from "lit/directives/until";
 import { styles } from './p2f.grid.styles.modules'
 import { publishStateTemplate, actionsTemplate, categoryTemplate, convertingStatusTemplate } from './p2f.grid.templates';
 import {P2fDocument} from '../../../functionalities/interfaces/p2f/p2f.document.interface';
+import { aeEvent } from "../../../functionalities/directives/event.directive";
 
 /**
  * page2flip Grid Module
@@ -81,27 +82,19 @@ export class AeP2fGrid extends LitElement {
 
   delete(e:Event, id:number, name:string) {
     e.preventDefault();
-    let deleteRequestEvent = new CustomEvent('ae-delete-request-event', { 
-      detail: { 
-        name: name,
-        id: id
-      },
-      bubbles: true, 
-      composed: true });
-    this.dispatchEvent(deleteRequestEvent); 
+    aeEvent(this, 'p2f-grid', '*', 'delete-request', { 
+      name: name,
+      id: id
+    }, true);
   }
 
   openEmbeddedWebview(e:Event, assetId:number, documentName:string, app:string) {
     e.preventDefault();
-    let embeddedWebviewEvent = new CustomEvent('ae-p2f-embedded-webview-event', { 
-      detail: { 
-        assetId: assetId,
-        documentName: documentName,
-        app: app
-      },
-      bubbles: true, 
-      composed: true });
-    this.dispatchEvent(embeddedWebviewEvent); 
+    aeEvent(this, 'p2f-grid', 'ae-embedded-webview', 'push', {
+      assetId: assetId,
+      documentName: documentName,
+      app: app
+    }, true);
   }
 
   get root() {
@@ -109,7 +102,7 @@ export class AeP2fGrid extends LitElement {
   }
 
   firstUpdated() {
-    document.addEventListener('ae-deleted-event', (e:any) => {
+    document.addEventListener('ae-deleted-event', (e:CustomEvent) => {
       let deletedItem = this.root.getElementById('document_' + e.detail.id);
       if(deletedItem != null) {
         deletedItem.remove();

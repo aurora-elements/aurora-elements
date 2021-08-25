@@ -25,12 +25,9 @@ class P2fGridPage extends LitElement {
   /* Render template */
   render() {
     return html`
-
-      <ae-number-dashlet number-value="32" label="Dokumente"></ae-number-dashlet>
-
       <ae-p2f-grid
-        url="https://page2flip-staging.customer.space.one"
-        spoql-query="at 'thenewp2f' select item from 'p2fDocumentItem' where %7Bitems publishedstate eq 'PUBLISHED'%7D orderby %7Bcreated descending%7D limit 4"
+        base-url="https://page2flip-staging.customer.space.one"
+        spoql-query="at 'thenewp2f' select item from 'p2fDocumentItem' where %7Bitems publishedstate eq 'PUBLISHED'%7D orderby %7Bcreated descending%7D limit 8"
         space-key="thenewp2f">
       </ae-p2f-grid>
       <ae-confirm-dialog></ae-confirm-dialog>
