@@ -7,10 +7,10 @@ module.exports = {
   mode: "production",
   devtool: 'source-map',
   entry: {
-    'aurora.elements': './src/standalone.ts',
+    'aurora.elements': './src/elements.ts',
     showcase: './src/showcase.ts',
     'aurora.modules': './src/modules.ts',
-    'aurora.dashboard': './src/dashboard.ts'
+    'aurora.dashlets': './src/dashboard.ts'
   },
   module: {
     rules: [

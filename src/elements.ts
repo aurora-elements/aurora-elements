@@ -1,6 +1,3 @@
-// spo api fetch
-import './functionalities/directives/spo/spo.api.fetch.directive';
-import './functionalities/directives/spo/spo.api.fetch.public.directive';
 // Card
 import './elements/card.element';
 // Loader
@@ -16,3 +13,5 @@ import './elements/accordion/accordionItem.element';
 import './elements/dropdown.button.element';
 // Confirm dialog
 import './elements/confirm.dialog.element';
+// Embedded webview
+import './elements/embedded.webview.element';

@@ -9,7 +9,7 @@ module.exports = {
     historyApiFallback: true,
   },
   entry: {
-    aurora: './src/standalone.ts',
+    aurora: './src/elements.ts',
     showcase: './src/showcase.ts'
   },
   module: {

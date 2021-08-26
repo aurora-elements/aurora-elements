@@ -115,9 +115,13 @@ const tableTemplate = (
 @customElement('ae-data-table')
 export class AeDataTable extends LitElement {
 
-    @property({ attribute: 'column-labels', type: Array }) columnLabels = ["Date","Component","Description"];
+    @property({ attribute: 'column-labels', type: Array }) 
+    columnLabels = ["Attribute","Type","Default-Value","Description"];
     
     @property({ type: String }) rows?:string;
+
+    @property({type:String})
+    type:string = 'element';
 
     /* Styles - LitElement */
     static get styles() {
@@ -126,6 +130,25 @@ export class AeDataTable extends LitElement {
 
     /* Render template */
     render() {
+        if(this.type === 'news') {
+            this.columnLabels = ["Date","Component","Description"];
+        } 
+        else if(this.type === 'html') {
+            this.columnLabels = ["Attribute","Type","Default-Value","Description"];    
+        }
+        else if(this.type === 'css') {
+            this.columnLabels = ["Variable","1.Fallback","2.Fallback","Description"];    
+        }
+        else if(this.type === 'events') {
+            this.columnLabels = ["Name","Details","Description"];    
+        }
+        else if(this.type === 'slots') {
+            this.columnLabels = ["Name","Description"];    
+        }
+        else if(this.type === 'parts') {
+            this.columnLabels = ["Name","Description"];    
+        }
+
         return html`
         <table part="table">
             <thead part="header">

@@ -37,12 +37,12 @@
         ]
     },
     {
-        "label": "Dashboard",
+        "label": "Dashlets",
         "visible": true,
         "items": [
             {
-                "href":"/dashboard/dashlets",
-                "label": "Dashlets"
+                "href":"/dashboard/number",
+                "label": "Number"
             }
         ]
     },

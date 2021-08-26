@@ -14,8 +14,9 @@ const styles = css`
         box-sizing: border-box;
         padding:0!important;
         color: #484848;
-        background-color: #f5f5f5;
+        background-color: #f8f8f8;
         position:relative;
+        display: block;
     }
     .language {
         background-color: #fff;
@@ -43,6 +44,7 @@ const styles = css`
         cursor: pointer;
         transition: all 0.2s ease-in;
         opacity: 0;
+        display: none;
     }
     .copy-button:hover {
         background-color: var(--codeMirror-color-hover, var(--color-accent-primary, #00569c));

@@ -6,7 +6,7 @@ import { repeat } from 'lit/directives/repeat.js';
 import logo from './showcase/img/aurora-logo.png';
 import { routes } from "./showcase/components/navigation/routerOutlet.component";
 // Aurora elements
-import "./standalone";
+import "./elements";
 
 // Showcase components
 import "./showcase/components/navigation/link.component";

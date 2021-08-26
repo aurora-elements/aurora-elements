@@ -6,7 +6,7 @@ import "../../pages/welcome/welcome.page";
 import "../../pages/whatsNew/whatsNew.page";
 import "../../pages/imprint/imprint.page";
 import "../../pages/visualisation/card/card.page";
-import "../../pages/dashboard/dashlets.page";
+import "../../pages/dashboard/number.dashlet.page";
 import "../../pages/page2flip/p2f.grid.page";
 import "../../pages/notFound/notFound.page";
 
@@ -33,9 +33,9 @@ export const routes = [
       data: { title: "Card" }
     },
     {
-      name: "dashlets",
-      pattern: "dashboard/dashlets",
-      data: { title: "Dashlets" }
+      name: "number",
+      pattern: "dashboard/number",
+      data: { title: "Number Dashlets" }
     },
     {
       name: "p2fgrid",
@@ -60,7 +60,7 @@ export class RouterOutlet extends outlet(LitElement) {
             <whatsnew-page route="whatsnew"></whatsnew-page>
             <imprint-page route="imprint"></imprint-page>
             <card-page route="card"></card-page>
-            <dashlets-page route="dashlets"></dashlets-page>
+            <number-dashlet-page route="number"></number-dashlet-page>
             <p2f-grid-page route="p2fgrid"></p2f-grid-page>
             <not-found-page route="not-found"></not-found-page>
         `;

@@ -1,3 +1,4 @@
+import "../../components/headlineBlock.component";
 import { LitElement, html } from "lit";
 
 class Imprint extends LitElement {
