@@ -14,7 +14,7 @@ const styles = css`
         border-collapse: separate;
         border-spacing: 0;
         width: 100%;
-        border-bottom: 1px solid #e0e6ed;
+        border-bottom: 1px solid var(--grey-middle, #e0e6ed);
         text-align: justify;
     }
     table thead th {
@@ -50,7 +50,7 @@ const styles = css`
     tr td {
         border-left: none;
         border-right: none;
-        border-top: 1px solid #e0e6ed;
+        border-top: 1px solid var(--grey-middle, #e0e6ed);
         font-weight: 400;
         line-height: 1.5;
         padding: 14px 20px;

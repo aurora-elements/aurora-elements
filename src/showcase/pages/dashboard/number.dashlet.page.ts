@@ -16,7 +16,7 @@ class NumberDashletPage extends LitElement {
       <ae-headline-block headline="Number Dashlets" style="margin-bottom: 60px;">
         Das Number-Dashlet stellt eine Nummer dar, zum Beispiel die Anzahl von Dokumenten in einem space.
       </ae-headline-block>
-      <div style="background-color:#f8f8f8;padding:40px;margin-bottom:40px;">
+      <div style="background-color:var(--grey-ligthest);padding:40px;margin-bottom:40px;">
         <ae-number-dashlet>
           <a href="#" slot="actions" style="margin-right:10px">Aktion 1</a>
           <a href="#" slot="actions" style="margin-right:10px">Aktion 2</a>
@@ -24,13 +24,21 @@ class NumberDashletPage extends LitElement {
         </ae-number-dashlet>
       </div>
       <ae-code-mirror language="xml">
-        &lt;ae-number-dashlet&gt;
-            &lt;a href="#" slot="actions" style="margin-right:10px">Aktion 1&lt;/a&gt;
-            &lt;a href="#" slot="actions" style="margin-right:10px">Aktion 2&lt;/a&gt;
-            &lt;a href="#" slot="actions">Aktion 3&lt;/a&gt;
-
-            &lt;svg viewBox="0 0 24 24" slot="icon"&gt;
-                &lt;path fill="currentColor" d="M22,4A2,2 0 0,1 24,6V16A2, ..."&gt;
+        &lt;ae-number-dashlet 
+            label="Label" 
+            number-value="0"&gt;
+            &lt;a 
+                href="#" 
+                slot="actions"&gt;
+                Aktion 1
+            &lt;/a&gt;
+            ...
+            &lt;svg 
+                viewBox="0 0 24 24" 
+                slot="icon"&gt;
+                &lt;path 
+                    fill="currentColor" 
+                    d="M22,4A2,2 0 0,1 24,6V16A2, ..."&gt;
                 &lt;/path&gt;
             &lt;/svg&gt;
         &lt;/ae-number-dashlet&gt;

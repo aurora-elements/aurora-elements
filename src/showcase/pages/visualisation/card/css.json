@@ -1,0 +1,86 @@
+[
+    {
+        "col1": "--ae-number-dashlet--shadow",
+        "col2": "--ae-dashlet--shadow",
+        "col3": "0px 20px 30px -20px rgba(0, 0, 0, 0.1)",
+        "col4": "Schatten des Dashlets"   
+    },
+    {
+        "col1": "--ae-number-dashlet--bg",
+        "col2": "--ae-dashlet--bg",
+        "col3": "#ffffff",
+        "col4": "Hintergrundfarbe des Dashlets"   
+    },
+    {
+        "col1": "-",
+        "col2": "-",
+        "col3": "-",
+        "col4": "-"   
+    },
+    {
+        "col1": "--ae-number-dashlet--numberAndText-padding",
+        "col2": "20px 20px 0 20px",
+        "col3": "-",
+        "col4": "Padding um die Nummer und das Label im Dashlet"   
+    },
+    {
+        "col1": "--ae-number-dashlet--numberAndText-font-size",
+        "col2": "24px",
+        "col3": "-",
+        "col4": "Schriftgröße der Nummer und des Labels im Dashlet"   
+    },
+    {
+        "col1": "--ae-number-dashlet--numberAndText-color",
+        "col2": "#141E38",
+        "col3": "-",
+        "col4": "Schriftfarbe der Nummer und des Labels im Dashlet"   
+    },
+    {
+        "col1": "-",
+        "col2": "-",
+        "col3": "-",
+        "col4": "-"   
+    },
+    {
+        "col1": "--ae-number-dashlet--actions-padding",
+        "col2": "0 20px 20px 20px",
+        "col3": "-",
+        "col4": "Padding um den Bereich für die Aktionen"   
+    },
+    {
+        "col1": "-",
+        "col2": "-",
+        "col3": "-",
+        "col4": "-"   
+    },
+    {
+        "col1": "--ae-number-dashlet--icon-size",
+        "col2": "80px",
+        "col3": "-",
+        "col4": "Größe des Icons (height / width)"   
+    },
+    {
+        "col1": "--ae-number-dashlet--icon-bg",
+        "col2": "#f3f4f7",
+        "col3": "-",
+        "col4": "Hintergrundfarbe des Icons"   
+    },
+    {
+        "col1": "--ae-number-dashlet--icon-color",
+        "col2": "#7DAC46",
+        "col3": "-",
+        "col4": "Farbe des Icons"   
+    },
+    {
+        "col1": "--ae-number-dashlet--icon-padding",
+        "col2": "20px",
+        "col3": "-",
+        "col4": "Farbe des Icons"   
+    },
+    {
+        "col1": "--ae-number-dashlet--icon-align",
+        "col2": "center",
+        "col3": "-",
+        "col4": "Ausrichtung des Icons"   
+    }
+]

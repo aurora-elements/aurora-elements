@@ -14,12 +14,12 @@ const styles = css`
         box-sizing: border-box;
         padding:0!important;
         color: #484848;
-        background-color: #f8f8f8;
+        background-color: var(--grey-ligthest, #f8f8f8);
         position:relative;
         display: block;
     }
     .language {
-        background-color: #fff;
+        background-color: var(--grey-ligthest, #fff);
         padding: 10px 0;
         margin: 0;
     }
@@ -53,7 +53,7 @@ const styles = css`
 
     .code-wrapper {
         position: relative;
-        border-left: 3px solid #e0e6ed;
+        border-left: 3px solid var(--grey-middle, #e0e6ed);
     }
     .code-wrapper:hover .copy-button {
         opacity: 1;
@@ -101,7 +101,8 @@ export class AeCodeMirror extends LitElement {
     /* Render template */
     render() {
         return html`
-            <p class="language">${this.label}</p>
+            ${this.label ? html`<p class="language">${this.label}</p>` : html``}
+            
             <div class="code-wrapper">
                 <slot @slotchange="${this.onSlotchange}"></slot>
                 <button class="copy-button">
