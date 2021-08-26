@@ -13,20 +13,6 @@
         ]
     },
     {
-        "label": "Funtionalitäten",
-        "visible": true,
-        "items": [
-            {
-                "href":"/functionalities/dircetives",
-                "label": "Direktiven"
-            },
-            {
-                "href":"/functionalities/interfaces",
-                "label": "Interfaces"
-            }
-        ]
-    },
-    {
         "label": "Elemente",
         "visible": true,
         "items": [

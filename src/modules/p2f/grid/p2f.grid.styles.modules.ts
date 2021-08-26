@@ -124,7 +124,14 @@ export const styles = css`
     font-size:              20px;
   }
   .doc-status.published {
-    background-color:       var(--color-accent);
+    background-color:       var(
+      --ae-p2f-grid-item--published-color, 
+      var(
+        --ae-published-color, 
+        var(
+          --color-accent, 
+          #7DAC46
+      )));
   }
   .category {
     float:                  left;
