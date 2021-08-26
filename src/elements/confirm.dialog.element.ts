@@ -112,7 +112,7 @@ export class AeConfirmDialog extends LitElement {
     }
 
     firstUpdated() {
-        document.addEventListener('ae-delete-request-event', (e:CustomEvent) => {
+        document.addEventListener('ae-*:ae-confirm-dialog|delete-request', (e:CustomEvent) => {
 
             this.setAttribute('visible', '');
 

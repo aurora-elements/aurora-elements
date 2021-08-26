@@ -3,10 +3,10 @@ import { css } from "lit";
 export const styles = css`
   :host {
     display:                grid;
-    grid-template-columns:  repeat(auto-fill, minmax(var(--p2f-grid-column-min, 300px), 1fr));
+    grid-template-columns:  repeat(auto-fill, minmax(var(--p2f-grid-column-min, 250px), 1fr));
     grid-gap:               var(--p2f-grid-gap, 20px);
-    background-color:       var(--p2f-grid-bg, #e6e9ef);
-    padding:                var(--p2f-grid-padding, 40px);
+    background-color:       var(--p2f-grid-bg, rgba(0,0,0,0));
+    padding:                var(--p2f-grid-padding, 0);
     --card-radius:          var(--p2f-grid-item-radius, 0);
   }
   ae-card {
@@ -22,7 +22,7 @@ export const styles = css`
     align-items:            center;
     justify-items:          center;
     height:                 100%;
-    background-color:       var(--p2f-grid-item-image-bg, #f3f4f7);
+    background-color:       var(--p2f-grid-item-image-bg, #ffffff);
     padding:                var(--p2f-grid-item-padding, 20px);
   }
   ::part(card-header) {
@@ -135,7 +135,7 @@ export const styles = css`
   }
   .category {
     float:                  left;
-    background:             var(--p2f-grid-item-category-bg, var(--p2f-grid-item-image-bg, #f3f4f7));
+    background:             var(--p2f-grid-item-category-bg, var(--p2f-grid-item-image-bg, #ffffff));
     padding:                calc(var(--p2f-grid-item-padding, 20px) / 2) var(--p2f-grid-item-padding, 20px);
     border-radius:          0;
     font-size:              12px;

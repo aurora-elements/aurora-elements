@@ -178,9 +178,11 @@ export class AeCard extends LitElement {
 
   firstUpdated() {
     const el = this;
-    this.imageEl!.addEventListener("load", () => {
-      el.setAttribute("loaded", "");
-    });
+    if(this.image) {
+      this.imageEl.addEventListener("load", () => {
+        el.setAttribute("loaded", "");
+      });
+    }
   }
 }
 

@@ -158,7 +158,7 @@ export class AeDataTable extends LitElement {
             </thead>
             <tbody part="tbody">
                 ${until(
-                    fetch(this.rows!)
+                    fetch(this.rows)
                     .then(res => res.json())
                     .then(items => html`                        
                         ${repeat(items, (item:any) => item.id, ({ 

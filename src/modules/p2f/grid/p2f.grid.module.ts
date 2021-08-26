@@ -9,7 +9,7 @@ import { until } from "lit/directives/until";
 import { styles } from './p2f.grid.styles.modules'
 import { publishStateTemplate, actionsTemplate, categoryTemplate, convertingStatusTemplate } from './p2f.grid.templates';
 import {P2fDocument} from '../../../functionalities/interfaces/p2f/p2f.document.interface';
-import { aeEvent } from "../../../functionalities/directives/event.directive";
+import { aeDeleteEvent, aeEvent } from "../../../functionalities/directives/event.directive";
 
 /**
  * page2flip Grid Module
@@ -82,10 +82,14 @@ export class AeP2fGrid extends LitElement {
 
   delete(e:Event, id:number, name:string) {
     e.preventDefault();
-    aeEvent(this, 'p2f-grid', '*', 'delete-request', { 
-      name: name,
-      id: id
-    }, true);
+    aeDeleteEvent(
+      this, 
+      id, 
+      name,
+      {
+        trigger: 'ae-p2f-grid', 
+        type: 'document'
+      }, true);
   }
 
   openEmbeddedWebview(e:Event, assetId:number, documentName:string, app:string) {
