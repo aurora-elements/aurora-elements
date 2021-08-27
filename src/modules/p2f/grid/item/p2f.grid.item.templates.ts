@@ -113,7 +113,7 @@ export function convertingStatusTemplate(t:any, document: P2fDocument) {
         html`
           <span 
             class="converting-status failed" 
-            style="${document.meta.publish.state === 'PUBLISHED' ? 'padding-left: 55px;' :''}">
+            style="${document.meta.publish !== undefined && document.meta.publish.state === 'PUBLISHED' ? 'padding-left: 55px;' :''}">
             ${t.convertingStatusLabelFailed}
           </span>` 
         : html``
@@ -122,7 +122,7 @@ export function convertingStatusTemplate(t:any, document: P2fDocument) {
         html`
           <span 
             class="converting-status converting"
-            style="${document.meta.publish.state === 'PUBLISHED' ? 'padding-left: 55px;' :''}">
+            style="${document.meta.publish !== undefined && document.meta.publish.state === 'PUBLISHED' ? 'padding-left: 55px;' :''}">
             ${t.convertingStatusLabelConverting}
           </span>` 
         : html``

@@ -10,6 +10,7 @@ import { styles } from './p2f.grid.styles.modules'
 import { publishStateTemplate, actionsTemplate, categoryTemplate, convertingStatusTemplate } from './p2f.grid.templates';
 import {P2fDocument} from '../../../functionalities/interfaces/p2f/p2f.document.interface';
 import { aeDeleteEvent, aeDeletedEvent, aeEvent } from "../../../functionalities/directives/event.directive";
+import { errorHandler } from "../../../functionalities/directives/error.handler.directive";
 
 /**
  * page2flip Grid Module
@@ -48,6 +49,9 @@ export class AeP2fGrid extends LitElement {
 
   @property({type: String, attribute: 'spoql-query'})
   spoQlQuery: string;
+
+  @property({type: String, attribute: 'api-url'})
+  apiUrl: string;
 
   @property({type:Number})
   size:number = 100000;
@@ -126,7 +130,11 @@ export class AeP2fGrid extends LitElement {
 
     if(!this.spoQlQuery) {
       apiResponse = publicApi.get(`${this.baseUrl}/api/scope/${this.scopeKey}/items/p2fDocumentItem`);
-    } else {
+    } 
+    else if(this.apiUrl) {
+      apiResponse = publicApi.get(this.apiUrl);  
+    } 
+    else {
       apiResponse = publicApi.get(`${this.baseUrl}/api/spoql?q=${this.spoQlQuery}`);
     }
 
@@ -134,7 +142,7 @@ export class AeP2fGrid extends LitElement {
       ${until(
         apiResponse.then(
           (documents:any) => html`
-            ${documents.map(
+            ${documents.slice(0, this.size).map(
               (document:P2fDocument) =>
                 html`
                   <ae-card
@@ -143,7 +151,10 @@ export class AeP2fGrid extends LitElement {
                     target="_blank"             
                     image="${spoUriConverter(this.baseUrl + '/api', document.asset.thumbnailUri)}"
                     id="document_${document.id}">
-                    ${publishStateTemplate(document)}
+                    ${document.meta.publish != undefined ? 
+                      html`${publishStateTemplate(document)}` 
+                      : html`` 
+                    }                    
                     ${actionsTemplate(this, document)}
                     ${categoryTemplate(document)}
                     ${convertingStatusTemplate(this, document)}
@@ -151,7 +162,7 @@ export class AeP2fGrid extends LitElement {
                 `
             )}
           `
-        ),
+        ).catch((e:Event) => errorHandler(this, e, 'Documents', true)),
         html`
           <slot name="documents-loading-information">
             <ae-loader part="documents-loading-information"></ae-loader>
