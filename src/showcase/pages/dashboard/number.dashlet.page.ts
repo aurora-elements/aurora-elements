@@ -16,6 +16,7 @@ class NumberDashletPage extends LitElement {
       <ae-headline-block headline="Number Dashlets" style="margin-bottom: 60px;">
         Das Number-Dashlet stellt eine Nummer dar, zum Beispiel die Anzahl von Dokumenten in einem space.
       </ae-headline-block>
+      <small style="width: 100%;display: block;padding-bottom: 40px;opacity: .5;">Version 0.0.8</small>
       <div style="background-color:var(--grey-ligthest);padding:40px;margin-bottom:40px;">
         <ae-number-dashlet>
           <a href="#" slot="actions" style="margin-right:10px">Aktion 1</a>

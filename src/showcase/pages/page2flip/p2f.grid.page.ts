@@ -23,6 +23,7 @@ class P2fGridPage extends LitElement {
       <ae-headline-block headline="page2flip Grid" style="margin-bottom: 60px;">
         Das page2flip Grid...
       </ae-headline-block>
+      <small style="width: 100%;display: block;padding-bottom: 40px;opacity: .5;">Version 0.0.8</small>
       <div style="background-color:var(--grey-ligthest);padding:40px;margin-bottom:40px;">
         <ae-p2f-grid
           base-url="https://page2flip-staging.customer.space.one"

@@ -9,7 +9,7 @@ import { until } from "lit/directives/until";
 import { styles } from './p2f.grid.styles.modules'
 import { publishStateTemplate, actionsTemplate, categoryTemplate, convertingStatusTemplate } from './p2f.grid.templates';
 import {P2fDocument} from '../../../functionalities/interfaces/p2f/p2f.document.interface';
-import { aeDeleteEvent, aeEvent } from "../../../functionalities/directives/event.directive";
+import { aeDeleteEvent, aeDeletedEvent, aeEvent } from "../../../functionalities/directives/event.directive";
 
 /**
  * page2flip Grid Module
@@ -51,6 +51,9 @@ export class AeP2fGrid extends LitElement {
 
   @property({type:Number})
   size:number = 100000;
+
+  @property({type:String, attribute: 'update-event'})
+  updateEvent: string = 'afterViewUpdate';
 
   @property({type:String, attribute: 'action-primary'})
   actionPrimary: string = 'edit';
@@ -106,13 +109,13 @@ export class AeP2fGrid extends LitElement {
   }
 
   firstUpdated() {
-    document.addEventListener('ae-deleted-event', (e:CustomEvent) => {
+    document.addEventListener(aeDeletedEvent, (e:CustomEvent) => {
       let deletedItem = this.root.getElementById('document_' + e.detail.id);
       if(deletedItem != null) {
         deletedItem.remove();
       }
     });
-    document.addEventListener('afterViewUpdate', () => {
+    document.addEventListener(this.updateEvent, () => {
       this.requestUpdate();
     });
   }

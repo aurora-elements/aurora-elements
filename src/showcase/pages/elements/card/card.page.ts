@@ -16,13 +16,14 @@ class Card extends LitElement {
   /* Render template */
   render() {
     return html`
-    <ae-headline-block headline="Card" style="margin-bottom: 60px;">
+    <ae-headline-block headline="Card - coming soon" style="margin-bottom: 60px;">
         Das Card Element ...
       </ae-headline-block>
-      <div style="background-color:var(--grey-ligthest);padding:40px;margin-bottom:40px;">
+      <small style="width: 100%;display: block;padding-bottom: 40px;opacity: .5;">Version 0.0.8</small>
+      <div style="background-color:var(--grey-ligthest);padding:40px;margin-bottom:40px;display:none">
           <ae-card></ae-card>
       </div>
-      <ae-code-mirror language="xml">
+      <ae-code-mirror language="xml" style="display:none">
         &lt;ae-card&gt;
             &lt;a href="#" slot="actions" style="margin-right:10px">Aktion 1&lt;/a&gt;
             &lt;a href="#" slot="actions" style="margin-right:10px">Aktion 2&lt;/a&gt;
@@ -34,20 +35,20 @@ class Card extends LitElement {
             &lt;/svg&gt;
         &lt;/ae-card&gt;
       </ae-code-mirror>
-      <span style="width: 100%;display: block;padding: 40px 0 0px 0;font-weight: 400;font-size: 20px;">HTML</span>
-      <ae-data-table rows="${htmlAttributes}" type="html">
+      <span style="width: 100%;display: none;padding: 40px 0 0px 0;font-weight: 400;font-size: 20px;">HTML</span>
+      <ae-data-table rows="${htmlAttributes}" type="html" style="display:none">
       </ae-data-table>
 
-      <span style="width: 100%;display: block;padding: 40px 0 0px 0;font-weight: 400;font-size: 20px;">Slots</span>
-      <ae-data-table rows="${slots}" type="slots">
+      <span style="width: 100%;display: none;padding: 40px 0 0px 0;font-weight: 400;font-size: 20px;">Slots</span>
+      <ae-data-table rows="${slots}" type="slots" style="display:none">
       </ae-data-table>
 
-      <span style="width: 100%;display: block;padding: 40px 0 0px 0;font-weight: 400;font-size: 20px;">Parts</span>
-      <ae-data-table rows="${parts}" type="parts">
+      <span style="width: 100%;display: none;padding: 40px 0 0px 0;font-weight: 400;font-size: 20px;">Parts</span>
+      <ae-data-table rows="${parts}" type="parts" style="display:none">
       </ae-data-table>
       
-      <span style="width: 100%;display: block;padding: 40px 0 0px 0;font-weight: 400;font-size: 20px;">CSS</span>
-      <ae-data-table rows="${css}" type="css">
+      <span style="width: 100%;display: none;padding: 40px 0 0px 0;font-weight: 400;font-size: 20px;">CSS</span>
+      <ae-data-table rows="${css}" type="css" style="display:none">
       </ae-data-table>
  
  `;

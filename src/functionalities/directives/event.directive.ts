@@ -1,3 +1,6 @@
+export const aeDeletedEvent = "ae-confirm-dialog:*|deleted";
+export const aeDeleteRequestEvent = "ae-*:ae-confirm-dialog|delete-request";
+
 export function aeEvent(
     dispatchElement:any,
     trigger: string,
@@ -27,7 +30,7 @@ export function aeDeleteEvent(
     debug?: boolean
     ) {
 
-    let aeDeleteEvent = new CustomEvent('ae-*:ae-confirm-dialog|delete-request', { 
+    let aeDeleteEvent = new CustomEvent(aeDeleteRequestEvent, { 
         detail: {
             id: id,
             name: name,
@@ -38,7 +41,7 @@ export function aeDeleteEvent(
     });
 
     if(debug) {
-        console.log('Fired -> ae-*:ae-confirm-dialog|delete-request', aeDeleteEvent.detail);
+        console.log('Fired -> ' + aeDeleteRequestEvent, aeDeleteEvent.detail);
     } 
 
     return dispatchElement.dispatchEvent(aeDeleteEvent);

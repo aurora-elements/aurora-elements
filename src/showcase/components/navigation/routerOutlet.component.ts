@@ -5,7 +5,8 @@ import { outlet } from "lit-element-router";
 import "../../pages/welcome/welcome.page";
 import "../../pages/whatsNew/whatsNew.page";
 import "../../pages/imprint/imprint.page";
-import "../../pages/visualisation/card/card.page";
+import "../../pages/elements/card/card.page";
+import "../../pages/elements/accordion/accordion.page";
 import "../../pages/dashboard/number.dashlet.page";
 import "../../pages/page2flip/p2f.grid.page";
 import "../../pages/notFound/notFound.page";
@@ -29,8 +30,13 @@ export const routes = [
     },
     {
       name: "card",
-      pattern: "visualisation/card",
+      pattern: "elements/card",
       data: { title: "Card" }
+    },
+    {
+      name: "accordion",
+      pattern: "elements/accordion",
+      data: { title: "Accordion" }
     },
     {
       name: "number",
@@ -60,6 +66,7 @@ export class RouterOutlet extends outlet(LitElement) {
             <whatsnew-page route="whatsnew"></whatsnew-page>
             <imprint-page route="imprint"></imprint-page>
             <card-page route="card"></card-page>
+            <accordion-page route="accordion"></accordion-page>
             <number-dashlet-page route="number"></number-dashlet-page>
             <p2f-grid-page route="p2fgrid"></p2f-grid-page>
             <not-found-page route="not-found"></not-found-page>

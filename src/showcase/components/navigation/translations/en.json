@@ -17,8 +17,12 @@
         "visible": true,
         "items": [
             {
-                "href":"/visualisation/card",
+                "href":"/elemets/card",
                 "label": "Card"
+            },
+            {
+                "href":"/elements/accordion",
+                "label": "Accordion"
             }
         ]
     },
