@@ -1,3 +1,5 @@
+import { html } from "lit";
+
 export function errorHandler(
     dispatchElement:any, 
     error:any, 
@@ -8,10 +10,10 @@ export function errorHandler(
     if (error.status === 401 || error.status === 404 || error.status === 408) {
         errorInfo = error.status + ' ' + error.statusText;
     } else {
-        errorInfo = ' something went wrong: ' + error.message
+        errorInfo = error.message
     }
 
-    let aeErrorEvent = new CustomEvent('ae-*:*|error', { 
+    let aeErrorEvent = new CustomEvent('ae-*:*|fetch-error', { 
         detail:{ 
             message: errorInfo,
             origin: origin
@@ -21,8 +23,10 @@ export function errorHandler(
     });
 
     if(debug) {
-        console.log('Fired -> ae-*:*|error', aeErrorEvent.detail);
+        console.log('Fired -> ae-*:*|fetch-error', aeErrorEvent.detail);
     } 
 
-    return dispatchElement.dispatchEvent(aeErrorEvent); 
+    dispatchElement.dispatchEvent(aeErrorEvent); 
+
+    return html`<pre class="error" style="color:red">Something went wrong (<i>"${errorInfo}"</i>)</pre>`
 }

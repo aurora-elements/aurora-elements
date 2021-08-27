@@ -82,6 +82,9 @@ export class AeP2fGrid extends LitElement {
 
   @property({type:String, attribute: 'converting-status-label-converting'})
   convertingStatusLabelConverting: string = 'The PDF is converted';
+ 
+  @property({type:String, attribute:'msg-empty'})
+  msgEmpty: string = 'Unfortunately no documents were found!';
 
   static get styles() {
     return [styles];
@@ -142,27 +145,33 @@ export class AeP2fGrid extends LitElement {
       ${until(
         apiResponse.then(
           (documents:any) => html`
-            ${documents.slice(0, this.size).map(
-              (document:P2fDocument) =>
-                html`
-                  <ae-card
-                    label="${document.name ? document.name : 'Name not specified'}"
-                    part="document"
-                    target="_blank"             
-                    image="${spoUriConverter(this.baseUrl + '/api', document.asset.thumbnailUri)}"
-                    id="document_${document.id}">
-                    ${document.meta.publish != undefined ? 
-                      html`${publishStateTemplate(document)}` 
-                      : html`` 
-                    }                    
-                    ${actionsTemplate(this, document)}
-                    ${categoryTemplate(document)}
-                    ${convertingStatusTemplate(this, document)}
-                  </ae-card>
-                `
-            )}
+            ${documents.length > 0 ? 
+              html`      
+                ${documents.slice(0, this.size).map(
+                  (document:P2fDocument) =>
+                    html`
+                      <ae-card
+                        label="${document.name ? document.name : 'Name not specified'}"
+                        part="document"
+                        target="_blank"             
+                        image="${spoUriConverter(this.baseUrl + '/api', document.asset.thumbnailUri)}"
+                        id="document_${document.id}">
+                        ${document.meta.publish != undefined ? 
+                          html`${publishStateTemplate(document)}` 
+                          : html`` 
+                        }                    
+                        ${actionsTemplate(this, document)}
+                        ${categoryTemplate(document)}
+                        ${convertingStatusTemplate(this, document)}
+                      </ae-card>
+                    `
+                )}` : 
+              html`<span>${this.msgEmpty}</span>`
+            }
           `
-        ).catch((e:Event) => errorHandler(this, e, 'Documents', true)),
+        ).catch((e:Event) => 
+            errorHandler(this, e, 'ae-p2f-grid', true)
+        ),
         html`
           <slot name="documents-loading-information">
             <ae-loader part="documents-loading-information"></ae-loader>
