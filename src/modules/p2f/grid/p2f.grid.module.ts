@@ -28,6 +28,7 @@ import { errorHandler } from "../../../functionalities/directives/error.handler.
  * @property {string} action-label-preview              - Label of the preview action.
  * @property {string} action-label-hotspots             - Label of the hotspots action.
  * @property {string} action-label-delete               - Label of the delete action.
+ * @property {boolean} modusViewer                      - show all actions, or only viewer | default: show all
  * 
  * CSS___________________________________________________
  * Grid
@@ -41,8 +42,11 @@ import { errorHandler } from "../../../functionalities/directives/error.handler.
 
 @customElement("ae-p2f-grid")
 export class AeP2fGrid extends LitElement {
-  @property({type: String, attribute: 'base-url'})
+  @property({type: String, attribute: 'url-base'})
   baseUrl: string = window.location.origin;
+
+  @property({type: String, attribute: 'url-creator'})
+  creatorUrl: string = 'https://creator.page2flip.customer.space.one/wizard/hotspot-editor-standalone';
 
   @property({type: String, attribute: 'space-key'})
   scopeKey: string;
@@ -50,7 +54,7 @@ export class AeP2fGrid extends LitElement {
   @property({type: String, attribute: 'spoql-query'})
   spoQlQuery: string;
 
-  @property({type: String, attribute: 'api-url'})
+  @property({type: String, attribute: 'url-api'})
   apiUrl: string;
 
   @property({type:Number})
@@ -85,6 +89,9 @@ export class AeP2fGrid extends LitElement {
  
   @property({type:String, attribute:'msg-empty'})
   msgEmpty: string = 'Unfortunately no documents were found!';
+
+  @property({type:Boolean, attribute: 'modus-viewer'})
+  modusViewer: boolean;
 
   static get styles() {
     return [styles];
@@ -157,12 +164,11 @@ export class AeP2fGrid extends LitElement {
                         image="${spoUriConverter(this.baseUrl + '/api', document.asset.thumbnailUri)}"
                         id="document_${document.id}">
                         ${document.meta.publish != undefined ? 
-                          html`${publishStateTemplate(document)}` 
-                          : html`` 
-                        }                    
-                        ${actionsTemplate(this, document)}
-                        ${categoryTemplate(document)}
-                        ${convertingStatusTemplate(this, document)}
+                          html`${publishStateTemplate(document)}` : html`` 
+                        }
+                        ${actionsTemplate(this, document)} 
+                        ${categoryTemplate(document)}  
+                        ${convertingStatusTemplate(this, document)}     
                       </ae-card>
                     `
                 )}` : 

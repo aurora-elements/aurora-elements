@@ -50,6 +50,11 @@ export const styles = css`
     grid-template-rows:     1fr 80px; 
     grid-template-areas:    "primary primary primary" ". . ."; 
   }
+  .p2f-grid-item-actions.viewer {
+    grid-template-columns:  1fr; 
+    grid-template-rows:     1fr; 
+    grid-template-areas:    "primary"; 
+  }
   .p2f-grid-item-actions a {
     background:             var(--p2f-grid-item-action-secondary-bg, #fff);
     text-decoration:        none;

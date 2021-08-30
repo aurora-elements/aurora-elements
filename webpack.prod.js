@@ -10,7 +10,7 @@ module.exports = {
     'aurora.elements': './src/elements.ts',
     showcase: './src/showcase.ts',
     'aurora.modules': './src/modules.ts',
-    'aurora.dashlets': './src/dashboard.ts'
+    'aurora.dashlets': './src/dashlets.ts'
   },
   module: {
     rules: [
