@@ -7,6 +7,7 @@ module.exports = {
   mode: "development",
   devServer: {
     historyApiFallback: true,
+    port: 4200,
   },
   entry: {
     aurora: './src/elements.ts',

@@ -144,7 +144,6 @@ class P2fGridPage extends LitElement {
     let filterByStatus =            `${this.status != 'all' ? "%7Bitems publishedstate eq '" + this.status + "'%7D" : ""}`;
     let filterByStatusAndCategory = `${this.status != 'all' && this.category != 'all' ? 'and' : ''}`;
     let filterByCategory =          `${this.category != 'all' ? " %7Bproperty 'category' eq '" + this.category + "'%7D" : ""}`; 
-    let filterByName =              `${this.searchString != undefined ? "and %7Bproperty 'category' contains '" + this.searchString + "'%7D" : ""}`;
     let orderBy =                   `orderby %7Bcreated ${this.sorting}%7D `; 
     let limit =                     `limit ${this.size}`;          
 
@@ -154,7 +153,6 @@ class P2fGridPage extends LitElement {
       ${filterByStatus} 
       ${filterByStatusAndCategory}
       ${filterByCategory}
-      ${filterByName}
       ${orderBy}
       ${limit}
     `;
@@ -174,6 +172,7 @@ class P2fGridPage extends LitElement {
       <div class="show-box">
         <ae-p2f-grid
           modus-viewer
+          search-string="${this.searchString}"
           url-base="${this.urlBase}"
           spoql-query="${spoqlQuery}">
         </ae-p2f-grid>

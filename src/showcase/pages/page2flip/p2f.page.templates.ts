@@ -12,7 +12,7 @@ export function defaultContentTemplate() {
       Das page2flip Grid...
     </ae-headline-block>
     <small style="width: 100%;display: block;padding-bottom: 40px;opacity: .5;"
-      >Version 0.0.8</small
+      >Version 0.0.9</small
     >
     <div class="show-box">
       <ae-p2f-grid

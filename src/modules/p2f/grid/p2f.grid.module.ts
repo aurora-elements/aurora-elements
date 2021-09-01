@@ -1,16 +1,11 @@
 import "../../../elements/confirm.dialog.element";
 import "../../../elements/card.element";
 import "../../../elements/loader.element";
-import { LitElement, html } from "lit";
+import { LitElement } from "lit";
 import { customElement, property } from "lit/decorators.js";
-import publicApi from "../../../functionalities/directives/spo/spo.api.fetch.public.directive";
-import { spoUriConverter } from "../../../functionalities/directives/spo/spo.uri.converter.directive";
-import { until } from "lit/directives/until";
 import { styles } from './p2f.grid.styles.modules'
-import { publishStateTemplate, actionsTemplate, categoryTemplate, convertingStatusTemplate } from './p2f.grid.templates';
-import {P2fDocument} from '../../../functionalities/interfaces/p2f/p2f.document.interface';
 import { aeDeleteEvent, aeDeletedEvent, aeEvent } from "../../../functionalities/directives/event.directive";
-import { errorHandler } from "../../../functionalities/directives/error.handler.directive";
+import { masterTemplate } from "./p2f.grid.templates";
 
 /**
  * page2flip Grid Module
@@ -62,6 +57,9 @@ export class AeP2fGrid extends LitElement {
 
   @property({type:String, attribute: 'update-event'})
   updateEvent: string = 'afterViewUpdate';
+
+  @property({type:String, attribute: 'search-string'})
+  searchString: string;
 
   @property({type:String, attribute: 'action-primary'})
   actionPrimary: string = 'edit';
@@ -135,56 +133,7 @@ export class AeP2fGrid extends LitElement {
   }
 
   render() {
-
-    let apiResponse:any;
-
-    if(!this.spoQlQuery) {
-      apiResponse = publicApi.get(`${this.baseUrl}/api/scope/${this.scopeKey}/items/p2fDocumentItem`);
-    } 
-    else if(this.apiUrl) {
-      apiResponse = publicApi.get(this.apiUrl);  
-    } 
-    else {
-      apiResponse = publicApi.get(`${this.baseUrl}/api/spoql?q=${this.spoQlQuery}`);
-    }
-
-    return html`
-      ${until(
-        apiResponse.then(
-          (documents:any) => html`
-            ${documents.length > 0 ? 
-              html`      
-                ${documents.slice(0, this.size).map(
-                  (document:P2fDocument) =>
-                    html`
-                      <ae-card
-                        label="${document.name ? document.name : 'Name not specified'}"
-                        part="document"
-                        target="_blank"             
-                        image="${spoUriConverter(this.baseUrl + '/api', document.asset.thumbnailUri)}"
-                        id="document_${document.id}">
-                        ${document.meta.publish != undefined ? 
-                          html`${publishStateTemplate(document)}` : html`` 
-                        }
-                        ${actionsTemplate(this, document)} 
-                        ${categoryTemplate(document)}  
-                        ${convertingStatusTemplate(this, document)}     
-                      </ae-card>
-                    `
-                )}` : 
-              html`<span>${this.msgEmpty}</span>`
-            }
-          `
-        ).catch((e:Event) => 
-            errorHandler(this, e, 'ae-p2f-grid', true)
-        ),
-        html`
-          <slot name="documents-loading-information">
-            <ae-loader part="documents-loading-information"></ae-loader>
-          </slot>
-        `
-      )}
-    `;
+    return masterTemplate(this);
   }
 }
 

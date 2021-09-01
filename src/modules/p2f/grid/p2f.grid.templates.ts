@@ -1,7 +1,13 @@
 import { html } from 'lit';
 import {P2fDocument} from '../../../functionalities/interfaces/p2f/p2f.document.interface';
+import publicApi from "../../../functionalities/directives/spo/spo.api.fetch.public.directive";
+import "../../../elements/card.element";
+import "../../../elements/loader.element";
+import { errorHandler } from '../../../functionalities/directives/error.handler.directive';
+import { spoUriConverter } from '../../../functionalities/directives/spo/spo.uri.converter.directive';
+import { until } from 'lit/directives/until';
 
-export function publishStateTemplate(document: P2fDocument) {
+function publishStateTemplate(document: P2fDocument) {
     return html`
         ${document.meta.publish.state === 'PUBLISHED' ? 
           html`
@@ -23,7 +29,7 @@ export function publishStateTemplate(document: P2fDocument) {
     `;
 }
 
-export function actionsTemplate(t:any, document: P2fDocument) {
+function actionsTemplate(t:any, document: P2fDocument) {
 
   let convertingStatus: string;
 
@@ -97,7 +103,7 @@ export function actionsTemplate(t:any, document: P2fDocument) {
   `;
 }
 
-export function categoryTemplate(document: P2fDocument) {
+function categoryTemplate(document: P2fDocument) {
   return html`
     <span
       slot="bottom"
@@ -107,7 +113,7 @@ export function categoryTemplate(document: P2fDocument) {
   `;
 }
 
-export function convertingStatusTemplate(t:any, document: P2fDocument) {
+function convertingStatusTemplate(t:any, document: P2fDocument) {
 
   let convertingStatus: string;
 
@@ -136,6 +142,83 @@ export function convertingStatusTemplate(t:any, document: P2fDocument) {
         : html``
       }
     </div>
+  `;
+}
+
+export function masterTemplate(t:any) {
+  
+  let apiResponse:any;
+
+  if(!t.spoQlQuery) {
+    apiResponse = publicApi.get(`${t.baseUrl}/api/scope/${t.scopeKey}/items/p2fDocumentItem`);
+  } 
+  else if(t.apiUrl) {
+    apiResponse = publicApi.get(t.apiUrl);  
+  } 
+  else {
+    apiResponse = publicApi.get(`${t.baseUrl}/api/spoql?q=${t.spoQlQuery}`);
+  }
+
+  return html`
+    ${until(
+      apiResponse.then(
+        (documents:any) => html`
+          ${documents.length > 0 ? 
+            html`   
+              ${documents.slice(0, t.size).map(
+                (document:P2fDocument) =>
+                  html`
+                    ${t.searchString != undefined ? 
+                      html`
+                        ${document.name != undefined && document.name.toLowerCase().includes(t.searchString) ? 
+                          html`
+                            <ae-card
+                              label="${document.name ? document.name : 'Name not specified'}"
+                              part="document"
+                              target="_blank"             
+                              image="${spoUriConverter(t.baseUrl + '/api', document.asset.thumbnailUri)}"
+                              id="document_${document.id}">
+                              ${document.meta.publish != undefined ? 
+                                html`${publishStateTemplate(document)}` : html`` 
+                              }
+                              ${actionsTemplate(t, document)} 
+                              ${categoryTemplate(document)}  
+                              ${convertingStatusTemplate(t, document)}     
+                            </ae-card>
+                          `: 
+                          html``
+                        }
+                      `:
+                      html`
+                        <ae-card
+                          label="${document.name ? document.name : 'Name not specified'}"
+                          part="document"
+                          target="_blank"             
+                          image="${spoUriConverter(t.baseUrl + '/api', document.asset.thumbnailUri)}"
+                          id="document_${document.id}">
+                          ${document.meta.publish != undefined ? 
+                            html`${publishStateTemplate(document)}` : html`` 
+                          }
+                          ${actionsTemplate(t, document)} 
+                          ${categoryTemplate(document)}  
+                          ${convertingStatusTemplate(t, document)}     
+                        </ae-card>
+                      `
+                    }                 
+                  `
+              )}` : 
+            html`<span>${t.msgEmpty}</span>`
+          }
+        `
+      ).catch((e:Event) => 
+          errorHandler(t, e, 'ae-p2f-grid', true)
+      ),
+      html`
+        <slot name="documents-loading-information">
+          <ae-loader part="documents-loading-information"></ae-loader>
+        </slot>
+      `
+    )}
   `;
 }
 
