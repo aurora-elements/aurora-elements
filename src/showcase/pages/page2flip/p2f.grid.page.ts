@@ -25,6 +25,7 @@ const styles = css`
     float: left;
     width: 100%;
     box-sizing: border-box;
+    position:relative;
   }
   .space-bottom-20 {
     margin-bottom:20px!important;
@@ -38,8 +39,8 @@ class P2fGridPage extends LitElement {
   @property({type: String})
   spaceKey: string = "thenewp2f";
 
-  @property({type: String})
-  size: string = "3";
+  @property({type: Number})
+  size: number = 3;
 
   @property({type: String})
   status: string = "all";
@@ -74,7 +75,7 @@ class P2fGridPage extends LitElement {
 
   sizeChanged() {
     setTimeout(() => {
-      this.size = this.sizeInput.value;
+      this.size = parseInt(this.sizeInput.value);
     },2000)
   }
 
@@ -144,8 +145,7 @@ class P2fGridPage extends LitElement {
     let filterByStatus =            `${this.status != 'all' ? "%7Bitems publishedstate eq '" + this.status + "'%7D" : ""}`;
     let filterByStatusAndCategory = `${this.status != 'all' && this.category != 'all' ? 'and' : ''}`;
     let filterByCategory =          `${this.category != 'all' ? " %7Bproperty 'category' eq '" + this.category + "'%7D" : ""}`; 
-    let orderBy =                   `orderby %7Bcreated ${this.sorting}%7D `; 
-    let limit =                     `limit ${this.size}`;          
+    let orderBy =                   `orderby %7Bcreated ${this.sorting}%7D`;        
 
     let spoqlQuery = `
       ${selectItem} 
@@ -154,7 +154,6 @@ class P2fGridPage extends LitElement {
       ${filterByStatusAndCategory}
       ${filterByCategory}
       ${orderBy}
-      ${limit}
     `;
 
     return html`
@@ -172,6 +171,7 @@ class P2fGridPage extends LitElement {
       <div class="show-box">
         <ae-p2f-grid
           modus-viewer
+          size="${this.size}"
           search-string="${this.searchString}"
           url-base="${this.urlBase}"
           spoql-query="${spoqlQuery}">

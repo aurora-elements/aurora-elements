@@ -78,7 +78,7 @@ export function DIYconfigTemplate(t:any) {
       >
         <option value="all">Alle</option>
         ${until(
-        t.categoryItems
+          t.categoryItems
             .then(
                 (categories: any) => html`
                 ${categories.map(
