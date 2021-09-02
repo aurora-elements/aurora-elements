@@ -1,4 +1,5 @@
-/* 
+
+import "../../../apps/p2f/kiosk/p2f.kiosk.apps";/* 
 text suche
 alternative darstellung kategorien
 */
@@ -179,6 +180,11 @@ class P2fGridPage extends LitElement {
       </div>
 
       <ae-confirm-dialog></ae-confirm-dialog>
+      <div style="display: block;position: fixed;top: 0;left: 0;width: 100%;height: 100%;z-index: 1000000;background: #fff;overflow-y:auto;">
+        <p2f-kiosk 
+          url="https://lyreco.devdock.space.one"
+          key="lyreco"></p2f-kiosk>
+      </div>
   `;
   }
 }
