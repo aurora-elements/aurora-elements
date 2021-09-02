@@ -171,4 +171,10 @@ export const styles = css`
   .converting-status.converting {
     background:               #f57c00;
   }
+
+  #counter {
+    position:absolute;
+    top:10px;
+    right:10px;
+  }
 `;

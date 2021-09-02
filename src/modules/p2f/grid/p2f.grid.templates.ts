@@ -163,7 +163,9 @@ export function masterTemplate(t:any) {
     ${until(
       apiResponse.then(
         (documents:any) => html`
-        <span style="position:absolute;top:10px;right:10px;">
+        <span 
+          id="counter" 
+          part="counter">
           ${t.size != undefined ? (t.size > documents.length ? documents.length : t.size) + ' / ' + documents.length : documents.length}
         </span>
           ${documents.length > 0 ? 
