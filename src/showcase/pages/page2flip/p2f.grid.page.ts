@@ -181,9 +181,10 @@ class P2fGridPage extends LitElement {
 
       <ae-confirm-dialog></ae-confirm-dialog>
       <div style="display: block;position: fixed;top: 0;left: 0;width: 100%;height: 100%;z-index: 1000000;background: #fff;overflow-y:auto;">
-        <p2f-kiosk 
+        <ae-p2f-kiosk 
           url="https://lyreco.devdock.space.one"
-          key="lyreco"></p2f-kiosk>
+          key="lyreco">
+        </ae-p2f-kiosk>
       </div>
   `;
   }

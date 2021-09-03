@@ -10,25 +10,24 @@ export function kioskTemplate(t:any) {
     t.categoryItems = publicApi.get(`${t.urlBase}/api/scope/${t.spaceKey}/items/p2fDocumentCategory`);
     return html`
     <div class="show-box space-bottom-20">
-        <div style="width:100%;float:left;background:orange;" id="categoryMenu">
+        <div id="categoryMenu" style="display:none;">
         ${until(
         t.categoryItems
           .then(
               (categories: any) => html`
               ${categories.map(
-                  (category: P2fCategory) => html`
+                  (category: P2fCategory, index) => html`
                   <span
-                    style="
-                    ${category.meta.parent != undefined ? 'display:none' : 'display:block'}; 
-                    ${category.meta.parent === t.selectedCategory ? 'display:block' : ''};
-                    padding:10px 20px;
-                    background:yellow;
-                    margin-right:10px;
-                    float:left;"
                     id="${category.id}"
                     parent="${category.meta.parent != undefined ? category.meta.parent : ''}"
                     @click="${t.selectCategory}"
-                    class="${category.id === t.selectedCategory ? 'selected' : ''}">
+                    class="
+                      ${category.meta.parent != undefined ? ' category-hidden ' : ' category-visible '} 
+                      ${t.selectedCategory != undefined ? 
+                        (category.id === t.selectedCategory ? ' category-active ' : '') : 
+                        (index == 0 ? ' category-active' : '')
+                      }
+                    ">
                     ${category.name != undefined
                           ? category.name
                           : category.id

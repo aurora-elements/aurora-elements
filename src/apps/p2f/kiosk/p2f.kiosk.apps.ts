@@ -1,10 +1,11 @@
-import "../../../modules/p2f/grid/p2f.grid.module";
+
+import "./categories/p2f.kiosk.categories";import "../../../modules/p2f/grid/p2f.grid.module";
 import {LitElement, html } from 'lit';
 import { customElement, property } from "lit/decorators.js";
 import { kioskTemplate } from "./p2f.kiosk.templates.apps";
 import { styles } from "./p2f.kiosk.styles.apps";
 
-@customElement('p2f-kiosk')
+@customElement('ae-p2f-kiosk')
 export class P2fKiosk extends LitElement {
   @property({type: String, attribute:'url'})
   urlBase: string = '';
@@ -55,14 +56,12 @@ export class P2fKiosk extends LitElement {
   }
 
   selectCategory(e:Event) {
+    let parent = (e.target as Element).getAttribute('parent')
     this.category = (e.target as Element).id;  
     this.selectedCategory = parseInt((e.target as Element).id);
     this.selectedCategoryName = (e.target as Element).textContent.trim();
-
-    (e.target as Element).classList.add('selected');  
-
-    console.log('e.target: ', e.target);
     console.log('category: ', this.category);
+    console.log('parent: ', parent);
     console.log('selectedCategory: ', this.selectedCategory);
     console.log('selectedCategoryName: ', this.selectedCategoryName);
   }
@@ -128,8 +127,11 @@ export class P2fKiosk extends LitElement {
     `;
 
     return html`
+      <ae-p2f-kiosk-categories 
+        url="${this.urlBase}" 
+        key="${this.spaceKey}">
+      </ae-p2f-kiosk-categories>
       ${kioskTemplate(this)}
-
       <div class="show-box">
         <header>
           <h1>
@@ -147,5 +149,11 @@ export class P2fKiosk extends LitElement {
 
       <ae-confirm-dialog></ae-confirm-dialog>
   `;
+  }
+}
+
+declare global {
+  interface HTMLElementTagNameMap {
+      'ae-p2f-kiosk': P2fKiosk;
   }
 }
