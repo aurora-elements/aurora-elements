@@ -9,47 +9,6 @@ import publicApi from "../../../functionalities/directives/spo/spo.api.fetch.pub
 export function kioskTemplate(t:any) {
     t.categoryItems = publicApi.get(`${t.urlBase}/api/scope/${t.spaceKey}/items/p2fDocumentCategory`);
     return html`
-    <div class="show-box space-bottom-20">
-        <div id="categoryMenu" style="display:none;">
-        ${until(
-        t.categoryItems
-          .then(
-              (categories: any) => html`
-              ${categories.map(
-                  (category: P2fCategory, index) => html`
-                  <span
-                    id="${category.id}"
-                    parent="${category.meta.parent != undefined ? category.meta.parent : ''}"
-                    @click="${t.selectCategory}"
-                    class="
-                      ${category.meta.parent != undefined ? ' category-hidden ' : ' category-visible '} 
-                      ${t.selectedCategory != undefined ? 
-                        (category.id === t.selectedCategory ? ' category-active ' : '') : 
-                        (index == 0 ? ' category-active' : '')
-                      }
-                    ">
-                    ${category.name != undefined
-                          ? category.name
-                          : category.id
-                    }                   
-                      
-                  </span>
-                `
-              )}
-            `
-          )
-          .catch((e: Event) => errorHandler(t, e, "category", true)),
-        html`
-            <slot name="documents-loading-information">
-              <ae-loader part="documents-loading-information"></ae-loader>
-            </slot>
-          `
-      )}
-      
-      </div>
-
-
-
     <label style="float:left;width:100%;margin-top:20px;">
       Dokumente aus welcher Kategorie sollen angezeigt werden?
     </label>

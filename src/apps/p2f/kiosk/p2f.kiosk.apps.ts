@@ -47,25 +47,6 @@ export class P2fKiosk extends LitElement {
     },2000)
   }
 
-  categoryChanged() {
-    setTimeout(() => {  
-      this.category = this.categorySelect.value;
-      this.selectedCategory = parseInt(this.categorySelect.value);
-      this.selectedCategoryName = this.categorySelect.selectedOptions[0].textContent.trim();
-    },300)
-  }
-
-  selectCategory(e:Event) {
-    let parent = (e.target as Element).getAttribute('parent')
-    this.category = (e.target as Element).id;  
-    this.selectedCategory = parseInt((e.target as Element).id);
-    this.selectedCategoryName = (e.target as Element).textContent.trim();
-    console.log('category: ', this.category);
-    console.log('parent: ', parent);
-    console.log('selectedCategory: ', this.selectedCategory);
-    console.log('selectedCategoryName: ', this.selectedCategoryName);
-  }
-
   sortingChanged() {
     setTimeout(() => {
       this.sorting = this.sortingSelect.value;
@@ -96,16 +77,20 @@ export class P2fKiosk extends LitElement {
     return this.shadowRoot!.querySelector('#size select')! as HTMLSelectElement;
   }
 
-  private get categorySelect(): HTMLSelectElement {
-    return this.shadowRoot!.querySelector('#category')! as HTMLSelectElement;
-  }
-
   private get sortingSelect(): HTMLSelectElement {
     return this.shadowRoot!.querySelector('#sorting select')! as HTMLSelectElement;
   }
 
   private get statusSelect(): HTMLSelectElement {
     return this.shadowRoot!.querySelector('#status select')! as HTMLSelectElement;
+  }
+
+  firstUpdated() {
+    document.addEventListener('ae-p2f-kiosk-categories:ae-p2f-kiosk|select', (e:CustomEvent) => {
+      this.category = e.detail.category;  
+      this.selectedCategory = parseInt(e.detail.catgory);
+      this.selectedCategoryName = e.detail.name;
+    });
   }
 
   /* Render template */
