@@ -1,6 +1,23 @@
 import { css } from "lit";
 
 export const styles = css`
+    :host {
+        background-image: var(--ae-p2f-kiosk--bg-image, none);
+        background-color: var(--ae-p2f-kiosk--bg-color, #e9e9e9);
+        display:grid;
+        grid-template-rows: max-content 1fr;
+        width:100%;
+        height:100vh;
+        overflow-x:hidden;
+        overflow-y: auto;
+        box-sizing: border-box;
+    }
+
+    ::part(container) {
+        max-width: var(--ae-p2f-kiosk-container--width, 1400px);
+    }
+
+
     ae-p2f-grid {
         width: 100%;
         box-sizing: border-box;

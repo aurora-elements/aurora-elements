@@ -1,6 +1,6 @@
 import "../../../../elements/loader.element";
 import { css, html, LitElement } from "lit";
-import { customElement, property } from "lit/decorators.js";
+import { customElement, property, queryAll } from "lit/decorators.js";
 import { errorHandler } from "../../../../functionalities/directives/error.handler.directive";
 import { until } from "lit/directives/until";
 import { P2fCategory } from "../../../../functionalities/interfaces/p2f/p2f.category.interface";
@@ -56,10 +56,24 @@ export class P2fKioskCategories extends LitElement {
     @property({type: String})
     category: string = "all";
 
+    @queryAll('div')
+    categoryItems:any;
+
+    // Problem bei jedem klick wir neu gerendert, daher funktioniert kinder anzeigen nicht
     selectCategory(e:Event) {
         let parent:number|string =      (e.target as Element).getAttribute('parent');
         let category:number|string =    (e.target as Element).id;
         let name:string =               (e.target as Element).textContent.trim();
+
+        this.categoryItems.forEach((categoryItem:any) => {
+            let parentId = categoryItem.getAttribute('parent');
+            console.log('Elternkategorie: ', parentId)
+            console.log('ausgewählte Kategorie: ', category)
+            if( category == parentId ) {
+                categoryItem.classList.remove('category-hidden');
+                categoryItem.classList.add('category-visible');
+            }
+        })
 
 
         this.selectedCategory = parseInt(category);
@@ -71,7 +85,7 @@ export class P2fKioskCategories extends LitElement {
             name:       name,
             parent:     parent
         }, true);
-      }
+    }
 
     static get styles() {
         return [styles];
@@ -84,14 +98,14 @@ export class P2fKioskCategories extends LitElement {
                 categoryItems
                 .then(
                     (categories: any) => html`
-                        ${categories.map(
+                        ${categories.filter(category => category.meta.parent == this.selectedCategory).map(
                             (category: P2fCategory, index:number) => html`
                             <div
                                 id="${category.id}"
                                 parent="${category.meta.parent != undefined ? category.meta.parent : ''}"
-                                @click="${this.selectCategory}"
+                                @click=${this.selectCategory}
                                 class="
-                                    ${category.meta.parent != undefined ? ' category-hidden ' : ' category-visible '} 
+                                    ${category.meta.parent != this.selectedCategory ? ' category-hidden ' : ' category-visible '} 
                                     ${this.selectedCategory != undefined ? 
                                         (category.id === this.selectedCategory ? ' category-active ' : '') : 
                                         (index == 0 ? ' category-active' : '')

@@ -1,5 +1,8 @@
 
-import "./categories/p2f.kiosk.categories";import "../../../modules/p2f/grid/p2f.grid.module";
+import "./components/p2f.kiosk.header";
+import "./components/p2f.kiosk.overview";
+import "./components/p2f.kiosk.categories";
+import "../../../modules/p2f/grid/p2f.grid.module";
 import {LitElement, html } from 'lit';
 import { customElement, property } from "lit/decorators.js";
 import { kioskTemplate } from "./p2f.kiosk.templates.apps";
@@ -7,17 +10,20 @@ import { styles } from "./p2f.kiosk.styles.apps";
 
 @customElement('ae-p2f-kiosk')
 export class P2fKiosk extends LitElement {
-  @property({type: String, attribute:'url'})
+  @property({type: String, attribute:'url' })
   urlBase: string = '';
 
   @property({type: String, attribute: 'key'})
-  spaceKey: string = "thenewp2f";
+  spaceKey: string = "";
 
   @property({type: Number})
   size: number = 20;
 
   @property({type: String})
   status: string = "all";
+
+  @property({type: String})
+  slogan: string = "";
 
   @property({type: String})
   sorting: string = "descending";
@@ -37,8 +43,11 @@ export class P2fKiosk extends LitElement {
   @property()
   categoryItems:any;
 
+  @property({attribute: false})
+  backgroundImage: any;
+
   static get styles() {
-    return [styles];
+      return [styles];
   }
 
   sizeChanged() {
@@ -86,6 +95,8 @@ export class P2fKiosk extends LitElement {
   }
 
   firstUpdated() {
+    this.backgroundImage = 'url('+ this.urlBase +'/api/scope/'+ this.spaceKey +'/asset/1196/thumbnail?&width=1920)';
+
     document.addEventListener('ae-p2f-kiosk-categories:ae-p2f-kiosk|select', (e:CustomEvent) => {
       this.category = e.detail.category;  
       this.selectedCategory = parseInt(e.detail.catgory);
@@ -112,26 +123,48 @@ export class P2fKiosk extends LitElement {
     `;
 
     return html`
-      <ae-p2f-kiosk-categories 
+    <style>
+      :host {
+        --ae-p2f-kiosk--bg-image: ${this.backgroundImage};
+        --ae-p2f-kiosk--bg-color:#e9e9e9;
+      }
+    </style>
+      <ae-p2f-kiosk-header
+      url="${this.urlBase}" 
+          key="${this.spaceKey}">
+          <div slot="header-extended-content">
+            <slot name="header-content">
+              <h1 class="slogan" style="color:#2d2e87;font-weight:700;">
+                ${this.slogan}
+              </h1>
+            </slot>
+          </div>
+      </ae-p2f-kiosk-header>
+      <ae-p2f-kiosk-overview
         url="${this.urlBase}" 
         key="${this.spaceKey}">
-      </ae-p2f-kiosk-categories>
-      ${kioskTemplate(this)}
-      <div class="show-box">
-        <header>
-          <h1>
-            ${this.selectedCategoryName != undefined ? this.selectedCategoryName : 'Alle Dokumente'}
-          </h1>
-        </header>
-        <ae-p2f-grid
-          modus-viewer
-          size="${this.size}"
-          search-string="${this.searchString}"
-          url-base="${this.urlBase}"
-          spoql-query="${spoqlQuery}">
-        </ae-p2f-grid>
+      </ae-p2f-kiosk-overview>
+      <div style="display: none">
+        <ae-p2f-kiosk-categories 
+          url="${this.urlBase}" 
+          key="${this.spaceKey}">
+        </ae-p2f-kiosk-categories>
+        ${kioskTemplate(this)}
+        <div class="show-box">
+          <header>
+            <h1>
+              ${this.selectedCategoryName != undefined ? this.selectedCategoryName : 'Alle Dokumente'}
+            </h1>
+          </header>
+          <ae-p2f-grid
+            modus-viewer
+            size="${this.size}"
+            search-string="${this.searchString}"
+            url-base="${this.urlBase}"
+            spoql-query="${spoqlQuery}">
+          </ae-p2f-grid>
+        </div>
       </div>
-
       <ae-confirm-dialog></ae-confirm-dialog>
   `;
   }
