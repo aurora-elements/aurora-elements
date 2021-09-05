@@ -1,12 +1,13 @@
 
 import "./components/p2f.kiosk.header";
 import "./components/p2f.kiosk.overview";
+import "./components/p2f.kiosk.contentview";
 import "./components/p2f.kiosk.categories";
 import "../../../modules/p2f/grid/p2f.grid.module";
 import {LitElement, html } from 'lit';
-import { customElement, property } from "lit/decorators.js";
-import { kioskTemplate } from "./p2f.kiosk.templates.apps";
-import { styles } from "./p2f.kiosk.styles.apps";
+import { customElement, property, query } from "lit/decorators.js";
+import { kioskTemplate } from "./p2f.kiosk.templates.app";
+import { styles } from "./p2f.kiosk.styles.app";
 
 @customElement('ae-p2f-kiosk')
 export class P2fKiosk extends LitElement {
@@ -45,6 +46,21 @@ export class P2fKiosk extends LitElement {
 
   @property({attribute: false})
   backgroundImage: any;
+
+  @property({type:Boolean, attribute: 'modus-edit'})
+  modusEdit: boolean = false;
+
+  @property({type:Boolean, attribute: 'modus-embedded'})
+  modusEmbedded: boolean = false;
+
+  @query('ae-p2f-kiosk-header')
+  header: any;
+
+  @query('ae-p2f-kiosk-overview')
+  overview: any;
+
+  @query('ae-p2f-kiosk-contentview')
+  contentview: any;
 
   static get styles() {
       return [styles];
@@ -95,6 +111,29 @@ export class P2fKiosk extends LitElement {
   }
 
   firstUpdated() {
+    let obj = {
+      url: this.urlBase,
+      key: this.spaceKey,
+      size: this.size,
+    };
+    this.header.data = obj;
+    this.overview.data = obj;
+    this.contentview.data = obj;
+
+    document.addEventListener('ae-*:p2f-kiosk-contentview|show', () => {
+      this.overview.classList.add('fadeOut');
+      this.overview.classList.remove('fadeIn');
+      this.contentview.classList.remove('fadeOut');
+      this.contentview.classList.add('fadeIn');
+    });
+
+    document.addEventListener('ae-*:p2f-kiosk-overview|show', () => {
+      this.contentview.classList.add('fadeOut');
+      this.contentview.classList.remove('fadeIn');
+      this.overview.classList.remove('fadeOut');
+      this.overview.classList.add('fadeIn');
+    });
+
     this.backgroundImage = 'url('+ this.urlBase +'/api/scope/'+ this.spaceKey +'/asset/1196/thumbnail?&width=1920)';
 
     document.addEventListener('ae-p2f-kiosk-categories:ae-p2f-kiosk|select', (e:CustomEvent) => {
@@ -123,28 +162,32 @@ export class P2fKiosk extends LitElement {
     `;
 
     return html`
-    <style>
-      :host {
-        --ae-p2f-kiosk--bg-image: ${this.backgroundImage};
-        --ae-p2f-kiosk--bg-color:#e9e9e9;
+
+      <style>
+        :host {
+          --ae-p2f-kiosk--bg-image: ${this.backgroundImage};
+          --ae-p2f-kiosk--bg-color:#e9e9e9;
+        }
+      </style>
+
+      ${this.modusEmbedded ? 
+        html`` : 
+        html`
+          <ae-p2f-kiosk-header>
+            <div slot="header-extended-content">
+              <slot name="header-content">
+                <h1 class="slogan" style="color:#2d2e87;font-weight:700;font-size:25px;white-space:nowrap;text-overflow: ellipse;">
+                  ${this.slogan}
+                </h1>
+              </slot>
+            </div>
+          </ae-p2f-kiosk-header>
+        `
       }
-    </style>
-      <ae-p2f-kiosk-header
-      url="${this.urlBase}" 
-          key="${this.spaceKey}">
-          <div slot="header-extended-content">
-            <slot name="header-content">
-              <h1 class="slogan" style="color:#2d2e87;font-weight:700;font-size:25px;white-space:nowrap;text-overflow: ellipse;">
-                ${this.slogan}
-              </h1>
-            </slot>
-          </div>
-      </ae-p2f-kiosk-header>
-      <ae-p2f-kiosk-overview
-        class="container"
-        url="${this.urlBase}" 
-        key="${this.spaceKey}">
-      </ae-p2f-kiosk-overview>
+
+      <ae-p2f-kiosk-overview class="container"></ae-p2f-kiosk-overview>
+      <ae-p2f-kiosk-contentview></ae-p2f-kiosk-contentview>
+
       <div style="display: none">
         <ae-p2f-kiosk-categories 
           url="${this.urlBase}" 
@@ -166,7 +209,9 @@ export class P2fKiosk extends LitElement {
           </ae-p2f-grid>
         </div>
       </div>
-      <ae-confirm-dialog></ae-confirm-dialog>
+
+      ${this.modusEdit ? html`<ae-confirm-dialog></ae-confirm-dialog>` : html``}
+      
   `;
   }
 }

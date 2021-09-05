@@ -11,8 +11,7 @@ export const styles = css`
         grid-template-rows: 100px 1fr;
         width:100%;
         height:100vh;
-        overflow-x:hidden;
-        overflow-y: auto;
+        overflow:hidden;
         box-sizing: border-box;
     }
 
@@ -71,5 +70,21 @@ export const styles = css`
         color: red!important;
         cursor:default;
         pointer-events: none;
+    }
+
+    .fadeOut {
+        transition: opacity 500ms linear 0s, height 0ms linear 500ms;
+        opacity: 0;
+        height:0;
+        overflow:hidden;
+        visibility: hidden;
+    }
+    .fadeIn {
+        transition: opacity 500ms linear 0s, height 0ms linear 500ms;
+        opacity: 1;
+        height:100%;
+        overflow-y:auto;
+        visibility: visible;
+        display: block;
     }
 `;

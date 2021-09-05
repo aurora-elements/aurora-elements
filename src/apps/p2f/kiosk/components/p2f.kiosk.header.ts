@@ -1,5 +1,6 @@
 import { css, html, LitElement } from "lit";
 import { customElement, property } from "lit/decorators.js";
+import { aeEvent } from "../../../../functionalities/directives/event.directive";
 
 const styles = css`
     :host {
@@ -7,6 +8,8 @@ const styles = css`
         width:100%;
         display:block;
         box-sizing: border-box;
+        position: relative;
+        z-index: 100;
     }
     .container {
         margin:0 auto;
@@ -22,6 +25,7 @@ const styles = css`
         height: 100%;
         align-self: center;
         justify-self: start;
+        cursor: pointer;
     }
     .link-favorites {
         transition: color 300ms linear 0s;
@@ -60,21 +64,19 @@ const styles = css`
 @customElement('ae-p2f-kiosk-header')
 export class P2fKioskHeader extends LitElement {
 
-    @property({type: String, attribute:'url'})
-    urlBase: string = "";
-  
-    @property({type: String, attribute: 'key'})
-    spaceKey: string = "";
+    @property({attribute: false})
+    data: any;
 
     static get styles() {
         return [styles];
     }
+
     render() {
         return html`
             <div 
                 class="container" 
                 part="container">
-                <img src="${this.urlBase}/api/scope/${this.spaceKey}/asset/1194/thumbnail?height=130" />
+                <img @click=${this.showOverview} src="${this.data.url}/api/scope/${this.data.key}/asset/1194/thumbnail?height=130" />
 
                 <slot name="header-extended-content"></slot>
 
@@ -95,6 +97,10 @@ export class P2fKioskHeader extends LitElement {
                 </a>
             </div>            
         `;
+    }
+
+    showOverview() {
+        aeEvent(this, '*', 'p2f-kiosk-overview', 'show', {}, true);
     }
 }
 

@@ -6,7 +6,7 @@ import { until } from "lit/directives/until";
 import { P2fCategory } from "../../../../functionalities/interfaces/p2f/p2f.category.interface";
 import publicApi from "../../../../functionalities/directives/spo/spo.api.fetch.public.directive";
 import { spoUriConverter } from "../../../../functionalities/directives/spo/spo.uri.converter.directive";
-
+import { aeEvent } from "../../../../functionalities/directives/event.directive";
 
 const styles = css`
     :host {
@@ -14,6 +14,9 @@ const styles = css`
         width:100%;
         margin:0 auto;
         max-width: var(--ae-p2f-kiosk-container--width, 1400px);
+        transition: transform 500ms linear 0s;
+        overflow-x:hidden;
+        overflow-y: auto;
     }
     .grid-container {
         grid-template-columns: repeat(auto-fill,minmax(400px,1fr));
@@ -57,17 +60,14 @@ const styles = css`
 @customElement('ae-p2f-kiosk-overview')
 export class P2fKioskOverview extends LitElement {
 
-    @property({type: String, attribute:'url'})
-    urlBase: string = "";
-  
-    @property({type: String, attribute: 'key'})
-    spaceKey: string = "";
+    @property({attribute: false})
+    data: any;
 
     static get styles() {
         return [styles];
     }
     render() {
-        let categoryItems = publicApi.get(`${this.urlBase}/api/scope/${this.spaceKey}/items/p2fDocumentCategory`);
+        let categoryItems = publicApi.get(`${this.data.url}/api/scope/${this.data.key}/items/p2fDocumentCategory`);
         return html`
         <div class="grid-container" part="grid-container">
             ${until(
@@ -76,8 +76,8 @@ export class P2fKioskOverview extends LitElement {
                     (categories: any) => html`
                         ${categories.filter(category => category.meta.parent == undefined).map(
                             (category: P2fCategory) => html`
-                            <div id="${category.id}">
-                                <img src="${spoUriConverter(this.urlBase + '/api', category.asset.thumbnailUri)}?Width=500" />
+                            <div id="${category.id}" @click=${this.rootCategoryHandler}>
+                                <img src="${spoUriConverter(this.data.url + '/api', category.asset.thumbnailUri)}?Width=500" />
                                 <span>
                                     ${category.name != undefined ? category.name : category.id}
                                 </span>                         
@@ -91,6 +91,10 @@ export class P2fKioskOverview extends LitElement {
             )}
         </div>
         `;
+    }
+
+    rootCategoryHandler() {
+        aeEvent(this, '*', 'p2f-kiosk-contentview', 'show', {}, true);
     }
 }
 
