@@ -4,8 +4,11 @@ export const styles = css`
     :host {
         background-image: var(--ae-p2f-kiosk--bg-image, none);
         background-color: var(--ae-p2f-kiosk--bg-color, #e9e9e9);
+        background-position: center;
+        background-attachment: fixed;
+        background-size: cover;
         display:grid;
-        grid-template-rows: max-content 1fr;
+        grid-template-rows: 100px 1fr;
         width:100%;
         height:100vh;
         overflow-x:hidden;
@@ -15,8 +18,12 @@ export const styles = css`
 
     ::part(container) {
         max-width: var(--ae-p2f-kiosk-container--width, 1400px);
+        padding-left: var(--ae-p2f-kiosk--padding-horizontal, 2.084vw);
+        padding-right: var(--ae-p2f-kiosk--padding-horizontal, 2.084vw);
     }
-
+    [slot=header-extended-content] {
+        overflow:hidden;
+    }
 
     ae-p2f-grid {
         width: 100%;

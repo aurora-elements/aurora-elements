@@ -12,29 +12,32 @@ const styles = css`
     :host {
         display:block;
         width:100%;
-        padding:4.315vh 2.084vw;
-        box-sizing: border-box;
-    }
-    .container {
-        grid-template-columns: repeat(auto-fill,minmax(400px,1fr));
-        grid-gap: 30px;
-        grid-template-rows: max-content;
         margin:0 auto;
         max-width: var(--ae-p2f-kiosk-container--width, 1400px);
-        display: grid;
     }
-    div:not(.container) {
-        transition: color 200ms linear 0s, background-color 400ms ease-in-out 0s;
+    .grid-container {
+        grid-template-columns: repeat(auto-fill,minmax(400px,1fr));
+        grid-gap: calc(var(--ae-p2f-kiosk--padding-horizontal, 2.084vw) / 2);
+        grid-template-rows: max-content;       
+        display: grid;
+        padding: var(--ae-p2f-kiosk--padding-horizontal, 2.084vw);
+    }
+    div:not(.grid-container) {
         background-color:#fff;
         display: grid;
         grid-template-rows: 1fr 60px;
         box-shadow: 0px 20px 30px -20px rgba(0, 0, 0, 0.1);
         cursor: pointer;
+        background-image: linear-gradient(to right, #9ac31c 50%, #fff 0);
+        background-position: right;
+        background-size: 201% 200%;
+        transition: background-position 500ms ease-in-out 0s, color 200ms linear 0s;
     }
-    div:not(.container):hover {
-        background-color: #9ac31c;
+    div:not(.grid-container):hover {
         color:#fff;
+        background-position: left;
     }
+    
     span {
         display: block;
         padding:0 20px;
@@ -66,7 +69,7 @@ export class P2fKioskOverview extends LitElement {
     render() {
         let categoryItems = publicApi.get(`${this.urlBase}/api/scope/${this.spaceKey}/items/p2fDocumentCategory`);
         return html`
-        <div class="container" part="container">
+        <div class="grid-container" part="grid-container">
             ${until(
                 categoryItems
                 .then(

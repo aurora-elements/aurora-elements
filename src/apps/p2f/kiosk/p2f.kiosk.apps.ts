@@ -134,13 +134,14 @@ export class P2fKiosk extends LitElement {
           key="${this.spaceKey}">
           <div slot="header-extended-content">
             <slot name="header-content">
-              <h1 class="slogan" style="color:#2d2e87;font-weight:700;">
+              <h1 class="slogan" style="color:#2d2e87;font-weight:700;font-size:25px;white-space:nowrap;text-overflow: ellipse;">
                 ${this.slogan}
               </h1>
             </slot>
           </div>
       </ae-p2f-kiosk-header>
       <ae-p2f-kiosk-overview
+        class="container"
         url="${this.urlBase}" 
         key="${this.spaceKey}">
       </ae-p2f-kiosk-overview>
