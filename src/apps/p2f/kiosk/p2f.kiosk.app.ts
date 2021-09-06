@@ -184,9 +184,10 @@ export class P2fKiosk extends LitElement {
           </ae-p2f-kiosk-header>
         `
       }
-
-      <ae-p2f-kiosk-overview class="container"></ae-p2f-kiosk-overview>
-      <ae-p2f-kiosk-contentview></ae-p2f-kiosk-contentview>
+      <div class="ae-p2f-kiosk-content">
+        <ae-p2f-kiosk-overview class="container"></ae-p2f-kiosk-overview>
+        <ae-p2f-kiosk-contentview></ae-p2f-kiosk-contentview>
+      </div>
 
       <div style="display: none">
         <ae-p2f-kiosk-categories 

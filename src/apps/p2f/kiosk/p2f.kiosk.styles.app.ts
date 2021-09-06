@@ -86,5 +86,6 @@ export const styles = css`
         overflow-y:auto;
         visibility: visible;
         display: block;
+        position:relative;
     }
 `;
