@@ -44,6 +44,7 @@ const styles = css`
     transition: opacity 300ms ease;
     max-width: 100%;
     max-height: 100%;
+    min-height:0;
   }
   :host([loaded]) img {
     opacity: 1;
