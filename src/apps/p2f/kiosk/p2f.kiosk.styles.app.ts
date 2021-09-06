@@ -19,9 +19,14 @@ export const styles = css`
         max-width: var(--ae-p2f-kiosk-container--width, 1400px);
         padding-left: var(--ae-p2f-kiosk--padding-horizontal, 2.084vw);
         padding-right: var(--ae-p2f-kiosk--padding-horizontal, 2.084vw);
+        margin: 0 auto;
+        box-sizing: border-box;
     }
     [slot=header-extended-content] {
         overflow:hidden;
+    }
+    .ae-p2f-kiosk-content {
+        overflow-y: auto;
     }
 
     ae-p2f-grid {
@@ -83,7 +88,6 @@ export const styles = css`
         transition: opacity 500ms linear 0s, height 0ms linear 500ms;
         opacity: 1;
         height:100%;
-        overflow-y:auto;
         visibility: visible;
         display: block;
         position:relative;
