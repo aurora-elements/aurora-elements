@@ -34,6 +34,9 @@ export class P2fKioskContentview extends LitElement {
     @property({type: String, attribute: false})
     categoryName: string;
 
+    @property({type: Number, attribute: false})
+    categoryId: number;
+
     @query('ae-p2f-kiosk-categories')
     categoryTree: any;
 
@@ -56,6 +59,17 @@ export class P2fKioskContentview extends LitElement {
 
         document.addEventListener('ae-*:p2f-kiosk-contentview|show', (e:CustomEvent) => {
             this.categoryName = e.detail.name;
+            this.categoryId = e.detail.id;
+        });
+
+        document.addEventListener('ae-*:p2f-kiosk-grid|push', (e:CustomEvent) => {
+            this.categoryName = e.detail.name;
+            this.categoryId = e.detail.id;
+        });
+
+        document.addEventListener('ae-*:p2f-kiosk-grid|change', (e:CustomEvent) => {
+            this.categoryName = e.detail.name;
+            this.categoryId = e.detail.id;
         });
 
     }
@@ -73,7 +87,7 @@ export class P2fKioskContentview extends LitElement {
             <ae-p2f-kiosk-filterbar></ae-p2f-kiosk-filterbar>
             <ae-p2f-grid
                 modus-viewer
-                space-key=${this.data.key}
+                spoql-query="at '${this.data.key}' select item from 'p2fDocumentItem' where %7Bproperty 'category' eq '${this.categoryId}'%7D"
                 size="${this.data.size}"
                 url-base="${this.data.url}">
             </ae-p2f-grid>

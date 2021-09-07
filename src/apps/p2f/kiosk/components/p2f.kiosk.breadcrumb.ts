@@ -8,6 +8,9 @@ export class P2fKioskBreadcrumb extends LitElement {
     @property({attribute: 'category-selected'})
     selectedCategoryName: string;
 
+    @property({attribute:false})
+    categories: any = [];
+
     static get styles() {
         return css`
             :host {
@@ -52,22 +55,59 @@ export class P2fKioskBreadcrumb extends LitElement {
                 <li>
                     <a href="#" @click=${this.showOverview}>Übersicht</a>
                 </li>
-                <li>
-                    <svg viewBox="0 0 24 24">
-                        <path 
-                            fill="currentColor" 
-                            d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" />
-                    </svg>
-                </li>
-                <li>
-                    <a href="#">${this.selectedCategoryName}</a>
-                </li>
+                ${this.categories.map((category:any) => html`
+                    <li>
+                        <svg viewBox="0 0 24 24">
+                            <path 
+                                fill="currentColor" 
+                                d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" />
+                        </svg>
+                    </li>
+                    <li>
+                        <a 
+                            href="#" 
+                            category-id="${category.id}" 
+                            @click="${(e:Event) => this.itemClickHandler(e, category.id, category.name)}">
+                            ${category.name}
+                        </a>
+                    </li>                              
+                `)}
             </ul>
         `
     }
 
+    firstUpdated() {
+      //  console.log('categories 0: ', categories[0].id)
+       // categories.pop();
+       // console.log('categories nach pop: ', categories)
+       document.addEventListener('ae-*:p2f-kiosk-contentview|show', (e:CustomEvent) => {
+            this.categories.push({id: e.detail.id, name: e.detail.name});
+        });
+        document.addEventListener('ae-*:p2f-kiosk-grid|push', (e:CustomEvent) => {
+            this.categories.push({id: e.detail.id, name: e.detail.name});
+        });
+    }
+
     showOverview() {
         aeEvent(this, '*', 'p2f-kiosk-overview', 'show', {}, debugMode);
+        this.categories.length = 0;
+    }
+
+    itemClickHandler(e:Event, catId:number, name:string) {
+        e.preventDefault();
+
+         this.categories.map((category:any) => {
+             if(category.id != catId) {
+                 this.categories.pop();
+             }
+         });
+
+         aeEvent(this, '*', 'p2f-kiosk-grid', 'change', {
+            id: catId,
+            name: name
+        }, debugMode);
+
+        this.requestUpdate();    
     }
 }
 

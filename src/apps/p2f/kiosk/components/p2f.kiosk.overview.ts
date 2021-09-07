@@ -15,11 +15,9 @@ const styles = css`
         margin:0 auto;
         max-width: var(--ae-p2f-kiosk-container--width, 1400px);
         transition: transform 500ms linear 0s;
-        overflow-x:hidden;
-        overflow-y: auto;
     }
     .grid-container {
-        grid-template-columns: repeat(auto-fill,minmax(400px,1fr));
+        grid-template-columns: repeat(auto-fill,minmax(250px, 1fr));
         grid-gap: calc(var(--ae-p2f-kiosk--padding-horizontal, 2.084vw) / 2);
         grid-template-rows: max-content;       
         display: grid;
@@ -90,6 +88,18 @@ export class P2fKioskOverview extends LitElement {
                 
                 html``
             )}
+        </div>
+        <div class="grid-container" style="padding-top: 0;padding-bottom:0">
+            <h2 style="color: #2d2e87;font-weight: 600;margin-top:0;">Die aktuellen Highlights</h2>
+        </div>
+        <div class="grid-container" part="grid-container" style="grid-template-columns: unset;padding-top: 0;">
+            <ae-p2f-grid
+                modus-viewer
+                spoql-query="at '${this.data.key}' select item from 'p2fDocumentItem' where %7Bproperty 'featured' eq 'true'%7D"
+                space-key=${this.data.key}
+                size="${this.data.size}"
+                url-base="${this.data.url}">
+            </ae-p2f-grid>
         </div>
         `;
     }

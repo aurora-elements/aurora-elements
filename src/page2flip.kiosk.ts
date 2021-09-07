@@ -1,0 +1,1 @@
+import './apps/p2f/kiosk/p2f.kiosk.app'

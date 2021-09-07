@@ -1,10 +1,11 @@
 import "../../../../elements/loader.element";
 import { css, html, LitElement } from "lit";
-import { customElement, property } from "lit/decorators.js";
+import { customElement, property, queryAll } from "lit/decorators.js";
 import { errorHandler } from "../../../../functionalities/directives/error.handler.directive";
 import { until } from "lit/directives/until";
 import { P2fCategory } from "../../../../functionalities/interfaces/p2f/p2f.category.interface";
 import { debugMode } from "../p2f.kiosk.app";
+import { aeEvent } from "../../../../functionalities/directives/event.directive";
 
 
 const styles = css`
@@ -32,11 +33,11 @@ const styles = css`
     .category-visible {
         display: block;
     }
-    .category-active {
-        color: red!important;
+    .active {
+        color: #fff!important;
         cursor:default;
         pointer-events: none;
-        background-color:#f8f8f8;
+        background-color:#2d2e87;
     }
 `;
 
@@ -52,6 +53,8 @@ export class P2fKioskCategories extends LitElement {
     @property({type: String})
     category: string = "all";
 
+    @queryAll('div')
+    categoryDivs:any; 
 
     @property({attribute: false})
     data: any;
@@ -92,6 +95,12 @@ export class P2fKioskCategories extends LitElement {
         document.addEventListener('ae-*:p2f-kiosk-contentview|show', (e:CustomEvent) => {
             this.selectedCategory = e.detail.id;
         });
+        document.addEventListener('ae-*:p2f-kiosk-grid|push', (e:CustomEvent) => {
+            this.selectedCategory = e.detail.id;
+        });
+        document.addEventListener('ae-*:p2f-kiosk-grid|change', (e:CustomEvent) => {
+            this.selectedCategory = e.detail.id;
+        });
     }
     render() {
 
@@ -104,6 +113,7 @@ export class P2fKioskCategories extends LitElement {
                             (category: P2fCategory) => html`
                             <div
                                 id="${category.id}"
+                                @click=${(e:Event) => this.categoryHandler(e, category.id, category.name)}
                                 parent="${category.meta.parent != undefined ? category.meta.parent : ''}">
                                 ${category.name != undefined
                                     ? category.name
@@ -118,6 +128,14 @@ export class P2fKioskCategories extends LitElement {
                 html``
             )}
         `;
+    }
+
+    categoryHandler(e:Event, id:number, name:string) {
+        e.preventDefault();
+        aeEvent(this, '*', 'p2f-kiosk-grid', 'push', {
+            id: id,
+            name: name
+        }, debugMode);
     }
 }
 

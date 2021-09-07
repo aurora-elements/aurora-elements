@@ -163,11 +163,13 @@ export function masterTemplate(t:any) {
     ${until(
       apiResponse.then(
         (documents:any) => html`
-        <span 
-          id="counter" 
-          part="counter">
-          ${t.size != undefined ? (t.size > documents.length ? documents.length : t.size) + ' / ' + documents.length : documents.length}
-        </span>
+          ${t.counter ? html`
+            <span 
+              id="counter" 
+              part="counter">
+              ${t.size != undefined ? (t.size > documents.length ? documents.length : t.size) + ' / ' + documents.length : documents.length}
+            </span>
+          ` : html``}
           ${documents.length > 0 ? 
             html`   
               ${documents.slice(0, t.size).map(

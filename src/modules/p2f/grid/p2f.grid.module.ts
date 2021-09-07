@@ -91,6 +91,9 @@ export class AeP2fGrid extends LitElement {
   @property({type:Boolean, attribute: 'modus-viewer'})
   modusViewer: boolean;
 
+  @property({type:Boolean, attribute: 'show-counter'})
+  counter: boolean = false;
+
   static get styles() {
     return [styles];
   }
