@@ -17,6 +17,12 @@ const styles = css`
     .grid {
         padding-bottom: var(--ae-p2f-kiosk--padding-horizontal, 2.084vw);
     }
+    ae-p2f-kiosk-filterbar, ae-p2f-grid {
+        float:left; 
+        width:100%;
+        margin-top:10px;
+    }
+    ae-p2f-kiosk-filterbar {display: none;}
 `;
 
 @customElement('ae-p2f-kiosk-contentview')
@@ -59,11 +65,8 @@ export class P2fKioskContentview extends LitElement {
         return html`
         <header>
             <div class="container" part="container">
-                <ae-p2f-kiosk-breadcrumb></ae-p2f-kiosk-breadcrumb>
+                <ae-p2f-kiosk-breadcrumb category-selected="${this.categoryName}"></ae-p2f-kiosk-breadcrumb>
                 <ae-p2f-kiosk-categories></ae-p2f-kiosk-categories>
-                <h1>
-                    ${this.categoryName}
-                </h1>
             </div>
         </header>
         <div class="container grid" part="container">

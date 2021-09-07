@@ -1,8 +1,12 @@
 import {css, html, LitElement } from 'lit';
-import { customElement } from "lit/decorators.js";
+import { customElement, property } from "lit/decorators.js";
+import { aeEvent } from '../../../../functionalities/directives/event.directive';
+import { debugMode } from '../p2f.kiosk.app';
 
 @customElement('ae-p2f-kiosk-breadcrumb')
 export class P2fKioskBreadcrumb extends LitElement {
+    @property({attribute: 'category-selected'})
+    selectedCategoryName: string;
 
     static get styles() {
         return css`
@@ -27,7 +31,7 @@ export class P2fKioskBreadcrumb extends LitElement {
             }
             li:last-child a {
                 pointer-events: none;
-                color: var(--ae-p2f-kiosk--accent-color-dark, #9ac31c);
+                color: #2d2e87;
             }
             a {
                 text-decoration: none;
@@ -46,7 +50,7 @@ export class P2fKioskBreadcrumb extends LitElement {
         return html`
             <ul>
                 <li>
-                    <a href="#">Übersicht</a>
+                    <a href="#" @click=${this.showOverview}>Übersicht</a>
                 </li>
                 <li>
                     <svg viewBox="0 0 24 24">
@@ -56,10 +60,14 @@ export class P2fKioskBreadcrumb extends LitElement {
                     </svg>
                 </li>
                 <li>
-                    <a href="#">Subkategorie</a>
+                    <a href="#">${this.selectedCategoryName}</a>
                 </li>
             </ul>
         `
+    }
+
+    showOverview() {
+        aeEvent(this, '*', 'p2f-kiosk-overview', 'show', {}, debugMode);
     }
 }
 

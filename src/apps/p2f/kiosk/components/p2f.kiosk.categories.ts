@@ -12,16 +12,19 @@ const styles = css`
         width:100%;
         float:left;
         background:transparent;
-        height:40px;
         overflow: hidden;
     }
     div {
-        padding:10px 20px;
-        background:white;
-        margin-right:10px;
-        float:left;
-        cursor:pointer;
+        padding: 10px 20px;
+        background: white;
+        margin: 10px 10px 10px 0;
+        float: left;
+        cursor: pointer;
         user-select: none;
+        font-weight: 700;
+        text-transform: uppercase;
+        font-size: .8rem;
+        color: #9facb6;
     }
     .category-hidden {
         display:none;
