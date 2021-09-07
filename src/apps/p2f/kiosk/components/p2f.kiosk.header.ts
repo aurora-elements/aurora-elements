@@ -1,6 +1,7 @@
 import { css, html, LitElement } from "lit";
 import { customElement, property } from "lit/decorators.js";
 import { aeEvent } from "../../../../functionalities/directives/event.directive";
+import { debugMode } from "../p2f.kiosk.app";
 
 const styles = css`
     :host {
@@ -100,7 +101,7 @@ export class P2fKioskHeader extends LitElement {
     }
 
     showOverview() {
-        aeEvent(this, '*', 'p2f-kiosk-overview', 'show', {}, true);
+        aeEvent(this, '*', 'p2f-kiosk-overview', 'show', {}, debugMode);
     }
 }
 

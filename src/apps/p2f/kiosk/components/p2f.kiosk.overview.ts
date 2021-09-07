@@ -4,9 +4,9 @@ import { customElement, property } from "lit/decorators.js";
 import { errorHandler } from "../../../../functionalities/directives/error.handler.directive";
 import { until } from "lit/directives/until";
 import { P2fCategory } from "../../../../functionalities/interfaces/p2f/p2f.category.interface";
-import publicApi from "../../../../functionalities/directives/spo/spo.api.fetch.public.directive";
 import { spoUriConverter } from "../../../../functionalities/directives/spo/spo.uri.converter.directive";
 import { aeEvent } from "../../../../functionalities/directives/event.directive";
+import { debugMode } from "../p2f.kiosk.app";
 
 const styles = css`
     :host {
@@ -67,16 +67,17 @@ export class P2fKioskOverview extends LitElement {
         return [styles];
     }
     render() {
-        let categoryItems = publicApi.get(`${this.data.url}/api/scope/${this.data.key}/items/p2fDocumentCategory`);
         return html`
         <div class="grid-container" part="grid-container">
             ${until(
-                categoryItems
+                this.data.categoryItems
                 .then(
                     (categories: any) => html`
                         ${categories.filter(category => category.meta.parent == undefined).map(
                             (category: P2fCategory) => html`
-                            <div id="${category.id}" @click=${this.rootCategoryHandler}>
+                            <div 
+                                id="${category.id}"                                 
+                                @click=${(e:Event) => this.rootCategoryHandler(e, category.id, category.name)}>
                                 <img src="${spoUriConverter(this.data.url + '/api', category.asset.thumbnailUri)}?Width=500" />
                                 <span>
                                     ${category.name != undefined ? category.name : category.id}
@@ -85,7 +86,7 @@ export class P2fKioskOverview extends LitElement {
                             `
                         )}
                     `
-                ).catch((e: Event) => errorHandler(this, e, "ae-p2f-kiosk-overview", true)),
+                ).catch((e: Event) => errorHandler(this, e, "ae-p2f-kiosk-overview", debugMode)),
                 
                 html``
             )}
@@ -93,8 +94,12 @@ export class P2fKioskOverview extends LitElement {
         `;
     }
 
-    rootCategoryHandler() {
-        aeEvent(this, '*', 'p2f-kiosk-contentview', 'show', {}, true);
+    rootCategoryHandler(e:Event, id:number, name:string) {
+        e.preventDefault();
+        aeEvent(this, '*', 'p2f-kiosk-contentview', 'show', {
+            id: id,
+            name: name
+        }, debugMode);
     }
 }
 

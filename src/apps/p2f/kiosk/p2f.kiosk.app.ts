@@ -6,8 +6,10 @@ import "./components/p2f.kiosk.categories";
 import "../../../modules/p2f/grid/p2f.grid.module";
 import {LitElement, html } from 'lit';
 import { customElement, property, query } from "lit/decorators.js";
-import { kioskTemplate } from "./p2f.kiosk.templates.app";
 import { styles } from "./p2f.kiosk.styles.app";
+import publicApi from "../../../functionalities/directives/spo/spo.api.fetch.public.directive";
+
+export const debugMode:boolean = true;
 
 @customElement('ae-p2f-kiosk')
 export class P2fKiosk extends LitElement {
@@ -115,6 +117,7 @@ export class P2fKiosk extends LitElement {
       url: this.urlBase,
       key: this.spaceKey,
       size: this.size,
+      categoryItems: publicApi.get(`${this.urlBase}/api/scope/${this.spaceKey}/items/p2fDocumentCategory`)
     };
     this.header.data = obj;
     this.overview.data = obj;
@@ -145,21 +148,21 @@ export class P2fKiosk extends LitElement {
 
   /* Render template */
   render() {
-    let selectItem =                `at '${this.spaceKey}' select item from 'p2fDocumentItem' `;
+ /*   let selectItem =                `at '${this.spaceKey}' select item from 'p2fDocumentItem' `;
     let filterByStatusOrCategory =  `${this.status === 'all' && this.category === 'all' ? '' : 'where'}`;
     let filterByStatus =            `${this.status != 'all' ? "%7Bitems publishedstate eq '" + this.status + "'%7D" : ""}`;
     let filterByStatusAndCategory = `${this.status != 'all' && this.category != 'all' ? 'and' : ''}`;
     let filterByCategory =          `${this.category != 'all' ? " %7Bproperty 'category' eq '" + this.category + "'%7D" : ""}`; 
     let orderBy =                   `orderby %7Bcreated ${this.sorting}%7D`;        
 
-    let spoqlQuery = `
+   /* let spoqlQuery = `
       ${selectItem} 
       ${filterByStatusOrCategory} 
       ${filterByStatus} 
       ${filterByStatusAndCategory}
       ${filterByCategory}
       ${orderBy}
-    `;
+    `;*/
 
     return html`
 
@@ -187,28 +190,6 @@ export class P2fKiosk extends LitElement {
       <div class="ae-p2f-kiosk-content">
         <ae-p2f-kiosk-overview class="container"></ae-p2f-kiosk-overview>
         <ae-p2f-kiosk-contentview></ae-p2f-kiosk-contentview>
-      </div>
-
-      <div style="display: none">
-        <ae-p2f-kiosk-categories 
-          url="${this.urlBase}" 
-          key="${this.spaceKey}">
-        </ae-p2f-kiosk-categories>
-        ${kioskTemplate(this)}
-        <div class="show-box">
-          <header>
-            <h1>
-              ${this.selectedCategoryName != undefined ? this.selectedCategoryName : 'Alle Dokumente'}
-            </h1>
-          </header>
-          <ae-p2f-grid
-            modus-viewer
-            size="${this.size}"
-            search-string="${this.searchString}"
-            url-base="${this.urlBase}"
-            spoql-query="${spoqlQuery}">
-          </ae-p2f-grid>
-        </div>
       </div>
 
       ${this.modusEdit ? html`<ae-confirm-dialog></ae-confirm-dialog>` : html``}

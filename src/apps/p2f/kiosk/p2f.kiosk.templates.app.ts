@@ -5,6 +5,7 @@ import "../../../modules/p2f/grid/p2f.grid.module";
 import "../../../elements/select.element";
 import { P2fCategory } from "../../../functionalities/interfaces/p2f/p2f.category.interface";
 import publicApi from "../../../functionalities/directives/spo/spo.api.fetch.public.directive";
+import { debugMode } from "./p2f.kiosk.app";
 
 export function kioskTemplate(t:any) {
     t.categoryItems = publicApi.get(`${t.urlBase}/api/scope/${t.spaceKey}/items/p2fDocumentCategory`);
@@ -32,7 +33,7 @@ export function kioskTemplate(t:any) {
                 `
               )}
             `
-          ).catch((e: Event) => errorHandler(t, e, "category", true)),
+          ).catch((e: Event) => errorHandler(t, e, "category", debugMode)),
           html`
             <slot name="documents-loading-information">
               <ae-loader part="documents-loading-information"></ae-loader>
