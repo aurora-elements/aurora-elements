@@ -42,6 +42,22 @@ const styles = css`
         background: #fff;
         grid-area: content;
     }
+    header {
+        background: #2d2e87;
+        display: grid;
+        grid-template-columns: 1fr 24px;
+        padding: 5px 20px;
+        align-items: center;
+        color: #fff;
+    }
+    header h5 {margin:0}
+    svg {
+        cursor: pointer;
+        opacity:.5;
+    }
+    svg:hover {
+        opacity:1;
+    }
 `;
 
 @customElement('ae-overlay')
