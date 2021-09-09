@@ -1,8 +1,5 @@
 
-import "../../../apps/p2f/kiosk/p2f.kiosk.app";/* 
-text suche
-alternative darstellung kategorien
-*/
+import "../../../apps/p2f/kiosk/p2f.kiosk.app";
 import "../../../elements/select.element";import "../../../elements/input.wrapper.element";
 import "../../../elements/dashboard/number.dashlet.element";
 import "../../components/headlineBlock.component";

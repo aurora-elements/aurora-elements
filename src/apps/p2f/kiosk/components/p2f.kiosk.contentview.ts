@@ -22,7 +22,6 @@ const styles = css`
         width:100%;
         margin-top:10px;
     }
-    ae-p2f-kiosk-filterbar {display: none;}
 `;
 
 @customElement('ae-p2f-kiosk-contentview')
