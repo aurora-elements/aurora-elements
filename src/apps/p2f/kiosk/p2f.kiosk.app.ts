@@ -1,4 +1,5 @@
 
+import "../../../elements/embedded.webview.element";
 import "./components/p2f.kiosk.header";
 import "./components/p2f.kiosk.overview";
 import "./components/p2f.kiosk.contentview";
@@ -191,7 +192,10 @@ export class P2fKiosk extends LitElement {
         <ae-p2f-kiosk-overview class="container"></ae-p2f-kiosk-overview>
         <ae-p2f-kiosk-contentview></ae-p2f-kiosk-contentview>
       </div>
-
+      <ae-embedded-webview 
+        base-url="${this.urlBase}"
+        space-key="${this.spaceKey}">
+      </ae-embedded-webview>
       ${this.modusEdit ? html`<ae-confirm-dialog></ae-confirm-dialog>` : html``}
       
   `;

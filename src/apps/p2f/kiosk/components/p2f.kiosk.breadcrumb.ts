@@ -77,10 +77,8 @@ export class P2fKioskBreadcrumb extends LitElement {
     }
 
     firstUpdated() {
-      //  console.log('categories 0: ', categories[0].id)
-       // categories.pop();
-       // console.log('categories nach pop: ', categories)
        document.addEventListener('ae-*:p2f-kiosk-contentview|show', (e:CustomEvent) => {
+            this.categories = [];
             this.categories.push({id: e.detail.id, name: e.detail.name});
         });
         document.addEventListener('ae-*:p2f-kiosk-grid|push', (e:CustomEvent) => {
