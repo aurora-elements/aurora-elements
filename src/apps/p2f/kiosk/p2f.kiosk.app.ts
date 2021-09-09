@@ -1,4 +1,5 @@
 
+import "../../../elements/overlay.element";
 import "../../../elements/embedded.webview.element";
 import "./components/p2f.kiosk.header";
 import "./components/p2f.kiosk.overview";
@@ -64,6 +65,12 @@ export class P2fKiosk extends LitElement {
 
   @query('ae-p2f-kiosk-contentview')
   contentview: any;
+
+  @query('ae-overlay')
+  overlay: any;
+
+  @query('ae-embedded-webview')
+  webview: any;
 
   static get styles() {
       return [styles];
@@ -145,6 +152,15 @@ export class P2fKiosk extends LitElement {
       this.selectedCategory = parseInt(e.detail.catgory);
       this.selectedCategoryName = e.detail.name;
     });
+
+    document.addEventListener('ae-embedded-webview:*|loaded', (e:CustomEvent) => {
+        this.overlay.setAttribute('visible', ''); 
+        this.overlay.setAttribute('name', e.detail.name);
+    });
+
+    document.addEventListener('ae-overlay:*|closed', () => {
+      this.webview.src = ''; 
+  })
   }
 
   /* Render template */
@@ -192,10 +208,12 @@ export class P2fKiosk extends LitElement {
         <ae-p2f-kiosk-overview class="container"></ae-p2f-kiosk-overview>
         <ae-p2f-kiosk-contentview></ae-p2f-kiosk-contentview>
       </div>
-      <ae-embedded-webview 
-        base-url="${this.urlBase}"
-        space-key="${this.spaceKey}">
-      </ae-embedded-webview>
+      <ae-overlay size="full">
+        <ae-embedded-webview 
+          base-url="${this.urlBase}"
+          space-key="${this.spaceKey}">
+        </ae-embedded-webview>        
+      </ae-overlay>
       ${this.modusEdit ? html`<ae-confirm-dialog></ae-confirm-dialog>` : html``}
       
   `;

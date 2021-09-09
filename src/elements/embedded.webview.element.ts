@@ -62,7 +62,7 @@ export class AeEmbeddedWebview extends LitElement {
 
       this.frame.addEventListener('load', () => {
         if(this.src.includes('http')) {
-          aeEvent(this, 'embedded-webview', '*', 'loaded', null, true)
+          aeEvent(this, 'embedded-webview', '*', 'loaded', {id: this.assetId, name: this.name}, true)
         }
       });
 
