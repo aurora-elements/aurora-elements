@@ -27,7 +27,7 @@ const styles = css`
         background-color:#fff;
         display: grid;
         grid-template-rows: 1fr 60px;
-        box-shadow: 0px 20px 30px -20px rgba(0, 0, 0, 0.1);
+        box-shadow: 0px 20px 30px -20px rgba(0, 0, 0, 0.3);
         cursor: pointer;
         background-image: linear-gradient(to right, #9ac31c 50%, #fff 0);
         background-position: right;

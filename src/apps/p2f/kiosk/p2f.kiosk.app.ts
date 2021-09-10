@@ -165,22 +165,6 @@ export class P2fKiosk extends LitElement {
 
   /* Render template */
   render() {
- /*   let selectItem =                `at '${this.spaceKey}' select item from 'p2fDocumentItem' `;
-    let filterByStatusOrCategory =  `${this.status === 'all' && this.category === 'all' ? '' : 'where'}`;
-    let filterByStatus =            `${this.status != 'all' ? "%7Bitems publishedstate eq '" + this.status + "'%7D" : ""}`;
-    let filterByStatusAndCategory = `${this.status != 'all' && this.category != 'all' ? 'and' : ''}`;
-    let filterByCategory =          `${this.category != 'all' ? " %7Bproperty 'category' eq '" + this.category + "'%7D" : ""}`; 
-    let orderBy =                   `orderby %7Bcreated ${this.sorting}%7D`;        
-
-   /* let spoqlQuery = `
-      ${selectItem} 
-      ${filterByStatusOrCategory} 
-      ${filterByStatus} 
-      ${filterByStatusAndCategory}
-      ${filterByCategory}
-      ${orderBy}
-    `;*/
-
     return html`
 
       <style>

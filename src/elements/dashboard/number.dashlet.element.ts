@@ -9,7 +9,7 @@ const styles = css`
         gap: 20px;
         grid-template-areas: ". icon" ". icon";
         align-content: center;
-        box-shadow: var(--ae-number-dashlet--shadow, var(--ae-dashlet--shadow, 0px 20px 30px -20px rgba(0, 0, 0, 0.1)));
+        box-shadow: var(--ae-number-dashlet--shadow, var(--ae-dashlet--shadow, 0px 20px 30px -20px rgba(0, 0, 0, 0.3)));
         background: var(--ae-number-dashlet--bg, var(--ae-dashlet--bg, #ffffff));       
     }
     #numberAndText {

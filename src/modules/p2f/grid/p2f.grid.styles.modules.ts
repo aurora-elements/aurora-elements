@@ -11,7 +11,7 @@ export const styles = css`
   }
   ae-card {
       transition:           transform .3s ease-in-out;
-      box-shadow:           var(--p2f-grid-item-shadow, 0px 20px 30px -20px rgba(0, 0, 0, 0.1));
+      box-shadow:           var(--p2f-grid-item-shadow, 0px 20px 30px -20px rgba(0, 0, 0, 0.3));
       display:              block;
   }
   ::part(card-figure) {

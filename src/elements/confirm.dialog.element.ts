@@ -38,7 +38,7 @@ const styles = css`
     }
     section {
         background: #fff;
-        box-shadow: 0px 20px 30px -20px rgba(0, 0, 0, 0.1);
+        box-shadow: 0px 20px 30px -20px rgba(0, 0, 0, 0.3);
         display: grid;
         grid-template-rows: 41px 1fr 45px;
         max-width:300px;

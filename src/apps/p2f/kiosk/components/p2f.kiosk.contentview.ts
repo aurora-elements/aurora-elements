@@ -20,7 +20,12 @@ const styles = css`
     ae-p2f-kiosk-filterbar, ae-p2f-grid {
         float:left; 
         width:100%;
-        margin-top:10px;
+    }
+    ae-p2f-grid {
+        margin-top:20px;
+    }
+    ae-p2f-kiosk-filterbar {
+        margin-top:15px;
     }
 `;
 
@@ -35,6 +40,9 @@ export class P2fKioskContentview extends LitElement {
 
     @property({type: Number, attribute: false})
     categoryId: number;
+
+    @property()
+    searchString: string;
 
     @query('ae-p2f-kiosk-categories')
     categoryTree: any;
@@ -75,22 +83,46 @@ export class P2fKioskContentview extends LitElement {
 
 
     render() {
+        /*  let filterByStatusOrCategory =  `${this.status === 'all' && this.category === 'all' ? '' : 'where'}`;
+          let filterByStatus =            `${this.status != 'all' ? "%7Bitems publishedstate eq '" + this.status + "'%7D" : ""}`;
+          let filterByStatusAndCategory = `${this.status != 'all' && this.category != 'all' ? 'and' : ''}`;
+          let filterByCategory =          `${this.category != 'all' ? " %7Bproperty 'category' eq '" + this.category + "'%7D" : ""}`; 
+          let orderBy =                   `orderby %7Bcreated ${this.sorting}%7D`;  
+          */ 
+         
+              /*   ${filterByStatusOrCategory} 
+            ${filterByStatus} 
+            ${filterByStatusAndCategory}
+            ${filterByCategory}
+            ${orderBy}*/
+
+        let selectItem =                `at '${this.data.key}' select item from 'p2fDocumentItem' `;
+        let filterByCategory =          `%7Bproperty 'category' eq '${this.categoryId}'%7D`;
+        let filterBySearchString =      `and %7Bproperty 'name' contains '${this.searchString}'%7D`;   
+
+        let spoqlQuery = `
+            ${selectItem}
+            ${this.categoryId != undefined ? ' where ' : ''} 
+            ${filterByCategory}
+            ${this.searchString != undefined ? filterBySearchString : ''} 
+        `;
+
         return html`
-        <header>
-            <div class="container" part="container">
-                <ae-p2f-kiosk-breadcrumb category-selected="${this.categoryName}"></ae-p2f-kiosk-breadcrumb>
-                <ae-p2f-kiosk-categories></ae-p2f-kiosk-categories>
+            <header>
+                <div class="container" part="container">
+                    <ae-p2f-kiosk-breadcrumb category-selected="${this.categoryName}"></ae-p2f-kiosk-breadcrumb>
+                    <ae-p2f-kiosk-categories></ae-p2f-kiosk-categories>
+                </div>
+            </header>
+            <div class="container grid" part="container">
+                <ae-p2f-kiosk-filterbar></ae-p2f-kiosk-filterbar>
+                <ae-p2f-grid
+                    modus-viewer
+                    spoql-query="${spoqlQuery}"
+                    size="${this.data.size}"
+                    url-base="${this.data.url}">
+                </ae-p2f-grid>
             </div>
-        </header>
-        <div class="container grid" part="container">
-            <ae-p2f-kiosk-filterbar></ae-p2f-kiosk-filterbar>
-            <ae-p2f-grid
-                modus-viewer
-                spoql-query="at '${this.data.key}' select item from 'p2fDocumentItem' where %7Bproperty 'category' eq '${this.categoryId}'%7D"
-                size="${this.data.size}"
-                url-base="${this.data.url}">
-            </ae-p2f-grid>
-        </div>
             `    
     }
 }

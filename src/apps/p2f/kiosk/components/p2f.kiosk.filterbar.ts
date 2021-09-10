@@ -1,12 +1,14 @@
 import {css, html, LitElement } from 'lit';
-import { customElement, property } from "lit/decorators.js";
+import { customElement, property, query } from "lit/decorators.js";
+import { aeEvent } from '../../../../functionalities/directives/event.directive';
+import { debugMode } from '../p2f.kiosk.app';
 
 const styles = css`
     :host {
         width:100%;
-        padding: 10px 20px;
+        padding: 11.5px 20px;
         background: #fff;
-        box-shadow: 0px 20px 30px -20px rgba(0, 0, 0, 0.1);
+        box-shadow: 0px 20px 30px -20px rgba(0, 0, 0, 0.3);
         box-sizing: border-box;
     }
 `;
@@ -16,6 +18,9 @@ export class P2fKioskFilterbar extends LitElement {
 
     @property({type: String})
     searchString: string;
+
+    @query('input')
+    input: HTMLInputElement;
     
     static get styles() {
         return [styles];
@@ -26,23 +31,36 @@ export class P2fKioskFilterbar extends LitElement {
         <input
             id="search"
             type="text"
-            @change="${this.searchChanged}"
+            @keyup="${this.searchChanged}"
             .value="${this.searchString != undefined ? this.searchString : ''}"
-            placeholder="Suche nach Dokument"
-            style="float:left;width:100%;margin-top:10px;padding:5px 10px;"/>  
+            placeholder="Suche nach Dokument"/> 
+        ${this.searchString != undefined && this.searchString.length > 0 ? html`
+            <svg 
+                style="width:24px;height:24px"
+                @click=${this.resetHandler} 
+                viewBox="0 0 24 24">
+                <path 
+                    fill="currentColor" 
+                    d="M13.46,12L19,17.54V19H17.54L12,13.46L6.46,19H5V17.54L10.54,12L5,6.46V5H6.46L12,10.54L17.54,5H19V6.46L13.46,12Z" />
+            </svg>
+        ` : html``} 
         `;
+    }
+
+    resetHandler() {
+        this.input.value = '';
+        aeEvent(this, 'kiosk-filterbar', 'ae-p2f-kiosk-grid', 'search', {searchString: undefined}, debugMode);
     }
 
     searchChanged() {
         setTimeout(() => {
           if(this.searchInput.value.length != 0) {
             this.searchString = this.searchInput.value;
-            console.log('searchString: ', this.searchString)
-            console.log('searchString length: ', this.searchString.length)
+            aeEvent(this, 'kiosk-filterbar', 'ae-p2f-kiosk-grid', 'search', {searchString: this.searchString}, debugMode);
           } else {
-            this.searchString = undefined; console.log('searchString: ', this.searchString) 
+            this.searchString = undefined;
           }
-        },300)
+        },500)
     }
     private get searchInput(): HTMLInputElement {
         return this.shadowRoot!.querySelector('#search')! as HTMLInputElement;

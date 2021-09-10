@@ -130,9 +130,14 @@ export class AeP2fGrid extends LitElement {
         deletedItem.remove();
       }
     });
+    
     document.addEventListener(this.updateEvent, () => {
       this.requestUpdate();
     });
+
+    document.addEventListener('ae-kiosk-filterbar:ae-p2f-kiosk-grid|search', (e:CustomEvent) => {
+      this.searchString = e.detail.searchString;
+  });
   }
 
   render() {
