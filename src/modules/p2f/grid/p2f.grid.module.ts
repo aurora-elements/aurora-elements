@@ -86,7 +86,7 @@ export class AeP2fGrid extends LitElement {
   convertingStatusLabelConverting: string = 'The PDF is converted';
  
   @property({type:String, attribute:'msg-empty'})
-  msgEmpty: string = 'Unfortunately no documents were found!';
+  msgEmpty: string = 'Unfortunately, no documents were found!';
 
   @property({type:Boolean, attribute: 'modus-viewer'})
   modusViewer: boolean;

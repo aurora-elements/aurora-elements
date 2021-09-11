@@ -13,9 +13,32 @@ const styles = css`
     }
     input {
         height: 100%;
-        max-width: 300px;
+        max-width: 500px;
+        min-width: 295px;
         width: 100%;
-        border-width: 0 0 1px 0;
+        border-width: 0;
+        background-color: #f8f8f8;
+        padding: 10px 45px;
+        float:left;
+        box-sizing: border-box;
+    }
+    svg {
+        position:absolute;
+        z-index: 10;
+        color: #9facb6;
+        top:6px;
+    }
+    #searchBox {
+        position: relative;
+        float:left;
+        width: auto;
+    }
+    #searchIcon {
+        left: 10px;  
+    }
+    #resetIcon {
+        right: 10px;
+        cursor: pointer;
     }
 `;
 
@@ -34,29 +57,33 @@ export class P2fKioskFilterbar extends LitElement {
 
     render() {
         return html`
-        <svg 
-            style="width:24px;height:24px" 
-            viewBox="0 0 24 24">
-            <path 
-                fill="currentColor" 
-                d="M9.5,3A6.5,6.5 0 0,1 16,9.5C16,11.11 15.41,12.59 14.44,13.73L14.71,14H15.5L20.5,19L19,20.5L14,15.5V14.71L13.73,14.44C12.59,15.41 11.11,16 9.5,16A6.5,6.5 0 0,1 3,9.5A6.5,6.5 0 0,1 9.5,3M9.5,5C7,5 5,7 5,9.5C5,12 7,14 9.5,14C12,14 14,12 14,9.5C14,7 12,5 9.5,5Z" />
-        </svg>
-        <input
-            id="search"
-            type="text"
-            @keyup="${this.searchChanged}"
-            .value="${this.searchString != undefined ? this.searchString : ''}"
-            placeholder="Suche nach Dokument"/> 
-        ${this.searchString != undefined && this.searchString.length > 0 ? html`
-            <svg 
-                style="width:24px;height:24px"
-                @click=${this.resetHandler} 
-                viewBox="0 0 24 24">
-                <path 
-                    fill="currentColor" 
-                    d="M13.46,12L19,17.54V19H17.54L12,13.46L6.46,19H5V17.54L10.54,12L5,6.46V5H6.46L12,10.54L17.54,5H19V6.46L13.46,12Z" />
-            </svg>
-        ` : html``} 
+            <div id="searchBox">
+                <svg 
+                    style="width:24px;height:24px" 
+                    id="searchIcon"
+                    viewBox="0 0 24 24">
+                    <path 
+                        fill="currentColor" 
+                        d="M9.5,3A6.5,6.5 0 0,1 16,9.5C16,11.11 15.41,12.59 14.44,13.73L14.71,14H15.5L20.5,19L19,20.5L14,15.5V14.71L13.73,14.44C12.59,15.41 11.11,16 9.5,16A6.5,6.5 0 0,1 3,9.5A6.5,6.5 0 0,1 9.5,3M9.5,5C7,5 5,7 5,9.5C5,12 7,14 9.5,14C12,14 14,12 14,9.5C14,7 12,5 9.5,5Z" />
+                </svg>
+                <input
+                    id="search"
+                    type="text"
+                    @keyup="${this.searchChanged}"
+                    .value="${this.searchString != undefined ? this.searchString : ''}"
+                    placeholder="Suche nach Dokument"/> 
+                ${this.searchString != undefined && this.searchString.length > 0 ? html`
+                    <svg 
+                        id="resetIcon"
+                        style="width:24px;height:24px"
+                        @click=${this.resetHandler} 
+                        viewBox="0 0 24 24">
+                        <path 
+                            fill="currentColor" 
+                            d="M13.46,12L19,17.54V19H17.54L12,13.46L6.46,19H5V17.54L10.54,12L5,6.46V5H6.46L12,10.54L17.54,5H19V6.46L13.46,12Z" />
+                    </svg>
+                ` : html``} 
+            </div>
         `;
     }
 

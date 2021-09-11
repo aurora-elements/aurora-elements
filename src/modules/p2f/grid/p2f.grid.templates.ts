@@ -190,7 +190,7 @@ export function masterTemplate(t:any) {
                               target="_blank"             
                               image="${spoUriConverter(t.baseUrl + '/api', document.asset.thumbnailUri)}"
                               id="document_${document.id}">
-                              ${document.meta.publish != undefined ? 
+                              ${!t.modusViewer && document.meta.publish != undefined ? 
                                 html`${publishStateTemplate(document)}` : html`` 
                               }
                               ${actionsTemplate(t, document)} 
@@ -208,7 +208,7 @@ export function masterTemplate(t:any) {
                           target="_blank"             
                           image="${spoUriConverter(t.baseUrl + '/api', document.asset.thumbnailUri)}"
                           id="document_${document.id}">
-                          ${document.meta.publish != undefined ? 
+                          ${!t.modusViewer && document.meta.publish != undefined ? 
                             html`${publishStateTemplate(document)}` : html`` 
                           }
                           ${actionsTemplate(t, document)} 
