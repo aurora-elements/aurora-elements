@@ -7,6 +7,7 @@ export const styles = css`
     grid-gap:               var(--p2f-grid-gap, 20px);
     background-color:       var(--p2f-grid-bg, rgba(0,0,0,0));
     padding:                var(--p2f-grid-padding, 0);
+    position:               relative;
     --card-radius:          var(--p2f-grid-item-radius, 0);
   }
   ae-card {
@@ -176,5 +177,20 @@ export const styles = css`
     position:absolute;
     top:10px;
     right:10px;
+  }
+
+  #emptyState {
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    position: absolute;
+    grid-gap:40px;
+    top: 0;
+    left: 0;
+    box-sizing: border-box;
+    max-width: 800px;
+    font-size: 20px;
+    color: #9facb6;
+    font-weight: 600;
+    align-items: center;
   }
 `;

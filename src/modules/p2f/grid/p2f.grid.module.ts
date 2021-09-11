@@ -94,6 +94,9 @@ export class AeP2fGrid extends LitElement {
   @property({type:Boolean, attribute: 'show-counter'})
   counter: boolean = false;
 
+  @property({attribute:false})
+  counterDocumentsInCategory: number;
+
   static get styles() {
     return [styles];
   }

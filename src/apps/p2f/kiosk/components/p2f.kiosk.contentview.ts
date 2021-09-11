@@ -44,11 +44,17 @@ export class P2fKioskContentview extends LitElement {
     @property()
     searchString: string;
 
+    @property({type: Number})
+    numberOfDocumentsInCategory: number;
+
     @query('ae-p2f-kiosk-categories')
     categoryTree: any;
 
     @query('ae-p2f-kiosk-breadcrumb')
     breadcrumb: any;
+
+    @query('ae-p2f-kiosk-filterbar')
+    filterbar: HTMLElement;
 
     static get styles() {
         return [styles];
@@ -78,6 +84,10 @@ export class P2fKioskContentview extends LitElement {
             this.categoryName = e.detail.name;
             this.categoryId = e.detail.id;
         });
+
+        document.addEventListener('ae-p2f-grid:*|number-of-documents', (e:CustomEvent) => {
+            this.numberOfDocumentsInCategory = e.detail.numberOfDocuments;
+        })
 
     }
 
@@ -115,7 +125,11 @@ export class P2fKioskContentview extends LitElement {
                 </div>
             </header>
             <div class="container grid" part="container">
-                <ae-p2f-kiosk-filterbar></ae-p2f-kiosk-filterbar>
+                ${this.numberOfDocumentsInCategory == 0 || 
+                this.numberOfDocumentsInCategory == undefined ? 
+                    html`` : 
+                    html`<ae-p2f-kiosk-filterbar></ae-p2f-kiosk-filterbar>`
+                }
                 <ae-p2f-grid
                     modus-viewer
                     spoql-query="${spoqlQuery}"
