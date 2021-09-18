@@ -96,6 +96,9 @@ export class AeConfirmDialog extends LitElement {
 
     @property({type: Number, attribute: false})
     deleteTargetId: number;
+    
+    @property({type: Boolean, attribute: 'debug-mode'})
+    debugMode: boolean = false;
 
     cancel(e:Event) {
         e.preventDefault();
@@ -107,7 +110,7 @@ export class AeConfirmDialog extends LitElement {
         e.preventDefault();
         aeEvent(this, 'confirm-dialog', '*', 'deleted', {
             id: this.deleteTargetId
-        }, true)
+        }, this.debugMode)
         this.cancel(e);
     }
 

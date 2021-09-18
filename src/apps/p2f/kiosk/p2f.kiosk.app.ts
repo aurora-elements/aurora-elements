@@ -1,20 +1,20 @@
-
 import "../../../elements/overlay.element";
 import "../../../elements/embedded.webview.element";
-import "./components/p2f.kiosk.header";
-import "./components/p2f.kiosk.overview";
-import "./components/p2f.kiosk.contentview";
-import "./components/p2f.kiosk.categories";
+import "./components/header/p2f.kiosk.header";
+import "./components/overview/p2f.kiosk.overview";
+import "./components/contentview/p2f.kiosk.contentview";
+import "./components/categories/p2f.kiosk.categories";
 import "../../../modules/p2f/grid/p2f.grid.module";
 import {LitElement, html } from 'lit';
 import { customElement, property, query } from "lit/decorators.js";
 import { styles } from "./p2f.kiosk.styles.app";
 import publicApi from "../../../functionalities/directives/spo/spo.api.fetch.public.directive";
-
-export const debugMode:boolean = true;
+import { kioskTemplate, theme } from "./p2f.kiosk.templates.app";
 
 @customElement('ae-p2f-kiosk')
 export class P2fKiosk extends LitElement {
+
+/* Properties */
   @property({type: String, attribute:'url' })
   urlBase: string = '';
 
@@ -49,33 +49,32 @@ export class P2fKiosk extends LitElement {
   categoryItems:any;
 
   @property({attribute: false})
-  backgroundImage: any;
+  logo: string;
+  @property({attribute: false})
+  backgroundColor:string
+  @property({attribute: false})
+  backgroundImage: string;
+  @property({attribute: false})
+  accentColor: string;
 
   @property({type:Boolean, attribute: 'modus-edit'})
   modusEdit: boolean = false;
-
   @property({type:Boolean, attribute: 'modus-embedded'})
   modusEmbedded: boolean = false;
 
+/* Queries */
   @query('ae-p2f-kiosk-header')
   header: any;
-
   @query('ae-p2f-kiosk-overview')
   overview: any;
-
   @query('ae-p2f-kiosk-contentview')
   contentview: any;
-
   @query('ae-overlay')
-  overlay: any;
-
+  overlay: HTMLElement;
   @query('ae-embedded-webview')
-  webview: any;
+  webview: HTMLIFrameElement;
 
-  static get styles() {
-      return [styles];
-  }
-
+/* Methods */
   sizeChanged() {
     setTimeout(() => {
       this.size = parseInt(this.sizeSelect.value);
@@ -94,20 +93,6 @@ export class P2fKiosk extends LitElement {
     },300)
   }
 
-  searchChanged() {
-    setTimeout(() => {
-      if(this.searchInput.value.length != 0) {
-        this.searchString = this.searchInput.value;
-      } else {
-        this.searchString = undefined; 
-      }
-    },300)
-  }
-
-  private get searchInput(): HTMLInputElement {
-    return this.shadowRoot!.querySelector('#search')! as HTMLInputElement;
-  }
-
   private get sizeSelect(): HTMLSelectElement {
     return this.shadowRoot!.querySelector('#size select')! as HTMLSelectElement;
   }
@@ -120,11 +105,13 @@ export class P2fKiosk extends LitElement {
     return this.shadowRoot!.querySelector('#status select')! as HTMLSelectElement;
   }
 
+/* Init */
   firstUpdated() {
     let obj = {
       url: this.urlBase,
       key: this.spaceKey,
       size: this.size,
+      logo: this.logo,
       categoryItems: publicApi.get(`${this.urlBase}/api/scope/${this.spaceKey}/items/p2fDocumentCategory`)
     };
     this.header.data = obj;
@@ -145,8 +132,6 @@ export class P2fKiosk extends LitElement {
       this.overview.classList.add('fadeIn');
     });
 
-    this.backgroundImage = 'url('+ this.urlBase +'/api/scope/'+ this.spaceKey +'/asset/1196/thumbnail?&width=1920)';
-
     document.addEventListener('ae-p2f-kiosk-categories:ae-p2f-kiosk|select', (e:CustomEvent) => {
       this.category = e.detail.category;  
       this.selectedCategory = parseInt(e.detail.catgory);
@@ -160,50 +145,20 @@ export class P2fKiosk extends LitElement {
 
     document.addEventListener('ae-overlay:*|closed', () => {
       this.webview.src = ''; 
-  })
+    })
   }
 
-  /* Render template */
-  render() {
-    return html`
-
-      <style>
-        :host {
-          --ae-p2f-kiosk--bg-image: ${this.backgroundImage};
-          --ae-p2f-kiosk--bg-color:#e9e9e9;
-        }
-      </style>
-
-      ${this.modusEmbedded ? 
-        html`` : 
-        html`
-          <ae-p2f-kiosk-header>
-            <div slot="header-extended-content">
-              <slot name="header-content">
-                <h1 class="slogan" style="color:#2d2e87;font-weight:700;font-size:25px;white-space:nowrap;text-overflow: ellipse;">
-                  ${this.slogan}
-                </h1>
-              </slot>
-            </div>
-          </ae-p2f-kiosk-header>
-        `
-      }
-      <div class="ae-p2f-kiosk-content">
-        <ae-p2f-kiosk-overview class="container"></ae-p2f-kiosk-overview>
-        <ae-p2f-kiosk-contentview></ae-p2f-kiosk-contentview>
-      </div>
-      <ae-overlay size="full">
-        <ae-embedded-webview 
-          base-url="${this.urlBase}"
-          space-key="${this.spaceKey}">
-        </ae-embedded-webview>        
-      </ae-overlay>
-      ${this.modusEdit ? html`<ae-confirm-dialog></ae-confirm-dialog>` : html``}
-      
-  `;
+/* Template */
+  render() { return html`
+    ${theme(this)}
+    ${kioskTemplate(this)}`;
   }
+
+/* CSS */
+  static get styles() { return [styles]; }
 }
 
+/* Declaration */
 declare global {
   interface HTMLElementTagNameMap {
       'ae-p2f-kiosk': P2fKiosk;

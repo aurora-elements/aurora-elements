@@ -24,6 +24,9 @@ export class AeEmbeddedWebview extends LitElement {
   @property({ type: Number, attribute:'asset-id' })
   assetId: number;
 
+  @property({type: Boolean, attribute: 'debug-mode'})
+  debugMode: boolean = false;
+
   @query('iframe')
   frame:any;
 
@@ -62,7 +65,7 @@ export class AeEmbeddedWebview extends LitElement {
 
       this.frame.addEventListener('load', () => {
         if(this.src.includes('http')) {
-          aeEvent(this, 'embedded-webview', '*', 'loaded', {id: this.assetId, name: this.name}, true)
+          aeEvent(this, 'embedded-webview', '*', 'loaded', {id: this.assetId, name: this.name}, this.debugMode)
         }
       });
 

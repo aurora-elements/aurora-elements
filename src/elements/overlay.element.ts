@@ -1,6 +1,5 @@
 import { LitElement, css, html } from "lit";
 import { customElement, property } from 'lit/decorators.js';
-import { debugMode } from "../apps/p2f/kiosk/p2f.kiosk.app";
 import { aeEvent } from "../functionalities/directives/event.directive";
 
 const styles = css`
@@ -43,13 +42,15 @@ const styles = css`
         grid-area: content;
     }
     header {
-        background: #2d2e87;
+        background: #fff;
         display: grid;
-        grid-template-columns: 1fr 24px;
+        grid-template-columns: auto 1fr 24px;
         padding: 10px 20px;
         align-items: center;
-        color: #fff;
+        color: #333;
+        grid-gap: 20px;
     }
+    
     header h5 {margin:0}
     svg {
         cursor: pointer;
@@ -61,7 +62,7 @@ const styles = css`
     div {
         position: relative;
         width: 100%;
-        height: calc(100vh - 44px);
+        height: calc(100vh - 50px);
         float: left;
         padding: 0;
     }
@@ -78,6 +79,9 @@ export class AeOverlay extends LitElement {
     @property({type: Boolean})
     visible: boolean = false;
 
+    @property({type: Boolean, attribute: 'debug-mode'})
+    debugMode: boolean = false;
+
     static get styles() {
         return [styles];
     }
@@ -92,6 +96,7 @@ export class AeOverlay extends LitElement {
         return html`
             <section>
                 <header>
+                    <slot name="logo"></slot>
                     <h5>${this.name}</h5>
                     <svg 
                         style="width:24px;height:24px"
@@ -112,7 +117,7 @@ export class AeOverlay extends LitElement {
     closeHandler() {
         this.removeAttribute('visible');
         this.name= '';
-        aeEvent(this, 'overlay', '*', 'closed', null, debugMode)
+        aeEvent(this, 'overlay', '*', 'closed', null, this.debugMode)
     }
 }
 

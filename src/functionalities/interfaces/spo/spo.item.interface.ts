@@ -1,4 +1,4 @@
-export interface SpaceOneItem {
+export interface SpoItem {
     id: number;
     meta: {
       created: string;

@@ -180,9 +180,9 @@ class P2fGridPage extends LitElement {
 
       <div style="display: block;position: fixed;top: 0;left: 0;width: 100%;height: 100%;z-index: 1000000;background: #fff;overflow-y:auto;">
         <ae-p2f-kiosk 
-          url="https://lyreco.devdock.space.one"
-          key="lyreco"
-          slogan="WORKING TOGETHER FOR TOMORROW">
+          url="https://ae.devdock.space.one"
+          key="kiosk"
+          slogan="Interaktive e-Paper">
         </ae-p2f-kiosk>
       </div>
   `;

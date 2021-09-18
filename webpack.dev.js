@@ -22,20 +22,15 @@ module.exports = {
       },
       {
         test: /\.(png|jpe?g|gif)$/i,
-        use: [
-          {
-            loader: 'file-loader',
-          },
-        ],
+        type: 'asset/resource',
+      },
+      {
+        test: /\.svg/,
+        type: 'asset/resource',
       },
       {
         test: /\.(json)$/i,
-        type: 'javascript/auto',
-        use: [
-          {
-            loader: 'file-loader',
-          },
-        ],
+        type: 'asset/resource',
       },
     ],
   },

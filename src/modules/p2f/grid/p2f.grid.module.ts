@@ -94,6 +94,9 @@ export class AeP2fGrid extends LitElement {
   @property({type:Boolean, attribute: 'show-counter'})
   counter: boolean = false;
 
+  @property({type: Boolean, attribute: 'debug-mode'})
+  debugMode: boolean = false;
+
   @property({attribute:false})
   counterDocumentsInCategory: number;
 
@@ -110,7 +113,7 @@ export class AeP2fGrid extends LitElement {
       {
         trigger: 'ae-p2f-grid', 
         type: 'document'
-      }, true);
+      }, this.debugMode);
   }
 
   openEmbeddedWebview(e:Event, assetId:number, documentName:string, app:string) {
@@ -119,7 +122,7 @@ export class AeP2fGrid extends LitElement {
       assetId: assetId,
       documentName: documentName,
       app: app
-    }, true);
+    }, this.debugMode);
   }
 
   get root() {
