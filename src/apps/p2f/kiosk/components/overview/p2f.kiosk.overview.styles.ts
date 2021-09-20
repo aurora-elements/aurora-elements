@@ -8,14 +8,7 @@ export const styles = css`
     max-width: var(--p2f-kiosk-container--width);
     transition: transform 500ms linear 0s;
   }
-  .grid-container {
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-    grid-gap: calc(var(--p2f-kiosk--padding) / 2);
-    grid-template-rows: max-content;
-    display: grid;
-    padding: var(--p2f-kiosk--padding);
-  }
-  div:not(.grid-container) {
+  div {
     background-color: #fff;
     display: grid;
     grid-template-rows: 1fr 60px;
@@ -28,7 +21,7 @@ export const styles = css`
     transition: background-position 300ms ease-in-out 0s, color 200ms linear 0s;
     overflow: hidden;
   }
-  div:not(.grid-container):hover {
+  div:hover {
     color: #fff;
     background-position: left;
   }
@@ -47,7 +40,12 @@ export const styles = css`
     display: block;
     width: 100%;
   }
-  [part=p2f-kiosk-overview-feature-documents-headline] {
+  [part=p2f-kiosk-module-feature] {
+    float:left; 
+    width:100%;
+    padding: 0 var(--p2f-kiosk--padding) 0 var(--p2f-kiosk--padding);
+  }
+  [part=p2f-kiosk-module-feature-headline] {
     color: var(--p2f-kiosk-headlines--color);
     font-weight: 600;
     margin-top:0;  

@@ -1,5 +1,5 @@
 import { html, LitElement } from "lit";
-import { customElement, property } from "lit/decorators.js";
+import { customElement, property, query } from "lit/decorators.js";
 import { aeEvent } from "../../../../../functionalities/directives/event.directive";
 import { debugMode } from "../../p2f.kiosk.templates.app";
 import { styles } from './p2f.kiosk.overview.styles';
@@ -12,6 +12,13 @@ export class P2fKioskOverview extends LitElement {
     @property({attribute: false})
     data: any;
 
+    @property({attribute: false})
+    parentCategoriesQuery:string;
+
+/* Queries */    
+    @query('ae-p2f-kiosk-categories')
+    categoryTree: any;
+
 /* Methods */
     rootCategoryHandler(e:Event, id:number, name:string) {
         e.preventDefault();
@@ -19,6 +26,19 @@ export class P2fKioskOverview extends LitElement {
             id: id,
             name: name
         }, debugMode);
+    }
+
+/* Init */
+    firstUpdated() {
+        let obj = {
+            url: this.data.url,
+            key: this.data.key,
+            size: this.data.size,
+            categoryItems: this.data.categoryItems
+        };
+        this.categoryTree.data = obj;
+
+        this.parentCategoriesQuery = `at '${this.data.key}' select item from 'p2fDocumentItem' where %7Bproperty 'featured' eq 'true'%7D`
     }
 
 /* CSS */

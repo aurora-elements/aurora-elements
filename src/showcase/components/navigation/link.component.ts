@@ -6,6 +6,7 @@ import { navigator } from "lit-element-router";
 export class NavLink extends navigator(LitElement) {
     /* Properties */
     @property({ type: String }) href: string = '';
+    @property() target: any;
 
     static get styles() {
         return css`
@@ -37,6 +38,7 @@ export class NavLink extends navigator(LitElement) {
             <a 
                 class="nav-link" 
                 href="${this.href}" 
+                target="${this.target}"
                 @click="${this.handleClick}">
                 <slot></slot>
             </a>
@@ -57,6 +59,11 @@ export class NavLink extends navigator(LitElement) {
         this.navigate(this.href);
 
         this.setAttribute('route-active', '');
+
+        if(this.getAttribute('target') === '_blank') {
+            this.navigate(window.location.origin);
+            window.open(window.location.origin + this.href, '_blank');
+        }
 
     }
 

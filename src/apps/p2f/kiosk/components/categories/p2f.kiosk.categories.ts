@@ -21,6 +21,9 @@ export class P2fKioskCategories extends LitElement {
     @property({attribute: false})
     data: any;
 
+    @property({attribute: 'category-level'})
+    categoryLevel: string;
+
 /* Queries */
     @queryAll('div')
     categoryDivs:any; 
@@ -29,6 +32,14 @@ export class P2fKioskCategories extends LitElement {
     categoryHandler(e:Event, id:number, name:string) {
         e.preventDefault();
         aeEvent(this, '*', 'p2f-kiosk-grid', 'push', {
+            id: id,
+            name: name
+        }, debugMode);
+    }
+
+    rootCategoryHandler(e:Event, id:number, name:string) {
+        e.preventDefault();
+        aeEvent(this, '*', 'p2f-kiosk-contentview', 'show', {
             id: id,
             name: name
         }, debugMode);

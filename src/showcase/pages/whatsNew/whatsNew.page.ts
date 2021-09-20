@@ -1,5 +1,6 @@
 import "../../components/dataTable.component";
-import "../../components/headlineBlock.component";import { LitElement, html } from 'lit';
+import "../../components/headlineBlock.component";
+import { LitElement, html } from 'lit';
 import { customElement } from 'lit/decorators.js';
 import changelog_0_0_1 from './changelog/changelog_0_0_1.json';
 import changelog_0_0_2 from './changelog/changelog_0_0_2.json';

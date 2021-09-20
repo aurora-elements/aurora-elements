@@ -15,6 +15,27 @@ export const styles = css`
         box-sizing: border-box;
     }
 
+     /* scrollbar */
+    * {
+        scrollbar-width: thin;
+        scrollbar-color: 
+        var(--p2f-kiosk-scrollBar--bg,#9c9c9c)  
+        var(--p2f-kiosk-scrollBar--color,#e0e6ed);
+    }
+    *::-webkit-scrollbar {
+        width: 12px;
+    }
+
+    *::-webkit-scrollbar-track {
+        background: var(--p2f-kiosk-scrollBar--color,#e0e6ed);
+    }
+
+    *::-webkit-scrollbar-thumb {
+        background-color: var(--p2f-kiosk-scrollBar--bg,#9c9c9c); 
+        border-radius: 20px;
+        border: 3px solid var(--p2f-kiosk-scrollBar--color, #e0e6ed);
+    }
+
     ::part(container) {
         max-width: var(--p2f-kiosk-container--width, 1400px);
         padding-left: var(--p2f-kiosk--padding, 2.084vw);

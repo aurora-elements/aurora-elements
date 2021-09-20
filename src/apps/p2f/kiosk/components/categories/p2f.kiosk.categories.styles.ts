@@ -5,20 +5,19 @@ export const styles = css`
     width: 100%;
     float: left;
     background: transparent;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    grid-gap: calc(var(--p2f-kiosk--padding) / 2);
+    grid-template-rows: max-content;
+    display: grid;
+    padding: var(--p2f-kiosk--padding);
   }
   div {
-    padding: 14px 20px;
-    background: white;
-    margin: 15px 10px 5px 0;
-    float: left;
     cursor: pointer;
     user-select: none;
     font-weight: 700;
     text-transform: uppercase;
     font-size: 0.8rem;
     color: #9facb6;
-    box-shadow: var(--p2f-kiosk--box-shadow, 0px 20px 30px -20px rgba(0, 0, 0, 0.3));
-    border-radius: var(--p2f-kiosk--border-radius);
   }
   div {
     background-color: #fff;
@@ -48,5 +47,9 @@ export const styles = css`
     cursor: default;
     pointer-events: none;
     background-color: #2d2e87;
+  }
+
+  [part=p2f-kiosk-categories-category-img] {
+    max-width: 100%;
   }
 `;
