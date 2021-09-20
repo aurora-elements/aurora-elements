@@ -25,7 +25,7 @@ export function categoriesTemplate(t:any) {
                                             spoUriConverter(t.data.url + '/api', category.asset.thumbnailUri) + '?Width=500' 
                                             : ''
                                         }" />
-                                <span part="p2f-kiosk-overview-category-name">
+                                <span part="p2f-kiosk-categories-category-name">
                                     ${category.name ? category.name : category.id}
                                 </span>                                 </div>
                                 `

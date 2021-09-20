@@ -15,26 +15,21 @@ export const styles = css`
     cursor: pointer;
     user-select: none;
     font-weight: 700;
-    text-transform: uppercase;
     font-size: 0.8rem;
-    color: #9facb6;
   }
   div {
-    background-color: #fff;
+    background-color: #f8f8f8;
     display: grid;
     grid-template-rows: 1fr 60px;
     box-shadow: var(--p2f-kiosk--box-shadow);
     border-radius: var(--p2f-kiosk--border-radius);
     cursor: pointer;
-    background-image: linear-gradient(to right, var(--p2f-kiosk--accent-color) 50%, #fff 0);
-    background-position: right;
-    background-size: 201% 200%;
-    transition: background-position 300ms ease-in-out 0s, color 200ms linear 0s;
+    transition: background-color 300ms ease-in-out 0s, color 200ms linear 0s;
     overflow: hidden;
   }
-  div:hover {
+  div:hover span {
     color: #fff;
-    background-position: left;
+    background-color: var(--p2f-kiosk--accent-color);
   }
   .category-hidden {
     display: none;
@@ -51,5 +46,9 @@ export const styles = css`
 
   [part=p2f-kiosk-categories-category-img] {
     max-width: 100%;
+  }
+  [part=p2f-kiosk-categories-category-name] {
+    padding: 20px;
+    background-color: #fff;
   }
 `;

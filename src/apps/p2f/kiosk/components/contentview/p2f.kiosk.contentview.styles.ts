@@ -12,7 +12,8 @@ export const styles = css`
     padding-bottom: var(--p2f-kiosk--padding, 2.084vw);
   }
   ae-p2f-kiosk-filterbar,
-  ae-p2f-grid {
+  ae-p2f-grid,
+  ae-p2f-kiosk-breadcrumb {
     float: left;
     width: 100%;
   }
