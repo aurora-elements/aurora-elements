@@ -11,6 +11,11 @@ export const styles = css`
   .grid {
     padding-bottom: var(--p2f-kiosk--padding, 2.084vw);
   }
+  ae-p2f-kiosk-categories {
+    padding: 
+      calc(var(--p2f-kiosk--padding) / 2) 0 
+      var(--p2f-kiosk--padding) 0;
+  }
   ae-p2f-kiosk-filterbar,
   ae-p2f-grid,
   ae-p2f-kiosk-breadcrumb {

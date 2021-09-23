@@ -11,7 +11,8 @@ module.exports = {
     showcase: './src/showcase.ts',
     'aurora.modules': './src/modules.ts',
     'aurora.dashlets': './src/dashlets.ts',
-    'page2flip.kiosk': './src/page2flip.kiosk.ts'
+    'page2flip.kiosk': './src/page2flip.kiosk.ts',
+    'spo.theme.configurator': './src/spo.theme.configurator.ts'
   },
   module: {
     rules: [

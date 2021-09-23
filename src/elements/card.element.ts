@@ -157,7 +157,13 @@ export class AeCard extends LitElement {
             </slot>
           </figure>
         ` : 
-        html``}
+        html`
+        <div part="${this.partFigureSelector
+              ? this.partFigureSelector
+              : "card-figure"}">
+              <slot name="no-image" part="card-slot-image"></slot>
+        </div> 
+        `}
         ${this.label ?
           html`
             <header

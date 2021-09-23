@@ -17,7 +17,7 @@ export function categoriesTemplate(t:any) {
                                 (category: P2fCategory) => html`
                                 <div
                                     id="${category.id}"
-                                    part="p2f-kiosk-overview-category-item"
+                                    part="p2f-kiosk-categories-category-item"
                                     @click=${(e:Event) => t.rootCategoryHandler(e, category.id, category.name)}>
                                     <img 
                                         part="p2f-kiosk-categories-category-img"  
@@ -25,9 +25,10 @@ export function categoriesTemplate(t:any) {
                                             spoUriConverter(t.data.url + '/api', category.asset.thumbnailUri) + '?Width=500' 
                                             : ''
                                         }" />
-                                <span part="p2f-kiosk-categories-category-name">
-                                    ${category.name ? category.name : category.id}
-                                </span>                                 </div>
+                                    <span part="p2f-kiosk-categories-category-name">
+                                        ${category.name ? category.name : category.id}
+                                    </span>                                 
+                                </div>
                                 `
                             )}
                         `
@@ -45,7 +46,7 @@ export function categoriesTemplate(t:any) {
                                 (category: P2fCategory) => html`
                                 <div
                                     id="${category.id}"
-                                    part="category-item"
+                                    part="p2f-kiosk-categories-category-item"
                                     @click=${(e:Event) => t.categoryHandler(e, category.id, category.name)}
                                     parent="${category.meta.parent ? category.meta.parent : ''}">
                                     <img 
@@ -54,9 +55,10 @@ export function categoriesTemplate(t:any) {
                                             spoUriConverter(t.data.url + '/api', category.asset.thumbnailUri) + '?Width=500' 
                                             : ''
                                         }" />
-                                <span part="p2f-kiosk-overview-category-name">
-                                    ${category.name ? category.name : category.id}
-                                </span>                                 </div>
+                                    <span part="p2f-kiosk-categories-category-name">
+                                        ${category.name ? category.name : category.id}
+                                    </span>                                 
+                                </div>
                                 `
                             )}
                         `

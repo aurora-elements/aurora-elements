@@ -54,6 +54,10 @@
                 "href":"/apps/page2flip/kiosk",
                 "target": "_blank",
                 "label": "page2flip Kiosk"
+            },
+            {
+                "href":"/apps/space.one/theme",
+                "label": "space.one Theme-Konfigurator"
             }
         ]
     }

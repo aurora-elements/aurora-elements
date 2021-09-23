@@ -10,6 +10,7 @@ import "../../pages/elements/accordion/accordion.page";
 import "../../pages/dashboard/number.dashlet.page";
 import "../../pages/page2flip/p2f.grid.page";
 import "../../pages/page2flip/kiosk/p2f.kiosk.page";
+import "../../pages/space.one/themeConfigurator/spo.theme.configurator.page";
 import "../../pages/notFound/notFound.page";
 
 /* Routes */
@@ -55,6 +56,11 @@ export const routes = [
       data: { title: "page2flip Kiosk" }
     },
     {
+      name: "spaceOneThemeConfigurator",
+      pattern: "/apps/space.one/theme",
+      data: { title: "space.one Theme Configurator" }
+    },
+    {
       name: "not-found",
       pattern: "*",
       data: { title: "404 Not found" }
@@ -76,6 +82,7 @@ export class RouterOutlet extends outlet(LitElement) {
             <number-dashlet-page route="number"></number-dashlet-page>
             <p2f-grid-page route="p2fgrid"></p2f-grid-page>
             <p2f-kiosk-page route="p2fkiosk"></p2f-kiosk-page>
+            <spo-theme-configurator-page route="spaceOneThemeConfigurator"></spo-theme-configurator-page>
             <not-found-page route="not-found"></not-found-page>
         `;
     }

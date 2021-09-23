@@ -45,7 +45,7 @@ export function theme(t:any) {
           --p2f-kiosk--accent-color:          ${t.accentColor ? t.accentColor : '#7DAC46'};
           --p2f-kiosk-container--width:       ${t.containerWidth ? t.containerWidth : '1400px'};
           --p2f-kiosk--padding:               ${t.padding ? t.padding : '2.084vw'};
-          --p2f-kiosk--box-shadow:            ${t.boxShadow ? t.boxShadow : '0px 20px 30px -20px rgba(0, 0, 0, 0.3)'};
+          --p2f-kiosk--box-shadow:            ${t.boxShadow ? t.boxShadow : '0px 20px 30px -20px rgba(0, 0, 0, 0.1)'};
           --p2f-kiosk--border-radius:         ${t.borderRadius ? t.borderRadius : '0'};
           --p2f-kiosk-headlines--color:       ${t.headlineColor ? t.headlineColor : '#141E38'};
           --p2f-kiosk-category-label--color:  ${t.categoryNameColor ? t.categoryNameColor : '#141E38'};

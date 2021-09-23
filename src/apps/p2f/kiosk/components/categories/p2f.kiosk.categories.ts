@@ -45,16 +45,21 @@ export class P2fKioskCategories extends LitElement {
         }, debugMode);
     }
 
+    eventHandler(e:CustomEvent) {
+        this.selectedCategory = e.detail.id;     
+    }
+
 /* Init */   
     firstUpdated() {
+
         document.addEventListener('ae-*:p2f-kiosk-contentview|show', (e:CustomEvent) => {
-            this.selectedCategory = e.detail.id;
+            this.eventHandler(e);
         });
         document.addEventListener('ae-*:p2f-kiosk-grid|push', (e:CustomEvent) => {
-            this.selectedCategory = e.detail.id;
+            this.eventHandler(e);
         });
         document.addEventListener('ae-*:p2f-kiosk-grid|change', (e:CustomEvent) => {
-            this.selectedCategory = e.detail.id;
+            this.eventHandler(e);
         });
     }
 

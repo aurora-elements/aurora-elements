@@ -5,7 +5,7 @@ export const styles = css`
     width: 100%;
     padding: 11.5px 20px;
     background: #fff;
-    box-shadow: var(--p2f-kiosk--box-shadow, 0px 20px 30px -20px rgba(0, 0, 0, 0.3));
+    box-shadow: var(--p2f-kiosk--box-shadow, 0px 20px 30px -20px rgba(0, 0, 0, 0.1));
     box-sizing: border-box;
     border-radius: var(--p2f-kiosk-filterbar--border-radius, --p2f-kiosk--border-radius);
   }

@@ -7,15 +7,16 @@ export function spoP2fCreatorUrl(
     id: number
 )  {
     let encodeURI = encodeURIComponent(`${apiUrl}/api/scope/${scopeKey}/asset/${id}/format/p2fdocument/content/`);
-    let url = `${creatorUrl}${encodeURI}`;
 
-    if(creatorUrl === null) {
+    if(creatorUrl == null) {
         creatorUrl = `${spoP2fCreatorBaseUrl}/wizard/hotspot-editor-standalone/1?p=`;
     }
 
     if(creatorUrl === undefined || scopeKey === undefined || id === undefined) {
         return '';
     }
+
+    let url = `${creatorUrl}${encodeURI}`;
 
     return url;
 }

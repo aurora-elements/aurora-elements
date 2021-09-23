@@ -10,7 +10,7 @@ export class AeEmbeddedWebview extends LitElement {
   baseUrl: string = window.location.origin;
 
   @property({ type: String, attribute: 'p2f-creator-url' })
-  p2fCreatorUrl: string = 'https://creator.page2flip.customer.space.one/wizard/hotspot-editor-standalone';
+  p2fCreatorUrl: string = 'https://creator.page2flip.customer.space.one/wizard/hotspot-editor-standalone/1?p=';
 
   @property({ type: String })
   src: string;
@@ -55,7 +55,7 @@ export class AeEmbeddedWebview extends LitElement {
         this.src= spoP2fViewerUrl(this.baseUrl, this.spaceKey, this.assetId)
       }
       else if(e.detail.app === 'creator') {
-        this.src= spoP2fCreatorUrl(null, this.baseUrl, this.spaceKey, this.assetId);
+        this.src= spoP2fCreatorUrl(this.p2fCreatorUrl, this.baseUrl, this.spaceKey, this.assetId);
       }
 
       let embeddedWebviewName:HTMLElement = document.querySelector('#embeddedWebviewName');

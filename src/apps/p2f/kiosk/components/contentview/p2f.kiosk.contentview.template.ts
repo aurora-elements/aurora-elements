@@ -53,6 +53,7 @@ export function contentviewTemplate(t:any) {
             }
             <ae-p2f-grid
                 modus-viewer
+                hide-category
                 exportparts="document"
                 spoql-query="${spoqlQuery}"
                 size="${t.data.size}"

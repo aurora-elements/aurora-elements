@@ -42,7 +42,11 @@ function actionsTemplate(t:any, document: P2fDocument) {
   }
 
   return html`
-    <div class="p2f-grid-item-actions ${convertingStatus} ${t.modusViewer ? 'viewer' : ''}" slot="bottom">
+    <div class="
+        p2f-grid-item-actions 
+        ${convertingStatus} ${t.modusViewer ? 'viewer' : ''}
+        ${document.asset ? '' : 'failed'}" 
+      slot="bottom">
       ${!t.modusViewer ? 
         html`
           <a 
@@ -75,7 +79,7 @@ function actionsTemplate(t:any, document: P2fDocument) {
       ${!t.modusViewer ? 
         html`
           <a 
-            href="${t.creatorUrl + '?p=' + t.baseUrl + '/api/scope/' + t.scopeKey + '/asset/' + document.asset ? document.asset.id : '' +'/format/p2fdocument/content/'}"
+            href="#"
             @click="${(e:Event) => t.openEmbeddedWebview(e, document.asset ? document.asset.id : '', document.name, 'creator')}"
             class="${t.actionPrimary === 'hotspots' ? 'action-primary' : ''} action-hotspots">
             <svg 
@@ -127,23 +131,45 @@ function convertingStatusTemplate(t:any, document: P2fDocument) {
   }
 
   return html`
-    <div slot="top">
-      ${convertingStatus === 'failed' ? 
-        html`
-          <span 
-            class="converting-status failed" 
-            style="${document.meta.publish !== undefined && document.meta.publish.state === 'PUBLISHED' ? 'padding-left: 55px;' :''}">            ${t.convertingStatusLabelFailed}
-          </span>` 
-        : html``
-      }
-      ${convertingStatus === 'converting' ? 
-        html`
-          <span 
-            class="converting-status converting"
-            style="${document.meta.publish !== undefined && document.meta.publish.state === 'PUBLISHED' ? 'padding-left: 55px;' :''}">            ${t.convertingStatusLabelConverting}
-          </span>` 
-        : html``
-      }
+    ${document.asset ? 
+      html`
+        <div slot="top">
+          ${convertingStatus === 'failed' ? 
+            html`
+              <span 
+                class="converting-status failed" 
+                style="${document.meta.publish !== undefined && document.meta.publish.state === 'PUBLISHED' ? 'padding-left: 55px;' :''}">            
+                ${t.convertingStatusLabelFailed}
+              </span>` 
+            : html``
+          }
+          ${convertingStatus === 'converting' ? 
+            html`
+              <span 
+                class="converting-status converting"
+                style="${document.meta.publish !== undefined && document.meta.publish.state === 'PUBLISHED' ? 'padding-left: 55px;' :''}">            
+                ${t.convertingStatusLabelConverting}
+              </span>` 
+            : html``
+          }
+        </div>
+      ` : 
+      html``
+    }
+  `;
+}
+
+function noAssetAddedTemplate(t:any) {
+  return html`
+    <div slot="no-image">
+      <slot name="no-image">
+        <svg style="height:100px;width: 100%;" viewBox="0 0 24 24">
+            <path 
+              fill="currentColor" 
+              d="M10 18H8V16H10V18M10 14H8V8H10V14M14 2H6C4.9 2 4 2.9 4 4V20C4 21.1 4.9 22 6 22H18C19.1 22 20 21.1 20 20V8L14 2M18 20H6V4H13V9H18V20Z" />
+        </svg>
+        <span style="display: block;width: 100%;text-align: center;">${t.msgDocumentWithoutAsset}</span>
+      </slot>
     </div>
   `;
 }
@@ -188,14 +214,24 @@ export function masterTemplate(t:any) {
                             <ae-card
                               label="${document.name ? document.name : 'Name not specified'}"
                               part="document"
-                              target="_blank"             
+                              target="_blank"
+                              class="
+                                ${t.hideCategory ? 'p2f-grid-item-category-hidden' : ''}
+                                ${document.asset ? '' : ' p2f-grid-item-no-asset'}"             
                               image="${document.asset ? spoUriConverter(t.baseUrl + '/api', document.asset.thumbnailUri) : ''}"
                               id="document_${document.id}">
+                              ${document.asset ? html`` : 
+                                html`
+                                  ${noAssetAddedTemplate(t)}
+                                `
+                              }
                               ${!t.modusViewer && document.meta.publish != undefined ? 
                                 html`${publishStateTemplate(document)}` : html`` 
                               }
                               ${actionsTemplate(t, document)} 
-                              ${categoryTemplate(document)}  
+                              ${t.hideCategory ? 
+                                html`` : html`${categoryTemplate(document)}`
+                              }
                               ${convertingStatusTemplate(t, document)}     
                             </ae-card>
                           `: 
@@ -206,14 +242,24 @@ export function masterTemplate(t:any) {
                         <ae-card
                           label="${document.name ? document.name : 'Name not specified'}"
                           part="document"
-                          target="_blank"             
+                          target="_blank"   
+                          class="
+                            ${t.hideCategory ? 'p2f-grid-item-category-hidden' : ''}
+                            ${document.asset ? '' : ' p2f-grid-item-no-asset'}"            
                           image="${document.asset ? spoUriConverter(t.baseUrl + '/api', document.asset.thumbnailUri) : ''}"
                           id="document_${document.id}">
+                          ${document.asset ? html`` : 
+                            html`
+                              ${noAssetAddedTemplate(t)}
+                            `
+                          }
                           ${!t.modusViewer && document.meta.publish != undefined ? 
                             html`${publishStateTemplate(document)}` : html`` 
                           }
                           ${actionsTemplate(t, document)} 
-                          ${categoryTemplate(document)}  
+                          ${t.hideCategory ? 
+                            html`` : html`${categoryTemplate(document)}`
+                          }
                           ${convertingStatusTemplate(t, document)}     
                         </ae-card>
                       `
@@ -222,7 +268,7 @@ export function masterTemplate(t:any) {
               )}` : 
             html`
               <div id="emptyState" part="empty-state">
-                <slot name="epty-state">
+                <slot name="empty-state">
                   <svg 
                     width="300" 
                     height="300" 

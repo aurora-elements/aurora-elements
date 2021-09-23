@@ -88,11 +88,18 @@ export class AeP2fGrid extends LitElement {
   @property({type:String, attribute:'msg-empty'})
   msgEmpty: string = 'Unfortunately, no documents were found!';
 
+  @property({type: String, attribute: 'msg-document-without-asset'})
+  msgDocumentWithoutAsset: string = 'No document added'
+
   @property({type:Boolean, attribute: 'modus-viewer'})
   modusViewer: boolean;
 
   @property({type:Boolean, attribute: 'show-counter'})
   counter: boolean = false;
+
+  
+  @property({type:Boolean, attribute: 'hide-category'})
+  hideCategory: boolean = false;
 
   @property({type: Boolean, attribute: 'debug-mode'})
   debugMode: boolean = false;
