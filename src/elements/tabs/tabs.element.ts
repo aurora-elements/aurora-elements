@@ -12,6 +12,9 @@ export class Tabs extends LitElement {
     @property({type: Boolean}) 
     initialized = false;
 
+    @property({type: Boolean, attribute: 'mode-debug'}) 
+    modeDebug = false;
+
 /* Queries */
     @query('slot') 
     slotEl?: any;
@@ -24,13 +27,6 @@ export class Tabs extends LitElement {
         return this.slotEl ? this.slotEl.assignedElements() : [];
     }
 
-    visibleItem(visible:any) {
-        for(let item of this.items) {
-            item.visible = item === visible;
-            this.requestUpdate(); 
-        }
-    }
-
     clickHandler(e:Event, id:number) {
         e.preventDefault();
         this.navItems.forEach(item => {
@@ -41,7 +37,7 @@ export class Tabs extends LitElement {
         let target = e.target! as HTMLElement;
         target.setAttribute('active', '');
 
-        aeEvent(this, 'tabs', 'tab', 'change', {id: id}, true)
+        aeEvent(this, 'tabs', 'tab', 'change', {id: id}, this.modeDebug)
     }
 
     shouldUpdate(changedProperties:any) {
@@ -56,7 +52,7 @@ export class Tabs extends LitElement {
 
 /* Init */
     firstUpdated() {
-        this.items.find((item:any) => item.visible) || this.visibleItem(this.items[0]);
+        this.items[0].setAttribute('active', '');
 
         this.items.forEach((item, index:number) => { item.id = 'ae-tab-' + index });
 
@@ -66,6 +62,16 @@ export class Tabs extends LitElement {
                 id: item.id,
                 name: item.name
             }) 
+        });
+
+        document.addEventListener('ae-tabs:tab|change', (e:CustomEvent) => {
+            this.items.forEach(item => { 
+               if(item.id === e.detail.id) {
+                   item.setAttribute('active', '');
+               }else {
+                   item.removeAttribute('active');
+               }
+            });           
         });
 
         console.log('items: ', items)
