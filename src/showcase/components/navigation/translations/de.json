@@ -23,6 +23,38 @@
             {
                 "href":"/elements/accordion",
                 "label": "Accordion"
+            },
+            {
+                "href":"/elements/confirmdialog",
+                "label": "Confirm Dialog"
+            },
+            {
+                "href":"/elements/dropdownbutton",
+                "label": "Dropdown Button"
+            },
+            {
+                "href":"/elements/loader",
+                "label": "Loader"
+            },
+            {
+                "href":"/elements/overlay",
+                "label": "Overlay"
+            },
+            {
+                "href":"/elements/scrolltop",
+                "label": "Scroll Top"
+            },
+            {
+                "href":"/elements/themeswitcher",
+                "label": "Themeswitcher"
+            },
+            {
+                "href":"/elements/embeddedwebview",
+                "label": "Embedded webview"
+            },
+            {
+                "href":"/elements/tabs",
+                "label": "Tabs"
             }
         ]
     },

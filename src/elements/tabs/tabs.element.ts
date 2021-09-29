@@ -12,10 +12,19 @@ export class Tabs extends LitElement {
     @property({type: Boolean}) 
     initialized = false;
 
-    @property({type: Boolean, attribute: 'mode-debug'}) 
-    modeDebug = false;
+    @property({type: Boolean, attribute: 'debug-mode'}) 
+    debugMode = false;
+
+    @property({type: Boolean, attribute: false})
+    menuLayout: boolean = false;
+
+    @property({type: Boolean})
+    open: boolean = false;
 
 /* Queries */
+    @query('nav')
+    nav: HTMLElement;
+
     @query('slot') 
     slotEl?: any;
 
@@ -23,6 +32,25 @@ export class Tabs extends LitElement {
     navItems: NodeList;
 
 /* Methods */  
+    navHandler() {
+        let navWidth:number =       this.nav.offsetWidth;
+        let navItemWidth:number =   0;
+
+        this.navItems.forEach(item => {
+
+            let el = item! as HTMLElement;
+
+            if(el.offsetWidth != undefined) {
+                navItemWidth += el.offsetWidth;
+            }
+
+        });
+        
+        if(navWidth <= navItemWidth) {           
+            this.menuLayout = true;
+        } 
+    }
+
     getItems() {
         return this.slotEl ? this.slotEl.assignedElements() : [];
     }
@@ -37,7 +65,7 @@ export class Tabs extends LitElement {
         let target = e.target! as HTMLElement;
         target.setAttribute('active', '');
 
-        aeEvent(this, 'tabs', 'tab', 'change', {id: id}, this.modeDebug)
+        aeEvent(this, 'tabs['+ this.id +']', 'tab', 'change', {id: id}, this.debugMode)
     }
 
     shouldUpdate(changedProperties:any) {
@@ -52,30 +80,32 @@ export class Tabs extends LitElement {
 
 /* Init */
     firstUpdated() {
+
         this.items[0].setAttribute('active', '');
 
         this.items.forEach((item, index:number) => { item.id = 'ae-tab-' + index });
 
-        let items = []
-        this.items.forEach(item => { 
-            items.push({
-                id: item.id,
-                name: item.name
+        let tabs = []
+        this.items.forEach(tab => { 
+            tabs.push({
+                id: tab.id,
+                name: tab.name
             }) 
         });
 
-        document.addEventListener('ae-tabs:tab|change', (e:CustomEvent) => {
+        this.addEventListener('ae-tabs['+ this.id +']:tab|change', (e:CustomEvent) => {
             this.items.forEach(item => { 
                if(item.id === e.detail.id) {
                    item.setAttribute('active', '');
-               }else {
-                   item.removeAttribute('active');
+               } else {
+                    item.removeAttribute('active');                                   
                }
             });           
         });
 
-        console.log('items: ', items)
+        this.navHandler();
 
+        window.addEventListener("resize", () => setTimeout(() => this.navHandler(), 1000));
     }
 
 /* Template */

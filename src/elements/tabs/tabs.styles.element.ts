@@ -10,9 +10,6 @@ export const styles = css`
         width:              100%;
         background-color:   var(--ae-tabs-nav--bg, #7c9e16);
     }
-    :host([level-secondary]) nav {
-        background-color:   var(--ae-tabs-nav--bg-secondary, #f5f5f5);    
-    }
     nav a {
         transition:         background-color 300ms ease-in-out 0s, opacity 300ms ease-in-out 0s;
         background-color:   rgba(0,0,0,0);
@@ -29,14 +26,44 @@ export const styles = css`
     nav a:hover {
         opacity:            1;
     }
-    :host([level-secondary]) nav a {
-        color:              var(--ae-tabs-nav--color-secondary, #ffffff); 
-        text-transform:     var(--ae-tabs-nav--text-transform-secondary, none);
-    }
     nav a[active] {
         background-color:   var(--ae-tabs-nav--bg-active, #9ac31c);
         opacity:            1;
         cursor:             default;
         pointer-events:     none;
+    }
+/* Level secondary */
+    :host([level-secondary]) nav {
+        background-color:   var(--ae-tabs-nav--bg-secondary, #f5f5f5);    
+    }
+
+    :host([level-secondary]) nav a {
+        color:              var(--ae-tabs-nav--color-secondary, #aaaaaa); 
+        text-transform:     var(--ae-tabs-nav--text-transform-secondary, none);
+        opacity:            1;
+    }
+    :host([level-secondary]) nav a:hover {
+        color:              var(--ae-tabs-nav--color-active-secondary, #7c9e16); 
+    }
+    :host([level-secondary]) nav a[active] {
+        background-color:   var(--ae-tabs-nav--bg-active-secondary, #ffffff);
+        color:              var(--ae-tabs-nav--color-active-secondary, #7c9e16)
+    } 
+
+/* dropdown nav */
+    #ae-tabs-nav-dopdown-content {
+        display: none;
+        position:absolute;
+        background: #ffffff;
+    }
+    #ae-tabs-nav-dopdown-content a {
+        width:100%;
+        padding: 0 20px;
+        opacity: 1;
+        background: none;
+        color: #333;
+    }
+    #ae-tabs-nav-dopdown-content[open] {
+        display: block;
     }
 `;

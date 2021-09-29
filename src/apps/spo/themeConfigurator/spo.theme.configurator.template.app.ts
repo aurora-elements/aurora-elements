@@ -14,10 +14,7 @@ console.log(config) */
             ae-tabs-nav,
             ae-tabs-nav-item">
             <ae-tab name="General">
-                <h1>General</h1>
-                <ae-spo-theme-configurator-general>
-
-                </ae-spo-theme-configurator-general>
+                <ae-spo-theme-configurator-general></ae-spo-theme-configurator-general>
             </ae-tab>  
             <ae-tab name="Grafik"><h1>Grafik</h1></ae-tab>  
             <ae-tab name="Farben & Layout"><h1>Farben & Layout</h1></ae-tab>

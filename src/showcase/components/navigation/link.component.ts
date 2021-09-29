@@ -17,10 +17,11 @@ export class NavLink extends navigator(LitElement) {
                 text-decoration: none;
                 width: 100%;
                 display: block;
-                line-height: 24px;
+                line-height: 30px;
                 color: #9c9c9c;
                 outline: none !important;
                 cursor: pointer;
+                padding-left:10px;
             }
             a[route-active] {
                 cursor: default;

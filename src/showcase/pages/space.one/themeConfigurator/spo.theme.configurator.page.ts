@@ -19,7 +19,7 @@ class SpoThemeConfiguratorPage extends LitElement {
   /* Render template */
   render() {
     return html`
-      <div style="display: block;position: absolute;top: 0;left: 0;width: 100%;height: 100%;z-index: 1000000;background: #fff;overflow-y:auto;">
+      <div style="display: block;position: absolute;top: 0;left: 0;width: 100%;height: 100%;z-index: 1000000;background: #e6e9ef;overflow-y:auto;">
         <ae-spo-theme-configurator></ae-spo-theme-configurator>
       </div>
   `;
