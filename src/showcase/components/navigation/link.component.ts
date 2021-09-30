@@ -25,7 +25,6 @@ export class NavLink extends navigator(LitElement) {
             }
             a[route-active] {
                 cursor: default;
-                font-weight: bold;
                 color: var(--link-color-hover, var(--color-accent-primary, #00569c));
             }
             a:hover {

@@ -85,21 +85,24 @@ const styles = css`
     grid-area: nav;
     background-color: var(--grey-ligthest);
     border-right: 1px solid var(--grey-middle);
-    overflow-y: auto;
+    height: 100vh;
+    display: grid;
+    grid-template-rows: auto auto 1fr;
     position: relative;
   }
+
   .nav nav {
     padding: 40px;
     float:left;
     width:100%;
     box-sizing: border-box;
+    overflow-y: auto;
   }
   nav span {
       width:100%;
       float:left;
       margin-bottom:5px;
       text-transform: uppercase;
-      opacity: .2;
       font-weight: 700;
       font-size: 80%;
       letter-spacing: .03em;
