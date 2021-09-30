@@ -1,6 +1,6 @@
 import {LitElement, html} from 'lit';
 import {customElement} from 'lit/decorators.js';
-import {until} from 'lit/directives/until';
+import { until } from 'lit/directives/until.js';
 import {unsafeHTML} from 'lit/directives/unsafe-html.js';
 import {repeat} from 'lit/directives/repeat.js';
 import {locale} from '../../../../src/functionalities/directives/translater.directive';

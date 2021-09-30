@@ -5,7 +5,7 @@ import "../../../elements/card.element";
 import "../../../elements/loader.element";
 import { errorHandler } from '../../../functionalities/directives/error.handler.directive';
 import { spoUriConverter } from '../../../functionalities/directives/spo/spo.uri.converter.directive';
-import { until } from 'lit/directives/until';
+import { until } from 'lit/directives/until.js';
 import { aeEvent } from '../../../functionalities/directives/event.directive';
 
 function publishStateTemplate(document: P2fDocument) {

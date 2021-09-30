@@ -1,5 +1,5 @@
 import { html } from "lit";
-import { until } from "lit/directives/until";
+import { until } from 'lit/directives/until.js';
 import { errorHandler } from "../../../../../functionalities/directives/error.handler.directive";
 import { spoUriConverter } from "../../../../../functionalities/directives/spo/spo.uri.converter.directive";
 import { P2fCategory } from "../../../../../functionalities/interfaces/p2f/p2f.category.interface";

@@ -1,5 +1,5 @@
 import { LitElement, html, css, nothing } from 'lit';
-import { until } from 'lit/directives/until';
+import { until } from 'lit/directives/until.js';
 import { repeat } from 'lit/directives/repeat.js';
 import { unsafeHTML } from 'lit/directives/unsafe-html.js';
 import { customElement, property } from 'lit/decorators.js';

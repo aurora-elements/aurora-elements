@@ -1,7 +1,7 @@
 import { LitElement, html, css } from "lit";
 import { customElement, property, query } from "lit/decorators.js";
 import { router } from "lit-element-router";
-import { until } from 'lit/directives/until';
+import { until } from 'lit/directives/until.js';
 import { repeat } from 'lit/directives/repeat.js';
 import logo from './showcase/img/aurora-logo.png';
 import { routes } from "./showcase/components/navigation/routerOutlet.component";

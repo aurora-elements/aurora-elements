@@ -1,5 +1,5 @@
 import { html } from "lit";
-import { until } from "lit/directives/until";
+import { until } from 'lit/directives/until.js';
 import { errorHandler } from "../../../functionalities/directives/error.handler.directive";
 import "../../../modules/p2f/grid/p2f.grid.module";
 import "../../../elements/select.element";
