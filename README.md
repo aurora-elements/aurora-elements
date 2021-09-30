@@ -1,4 +1,4 @@
-# Aurora Components
+# Aurora Elements
 
 After checkout you should run
 
