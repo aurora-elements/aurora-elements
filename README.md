@@ -1,4 +1,4 @@
-# Aurora Elements
+# aurora-elements
 
 After checkout you should run
 
