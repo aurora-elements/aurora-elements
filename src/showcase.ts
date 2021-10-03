@@ -252,6 +252,12 @@ export class AeShowcase extends router(LitElement) {
             ` : html``
           }
           <section id="content" class="content">
+              <a 
+                href="#" 
+                style="position: absolute;right: 90px;top: 28px;font-size: .8rem;color: #484848;"
+                @click=${(e:Event) => this.logoutHandler(e)}>
+                Ausloggen
+              </a>
               <ae-theme-switcher target="ae-showcase"></ae-theme-switcher>
               <div id="main" part="main">
                   <router-outlet active-route=${this.route}>
@@ -286,6 +292,12 @@ export class AeShowcase extends router(LitElement) {
           this.query = query;
           document.title = data.title ? data.title + ' - aurora-elements showcase' : 'aurora-elements showcase';
           document.body.setAttribute('class', (data.bodyClass ? data.bodyClass : ''));
+    }
+
+    logoutHandler(e:Event) {
+      e.preventDefault();
+      sessionStorage.removeItem('authenticated');
+      window.location.replace(window.location.origin);
     }
 
     firstUpdated() {
