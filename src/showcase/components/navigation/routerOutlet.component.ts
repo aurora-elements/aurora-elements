@@ -2,6 +2,7 @@ import { LitElement, html, css } from "lit";
 import { customElement, property } from 'lit/decorators.js';
 import { outlet } from "lit-element-router";
 /* Pages */
+import "../../pages/login/login.page";
 import "../../pages/welcome/welcome.page";
 import "../../pages/whatsNew/whatsNew.page";
 import "../../pages/imprint/imprint.page";
@@ -16,34 +17,52 @@ import "../../pages/notFound/notFound.page";
 /* Routes */
 export const routes = [
     {
-      name: "welcome",
+      name: "login",
       pattern: "",
-      data: { title: "Welcome" }
+      data: { 
+        title: "Login",
+        bodyClass: 'login' 
+      }
     },
     {
       name: "whatsnew",
       pattern: "whatsnew",
-      data: { title: "What's new" }
+      data: { 
+        title: "What's new",
+        bodyClass: 'whatsnew' 
+      }
     },
     {
       name: "imprint",
       pattern: "imprint",
-      data: { title: "Imprint" }
+      data: { 
+        title: "Imprint",
+        bodyClass: 'imprint'  
+      }
     },
     {
       name: "card",
       pattern: "elements/card",
-      data: { title: "Card" }
+      data: { 
+        title: "Card",
+        bodyClass: 'card'  
+      }
     },
     {
       name: "accordion",
       pattern: "elements/accordion",
-      data: { title: "Accordion" }
+      data: { 
+        title: "Accordion",
+        bodyClass: 'accordion'  
+      }
     },
     {
       name: "number",
       pattern: "dashboard/number",
-      data: { title: "Number Dashlets" }
+      data: { 
+        title: "Number Dashlets",
+        bodyClass: 'number-dashlet'  
+      }
     },
     {
       name: "p2fgrid",
@@ -70,20 +89,40 @@ export const routes = [
 /* Router outlet */  
 @customElement('router-outlet')
 export class RouterOutlet extends outlet(LitElement) {
-    @property({ type: String, attribute: 'route-active' }) routeActive!: string;
+    @property({ type: String, attribute: 'route-active' }) r
+    outeActive!: string;
+
+    @property({type: Boolean, attribute: false})
+    auth: boolean;
+
+    firstUpdated() {
+      this.addEventListener('ae-login:*|authenticated', () => {
+        this.auth = true;
+      })
+      if(sessionStorage.getItem('authenticated') != null) {
+        this.auth = sessionStorage.getItem('authenticated').toLowerCase() == 'true' ? true : false;
+      }
+    }
 
     render() {
         return html`
-            <welcome-page route="welcome"></welcome-page>
-            <whatsnew-page route="whatsnew"></whatsnew-page>
-            <imprint-page route="imprint"></imprint-page>
-            <card-page route="card"></card-page>
-            <accordion-page route="accordion"></accordion-page>
-            <number-dashlet-page route="number"></number-dashlet-page>
-            <p2f-grid-page route="p2fgrid"></p2f-grid-page>
-            <p2f-kiosk-page route="p2fkiosk"></p2f-kiosk-page>
-            <spo-theme-configurator-page route="spaceOneThemeConfigurator"></spo-theme-configurator-page>
-            <not-found-page route="not-found"></not-found-page>
+            <login-page route="login"></login-page>
+            <imprint-page route="imprint" style="display: none;"></imprint-page>
+            ${this.auth ? 
+              html`
+                <welcome-page route="welcome" style="display: none;"></welcome-page>
+                <whatsnew-page route="whatsnew" style="display: none;"></whatsnew-page>          
+                <card-page route="card" style="display: none;"></card-page>
+                <accordion-page route="accordion" style="display: none;"></accordion-page>
+                <number-dashlet-page route="number" style="display: none;"></number-dashlet-page>
+                <p2f-grid-page route="p2fgrid" style="display: none;"></p2f-grid-page>
+                <p2f-kiosk-page route="p2fkiosk" style="display: none;"></p2f-kiosk-page>
+                <spo-theme-configurator-page route="spaceOneThemeConfigurator" style="display: none;"></spo-theme-configurator-page>
+                <not-found-page route="not-found" style="display: none;"></not-found-page>
+              ` : 
+              html``
+
+            }
         `;
     }
 

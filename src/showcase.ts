@@ -55,7 +55,7 @@ const styles = css`
     text-rendering: optimizeLegibility;
     font-size: 15px;
     display: grid;
-    grid-template-columns: minmax(250px, 380px) minmax(600px, 1fr);
+    grid-template-columns: minmax(250px, 300px) minmax(600px, 1fr);
     grid-template-areas: 'nav content';
   }
   ::part(space-bottom-m40) {
@@ -105,7 +105,7 @@ const styles = css`
       text-transform: uppercase;
       font-weight: 700;
       font-size: 80%;
-      letter-spacing: .03em;
+      letter-spacing: .05em;
   }
   nav div {
       margin-bottom:20px;
@@ -129,6 +129,7 @@ const styles = css`
     float: left; 
     font-size: 80%;
     padding-bottom:0;
+    line-height: 30px;
   }
   footer nav-link {
     margin-left:20px;
@@ -179,6 +180,7 @@ const styles = css`
     margin-bottom: 40px;
   }
 
+
   @media screen and (max-width: 900px) {
     :host {
       grid-template-columns: 1fr;
@@ -193,9 +195,17 @@ const styles = css`
 
 @customElement('ae-showcase')
 export class AeShowcase extends router(LitElement) {
-    @property({ type: String }) route = '';
-    @property({ type: Object }) params = {};
-    @property({ type: Object }) query = {};
+    @property({type: Boolean})
+    login: boolean = false;
+
+    @property({ type: String }) 
+    route = '';
+
+    @property({ type: Object }) 
+    params = {};
+
+    @property({ type: Object }) 
+    query = {};
 
     @query('#content') content!: HTMLElement;
 
@@ -206,7 +216,9 @@ export class AeShowcase extends router(LitElement) {
 
     render() {
         return html`
-            <div class="nav">
+          ${this.login ?
+            html`
+              <div class="nav">
                 <a href="/">
                     <img class="logo" src="${logo}" />
                 </a>
@@ -235,24 +247,25 @@ export class AeShowcase extends router(LitElement) {
                         `),
                         html``
                     )}  
-                </nav>
-                
+                </nav>                
             </div>
-            <section id="content" class="content">
-                <ae-theme-switcher target="ae-showcase"></ae-theme-switcher>
-                <div id="main">
-                    <router-outlet active-route=${this.route}>
-                    </router-outlet>
-                </div>
-                <footer>
-                    <div class="copyright">
-                        <span>&copy;2021 Marcus Kramer</span> 
-                    </div>
-                    <nav-link href="/imprint">Imprint</nav-link> 
-                </footer>
-            </section>
-            <ae-scroll-top scroll-container="#content"></ae-scroll-top>
-        `
+            ` : html``
+          }
+          <section id="content" class="content">
+              <ae-theme-switcher target="ae-showcase"></ae-theme-switcher>
+              <div id="main" part="main">
+                  <router-outlet active-route=${this.route}>
+                  </router-outlet>
+              </div>
+              <footer part="footer">
+                  <div class="copyright">
+                      <span>&copy;2021 Marcus Kramer</span> 
+                  </div>
+                  <nav-link href="/imprint">Imprint</nav-link> 
+              </footer>
+          </section>
+          <ae-scroll-top scroll-container="#content"></ae-scroll-top>
+      `
     }
 
     static get routes() {
@@ -264,13 +277,15 @@ export class AeShowcase extends router(LitElement) {
         params: {},
         query: {},
         data: {
-            title: string;
+            title: string,
+            bodyClass: string
           }
         ) {
           this.route = route;
           this.params = params;
           this.query = query;
           document.title = data.title ? data.title + ' - aurora-elements showcase' : 'aurora-elements showcase';
+          document.body.setAttribute('class', (data.bodyClass ? data.bodyClass : ''));
     }
 
     firstUpdated() {

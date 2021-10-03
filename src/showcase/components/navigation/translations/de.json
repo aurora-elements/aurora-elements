@@ -4,7 +4,7 @@
         "visible": true,
         "items": [
             {
-                "href":"/",
+                "href":"/welcome",
                 "label": "Willkommen"
             }, {
                 "href": "/whatsnew",
@@ -29,10 +29,6 @@
                 "label": "Confirm Dialog"
             },
             {
-                "href":"/elements/dropdownbutton",
-                "label": "Dropdown Button"
-            },
-            {
                 "href":"/elements/loader",
                 "label": "Loader"
             },
@@ -41,20 +37,30 @@
                 "label": "Overlay"
             },
             {
-                "href":"/elements/scrolltop",
-                "label": "Scroll Top"
-            },
-            {
-                "href":"/elements/themeswitcher",
-                "label": "Themeswitcher"
-            },
-            {
                 "href":"/elements/embeddedwebview",
                 "label": "Embedded webview"
             },
             {
                 "href":"/elements/tabs",
                 "label": "Tabs"
+            }
+        ]
+    },
+    {
+        "label": "Interaktionen",
+        "visible": true,
+        "items": [
+            {
+                "href":"/elements/dropdownbutton",
+                "label": "Dropdown Button"
+            },
+            {
+                "href":"/elements/scrolltop",
+                "label": "Scroll Top"
+            },
+            {
+                "href":"/elements/themeswitcher",
+                "label": "Themeswitcher"
             }
         ]
     },
