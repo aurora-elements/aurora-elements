@@ -117,6 +117,18 @@ const styles = css`
       width:100%;
   }
 
+  .logout {
+    transition: text-decoration 300ms ease-in-out 0s;
+    position: absolute;
+    right: 90px;
+    top: 28px;
+    font-size: .8rem;
+    color: #484848;
+    text-decoration: none;
+  }
+  .logout:hover {
+    text-decoration: underline;
+  }
   .copyright {
     font-weight: 400;
     color: var(--grey-dark);
@@ -198,6 +210,9 @@ export class AeShowcase extends router(LitElement) {
     @property({type: Boolean})
     login: boolean = false;
 
+    @property({type: Boolean})
+    auth: boolean = false;
+
     @property({ type: String }) 
     route = '';
 
@@ -252,12 +267,14 @@ export class AeShowcase extends router(LitElement) {
             ` : html``
           }
           <section id="content" class="content">
+            ${this.auth ? html`
               <a 
                 href="#" 
-                style="position: absolute;right: 90px;top: 28px;font-size: .8rem;color: #484848;"
+                class="logout"
                 @click=${(e:Event) => this.logoutHandler(e)}>
                 Ausloggen
               </a>
+            ` : html``}
               <ae-theme-switcher target="ae-showcase"></ae-theme-switcher>
               <div id="main" part="main">
                   <router-outlet active-route=${this.route}>
@@ -290,7 +307,7 @@ export class AeShowcase extends router(LitElement) {
           this.route = route;
           this.params = params;
           this.query = query;
-          document.title = data.title ? data.title + ' - aurora-elements showcase' : 'aurora-elements showcase';
+          document.title = data.title ? data.title : '';
           document.body.setAttribute('class', (data.bodyClass ? data.bodyClass : ''));
     }
 
@@ -303,6 +320,9 @@ export class AeShowcase extends router(LitElement) {
     firstUpdated() {
         this.addEventListener('route-change-event', () => {
             this.content.scrollTop = 0;
+        })
+        this.addEventListener('ae-login:*|authenticated', () => {
+          this.auth = sessionStorage.getItem('authenticated') == 'true' ? true : false;
         })
     }
 

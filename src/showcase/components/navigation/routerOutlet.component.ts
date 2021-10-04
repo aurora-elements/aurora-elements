@@ -20,7 +20,7 @@ export const routes = [
       name: "login",
       pattern: "",
       data: { 
-        title: "Login",
+        title: "Login - marcuskramer.online",
         bodyClass: 'login' 
       }
     },

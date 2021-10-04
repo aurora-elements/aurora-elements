@@ -17,6 +17,7 @@ const styles = css`
     justify-content: center;
     padding: 60px 0 0;
     box-sizing: border-box;
+    
   }
   #landing {
     display: grid;
@@ -26,6 +27,9 @@ const styles = css`
     justify-content: center;
     padding: 60px 3vw 0;
     box-sizing: border-box;
+    min-height:100vh;
+    padding-bottom:20vh;
+    animation: page 2000ms cubic-bezier(0.175, 0.885, 0.320, 1.275) 0s;
   }
   svg {
     max-width:100%;
@@ -49,6 +53,7 @@ const styles = css`
     font-size:1rem;
     line-height: 1.5;
   }
+
   #landing h2 {
     text-transform: uppercase;
     font-size: 40px;
@@ -87,15 +92,59 @@ const styles = css`
     font-weight: 500;
   }
 
+  .social-media-item {
+    transition: background-color 500ms ease-in-out 0s, box-shadow 500ms ease-in-out 0s;
+    background: #f2f2f2;
+    padding: 20px;
+    float: left;
+    border-radius: 10px;
+    box-shadow: none;
+    margin-right: 30px;
+    margin-bottom:30px;
+  }
+  .social-media-item:hover {
+    box-shadow: 0px 10px 60px 0px rgba(0, 0, 0, 0.2);
+    background: #fff;
+  }
+  .social-media-item svg {
+    max-width: 30px;
+    max-height: 30px;
+    float: left;
+    display: block;
+  }
+
+  #whatIdo {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 60px;
+    align-items: center;
+    justify-content: center;
+    padding: 60px 3vw 0;
+    box-sizing: border-box;
+    min-height:100vh;
+    padding-bottom:20vh;
+    animation: page 2000ms cubic-bezier(0.175, 0.885, 0.320, 1.275) 0s;
+  }
+
   @media screen and (max-width: 830px) {
     svg {
       display: none;
     }
-    #loginForm {
+    #loginForm, #landing {
       display: block;
       width: 100%;
       max-width: 300px;
       margin: 40px auto;
+    }
+    #landing {max-width:100%}
+  }
+
+  @keyframes page {
+    0% {
+      transform:scale(0)
+    }
+    100% {
+      transform:scale(1)  
     }
   }
 `;
@@ -108,9 +157,15 @@ class LoginPage extends LitElement {
   firstUpdated() {
     this.addEventListener('ae-login:*|authenticated', () => {
       this.auth = true;
+      document.title = 'Willkommen - marcuskramer.online';
+      document.body.classList.add('welcome');
     })
     if(sessionStorage.getItem('authenticated') != null) {
       this.auth = sessionStorage.getItem('authenticated').toLowerCase() == 'true' ? true : false;
+    }
+    if(this.auth) {
+      document.title = 'Willkommen - marcuskramer.online'; 
+      document.body.classList.add('welcome');
     }
   }
 

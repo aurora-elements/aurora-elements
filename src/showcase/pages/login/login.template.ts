@@ -1,5 +1,6 @@
 
-import "../../../modules/login/login.module";import { html } from "lit";
+import "../../../modules/login/login.module";
+import { html } from "lit";
 
 export function loginTemplate() {
     return html`
