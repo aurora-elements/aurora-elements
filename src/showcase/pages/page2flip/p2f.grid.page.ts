@@ -32,10 +32,10 @@ const styles = css`
 
 class P2fGridPage extends LitElement {
   @property({type: String})
-  urlBase: string = "https://page2flip-staging.customer.space.one";
+  urlBase: string = "https://ae.devdock.space.one";
 
   @property({type: String})
-  spaceKey: string = "thenewp2f";
+  spaceKey: string = "kiosk";
 
   @property({type: Number})
   size: number = 3;

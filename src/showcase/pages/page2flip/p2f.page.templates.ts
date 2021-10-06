@@ -18,8 +18,8 @@ export function defaultContentTemplate() {
       <ae-p2f-grid
         size="2"
         modus-viewer
-        url-base="https://lyreco.devdock.space.one"
-        space-key="lyreco"
+        url-base="https://ae.devdock.space.one"
+        space-key="kiosk"
       >
       </ae-p2f-grid>
     </div>
@@ -29,8 +29,8 @@ export function defaultContentTemplate() {
     >
     <div class="show-box">
       <ae-p2f-grid
-        url-base="https://page2flip-staging.customer.space.one"
-        spoql-query="at 'thenewp2f' select item from 'p2fDocumentItem' where %7Bitems publishedstate eq 'PUBLISHED'%7D orderby %7Bcreated descending%7D limit 3"
+        url-base="https://ae.devdock.space.one"
+        spoql-query="at 'kiosk' select item from 'p2fDocumentItem' where %7Bitems publishedstate eq 'PUBLISHED'%7D orderby %7Bcreated descending%7D limit 3"
       >
       </ae-p2f-grid>
     </div>
