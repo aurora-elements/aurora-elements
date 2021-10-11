@@ -4,7 +4,7 @@
         "visible": true,
         "items": [
             {
-                "href":"/welcome",
+                "href":"/",
                 "label": "Willkommen"
             }, {
                 "href": "/whatsnew",

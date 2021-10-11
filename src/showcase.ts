@@ -207,11 +207,6 @@ const styles = css`
 
 @customElement('ae-showcase')
 export class AeShowcase extends router(LitElement) {
-    @property({type: Boolean})
-    login: boolean = false;
-
-    @property({type: Boolean})
-    auth: boolean = false;
 
     @property({ type: String }) 
     route = '';
@@ -231,50 +226,38 @@ export class AeShowcase extends router(LitElement) {
 
     render() {
         return html`
-          ${this.login ?
-            html`
-              <div class="nav">
-                <a href="/">
-                    <img class="logo" src="${logo}" />
-                </a>
-                <span class="claim">AURORA-ELEMENTS</span>
-                <nav>
-                    ${until(
-                        nav
-                        .then(items => html`                        
-                            ${repeat(items, (item: any) => item.id, (item) => html`
-                                ${item.visible ?
-                                    html`    
-                                        <div>
-                                            <span>${item.label}</span>
-                                            ${repeat(item.items, (item: any) => item.id, (item) => html`
-                                                <nav-link 
-                                                  href="${item.href}" 
-                                                  target="${item.target}">
-                                                    ${item.label}
-                                                </nav-link> 
-                                            `)}
-                                        </div>`
+          <div class="nav">
+            <a href="/">
+                <img class="logo" src="${logo}" />
+            </a>
+            <span class="claim">AURORA-ELEMENTS</span>
+            <nav>
+                ${until(
+                    nav
+                    .then(items => html`                        
+                        ${repeat(items, (item: any) => item.id, (item) => html`
+                            ${item.visible ?
+                                html`    
+                                    <div>
+                                        <span>${item.label}</span>
+                                        ${repeat(item.items, (item: any) => item.id, (item) => html`
+                                            <nav-link 
+                                              href="${item.href}" 
+                                              target="${item.target}">
+                                                ${item.label}
+                                            </nav-link> 
+                                        `)}
+                                    </div>`
 
-                                    : html``
-                                }
-                            `)}
-                        `),
-                        html``
-                    )}  
-                </nav>                
-            </div>
-            ` : html``
-          }
+                                : html``
+                            }
+                        `)}
+                    `),
+                    html``
+                )}  
+            </nav>                
+          </div>
           <section id="content" class="content">
-            ${this.auth ? html`
-              <a 
-                href="#" 
-                class="logout"
-                @click=${(e:Event) => this.logoutHandler(e)}>
-                Ausloggen
-              </a>
-            ` : html``}
               <ae-theme-switcher target="ae-showcase"></ae-theme-switcher>
               <div id="main" part="main">
                   <router-outlet active-route=${this.route}>
@@ -320,9 +303,6 @@ export class AeShowcase extends router(LitElement) {
     firstUpdated() {
         this.addEventListener('route-change-event', () => {
             this.content.scrollTop = 0;
-        })
-        this.addEventListener('ae-login:*|authenticated', () => {
-          this.auth = sessionStorage.getItem('authenticated') == 'true' ? true : false;
         })
     }
 

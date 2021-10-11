@@ -2,7 +2,6 @@ import { LitElement, html, css } from "lit";
 import { customElement, property } from 'lit/decorators.js';
 import { outlet } from "lit-element-router";
 /* Pages */
-import "../../pages/login/login.page";
 import "../../pages/welcome/welcome.page";
 import "../../pages/whatsNew/whatsNew.page";
 import "../../pages/imprint/imprint.page";
@@ -17,11 +16,11 @@ import "../../pages/notFound/notFound.page";
 /* Routes */
 export const routes = [
     {
-      name: "login",
-      pattern: "",
+      name: "welcome",
+      pattern: "/",
       data: { 
-        title: "Login - marcuskramer.online",
-        bodyClass: 'login' 
+        title: "Welcome - marcuskramer.online",
+        bodyClass: 'welcome' 
       }
     },
     {
@@ -106,23 +105,16 @@ export class RouterOutlet extends outlet(LitElement) {
 
     render() {
         return html`
-            <login-page route="login"></login-page>
-            <imprint-page route="imprint" style="display: none;"></imprint-page>
-            ${this.auth ? 
-              html`
-                <welcome-page route="welcome" style="display: none;"></welcome-page>
-                <whatsnew-page route="whatsnew" style="display: none;"></whatsnew-page>          
-                <card-page route="card" style="display: none;"></card-page>
-                <accordion-page route="accordion" style="display: none;"></accordion-page>
-                <number-dashlet-page route="number" style="display: none;"></number-dashlet-page>
-                <p2f-grid-page route="p2fgrid" style="display: none;"></p2f-grid-page>
-                <p2f-kiosk-page route="p2fkiosk" style="display: none;"></p2f-kiosk-page>
-                <spo-theme-configurator-page route="spaceOneThemeConfigurator" style="display: none;"></spo-theme-configurator-page>
-                <not-found-page route="not-found" style="display: none;"></not-found-page>
-              ` : 
-              html``
-
-            }
+            <imprint-page route="imprint"></imprint-page>
+            <welcome-page route="welcome"></welcome-page>
+            <whatsnew-page route="whatsnew"></whatsnew-page>          
+            <card-page route="card"></card-page>
+            <accordion-page route="accordion"></accordion-page>
+            <number-dashlet-page route="number"></number-dashlet-page>
+            <p2f-grid-page route="p2fgrid"></p2f-grid-page>
+            <p2f-kiosk-page route="p2fkiosk"></p2f-kiosk-page>
+            <spo-theme-configurator-page route="spaceOneThemeConfigurator"></spo-theme-configurator-page>
+            <not-found-page route="not-found"></not-found-page>
         `;
     }
 
