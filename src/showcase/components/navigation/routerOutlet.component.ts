@@ -19,7 +19,7 @@ export const routes = [
       name: "welcome",
       pattern: "/",
       data: { 
-        title: "Welcome - marcuskramer.online",
+        title: "Welcome - aurora-elements",
         bodyClass: 'welcome' 
       }
     },
@@ -27,7 +27,7 @@ export const routes = [
       name: "whatsnew",
       pattern: "whatsnew",
       data: { 
-        title: "What's new",
+        title: "What's new - aurora-elements",
         bodyClass: 'whatsnew' 
       }
     },
@@ -35,7 +35,7 @@ export const routes = [
       name: "imprint",
       pattern: "imprint",
       data: { 
-        title: "Imprint",
+        title: "Imprint - aurora-elements",
         bodyClass: 'imprint'  
       }
     },
@@ -43,7 +43,7 @@ export const routes = [
       name: "card",
       pattern: "elements/card",
       data: { 
-        title: "Card",
+        title: "Card - elemente - aurora-elements",
         bodyClass: 'card'  
       }
     },
@@ -51,7 +51,7 @@ export const routes = [
       name: "accordion",
       pattern: "elements/accordion",
       data: { 
-        title: "Accordion",
+        title: "Accordion - elemente - aurora-elements",
         bodyClass: 'accordion'  
       }
     },
@@ -59,24 +59,30 @@ export const routes = [
       name: "number",
       pattern: "dashboard/number",
       data: { 
-        title: "Number Dashlets",
+        title: "Number Dashlets - dashlets - aurora-elements",
         bodyClass: 'number-dashlet'  
       }
     },
     {
       name: "p2fgrid",
       pattern: "/modules/page2flip/grid",
-      data: { title: "page2flip Grid" }
+      data: { 
+        title: "page2flip Grid - module - aurora-elements" 
+      }
     },
     {
       name: "p2fkiosk",
       pattern: "/apps/page2flip/kiosk",
-      data: { title: "page2flip Kiosk" }
+      data: { 
+        title: "page2flip Kiosk - apps - aurora-elements" 
+      }
     },
     {
       name: "spaceOneThemeConfigurator",
       pattern: "/apps/space.one/theme",
-      data: { title: "space.one Theme Configurator" }
+      data: { 
+        title: "space.one Theme Configurator - apps - aurora-elements" 
+      }
     },
     {
       name: "not-found",
@@ -88,20 +94,10 @@ export const routes = [
 /* Router outlet */  
 @customElement('router-outlet')
 export class RouterOutlet extends outlet(LitElement) {
-    @property({ type: String, attribute: 'route-active' }) r
-    outeActive!: string;
+    @property({ type: String, attribute: 'route-active' })
+    routeActive!: string;
 
-    @property({type: Boolean, attribute: false})
-    auth: boolean;
 
-    firstUpdated() {
-      this.addEventListener('ae-login:*|authenticated', () => {
-        this.auth = true;
-      })
-      if(sessionStorage.getItem('authenticated') != null) {
-        this.auth = sessionStorage.getItem('authenticated').toLowerCase() == 'true' ? true : false;
-      }
-    }
 
     render() {
         return html`
