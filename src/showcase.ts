@@ -89,6 +89,7 @@ const styles = css`
     display: grid;
     grid-template-rows: auto auto 1fr;
     position: relative;
+    overflow-y:auto;
   }
 
   .nav nav {
@@ -96,7 +97,6 @@ const styles = css`
     float:left;
     width:100%;
     box-sizing: border-box;
-    overflow-y: auto;
   }
   nav span {
       width:100%;
