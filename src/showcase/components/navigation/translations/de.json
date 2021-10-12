@@ -14,7 +14,7 @@
     },
     {
         "label": "Elemente",
-        "visible": true,
+        "visible": false,
         "items": [
             {
                 "href":"/elements/card",
@@ -48,7 +48,7 @@
     },
     {
         "label": "Interaktionen",
-        "visible": true,
+        "visible": false,
         "items": [
             {
                 "href":"/elements/dropdownbutton",
@@ -76,7 +76,7 @@
     },
     {
         "label": "Module",
-        "visible": true,
+        "visible": false,
         "items": [
             {
                 "href":"/modules/page2flip/grid",
@@ -86,7 +86,7 @@
     },
     {
         "label": "Apps",
-        "visible": true,
+        "visible": false,
         "items": [
             {
                 "href":"/apps/page2flip/kiosk",
