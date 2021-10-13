@@ -14,6 +14,12 @@ import HTMLAttributes from "./htmlAttributes.json";
 import slots from "./slots.json";
 import parts from "./parts.json";
 
+const headline = 'Accordion';
+
+const headlineItem = 'Accordion Item';
+
+const version = '0.0.8';
+
 const HTMLCode = `
   <ae-accordion>
     <ae-accordion-item label="Accordion item 1">
@@ -61,9 +67,9 @@ class Accordion extends LitElement {
     return html`
       ${elementsMasterTemplate(
         false,
-        'Accordion', 
+        headline, 
         null, 
-        '0.0.8', 
+        version, 
         element, 
         HTMLCode, 
         HTMLAttributes, 
@@ -73,7 +79,7 @@ class Accordion extends LitElement {
       )}
       ${elementsMasterTemplate(
         true,
-        'Accordion Item', 
+        headlineItem, 
         null, 
         null, 
         null, 

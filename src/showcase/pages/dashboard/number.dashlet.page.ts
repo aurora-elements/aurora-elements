@@ -10,6 +10,12 @@ import slots from "./numberDashlet/slots.json";
 import { elementsMasterTemplate } from "../elements/masterTemplates/elements.master.template";
 import { elementsMasterStyles } from "../elements/masterTemplates/elements.master.template.styles";
 
+const headline = 'Number Dashlets';
+
+const description = 'Das Number-Dashlet stellt eine Nummer dar, zum Beispiel die Anzahl von Dokumenten in einem space.';
+
+const version = '0.0.8';
+
 const element = html`
   <ae-number-dashlet>
     <a href="#" slot="actions" style="margin-right:10px">Aktion 1</a>
@@ -46,9 +52,9 @@ class NumberDashletPage extends LitElement {
     return html`
       ${elementsMasterTemplate(
         false,
-        'Number Dashlets', 
-        'Das Number-Dashlet stellt eine Nummer dar, zum Beispiel die Anzahl von Dokumenten in einem space.', 
-        '0.0.8', 
+        headline, 
+        description, 
+        version, 
         element, 
         HTMLCode, 
         HTMLAttributes, 
