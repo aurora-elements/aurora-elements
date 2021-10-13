@@ -40,14 +40,6 @@ export const routes = [
       }
     },
     {
-      name: "card",
-      pattern: "elements/card",
-      data: { 
-        title: "Card - elemente - aurora-elements",
-        bodyClass: 'card'  
-      }
-    },
-    {
       name: "accordion",
       pattern: "elements/accordion",
       data: { 
@@ -61,27 +53,6 @@ export const routes = [
       data: { 
         title: "Number Dashlets - dashlets - aurora-elements",
         bodyClass: 'number-dashlet'  
-      }
-    },
-    {
-      name: "p2fgrid",
-      pattern: "/modules/page2flip/grid",
-      data: { 
-        title: "page2flip Grid - module - aurora-elements" 
-      }
-    },
-    {
-      name: "p2fkiosk",
-      pattern: "/apps/page2flip/kiosk",
-      data: { 
-        title: "page2flip Kiosk - apps - aurora-elements" 
-      }
-    },
-    {
-      name: "spaceOneThemeConfigurator",
-      pattern: "/apps/space.one/theme",
-      data: { 
-        title: "space.one Theme Configurator - apps - aurora-elements" 
       }
     },
     {
@@ -104,12 +75,8 @@ export class RouterOutlet extends outlet(LitElement) {
             <imprint-page route="imprint"></imprint-page>
             <welcome-page route="welcome"></welcome-page>
             <whatsnew-page route="whatsnew"></whatsnew-page>          
-            <card-page route="card"></card-page>
             <accordion-page route="accordion"></accordion-page>
             <number-dashlet-page route="number"></number-dashlet-page>
-            <p2f-grid-page route="p2fgrid"></p2f-grid-page>
-            <p2f-kiosk-page route="p2fkiosk"></p2f-kiosk-page>
-            <spo-theme-configurator-page route="spaceOneThemeConfigurator"></spo-theme-configurator-page>
             <not-found-page route="not-found"></not-found-page>
         `;
     }

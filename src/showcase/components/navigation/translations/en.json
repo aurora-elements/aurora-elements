@@ -5,44 +5,53 @@
         "items": [
             {
                 "href":"/",
-                "label": "Welcome"
+                "label": "Welcome",
+                "visible": true
             }, {
                 "href": "/whatsnew",
-                "label": "What's new"
+                "label": "What's new",
+                "visible": true
             }
         ]
     },
     {
         "label": "Elements",
-        "visible": false,
+        "visible": true,
         "items": [
             {
                 "href":"/elemets/card",
-                "label": "Card"
+                "label": "Card",
+                "visible": false
             },
             {
                 "href":"/elements/accordion",
-                "label": "Accordion"
+                "label": "Accordion",
+                "visible": true
             },
             {
                 "href":"/elements/confirmdialog",
-                "label": "Confirm Dialog"
+                "label": "Confirm Dialog",
+                "visible": false
             },
             {
                 "href":"/elements/loader",
-                "label": "Loader"
+                "label": "Loader",
+                "visible": false
             },
             {
                 "href":"/elements/overlay",
-                "label": "Overlay"
+                "label": "Overlay",
+                "visible": false
             },
             {
                 "href":"/elements/embeddedwebview",
-                "label": "Embedded webview"
+                "label": "Embedded webview",
+                "visible": false
             },
             {
                 "href":"/elements/tabs",
-                "label": "Tabs"
+                "label": "Tabs",
+                "visible": false
             }
         ]
     },
@@ -70,7 +79,8 @@
         "items": [
             {
                 "href":"/dashboard/number",
-                "label": "Number"
+                "label": "Number",
+                "visible": true
             }
         ]
     },

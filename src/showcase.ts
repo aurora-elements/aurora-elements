@@ -241,11 +241,16 @@ export class AeShowcase extends router(LitElement) {
                                     <div>
                                         <span>${item.label}</span>
                                         ${repeat(item.items, (item: any) => item.id, (item) => html`
-                                            <nav-link 
-                                              href="${item.href}" 
-                                              target="${item.target}">
-                                                ${item.label}
-                                            </nav-link> 
+                                          ${item.visible ? 
+                                            html`
+                                              <nav-link 
+                                                href="${item.href}" 
+                                                target="${item.target}">
+                                                  ${item.label}
+                                              </nav-link>
+                                              ` : 
+                                            html`` 
+                                          }
                                         `)}
                                     </div>`
 

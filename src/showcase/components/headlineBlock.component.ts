@@ -16,7 +16,7 @@ const styles = css`
         font-size: 2.8125rem;
         font-weight: 300;
         color: var(--color-headlineBlock-primary, var(--color-text-primary, #484848));
-        line-height: calc(1ex / 0.32);
+        line-height: 1;
         margin: 0;  
         padding-top:60px;
     }
@@ -24,7 +24,7 @@ const styles = css`
         color: var(--color-headlineBlock-primary, var(--color-text-primary, #484848));
         font-size: 2rem;
         font-weight: 300;
-        line-height: calc(1ex / 0.32);
+        line-height: 1;
         padding-top:80px;
         margin:0;  
     }

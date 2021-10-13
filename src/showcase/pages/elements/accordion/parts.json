@@ -1,0 +1,10 @@
+[
+    {
+        "col1": "Part 1",
+        "col2": "Hier können Aktionen (Links, Buttons) hinterlegt werden"   
+    },
+    {
+        "col1": "Part 2",
+        "col2": "Hier kann das Default-Icon ersetzt werden"   
+    }
+]

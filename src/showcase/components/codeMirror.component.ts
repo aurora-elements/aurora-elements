@@ -27,7 +27,7 @@ const styles = css`
     slot {
         white-space: pre;
         display: block;
-        padding: 0px 40px 30px 40px;
+        padding: 0px 20px 20px 0px;
         font-family: 'Roboto Mono', Consolas, Menlo, monospace;
         line-height: 1.6;
     }

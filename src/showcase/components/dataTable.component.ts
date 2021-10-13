@@ -28,10 +28,10 @@ const styles = css`
         white-space: nowrap;
     }
     table thead th:first-child {
-        padding: 10px 20px 10px 40px;
+        padding: 10px 20px 10px 20px;
     }
     table thead th:last-child {
-        padding: 10px 40px 10px 20px;
+        padding: 10px 20px 10px 20px;
     }
     table tbody {
         border-width: 1px;
@@ -64,10 +64,10 @@ const styles = css`
         list-style-type: square;
     }
     tr td:first-child {
-        padding: 14px 20px 14px 40px;
+        padding: 14px 20px 14px 20px;
     }
     tr td:last-child {
-        padding: 14px 40px 14px 20px;
+        padding: 14px 20px 14px 20px;
     }
 `;
 
