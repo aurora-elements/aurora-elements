@@ -23,9 +23,14 @@ const styles = css`
 @customElement('ae-accordion')
 class AeAccordion extends LitElement {
     /* Properties - LitElement */
-    @property({type: Array}) items:any = [];
-    @property({type: Boolean}) multiple = false;
-    @property({type: Boolean}) initialized = false;
+    @property({type: Array, attribute: false}) 
+    items:any = [];
+
+    @property({type: Boolean}) 
+    multiple = false;
+
+    @property({type: Boolean, attribute: false}) 
+    initialized = false;
 
     @query('slot') slotEl?: any;
 

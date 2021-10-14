@@ -1,14 +1,8 @@
 [
     {
-        "col1": "number-value",
-        "col2": "number",
-        "col3": "0",
-        "col4": "Zahlenwert auf dem Dashlet"   
-    },
-    {
-        "col1": "label",
-        "col2": "string",
-        "col3": "Label",
-        "col4": "Bezeichung des Dashlets"   
+        "col1": "multiple",
+        "col2": "boolean",
+        "col3": "false",
+        "col4": "Allows you to open several tabs at the same time."   
     }
 ]

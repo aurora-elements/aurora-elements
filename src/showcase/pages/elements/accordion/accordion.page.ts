@@ -1,4 +1,3 @@
-
 import "../../../../elements/accordion/accordionItem.element";
 import "../../../../elements/accordion/accordion.element";
 import "../../../components/dataTable.component";
@@ -12,7 +11,6 @@ import { elementsMasterStyles } from "../masterTemplates/elements.master.templat
 import css from './css.json';
 import HTMLAttributes from "./htmlAttributes.json";
 import slots from "./slots.json";
-import parts from "./parts.json";
 
 const headline = 'Accordion';
 
@@ -74,7 +72,7 @@ class Accordion extends LitElement {
         HTMLCode, 
         HTMLAttributes, 
         slots, 
-        parts, 
+        null, 
         css
       )}
       ${elementsMasterTemplate(
@@ -86,7 +84,7 @@ class Accordion extends LitElement {
         null, 
         HTMLAttributes, 
         slots, 
-        parts, 
+        null, 
         css
       )}
     `;

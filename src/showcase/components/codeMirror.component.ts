@@ -1,9 +1,9 @@
 import { LitElement, html, css } from "lit";
 import { customElement, property, query } from 'lit/decorators.js';
 import hljs from 'highlight.js/lib/highlight';
-//import xml from 'highlight.js/lib/languages/xml';
+import xml from 'highlight.js/lib/languages/xml';
 
-//hljs.registerLanguage('xml', xml);
+hljs.registerLanguage('xml', xml);
 
 const styles = css`
     :host {
@@ -103,7 +103,7 @@ export class AeCodeMirror extends LitElement {
         return html`
             ${this.label ? html`<p class="language">${this.label}</p>` : html``}
             
-            <div class="code-wrapper">
+            <div class="code-wrapper" id="codemirror">
                 <slot @slotchange="${this.onSlotchange}"></slot>
                 <button class="copy-button">
                     ${this.copyButtonLabel}
