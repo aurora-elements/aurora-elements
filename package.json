@@ -3,7 +3,7 @@
   "version": "0.0.8",
   "types": "global.d.ts",
   "dependencies": {
-    "highlight.js": "^9.18.1",
+    "@justinribeiro/code-block": "^1.0.0",
     "lit": "^2.0.0",
     "lit-element-router": "^2.0.3"
   },

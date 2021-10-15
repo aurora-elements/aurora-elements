@@ -5,94 +5,93 @@ import "../../../components/codeMirror.component";
 import "../../../../elements/card.element";
 import "../../../../elements/loader.element";
 import "../../../components/headlineBlock.component";
-import {LitElement, html} from 'lit';
+import { LitElement, html } from "lit";
 import { elementsMasterTemplate } from "../masterTemplates/elements.master.template";
 import { elementsMasterStyles } from "../masterTemplates/elements.master.template.styles";
-import css from './css.json';
+import css from "./css.json";
 import HTMLAttributes from "./htmlAttributes.json";
 import slots from "./slots.json";
 
-const headline = 'Accordion';
+const headline = "Accordion";
 
-const headlineItem = 'Accordion Item';
+const headlineItem = "Accordion Item";
 
-const version = '0.0.8';
+const version = "0.0.8";
 
 const HTMLCode = `
-  <ae-accordion>
+<ae-accordion>
     <ae-accordion-item label="Accordion item 1">
-      Lorem ipsum dolor sit amet...
+        Lorem ipsum dolor sit amet...
     </ae-accordion-item>
     <ae-accordion-item label="Accordion item 2">
-      Lorem ipsum dolor sit amet...
+        Lorem ipsum dolor sit amet...
     </ae-accordion-item>
     <ae-accordion-item label="Accordion item 3">
-      Lorem ipsum dolor sit amet...
+        Lorem ipsum dolor sit amet...
     </ae-accordion-item>
     ...
-  </ae-accordion>
+</ae-accordion>
 `;
 const element = html`
   <ae-accordion>
     <ae-accordion-item label="Accordion item 1">
       <p>
-        Lorem ipsum dolor sit amet, consetetur sadipscing elitr, 
-        sed diam nonumy eirmod tempor invidunt ut labore et 
-        dolore magna aliquyam erat, sed diam voluptua. 
+        Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy
+        eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam
+        voluptua.
       </p>
     </ae-accordion-item>
     <ae-accordion-item label="Accordion item 2">
       <p>
-          Lorem ipsum dolor sit amet, consetetur sadipscing elitr, 
-          sed diam nonumy eirmod tempor invidunt ut labore et 
-          dolore magna aliquyam erat, sed diam voluptua. 
+        Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy
+        eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam
+        voluptua.
       </p>
     </ae-accordion-item>
     <ae-accordion-item label="Accordion item 3">
       <p>
-          Lorem ipsum dolor sit amet, consetetur sadipscing elitr, 
-          sed diam nonumy eirmod tempor invidunt ut labore et 
-          dolore magna aliquyam erat, sed diam voluptua. 
+        Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy
+        eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam
+        voluptua.
       </p>
     </ae-accordion-item>
   </ae-accordion>
-`
+`;
 
 class Accordion extends LitElement {
-
-  /* Render template */
-  render() {
-    return html`
+    /* Render template */
+    render() {
+        return html`
       ${elementsMasterTemplate(
-        false,
-        headline, 
-        null, 
-        version, 
-        element, 
-        HTMLCode, 
-        HTMLAttributes, 
-        slots, 
-        null, 
-        css
-      )}
+            false,
+            headline,
+            null,
+            version,
+            element,
+            HTMLCode,
+            HTMLAttributes,
+            slots,
+            null,
+            css
+        )}
       ${elementsMasterTemplate(
-        true,
-        headlineItem, 
-        null, 
-        null, 
-        null, 
-        null, 
-        HTMLAttributes, 
-        slots, 
-        null, 
-        css
-      )}
+            true,
+            headlineItem,
+            null,
+            null,
+            null,
+            null,
+            HTMLAttributes,
+            slots,
+            null,
+            css
+        )}
     `;
-  }
+    }
 
-  /* Styles - LitElement */
-  static get styles() {
-    return [elementsMasterStyles]
-  }
+    /* Styles - LitElement */
+    static get styles() {
+        return [elementsMasterStyles];
+    }
 }
-customElements.define('accordion-page', Accordion);
+customElements.define("accordion-page", Accordion);

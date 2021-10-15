@@ -1,10 +1,12 @@
 
 import "../../../../elements/tabs/tab/tab.element";
-import "../../../../elements/tabs/tabs.element";import "../../../components/dataTable.component";
+import "../../../../elements/tabs/tabs.element";
+import "../../../components/dataTable.component";
 import "../../../components/codeMirror.component";
 import "../../../../elements/card.element";
 import "../../../components/headlineBlock.component";
 import { html } from "lit";
+import '@justinribeiro/code-block';
 
 export function elementsMasterTemplate(
     isSubheadline:boolean,
@@ -17,6 +19,22 @@ export function elementsMasterTemplate(
     slots:any, 
     parts:any, 
     css:any) {
+
+    let copyToClipboard = function(e:Event) { 
+        e.preventDefault();
+        let button = e.target! as HTMLElement;
+        let parent = button.firstElementChild.parentNode.parentElement.parentElement;
+        navigator.clipboard.writeText(HTMLCode).then(() => {
+            parent.classList.add('code-copied')
+            setTimeout(() => {
+                parent.classList.remove('code-copied')
+            }, 1200);
+
+        }), () => {
+            console.log('Error writing to the clipboard');
+        };
+    }
+    
     return html`
         ${headline ? 
             html`
@@ -44,10 +62,18 @@ export function elementsMasterTemplate(
         }
         ${HTMLCode ? 
             html`
-                <ae-code-mirror language="xml">${HTMLCode}</ae-code-mirror>
+                <div class="code-block-wrapper">
+                    <a href="#" @click=${copyToClipboard}>
+                        <svg style="width:24px;height:24px" viewBox="0 0 24 24">
+                            <path fill="currentColor" d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z" />
+                        </svg>
+                    </a>
+                    <code-block language="markup" theme="/src/showcase/assets/prism.css">${HTMLCode}</code-block>
+                </div>
             ` : 
             html``
         }
+
         <ae-tabs>
             ${HTMLAttributes ? 
                 html`

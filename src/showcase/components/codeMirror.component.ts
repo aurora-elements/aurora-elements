@@ -1,9 +1,6 @@
 import { LitElement, html, css } from "lit";
 import { customElement, property, query } from 'lit/decorators.js';
-import hljs from 'highlight.js/lib/highlight';
-import xml from 'highlight.js/lib/languages/xml';
 
-hljs.registerLanguage('xml', xml);
 
 const styles = css`
     :host {
@@ -178,15 +175,7 @@ export class AeCodeMirror extends LitElement {
                 .hljs-strong{font-weight:700}`;
             head.append(style);
         }
-
-        hljs.configure({
-            tabReplace: '',
-            languages: ['xml', 'html', 'js', 'javascript']
-          });
-
-        document.querySelectorAll('ae-code-mirror').forEach(block => {
-            hljs.highlightBlock(block);
-        });       
+     
     }  
 }
 
