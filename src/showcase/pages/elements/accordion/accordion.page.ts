@@ -11,6 +11,10 @@ import { elementsMasterStyles } from "../masterTemplates/elements.master.templat
 import css from "./css.json";
 import HTMLAttributes from "./htmlAttributes.json";
 import slots from "./slots.json";
+import cssItem from "./item/css.json";
+import HTMLAttributesItem from "./item/htmlAttributes.json";
+import slotsItem from "./item/slots.json";
+import partsItem from "./item/parts.json";
 
 const headline = "Accordion";
 
@@ -81,10 +85,10 @@ class Accordion extends LitElement {
             null,
             null,
             null,
-            HTMLAttributes,
-            slots,
-            null,
-            css
+            HTMLAttributesItem,
+            slotsItem,
+            partsItem,
+            cssItem
         )}
     `;
     }

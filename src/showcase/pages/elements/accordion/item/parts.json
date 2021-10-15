@@ -1,0 +1,10 @@
+[
+    {
+        "col1": "header",
+        "col2": "Tab header"   
+    },
+    {
+        "col1": "content",
+        "col2": "Tab content wrapper"   
+    }
+]

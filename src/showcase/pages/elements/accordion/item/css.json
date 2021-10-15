@@ -1,0 +1,14 @@
+[
+    {
+        "col1": "--accordion-item-color-expanded",
+        "col2": "--color-accent",
+        "col3": "#3579B2",
+        "col4": "Active color of Tab headline"   
+    },
+    {
+        "col1": "--accordion-item-border-color",
+        "col2": "--border-color",
+        "col3": "#c1c1c1",
+        "col4": "Icon color"   
+    }
+]
