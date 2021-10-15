@@ -40,13 +40,19 @@ export const elementsMasterStyles = css`
         color: var(--showcase-accent--1, #3470b0);
     }
     .code-copied {
-        animation: copied 1s cubic-bezier(0.75, 0.02, 0.5, 1);
+        animation: copied 2s cubic-bezier(0.75, 0.02, 0.5, 1);
     }
     @keyframes copied {
         0% {
             background-color: var(--grey-ligthest, #f8f8f8);
         }
+        25% {
+            background-color: var(--showcase-grey--2,#9c9c9c);
+        }
         50% {
+            background-color: var(--showcase-grey--2,#9c9c9c);
+        }
+        75% {
             background-color: var(--showcase-grey--2,#9c9c9c);
         }
         100% {

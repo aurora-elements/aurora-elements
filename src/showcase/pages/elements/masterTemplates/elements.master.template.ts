@@ -28,7 +28,7 @@ export function elementsMasterTemplate(
             parent.classList.add('code-copied')
             setTimeout(() => {
                 parent.classList.remove('code-copied')
-            }, 1200);
+            }, 2000);
 
         }), () => {
             console.log('Error writing to the clipboard');
