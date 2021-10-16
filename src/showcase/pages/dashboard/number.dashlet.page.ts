@@ -50,7 +50,7 @@ const HTMLCode = `
 
 class NumberDashletPage extends LitElement {
   /* Render template */
-  render() {
+  protected render() {
     return html`
       ${elementsMasterTemplate(
         false,
@@ -68,8 +68,6 @@ class NumberDashletPage extends LitElement {
   }
 
   /* Styles - LitElement */
-  static get styles() {
-    return [elementsMasterStyles];
-  }
+  static styles = [elementsMasterStyles];
 }
 customElements.define("number-dashlet-page", NumberDashletPage);

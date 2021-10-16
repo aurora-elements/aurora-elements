@@ -21,7 +21,7 @@
             {
                 "href":"/elemets/card",
                 "label": "Card",
-                "visible": false
+                "visible": true
             },
             {
                 "href":"/elements/accordion",
