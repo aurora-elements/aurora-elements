@@ -48,6 +48,14 @@ export const routes = [
       }
     },
     {
+      name: "card",
+      pattern: "elements/card",
+      data: { 
+        title: "Card - elemente - aurora-elements",
+        bodyClass: 'card'  
+      }
+    },
+    {
       name: "number",
       pattern: "dashboard/number",
       data: { 
@@ -76,6 +84,7 @@ export class RouterOutlet extends outlet(LitElement) {
             <welcome-page route="welcome"></welcome-page>
             <whatsnew-page route="whatsnew"></whatsnew-page>          
             <accordion-page route="accordion"></accordion-page>
+            <card-page route="card"></card-page>
             <number-dashlet-page route="number"></number-dashlet-page>
             <not-found-page route="not-found"></not-found-page>
         `;

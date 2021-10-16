@@ -64,7 +64,7 @@ const element = html`
 
 class Accordion extends LitElement {
     /* Render template */
-    render() {
+    protected render() {
         return html`
       ${elementsMasterTemplate(
             false,
@@ -94,8 +94,6 @@ class Accordion extends LitElement {
     }
 
     /* Styles - LitElement */
-    static get styles() {
-        return [elementsMasterStyles];
-    }
+    static styles = [elementsMasterStyles];
 }
 customElements.define("accordion-page", Accordion);
