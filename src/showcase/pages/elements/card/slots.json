@@ -1,10 +1,18 @@
 [
     {
-        "col1": "actions",
-        "col2": "Hier können Aktionen (Links, Buttons) hinterlegt werden"   
+        "col1": "top",
+        "col2": "-"   
     },
     {
-        "col1": "icon",
-        "col2": "Hier kann das Default-Icon ersetzt werden"   
+        "col1": "image",
+        "col2": "-"   
+    },
+    {
+        "col1": "no-image",
+        "col2": "-"   
+    },
+    {
+        "col1": "bottom",
+        "col2": "-"   
     }
 ]

@@ -47,6 +47,12 @@ const styles = css`
         border-top:none;
         cursor: auto;
     }
+    td {
+        white-space: nowrap;
+    }
+    tr td:last-of-type {
+        white-space: normal;
+    }
     tr td {
         border-left: none;
         border-right: none;

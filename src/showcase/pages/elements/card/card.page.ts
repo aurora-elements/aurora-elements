@@ -15,9 +15,8 @@ const version = "0.0.8";
 const headline = "Card";
 const HTMLCode = `
 <ae-card
-    style="width:300px;" 
     label="Card"
-    image="/src/showcase/assets/card-testbild.jpg">
+    image="...">
 </ae-card>
 `;
 const element = html`
