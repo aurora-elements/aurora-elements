@@ -63,7 +63,10 @@ export const routes = [
     {
       name: "not-found",
       pattern: "*",
-      data: { title: "404 Not found" }
+      data: { 
+        title: "404 Not found - aurora-elements",
+        bodyClass: 'error'
+      }
     },
   ];
 
