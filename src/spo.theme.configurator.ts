@@ -1,1 +1,0 @@
-import './apps/spo/themeConfigurator/spo.theme.configurator.app'

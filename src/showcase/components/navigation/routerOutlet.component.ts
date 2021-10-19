@@ -8,9 +8,6 @@ import "../../pages/imprint/imprint.page";
 import "../../pages/elements/card/card.page";
 import "../../pages/elements/accordion/accordion.page";
 import "../../pages/dashboard/number.dashlet.page";
-import "../../pages/page2flip/p2f.grid.page";
-import "../../pages/page2flip/kiosk/p2f.kiosk.page";
-import "../../pages/space.one/themeConfigurator/spo.theme.configurator.page";
 import "../../pages/notFound/notFound.page";
 
 /* Routes */

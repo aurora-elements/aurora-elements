@@ -1,4 +1,5 @@
 # aurora-elements
+A web components UI library.
 
 After checkout you should run
 

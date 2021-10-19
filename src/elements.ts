@@ -13,5 +13,5 @@ import './elements/accordion/accordionItem.element';
 import './elements/dropdown.button.element';
 // Confirm dialog
 import './elements/confirm.dialog.element';
-// Embedded webview
-import './elements/embedded.webview.element';
+// Dashlet: number
+import './elements/dashboard/number.dashlet.element';

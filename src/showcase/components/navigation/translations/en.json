@@ -83,30 +83,5 @@
                 "visible": true
             }
         ]
-    },
-    {
-        "label": "Modules",
-        "visible": false,
-        "items": [
-            {
-                "href":"/modules/page2flip/grid",
-                "label": "page2flip Grid"
-            }
-        ]
-    },
-    {
-        "label": "Apps",
-        "visible": false,
-        "items": [
-            {
-                "href":"/apps/page2flip/kiosk",
-                "target": "_blank",
-                "label": "page2flip Kiosk"
-            },
-            {
-                "href":"/apps/space.one/theme",
-                "label": "space.one Theme-Configurator"
-            }
-        ]
     }
 ]

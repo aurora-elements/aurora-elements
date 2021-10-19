@@ -1,7 +1,3 @@
-import "../../components/codeMirror.component";
-import "../../components/dataTable.component";
-import "../../components/headlineBlock.component";
-import "../../../elements/embedded.webview.element";
 import "../../../elements/dashboard/number.dashlet.element";
 import { LitElement, html } from "lit";
 import HTMLAttributes from "./numberDashlet/htmlAttributes.json";
