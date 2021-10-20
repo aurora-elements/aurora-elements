@@ -4,6 +4,7 @@
   "description": "UI elements library based on web components",
   "types": "global.d.ts",
   "author": "Marcus Kramer",
+  "main": "aurora.elements.js",
   "license": "MIT",
   "dependencies": {
     "lit": "^2.0.0",
