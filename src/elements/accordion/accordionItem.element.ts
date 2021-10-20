@@ -89,7 +89,7 @@ class AeAccordionItem extends LitElement {
         <div
             part="content"
             id="item-${this.convertLabel(this.label)}"
-            class="content ${!this.expanded ? '' : 'open'}">
+            class='content ${!this.expanded ? "" : "open"}'>
             <slot></slot>
         </div>
     `

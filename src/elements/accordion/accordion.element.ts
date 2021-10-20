@@ -1,5 +1,6 @@
 import { LitElement, html, css } from "lit";
 import { customElement, property, query } from 'lit/decorators.js';
+import './accordionItem.element';
 
 const styles = css`
     :host {

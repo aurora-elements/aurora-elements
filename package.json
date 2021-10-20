@@ -6,17 +6,14 @@
   "author": "Marcus Kramer",
   "license": "MIT",
   "dependencies": {
-    "@justinribeiro/code-block": "^1.0.0",
     "lit": "^2.0.0",
-    "lit-element-router": "^2.0.3",
-    "mini-css-extract-plugin": "^2.4.2"
+    "mini-css-extract-plugin": "^2.4.2",
+    "terser-webpack-plugin": "^5.2.4"
   },
   "devDependencies": {
     "clean-webpack-plugin": "^3.0.0",
-    "copy-webpack-plugin": "^8.1.0",
     "css-loader": "^5.2.0",
     "eslint": "^7.30.0",
-    "html-webpack-plugin": "^5.3.1",
     "npm-check-updates": "^11.3.0",
     "style-loader": "^2.0.0",
     "ts-loader": "^8.1.0",
@@ -31,8 +28,7 @@
     "build": "webpack --config webpack.dev.js",
     "watch": "webpack --watch",
     "build-prod": "webpack --config webpack.prod.js",
-    "dev": "webpack serve --mode development --env development",
-    "docs": "jsdoc -c jsdoc.json"
+    "dev": "webpack serve --mode development --env development"
   },
   "repository": {
     "type": "git",

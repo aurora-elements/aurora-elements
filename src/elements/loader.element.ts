@@ -31,8 +31,8 @@ export class AeLoader extends LitElement {
                 version="1.1"
                 x="0px"
                 y="0px"
-                part="${this.partLoaderSvgSelector?
-                    this.partLoaderSvgSelector: 'loader-svg'}"
+                part='${this.partLoaderSvgSelector?
+                    this.partLoaderSvgSelector: "loader-svg"}'
                 viewBox="0 0 100 20"
                 enable-background="new 0 0 0 0"
                 xml:space="preserve">
