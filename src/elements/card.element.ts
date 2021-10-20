@@ -119,11 +119,9 @@ export class AeCard extends LitElement {
   @query("img") 
   imageEl?: HTMLImageElement;
 
-  static get styles() {
-    return [styles];
-  }
+  static styles = [styles];
 
-  render() {
+  protected render() {
     return html`
       ${this.href
         ? html`

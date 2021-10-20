@@ -82,9 +82,7 @@ export class AeOverlay extends LitElement {
     @property({type: Boolean, attribute: 'debug-mode'})
     debugMode: boolean = false;
 
-    static get styles() {
-        return [styles];
-    }
+    static styles = [styles];
 
     firstUpdated() {
         document.addEventListener('*:ae-overlay|visible', () => {
@@ -92,7 +90,7 @@ export class AeOverlay extends LitElement {
         })
     }
 
-    render() {
+    protected render() {
         return html`
             <section>
                 <header>

@@ -84,12 +84,10 @@ export class AeThemeSwitcher extends LitElement {
     iconDark!: HTMLElement;
 
     /* Styles - LitElement */
-    static get styles() {
-        return [styles]
-    }
+    static styles = [styles];
 
     /* Render template */
-    render() {
+    protected render() {
         return template;
     }
 

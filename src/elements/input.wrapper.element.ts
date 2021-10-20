@@ -9,8 +9,7 @@ export class AeInputWrapper extends LitElement {
     @queryAssignedNodes('', true)
     defaultSlotNodes: HTMLInputElement;
 
-  static get styles() {
-    return css`
+  static styles = [css`
       * {
         box-sizing: border-box;
       }
@@ -73,8 +72,8 @@ export class AeInputWrapper extends LitElement {
       input:disabled ~ .label {
         opacity: 0.5;
       }
-    `;
-  }
+    `
+  ];
 
   handleSlotchange(e:any) {
     console.log('this.defaultSlotNodes: ', this.defaultSlotNodes)
@@ -89,7 +88,7 @@ export class AeInputWrapper extends LitElement {
     }) */
   }
  
-  render() {
+  protected render() {
     return html`
         <slot @slotchange=${this.handleSlotchange}></slot>
         <label>${this.label}</label>

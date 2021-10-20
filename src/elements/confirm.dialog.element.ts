@@ -141,10 +141,9 @@ export class AeConfirmDialog extends LitElement {
         });
     }
 
-    static get styles() {
-        return [styles];
-    }
-    render() {   
+    static styles = [styles];
+
+    protected render() {   
         return html`
             <section part="ae-confirm-dialog">
                 <header part="ae-confirm-dialog-header">

@@ -36,16 +36,10 @@ class AeAccordion extends LitElement {
     @query('slot') slotEl?: any;
 
     /* Styles - LitElement */
-    static get styles() {
-        return [styles]
-    }
+    static styles =[styles];
 
     /* Render template */
-    render() {
-        return html`
-            <slot> </slot>
-        `;
-    }
+    protected render() { return html`<slot> </slot>`; }
 
     /* Methods */
     /* Should update - Lit Element (Implement to override default behavior) */

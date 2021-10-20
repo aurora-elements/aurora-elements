@@ -89,11 +89,9 @@ export class AeButtonDropDown extends LitElement {
     @query(".ae-button-dropdown-content")
     content: HTMLElement;
 
-    static get styles() { 
-        return [styles] 
-    }
+    static styles = [styles];
 
-    render() {
+    protected render() {
         return html`
              <div 
                 class="ae-button-dropdown-button ${this.open ? 'open' : ''}" 

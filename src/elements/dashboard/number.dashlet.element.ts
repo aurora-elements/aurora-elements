@@ -44,7 +44,7 @@ export class AeNumberDashlet extends LitElement {
     @property({type: String, attribute: 'label'})
     label: string = "Label";
 
-    render() {
+    protected render() {
         return html`
             <header 
                 id="numberAndText" 
@@ -79,9 +79,7 @@ export class AeNumberDashlet extends LitElement {
         `;
     }
 
-    static get styles() {
-        return [styles];
-    }
+    static styles = [styles];
 }
 
 declare global {

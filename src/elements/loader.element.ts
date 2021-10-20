@@ -8,8 +8,8 @@ export class AeLoader extends LitElement {
     partLoaderSvgSelector?: string; 
     
     /* Styles - LitElement */
-    static get styles() {
-        return css`
+    static styles = [
+        css`
             :host {
                 contain: content;
                 display: block;
@@ -21,11 +21,11 @@ export class AeLoader extends LitElement {
             svg circle {
                 fill: var(--loader-svg--fill, var(--ae--accentColor, #888888));
             }
-        `;
-    }
+        `
+    ]
 
     /* Render template */
-    render() {
+    protected render() {
         return html`
             <svg
                 version="1.1"

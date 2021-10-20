@@ -67,12 +67,10 @@ class AeAccordionItem extends LitElement {
     multipleSupport = false;
 
     /* Styles - LitElement */
-    static get styles() {
-        return [styles]
-    }
+    static styles = [styles];
 
     /* Render template */
-    render() {
+    protected render() {
         return html`
         <header
             part="header"

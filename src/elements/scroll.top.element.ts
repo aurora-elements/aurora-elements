@@ -63,12 +63,10 @@ export class AeScrollTop extends LitElement {
     scrollContainer?:string;
 
     /* Styles - LitElement */
-    static get styles() {
-        return [styles]
-    }
+    static styles = [styles];
 
     /* Render template */
-    render() {
+    protected render() {
         return template;
     }
 

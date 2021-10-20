@@ -11,10 +11,10 @@ export class Tab extends LitElement {
     name: string;
 
 /* Template */
-    render() { return html`${masterTemplate()}`; }
+    protected render() { return html`${masterTemplate()}`; }
 
 /* CSS */
-    static get styles() { return [styles]; }
+    static styles = [styles]; 
 
 }
 
