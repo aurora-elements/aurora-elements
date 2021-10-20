@@ -1,5 +1,5 @@
 {
-  "name": "@aurora/elements",
+  "name": "aurora-elements",
   "version": "0.0.9",
   "description": "UI elements library based on web components",
   "types": "global.d.ts",
