@@ -5,7 +5,7 @@
   "types": "global.d.ts",
   "author": "Marcus Kramer",
   "main": "aurora.elements.js",
-  "license": "MIT",
+  "license": "BSD 3-Clause License",
   "dependencies": {
     "lit": "^2.0.0",
     "mini-css-extract-plugin": "^2.4.2",
