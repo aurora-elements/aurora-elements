@@ -1,24 +1,34 @@
 {
   "name": "aurora-elements",
-  "version": "0.0.9",
+  "version": "0.1.1",
   "description": "UI elements library based on web components",
   "types": "global.d.ts",
+  "browser": {
+    "[module-name]": false
+  },
   "author": "Marcus Kramer",
-  "main": "aurora.elements.js",
+  "main": "elements.js",
+  "module": "elements.js",
   "license": "BSD 3-Clause License",
   "dependencies": {
+    "aurora-elements": "^0.1.1",
     "lit": "^2.0.0",
     "mini-css-extract-plugin": "^2.4.2",
     "terser-webpack-plugin": "^5.2.4"
   },
   "devDependencies": {
+    "@types/node": "^16.11.1",
+    "@types/webpack": "^4.41.31",
+    "@types/webpack-dev-server": "^4.3.1",
     "clean-webpack-plugin": "^3.0.0",
     "css-loader": "^5.2.0",
     "eslint": "^7.30.0",
     "npm-check-updates": "^11.3.0",
     "style-loader": "^2.0.0",
     "ts-loader": "^8.1.0",
-    "typescript": "^4.2.4",
+    "ts-node": "^10.3.0",
+    "tsconfig-paths": "^3.11.0",
+    "typescript": "^4.4.4",
     "webpack": "^5.30.0",
     "webpack-bundle-analyser": "^1.4.0",
     "webpack-cli": "^4.6.0",
@@ -29,7 +39,8 @@
     "build": "webpack --config webpack.dev.js",
     "watch": "webpack --watch",
     "build-prod": "webpack --config webpack.prod.js",
-    "dev": "webpack serve --mode development --env development"
+    "dev": "webpack serve --mode development --env development",
+    "build-test": "cross-env TS_NODE_PROJECT=\"tsconfig-for-webpack-config.json\" webpack"
   },
   "repository": {
     "type": "git",

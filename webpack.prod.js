@@ -7,7 +7,7 @@ module.exports = {
   mode: "production",
   devtool: 'source-map',
   entry: {
-    'aurora.elements': './src/elements.ts',
+    'aurora.elements': './elements.js',
     'ae.dashlet.number': './src/elements/dashboard/number.dashlet.element.ts',
     'ae.accordion': './src/elements/accordion/accordion.element.ts',
     'ae.tabs': './src/elements/tabs/tabs.element.ts',
@@ -58,7 +58,7 @@ module.exports = {
     ],
   },
   resolve: {
-    extensions: ['.ts']
+    extensions: ['.ts', '.js']
   },
   output: {
     filename: "[name].js",
