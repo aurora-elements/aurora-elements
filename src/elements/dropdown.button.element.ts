@@ -94,8 +94,8 @@ export class AeButtonDropDown extends LitElement {
     protected render() {
         return html`
              <div 
-                class="ae-button-dropdown-button ${this.open ? 'open' : ''}" 
-                @click=${() => this.open = !this.open}>
+                class='${this.open ? "ae-button-dropdown-button open" : "ae-button-dropdown-button"}'
+                @click="${() => this.open = !this.open}">
                 <span>
                     ${this.label}
                 </span>

@@ -76,7 +76,7 @@ class AeAccordionItem extends LitElement {
             part="header"
             id="button-${this.convertLabel(this.label)}"
             tabindex="-1"
-            @click=${this.toggle}>
+            @click="${this.toggle}">
             <h3>${this.label}</h3>
             <svg 
                 style="width:24px;height:24px" 

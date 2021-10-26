@@ -1,4 +1,4 @@
-import "./loader.element";
+import "../loader.element";
 import { LitElement, html, css } from "lit";
 import { customElement, property, query } from "lit/decorators.js";
 

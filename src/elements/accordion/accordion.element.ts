@@ -1,6 +1,6 @@
 import { LitElement, html, css } from "lit";
 import { customElement, property, query } from 'lit/decorators.js';
-import './accordionItem.element';
+import './accordion-item.element';
 
 const styles = css`
     :host {
@@ -22,7 +22,7 @@ const styles = css`
 `;
 
 @customElement('ae-accordion')
-class AeAccordion extends LitElement {
+export class AeAccordion extends LitElement {
     /* Properties - LitElement */
     @property({type: Array, attribute: false}) 
     items:any = [];

@@ -158,11 +158,11 @@ export class AeConfirmDialog extends LitElement {
                     <a 
                         href="#"
                         part="ae-confirm-dialog-action-cancel" 
-                        @click=${this.cancel}>${this.btnLabelCancel}</a>
+                        @click="${this.cancel}">${this.btnLabelCancel}</a>
                     <a href="#" 
                         part="ae-confirm-dialog-action-submit"
                         onclick="${this.deleteAction}(${this.deleteTargetId});" 
-                        @click=${this.submit}>
+                        @click="${this.submit}">
                         ${this.btnLabelSubmit}
                     </a>
                 </footer>

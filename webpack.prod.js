@@ -7,11 +7,7 @@ module.exports = {
   mode: "production",
   devtool: 'source-map',
   entry: {
-    'aurora.elements': './elements.js',
-    'ae.dashlet.number': './src/elements/dashboard/number.dashlet.element.ts',
-    'ae.accordion': './src/elements/accordion/accordion.element.ts',
-    'ae.tabs': './src/elements/tabs/tabs.element.ts',
-    'ae.card': './src/elements/card.element.ts'
+    'aurora.elements': './src/elements.ts',
   },
   module: {
     rules: [
@@ -63,6 +59,6 @@ module.exports = {
   output: {
     filename: "[name].js",
     path: path.resolve(__dirname, "dist"),
-    publicPath: '/',
+    publicPath: '/dist',
   },
 };

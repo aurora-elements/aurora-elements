@@ -1,17 +1,19 @@
 {
-  "name": "aurora-elements",
-  "version": "0.1.1",
+  "name": "aurora_elements",
+  "version": "0.1.7",
   "description": "UI elements library based on web components",
   "types": "global.d.ts",
-  "browser": {
-    "[module-name]": false
-  },
   "author": "Marcus Kramer",
-  "main": "elements.js",
-  "module": "elements.js",
+  "keywords": [
+    "web components", 
+    "aurora-elements", 
+    "javascript", 
+    "UI-Components Library"
+  ],
+  "main": "./dist/aurora.elements.js",
+  "module": "./dist/aurora.elements.js",
   "license": "BSD 3-Clause License",
   "dependencies": {
-    "aurora-elements": "^0.1.1",
     "lit": "^2.0.0",
     "mini-css-extract-plugin": "^2.4.2",
     "terser-webpack-plugin": "^5.2.4"
@@ -39,11 +41,19 @@
     "build": "webpack --config webpack.dev.js",
     "watch": "webpack --watch",
     "build-prod": "webpack --config webpack.prod.js",
-    "dev": "webpack serve --mode development --env development",
-    "build-test": "cross-env TS_NODE_PROJECT=\"tsconfig-for-webpack-config.json\" webpack"
+    "dev": "webpack serve --mode development --env development"
   },
+  "files": [
+    "dist",
+    "LICENSE",
+    "README.md"
+  ],
   "repository": {
     "type": "git",
     "url": "https://github.com/theCherti/aurora-elements.git"
-  }
+  },
+  "bugs": {
+    "url": "https://github.com/theCherti/aurora-elements/issues"
+  },
+  "homepage": "https://github.com/theCherti/aurora-elements#readme"
 }
