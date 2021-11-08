@@ -74,8 +74,8 @@ const template = html`
 @customElement('ae-theme-switcher')
 export class AeThemeSwitcher extends LitElement {
     /* Properties */
-    @property({type: Object})
-    target: HTMLElement;
+    @property()
+    target: string;
 
     /* Queries */
     @query('slot[name=theme-icon-light]')
@@ -92,15 +92,19 @@ export class AeThemeSwitcher extends LitElement {
     }
 
     themeLightActive() {
+        let target:unknown = this.target;
+        let el = target as HTMLElement;
         this.iconLight.style.display = 'none';
         this.iconDark.style.display = 'block';
-        this.target.setAttribute('theme', 'light');
+        el.setAttribute('theme', 'light');
         localStorage.setItem("theme", 'light');    
     }
     themeDarkActive() {
+        let target:unknown = this.target;
+        let el = target as HTMLElement;
         this.iconLight.style.display = 'block';
         this.iconDark.style.display = 'none';
-        this.target.setAttribute('theme', 'dark');
+        el.setAttribute('theme', 'dark');
         localStorage.setItem("theme", 'dark');      
     }
 
