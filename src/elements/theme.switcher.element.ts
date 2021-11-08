@@ -74,14 +74,14 @@ const template = html`
 @customElement('ae-theme-switcher')
 export class AeThemeSwitcher extends LitElement {
     /* Properties */
-    @property()
-    target!: string;
+    @property({type: Object})
+    target: HTMLElement;
 
     /* Queries */
     @query('slot[name=theme-icon-light]')
-    iconLight!: HTMLElement;
+    iconLight: HTMLElement;
     @query('slot[name=theme-icon-dark]')
-    iconDark!: HTMLElement;
+    iconDark: HTMLElement;
 
     /* Styles - LitElement */
     static styles = [styles];
@@ -91,57 +91,47 @@ export class AeThemeSwitcher extends LitElement {
         return template;
     }
 
+    themeLightActive() {
+        this.iconLight.style.display = 'none';
+        this.iconDark.style.display = 'block';
+        this.target.setAttribute('theme', 'light');
+        localStorage.setItem("theme", 'light');    
+    }
+    themeDarkActive() {
+        this.iconLight.style.display = 'block';
+        this.iconDark.style.display = 'none';
+        this.target.setAttribute('theme', 'dark');
+        localStorage.setItem("theme", 'dark');      
+    }
+
     /* First updated - LitElement */
     firstUpdated() {
         const prefersDarkScheme = window.matchMedia("(prefers-color-scheme: dark)");
 
-        const targetEl = document.querySelector(this.target);
         this.addEventListener('click', () => {
             if (prefersDarkScheme.matches) {
-                this.iconLight.style.display = 'none';
-                this.iconDark.style.display = 'block';
-                targetEl!.toggleAttribute('theme-light');
-
-                if (targetEl!.hasAttribute('theme-light')) {
-
-                    localStorage.setItem("theme", 'light');
-
-                } else {
-                    this.iconLight.style.display = 'block';
-                    this.iconDark.style.display = 'none';
-                    localStorage.setItem("theme", 'dark');
-
-                }
-
+                this.themeDarkActive();
             } else {
-                this.iconLight.style.display = 'block';
-                this.iconDark.style.display = 'none';
-                targetEl!.toggleAttribute('theme-dark');
-
-                if (targetEl!.hasAttribute('theme-dark')) {
-
-                    localStorage.setItem("theme", 'dark');
-
-                } else {
-                    this.iconLight.style.display = 'none';
-                    this.iconDark.style.display = 'block';
-                    localStorage.setItem("theme", 'light');
-
-                }
+                this.themeLightActive();    
             }
-
         });
-
-        if (localStorage.getItem("theme") == "dark") {
-            this.iconLight.style.display = 'block';
-            this.iconDark.style.display = 'none';
-            targetEl!.toggleAttribute('theme-dark');
-
-        } else if (localStorage.getItem("theme") == "light") {
-            this.iconLight.style.display = 'none';
-            this.iconDark.style.display = 'block';
-            targetEl!.toggleAttribute('theme-light');
+        
+        if(localStorage.getItem("theme") != null) {
+            if (localStorage.getItem("theme") == "dark") {
+                this.themeDarkActive();
+    
+            } else {
+                this.themeLightActive()
+            }           
         }
+        if(localStorage.getItem("theme") == null) {
+            if (prefersDarkScheme.matches) {
+                this.themeDarkActive();
+            } else {
+                this.themeLightActive();    
+            }
+        }
+        
     }
 }
 

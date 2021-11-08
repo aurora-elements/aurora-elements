@@ -6,7 +6,7 @@ import './elements/accordion/accordion.element';
 import './elements/tabs/tabs.element';
 // Scroll top
 import './elements/scroll-top/scroll-top.element';
-// Scroll top
+// Theme switcher
 import './elements/theme.switcher.element';
 
 
