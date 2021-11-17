@@ -75,7 +75,7 @@ const template = html`
 export class AeThemeSwitcher extends LitElement {
     /* Properties */
     @property()
-    target: string;
+    target: any;
 
     /* Queries */
     @query('slot[name=theme-icon-light]')
@@ -92,16 +92,14 @@ export class AeThemeSwitcher extends LitElement {
     }
 
     themeLightActive() {
-        let target:unknown = this.target;
-        let el = target as HTMLElement;
+        let el = document.querySelector(this.target);
         this.iconLight.style.display = 'none';
         this.iconDark.style.display = 'block';
         el.setAttribute('theme', 'light');
         localStorage.setItem("theme", 'light');    
     }
     themeDarkActive() {
-        let target:unknown = this.target;
-        let el = target as HTMLElement;
+        let el = document.querySelector(this.target);
         this.iconLight.style.display = 'block';
         this.iconDark.style.display = 'none';
         el.setAttribute('theme', 'dark');
@@ -113,11 +111,11 @@ export class AeThemeSwitcher extends LitElement {
         const prefersDarkScheme = window.matchMedia("(prefers-color-scheme: dark)");
 
         this.addEventListener('click', () => {
-            if (prefersDarkScheme.matches) {
-                this.themeDarkActive();
+            if (localStorage.getItem("theme") == "dark") {
+                this.themeLightActive();   
             } else {
-                this.themeLightActive();    
-            }
+                this.themeDarkActive()
+            } 
         });
         
         if(localStorage.getItem("theme") != null) {
