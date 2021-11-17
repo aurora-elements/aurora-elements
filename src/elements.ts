@@ -12,5 +12,9 @@ import './elements/theme.switcher.element';
 import './elements/confirm.dialog.element';
 // Loader
 import './elements/loader.element';
+// Overlay
+import './elements/overlay.element';
+// Dropdown Button
+import './elements/dropdown.button.element';
 
 
