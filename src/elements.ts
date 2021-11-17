@@ -8,7 +8,9 @@ import './elements/tabs/tabs.element';
 import './elements/scroll-top/scroll-top.element';
 // Theme switcher
 import './elements/theme.switcher.element';
-// Confirm DFialog
+// Confirm Dialog
 import './elements/confirm.dialog.element';
+// Loader
+import './elements/loader.element';
 
 
