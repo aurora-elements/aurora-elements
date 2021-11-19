@@ -2,20 +2,6 @@ import { LitElement, html, css } from "lit";
 import { customElement, property } from "lit/decorators.js";
 import { aeDeleteRequestEvent, aeEvent } from "../functionalities/directives/event.directive";
 
-/**
- * Confirm dialog
- * @description:                                          This element provides a confirm dialog.
- * @version:                                              0.0.8.
- * 
- * Javascript____________________________________________
- * @property {string} url                               - Rest-Api Endpoint for p2f documents. 
- * Methods
- * 
- * CSS___________________________________________________
- * Grid
- * @property {css} --p2f-grid-column-min                - Minimum width of an item.
- */
-
 const styles = css`
     :host {
         transition: opacitiy 500ms ease-in-out 0s;

@@ -1,5 +1,6 @@
 import { LitElement, html, css } from "lit";
 import { customElement, property, query } from "lit/decorators.js";
+import { aeEvent } from "../functionalities/directives/event.directive";
 
 const styles = css`
     :host {
@@ -77,6 +78,9 @@ export class AeThemeSwitcher extends LitElement {
     @property()
     target: any;
 
+    @property({type: Boolean, attribute: 'debug-mode'})
+    debugMode: boolean = false;
+
     /* Queries */
     @query('slot[name=theme-icon-light]')
     iconLight: HTMLElement;
@@ -96,14 +100,20 @@ export class AeThemeSwitcher extends LitElement {
         this.iconLight.style.display = 'none';
         this.iconDark.style.display = 'block';
         el.setAttribute('theme', 'light');
-        localStorage.setItem("theme", 'light');    
+        localStorage.setItem("theme", 'light');   
+        aeEvent(this, 'theme-switcher', '*', 'theme-changed', {
+            theme: 'light'
+        }, this.debugMode)
     }
     themeDarkActive() {
         let el = document.querySelector(this.target);
         this.iconLight.style.display = 'block';
         this.iconDark.style.display = 'none';
         el.setAttribute('theme', 'dark');
-        localStorage.setItem("theme", 'dark');      
+        localStorage.setItem("theme", 'dark');    
+        aeEvent(this, 'theme-switcher', '*', 'theme-changed', {
+            theme: 'dark'
+        }, this.debugMode)  
     }
 
     /* First updated - LitElement */
