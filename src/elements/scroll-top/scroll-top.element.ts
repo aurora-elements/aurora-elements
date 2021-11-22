@@ -14,7 +14,7 @@ export class AeScrollTop extends LitElement {
     firstUpdated() {
         let scrollCon:any;
         if(this.scrollContainer) {
-            scrollCon = this.parentNode?.querySelector(this.scrollContainer);
+            scrollCon = document.querySelector(this.scrollContainer);
 
             scrollCon?.addEventListener('scroll', () => {
                 if (scrollCon.scrollTop > 50) {
