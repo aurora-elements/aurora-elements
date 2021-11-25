@@ -8,22 +8,23 @@ export class AeScrollTop extends LitElement {
 
     /* Properties - LitElement */
     @property({attribute: 'scroll-container'})
-    scrollContainer?:string;
+    scrollContainer:any;
 
     /* First updated - LitElement */
     firstUpdated() {
         let scrollCon:any;
         if(this.scrollContainer) {
             scrollCon = document.querySelector(this.scrollContainer);
-
-            scrollCon?.addEventListener('scroll', () => {
+            console.log('scrollCon: ', scrollCon)
+            console.log('scrollContainer: ', this.scrollContainer)
+            scrollCon.addEventListener('scroll', () => { console.log('scroll')
                 if (scrollCon.scrollTop > 50) {
                     this.setAttribute('is-active', '');
                 } else {
                     this.removeAttribute('is-active');
                 }
             });
-            this.addEventListener('click', () => {
+            this.addEventListener('click', () => { console.log('click')
                 scrollCon.scrollTo({
                     top: 0,
                     behavior: "smooth"
