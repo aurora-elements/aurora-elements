@@ -7,7 +7,7 @@ import './elements/tabs/tabs.element';
 // Scroll top
 import './elements/scroll-top/scroll-top.element';
 // Theme switcher
-import './elements/theme.switcher.element';
+import './elements/theme-switcher/theme.switcher.element';
 // Confirm Dialog
 import './elements/confirm.dialog.element';
 // Loader

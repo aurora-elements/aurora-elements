@@ -1,47 +1,52 @@
 import { html, LitElement } from "lit";
-import { customElement, property } from 'lit/decorators.js';
-import { template } from "./scroll-top.template";
+import { customElement, property } from "lit/decorators.js";
+import { aeEvent } from "../../functionalities/directives/event.directive";
 import { styles } from "./scroll-top.styles";
+import { template } from "./scroll-top.template";
 
-@customElement('ae-scroll-top')
+@customElement("ae-scroll-top")
 export class AeScrollTop extends LitElement {
+  /* Properties - LitElement */
+  @property({ type: Number, attribute: "visible-from" })
+  visibleFrom: number = 50;
+  @property({ type: Boolean, attribute: "debug-mode" })
+  debugMode: boolean = false;
 
-    /* Properties - LitElement */
-    @property({attribute: 'scroll-container'})
-    scrollContainer:any;
+  /* First updated - LitElement */
+  firstUpdated() {
+    this.addEventListener("click", () => this.scroll());
+    window.onscroll = this.visiblility.bind(this);
+  }
 
-    /* First updated - LitElement */
-    firstUpdated() {
-        let scrollCon:any;
-        if(this.scrollContainer) {
-            scrollCon = document.querySelector(this.scrollContainer);
-            console.log('scrollCon: ', scrollCon)
-            console.log('scrollContainer: ', this.scrollContainer)
-            scrollCon.addEventListener('scroll', () => { console.log('scroll')
-                if (scrollCon.scrollTop > 50) {
-                    this.setAttribute('is-active', '');
-                } else {
-                    this.removeAttribute('is-active');
-                }
-            });
-            this.addEventListener('click', () => { console.log('click')
-                scrollCon.scrollTo({
-                    top: 0,
-                    behavior: "smooth"
-                  })
-            })
-        }
+  /* Methods */
+  visiblility() {
+    if (
+      document.body.scrollTop > this.visibleFrom ||
+      document.documentElement.scrollTop > this.visibleFrom
+    ) {
+      this.setAttribute("visible", "");
+    } else {
+      this.removeAttribute("visible");
     }
+  }
+  scroll() {
+    aeEvent(this, 'scroll-top', '*', 'scroll-top', null, this.debugMode);
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }
 
-    /* Styles - LitElement */
-    static styles = [styles];
+  /* Styles - LitElement */
+  static styles = [styles];
 
-    /* Render template */
-    protected render() { return html`${template()}`; }
+  /* Render template */
+  protected render() {
+    return html`
+      ${template()}
+    `;
+  }
 }
 
 declare global {
-    interface HTMLElementTagNameMap {
-        'ae-scroll-top': AeScrollTop
-    }
+  interface HTMLElementTagNameMap {
+    "ae-scroll-top": AeScrollTop;
+  }
 }
