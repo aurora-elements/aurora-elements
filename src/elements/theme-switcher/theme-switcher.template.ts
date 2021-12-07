@@ -2,10 +2,10 @@ import { html } from "lit";
 
 export function template() {
   return html`
-    <slot name="icon-light">
+    <slot name="ae-theme-switcher--icon-light">
       <svg
         viewBox="0 0 32 32"
-        part="theme-icon-light"
+        part="ae-theme-switcher--icon-light"
         version="1.1"
         xmlns="http://www.w3.org/2000/svg"
         xmlns:xlink="http://www.w3.org/1999/xlink">
@@ -18,9 +18,9 @@ export function template() {
         </g>
       </svg>
     </slot>
-    <slot name="icon-dark">
+    <slot name="ae-theme-switcher--icon-dark">
       <svg
-        part="theme-icon-dark"
+        part="ae-theme-switcher--icon-dark"
         viewBox="0 0 32 32"
         version="1.1"
         xmlns="http://www.w3.org/2000/svg"

@@ -9,12 +9,12 @@ import './elements/scroll-top/scroll-top.element';
 // Theme switcher
 import './elements/theme-switcher/theme.switcher.element';
 // Confirm Dialog
-import './elements/confirm.dialog.element';
+import './elements/confirm-dialog/confirm-dialog.element';
 // Loader
 import './elements/loader.element';
 // Overlay
 import './elements/overlay.element';
 // Dropdown Button
-import './elements/dropdown.button.element';
+import './elements/dropdown-button/dropdown-button.element';
 
 
