@@ -3,7 +3,7 @@ import { property, state } from "lit/decorators.js";
 import { aeEvent } from "../../functionalities/directives/event.directive";
 import { styles } from "./confirm-dialog.styles";
 import { template } from "./confirm-dialog.template";
-import { auroraElement } from "../../functionalities/ae.decorators";
+import { auroraElement } from "../../functionalities/decorators";
 
 @auroraElement('ae-confirm-dialog')
 export class AeConfirmDialog extends LitElement {

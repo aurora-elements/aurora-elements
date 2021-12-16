@@ -3,7 +3,7 @@ import { property, query } from "lit/decorators.js";
 import { aeEvent } from "../../functionalities/directives/event.directive";
 import { styles } from "./theme-switcher.styles";
 import { template } from "./theme-switcher.template";
-import { auroraElement } from "../../functionalities/ae.decorators";
+import { auroraElement } from "../../functionalities/decorators";
 
 @auroraElement('ae-theme-switcher')
 export class AeThemeSwitcher extends LitElement {

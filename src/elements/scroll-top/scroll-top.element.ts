@@ -3,7 +3,7 @@ import { property } from "lit/decorators.js";
 import { aeEvent } from "../../functionalities/directives/event.directive";
 import { styles } from "./scroll-top.styles";
 import { template } from "./scroll-top.template";
-import { auroraElement } from "../../functionalities/ae.decorators";
+import { auroraElement } from "../../functionalities/decorators";
 
 @auroraElement('ae-scroll-top')
 export class AeScrollTop extends LitElement {

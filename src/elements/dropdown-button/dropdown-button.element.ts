@@ -3,7 +3,7 @@ import { property, query, state } from 'lit/decorators.js';
 import { aeEvent } from '../../functionalities/directives/event.directive';
 import { styles } from "./dropdown-button.styles";
 import { template } from "./dropdown-button.template";
-import { auroraElement } from "../../functionalities/ae.decorators";
+import { auroraElement } from "../../functionalities/decorators";
 
 @auroraElement('ae-dropdown-button')
 export class AeDropdownButton extends LitElement {

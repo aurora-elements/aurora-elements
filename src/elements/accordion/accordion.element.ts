@@ -3,7 +3,7 @@ import { property, query, state } from 'lit/decorators.js';
 import { styles } from "./accordion.styles";
 import { template } from "./accordion.template";
 import './item/accordion-item.element';
-import { auroraElement } from "../../functionalities/ae.decorators";
+import { auroraElement } from "../../functionalities/decorators";
 import { aeEvent } from "../../functionalities/directives/event.directive";
 
 @auroraElement('ae-accordion')

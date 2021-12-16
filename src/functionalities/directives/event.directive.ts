@@ -1,11 +1,4 @@
-interface AeEventConfig {
-    dispatchElement:any;
-    trigger: string;
-    target: string;
-    activity: string;  
-    eventDetails:any;
-    debug?: boolean;
-}
+import { AeEventConfig } from "../../interfaces/event.interface";
 
 export function aeEvent(ev: AeEventConfig) {
 

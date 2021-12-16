@@ -2,7 +2,7 @@ import { LitElement } from "lit";
 import {property, query} from 'lit/decorators.js';
 import { styles } from "./accordion-item.styles";
 import { template } from "./accordion-item.template";
-import { auroraElement } from "../../../functionalities/ae.decorators";
+import { auroraElement } from "../../../functionalities/decorators";
 
 @auroraElement('ae-accordion-item')
 class AeAccordionItem extends LitElement {
