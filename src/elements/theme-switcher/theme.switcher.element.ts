@@ -1,12 +1,16 @@
 import { LitElement } from "lit";
 import { property, query } from "lit/decorators.js";
-import { aeEvent } from "../../functionalities/directives/event.directive";
+import { aeEvent } from "../../functionalities/directive";
 import { styles } from "./theme-switcher.styles";
 import { template } from "./theme-switcher.template";
-import { auroraElement } from "../../functionalities/decorators";
+import { auroraCustomElement } from "../../functionalities/decorators";
+import { AuroraElement } from "../../functionalities/mixins";
 
-@auroraElement('ae-theme-switcher')
-export class AeThemeSwitcher extends LitElement {
+@auroraCustomElement('ae-theme-switcher')
+export class AeThemeSwitcher extends AuroraElement(LitElement, {
+    styles,
+    template
+}) {
     /* Properties */
     @property()
     target:any = 'body';
@@ -93,11 +97,6 @@ export class AeThemeSwitcher extends LitElement {
         
     }
 
-    /* Styles - LitElement */
-    static styles = [styles];
-
-    /* Render template */
-    protected render() { return template; }
 }
 
 declare global {

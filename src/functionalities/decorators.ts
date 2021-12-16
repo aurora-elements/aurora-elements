@@ -5,7 +5,7 @@ const validateSelector = (element: string) => {
     }
 };
 
-export const auroraElement = (element:string) => (cls:any) => {  
+export const auroraCustomElement = (element:string) => (cls:any) => {  
     validateSelector(element);
 
     if (!window.customElements.get(element)) {

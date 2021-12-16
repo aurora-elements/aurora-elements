@@ -1,12 +1,16 @@
 import { LitElement } from "lit";
 import { property, state } from "lit/decorators.js";
-import { aeEvent } from "../../functionalities/directives/event.directive";
+import { aeEvent } from "../../functionalities/directive";
 import { styles } from "./confirm-dialog.styles";
 import { template } from "./confirm-dialog.template";
-import { auroraElement } from "../../functionalities/decorators";
+import { auroraCustomElement } from "../../functionalities/decorators";
+import { AuroraElement } from "../../functionalities/mixins";
 
-@auroraElement('ae-confirm-dialog')
-export class AeConfirmDialog extends LitElement {
+@auroraCustomElement('ae-confirm-dialog')
+export class AeConfirmDialog extends AuroraElement(LitElement, {
+    styles,
+    template
+}) {
     
     @property({type: String, attribute: 'headline'})
     headline: string = 'Delete';
@@ -77,10 +81,6 @@ export class AeConfirmDialog extends LitElement {
             
         }); 
     }
-
-    static styles = [styles];
-
-    protected render() { return template(this); }
 }
 
 declare global {

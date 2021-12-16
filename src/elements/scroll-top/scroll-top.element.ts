@@ -1,12 +1,16 @@
 import { LitElement } from "lit";
 import { property } from "lit/decorators.js";
-import { aeEvent } from "../../functionalities/directives/event.directive";
+import { aeEvent } from "../../functionalities/directive";
 import { styles } from "./scroll-top.styles";
 import { template } from "./scroll-top.template";
-import { auroraElement } from "../../functionalities/decorators";
+import { auroraCustomElement } from "../../functionalities/decorators";
+import { AuroraElement } from "../../functionalities/mixins";
 
-@auroraElement('ae-scroll-top')
-export class AeScrollTop extends LitElement {
+@auroraCustomElement('ae-scroll-top')
+export class AeScrollTop extends AuroraElement(LitElement, {
+  styles,
+  template
+}) {
   /* Properties - LitElement */
   @property({ type: Number, attribute: "visible-from" })
   visibleFrom: number = 50;
@@ -48,11 +52,6 @@ export class AeScrollTop extends LitElement {
     window.onscroll = this.visiblility.bind(this);
   }
 
-  /* Styles - LitElement */
-  static styles = [styles];
-
-  /* Render template */
-  protected render() { return template() }
 }
 
 declare global {

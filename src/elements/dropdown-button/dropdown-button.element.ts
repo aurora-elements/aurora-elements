@@ -1,12 +1,16 @@
 import { LitElement } from 'lit';
 import { property, query, state } from 'lit/decorators.js';
-import { aeEvent } from '../../functionalities/directives/event.directive';
+import { aeEvent } from '../../functionalities/directive';
 import { styles } from "./dropdown-button.styles";
 import { template } from "./dropdown-button.template";
-import { auroraElement } from "../../functionalities/decorators";
+import { auroraCustomElement } from "../../functionalities/decorators";
+import { AuroraElement } from '../../functionalities/mixins';
 
-@auroraElement('ae-dropdown-button')
-export class AeDropdownButton extends LitElement {
+@auroraCustomElement('ae-dropdown-button')
+export class AeDropdownButton extends AuroraElement(LitElement, {
+    styles,
+    template
+}) {
 
     /* Properties */
     @property({type: String})
@@ -63,12 +67,6 @@ export class AeDropdownButton extends LitElement {
             this.class = 'ae-dropdown-button'
         }
     }
-
-    /* Styles */
-    static styles = [styles];
-
-    /* Template */
-    protected render() { return template(this); }
 }
 
 declare global {

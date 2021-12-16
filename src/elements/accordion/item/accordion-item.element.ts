@@ -2,10 +2,14 @@ import { LitElement } from "lit";
 import {property, query} from 'lit/decorators.js';
 import { styles } from "./accordion-item.styles";
 import { template } from "./accordion-item.template";
-import { auroraElement } from "../../../functionalities/decorators";
+import { auroraCustomElement } from "../../../functionalities/decorators";
+import { AuroraElement } from "../../../functionalities/mixins";
 
-@auroraElement('ae-accordion-item')
-class AeAccordionItem extends LitElement {
+@auroraCustomElement('ae-accordion-item')
+class AeAccordionItem extends AuroraElement(LitElement, {
+    styles,
+    template
+}) {
 
     /* Properties - LitElement */
     @property() 
@@ -45,13 +49,6 @@ class AeAccordionItem extends LitElement {
             }
         }
     }
-
-    /* Styles - LitElement */
-    static styles = [styles];
-
-    /* Render template */
-    protected render() { return template(this) }
-
 }
 
 declare global {

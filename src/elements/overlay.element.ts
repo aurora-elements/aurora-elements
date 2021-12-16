@@ -1,6 +1,6 @@
 import { LitElement, css, html } from "lit";
 import { customElement, property } from 'lit/decorators.js';
-import { aeEvent } from "../functionalities/directives/event.directive";
+import { aeEvent } from "../functionalities/directive";
 
 const styles = css`
     :host {

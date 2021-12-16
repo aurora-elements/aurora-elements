@@ -1,6 +1,6 @@
 import {html, LitElement } from 'lit';
 import { customElement, property, query, queryAll } from "lit/decorators.js";
-import { aeEvent } from '../../functionalities/directives/event.directive';
+import { aeEvent } from '../../functionalities/directive';
 import { styles } from './tabs.styles.element';
 import { masterTemplate } from './tabs.template.element';
 import './tab/tab.element';
