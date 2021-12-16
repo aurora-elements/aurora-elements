@@ -1,20 +1,20 @@
 // Card
 import './elements/card/card.element';
 // Accordion
-import './elements/accordion/accordion.element';
+import './elements/accordion/accordion';
 // Tabs
 import './elements/tabs/tabs.element';
 // Scroll top
-import './elements/scroll-top/scroll-top.element';
+import './elements/scroll-top/scroll-top';
 // Theme switcher
-import './elements/theme-switcher/theme.switcher.element';
+import './elements/theme-switcher/theme.switcher';
 // Confirm Dialog
-import './elements/confirm-dialog/confirm-dialog.element';
+import './elements/confirm-dialog/confirm-dialog';
 // Loader
 import './elements/loader.element';
 // Overlay
 import './elements/overlay.element';
 // Dropdown Button
-import './elements/dropdown-button/dropdown-button.element';
+import './elements/dropdown-button/dropdown-button';
 
 

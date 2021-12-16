@@ -1,5 +1,5 @@
-import { AeEventConfig } from "../interfaces/event.interface";
-import { AttrConfig } from "../interfaces/attr.interface";
+import { AeEventConfig } from "../interfaces/AeEventConfig";
+import { AttrConfig } from "../interfaces/AttrConfig";
 
 // aeEvent directive
 export function aeEvent(ev: AeEventConfig) {

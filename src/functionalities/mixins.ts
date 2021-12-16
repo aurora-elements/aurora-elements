@@ -1,11 +1,7 @@
-import { CSSResult, LitElement } from "lit";
+import { LitElement } from "lit";
+import { AuroraElementConfig } from "../interfaces/AuroraElementConfig";
 
 type Constructor<T = {}> = new (...args: any[]) => T;
-
-interface AuroraElementConfig {
-    styles: CSSResult;
-    template: Function;
-}
 
 export const AuroraElement = <T extends Constructor<LitElement>>(superClass: T, config: AuroraElementConfig) => {
 

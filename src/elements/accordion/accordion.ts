@@ -2,7 +2,7 @@ import { LitElement } from "lit";
 import { property, query, state } from 'lit/decorators.js';
 import { styles } from "./accordion.styles";
 import { template } from "./accordion.template";
-import './item/accordion-item.element';
+import './item/accordion-item';
 import { auroraCustomElement } from "../../functionalities/decorators";
 import { aeEvent, attr } from "../../functionalities/directive";
 import { AuroraElement } from "../../functionalities/mixins";
