@@ -1,48 +1,25 @@
-export const aeDeletedEvent = "ae-confirm-dialog:*|deleted";
-export const aeDeleteRequestEvent = "ae-*:ae-confirm-dialog|delete-request";
-
-export function aeEvent(
-    dispatchElement:any,
-    trigger: string,
-    target: string,
-    activity: string,  
-    eventDetails:any,
-    debug?: boolean
-    ) {
-
-    let aeEvent = new CustomEvent('ae-' + trigger + ':' + target + '|' + activity, { 
-        detail: eventDetails,
-        bubbles: true, 
-        composed: true 
-    });
-
-    if(debug) {
-        console.log('Fired -> ae-' + trigger + ':' + target + '|' + activity + ': ', aeEvent.detail);
-    } 
-
-    return dispatchElement.dispatchEvent(aeEvent);
+interface AeEventConfig {
+    dispatchElement:any;
+    trigger: string;
+    target: string;
+    activity: string;  
+    eventDetails:any;
+    debug?: boolean;
 }
-export function aeDeleteEvent(
-    dispatchElement:any,
-    id: number,
-    name?:string,
-    debugInformations?:any, 
-    debug?: boolean
-    ) {
 
-    let aeDeleteEvent = new CustomEvent(aeDeleteRequestEvent, { 
-        detail: {
-            id: id,
-            name: name,
-            debugInformations:debugInformations
-        },
+export function aeEvent(ev: AeEventConfig) {
+
+    let triggerEl = ev.trigger === '*' ? ev.trigger: 'ae-' + ev.trigger;
+
+    let aeEvent = new CustomEvent(triggerEl + ':' + ev.target + '|' + ev.activity, { 
+        detail: ev.eventDetails,
         bubbles: true, 
         composed: true 
     });
 
-    if(debug) {
-        console.log('Fired -> ' + aeDeleteRequestEvent, aeDeleteEvent.detail);
+    if(ev.debug) {
+        console.log('Fired -> ' + triggerEl + ':' + ev.target + '|' + ev.activity + ': ', aeEvent.detail);
     } 
 
-    return dispatchElement.dispatchEvent(aeDeleteEvent);
+    return ev.dispatchElement.dispatchEvent(aeEvent);
 }

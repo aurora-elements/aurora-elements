@@ -3,9 +3,9 @@ import { html } from "lit";
 export function template(t:any) {
   return html`
     <div
-      class=${t.open ? "ae-dropdown-button open" : "ae-dropdown-button"}
+      class=${t.class}
       part="ae-dropdown-button"
-      @click=${() => (t.open = !t.open, t.handleStatusChange())}>
+      @click=${() => (t.handleOpenChange(), t.handleStatusChange())}>
       <span part="ae-dropdown-button--label">
         ${t.label}
       </span>

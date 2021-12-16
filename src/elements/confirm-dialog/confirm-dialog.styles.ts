@@ -22,9 +22,9 @@ export const styles = css`
   }
   section {
     background:                 var(--ae-confirm-dialog--background-color, #ffffff);
-    box-shadow:                 var(--ae-confirm-dialog--box-shadow, 0px 20px 30px -20px rgba(0, 0, 0, 0.1));
+    box-shadow:                 var(--ae-confirm-dialog--box-shadow, none);
     display:                    grid;
-    grid-template-rows:         var(--ae-confirm-dialog--header-height, 41px) 1fr var(--ae-confirm-dialog--footer-height, 45px);
+    grid-template-rows:         var(--ae-confirm-dialog--header-height, 45px) 1fr var(--ae-confirm-dialog--footer-height, 45px);
     max-width:                  var(--ae-confirm-dialog--max-width, 300px);
     user-select:                none;
   }
@@ -40,10 +40,10 @@ export const styles = css`
   }
   footer {
     text-align:                 right;
-    padding:                    var(--ae-confirm-dialog--footer-padding, 10px 10px 20px 10px);
+    padding:                    var(--ae-confirm-dialog--footer-padding, 10px);
   }
   footer a {
-    text-transform:             var(--ae-confirm-dialog--button-text-transform, uppercase);
+    text-transform:             var(--ae-confirm-dialog--button-text-transform, none);
     transition:                 opacity 300 ms linear 0s;
     text-decoration:            none;
     padding:                    var(--ae-confirm-dialog--button-padding, 10px);

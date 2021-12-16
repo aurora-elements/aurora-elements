@@ -84,7 +84,7 @@ export class AeOverlay extends LitElement {
 
     static styles = [styles];
 
-    firstUpdated() {
+    protected firstUpdated(_changedProperties: Map<string | number | symbol, unknown>): void {
         document.addEventListener('*:ae-overlay|visible', () => {
             this.visible = true;
         })

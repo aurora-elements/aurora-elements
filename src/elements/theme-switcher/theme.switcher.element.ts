@@ -1,46 +1,62 @@
 import { LitElement } from "lit";
-import { customElement, property, query } from "lit/decorators.js";
+import { property, query } from "lit/decorators.js";
 import { aeEvent } from "../../functionalities/directives/event.directive";
 import { styles } from "./theme-switcher.styles";
 import { template } from "./theme-switcher.template";
+import { auroraElement } from "../../functionalities/ae.decorators";
 
-@customElement('ae-theme-switcher')
+@auroraElement('ae-theme-switcher')
 export class AeThemeSwitcher extends LitElement {
     /* Properties */
     @property()
-    target: any = 'body';
+    target:any = 'body';
 
     @property({type: Boolean, attribute: 'debug-mode'})
-    debugMode: boolean = false;
+    debugMode:boolean = false;
 
     /* Queries */
     @query('slot[name=theme-icon-light]')
-    iconLight: HTMLElement;
+    iconLight:HTMLElement;
+
     @query('slot[name=theme-icon-dark]')
-    iconDark: HTMLElement;
+    iconDark:HTMLElement;
 
     /* Methods */
-    themeLightActive() {
+    private themeLightActive() {
         let el = document.querySelector(this.target);
         this.iconLight.style.display = 'none';
         this.iconDark.style.display = 'block';
         el.setAttribute('theme', 'light');
         localStorage.setItem("theme", 'light');   
-        aeEvent(this, 'theme-switcher', '*', 'theme-changed', {
-            theme: 'light'
-        }, this.debugMode)
+        aeEvent({
+            dispatchElement: this, 
+            trigger: 'theme-switcher', 
+            target: '*', 
+            activity: 'theme-changed', 
+            eventDetails: {
+                theme: 'light'
+            }, 
+            debug: this.debugMode
+        })
     }
-    themeDarkActive() {
+    private themeDarkActive() {
         let el = document.querySelector(this.target);
         this.iconLight.style.display = 'block';
         this.iconDark.style.display = 'none';
         el.setAttribute('theme', 'dark');
         localStorage.setItem("theme", 'dark');    
-        aeEvent(this, 'theme-switcher', '*', 'theme-changed', {
-            theme: 'dark'
-        }, this.debugMode)  
+        aeEvent({
+            dispatchElement: this, 
+            trigger: 'theme-switcher', 
+            target: '*', 
+            activity: 'theme-changed', 
+            eventDetails: {
+                theme: 'dark'
+            }, 
+            debug: this.debugMode
+        })  
     }
-    themeCheck() {
+    private themeCheck() {
         if (localStorage.getItem("theme") == "dark") {
             this.themeLightActive();   
         } else {
@@ -49,7 +65,7 @@ export class AeThemeSwitcher extends LitElement {
     }
 
     /* First updated - LitElement */
-    firstUpdated() {
+    protected firstUpdated(_changedProperties: Map<string | number | symbol, unknown>): void {
         const prefersDarkScheme = window.matchMedia("(prefers-color-scheme: dark)");
 
         this.addEventListener('click', () => {
@@ -81,9 +97,7 @@ export class AeThemeSwitcher extends LitElement {
     static styles = [styles];
 
     /* Render template */
-    protected render() {
-        return template;
-    }
+    protected render() { return template; }
 }
 
 declare global {

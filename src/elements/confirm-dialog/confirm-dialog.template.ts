@@ -14,7 +14,7 @@ export function template(t: any) {
         </slot>
       </div>
       <footer part="ae-confirm-dialog--footer">
-        <slot name="ae-confirm-dialog--clancel-button">
+        <slot name="ae-confirm-dialog--cancel-button">
           <a
             href="#"
             part="ae-confirm-dialog--cancel-button"
@@ -27,7 +27,6 @@ export function template(t: any) {
           <a
             href="#"
             part="ae-confirm-dialog--submit-button"
-            onclick="${t.deleteAction}(${t.deleteTargetId});"
             @click="${t.submit}"
           >
             ${t.btnLabelSubmit}

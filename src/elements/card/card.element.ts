@@ -1,6 +1,6 @@
 import "../loader.element";
 import { LitElement, html, css } from "lit";
-import { customElement, property, query } from "lit/decorators.js";
+import { property, query } from "lit/decorators.js";
 
 const styles = css`
   :host {
@@ -77,14 +77,7 @@ const styles = css`
     margin: 0;
   }
 `;
-/** Class AeCard representing a card element.
- * @version:                        - 0.0.8.
- * 
- * @property {string} label         - The label of the card. 
- * @property {string} image         - The image of the card. 
- * @property {string} target        - The click target ("_blank, _self, _parent, _top"), Default-value: _self. 
- */
-@customElement("ae-card")
+
 export class AeCard extends LitElement {
   @property() 
   label?: string;
@@ -181,7 +174,7 @@ export class AeCard extends LitElement {
     `;
   }
 
-  firstUpdated() {
+  protected firstUpdated(_changedProperties: Map<string | number | symbol, unknown>): void {
     const el = this;
     if(this.image) {
       this.imageEl.addEventListener("load", () => {
@@ -189,6 +182,10 @@ export class AeCard extends LitElement {
       });
     }
   }
+}
+
+if (!window.customElements.get('ae-card')) {
+  window.customElements.define('ae-card', AeCard);
 }
 
 declare global {

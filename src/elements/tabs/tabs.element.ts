@@ -80,7 +80,7 @@ export class Tabs extends LitElement {
     }
 
 /* Init */
-    firstUpdated() {
+    protected firstUpdated(_changedProperties: Map<string | number | symbol, unknown>): void {
 
         this.items[0].setAttribute('active', '');
 
