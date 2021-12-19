@@ -1,10 +1,18 @@
 import { LitElement } from "lit";
 import { property } from "lit/decorators.js";
-import { aeEvent } from "../../functionalities/directive";
+import { aeEvent, attr } from "../../functionalities/directive";
 import { styles } from "./scroll-top.styles";
 import { template } from "./scroll-top.template";
 import { auroraCustomElement } from "../../functionalities/decorators";
 import { AuroraElement } from "../../functionalities/mixins";
+
+function attrVisible(t:any, action:string) {
+  attr({
+      target: t,
+      action: action,
+      key: 'visible'
+  });
+}
 
 @auroraCustomElement('ae-scroll-top')
 export class AeScrollTop extends AuroraElement(LitElement, {
@@ -24,9 +32,9 @@ export class AeScrollTop extends AuroraElement(LitElement, {
       document.body.scrollTop > this.visibleFrom ||
       document.documentElement.scrollTop > this.visibleFrom
     ) {
-      this.setAttribute("visible", "");
+      attrVisible(this, 'set');
     } else {
-      this.removeAttribute("visible");
+      attrVisible(this, 'remove');
     }
   }
 

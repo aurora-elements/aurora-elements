@@ -11,7 +11,7 @@ import './elements/theme-switcher/theme.switcher';
 // Confirm Dialog
 import './elements/confirm-dialog/confirm-dialog';
 // Loader
-import './elements/loader.element';
+import './elements/loader/loader';
 // Overlay
 import './elements/overlay.element';
 // Dropdown Button

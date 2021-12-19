@@ -6,6 +6,17 @@ import { template } from "./dropdown-button.template";
 import { auroraCustomElement } from "../../functionalities/decorators";
 import { AuroraElement } from '../../functionalities/mixins';
 
+function dropdowEvent(t:any, activity: string, details?:Object) {
+    return aeEvent({
+        dispatchElement: t, 
+        trigger: 'dropdown-button', 
+        target: '*', 
+        activity: activity, 
+        eventDetails: details, 
+        debug: t.debugMode
+    })
+}
+
 @auroraCustomElement('ae-dropdown-button')
 export class AeDropdownButton extends AuroraElement(LitElement, {
     styles,
@@ -35,27 +46,17 @@ export class AeDropdownButton extends AuroraElement(LitElement, {
 
     /* Methods */    
     protected handleStatusChange() {
-        aeEvent({
-            dispatchElement: this, 
-            trigger: 'dropdown-button', 
-            target: '*', 
-            activity: 'status-change', 
-            eventDetails: {
+        dropdowEvent(
+            this, 
+            'status-change', 
+            {
                 status: this.open ? 'open' : 'closed'
-            }, 
-            debug: this.debugMode
-        })
+            }
+        );
     }
 
     protected handleSlotchange() {
-        aeEvent({
-            dispatchElement: this, 
-            trigger: 'dropdown-button', 
-            target: '*', 
-            activity: 'slot-change', 
-            eventDetails: null, 
-            debug: this.debugMode
-        });
+        dropdowEvent(this, 'slot-change');
     }
 
     protected handleOpenChange() {

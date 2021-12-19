@@ -1,10 +1,18 @@
 import { LitElement } from "lit";
 import { property, state } from "lit/decorators.js";
-import { aeEvent } from "../../functionalities/directive";
+import { aeEvent, attr } from "../../functionalities/directive";
 import { styles } from "./confirm-dialog.styles";
 import { template } from "./confirm-dialog.template";
 import { auroraCustomElement } from "../../functionalities/decorators";
 import { AuroraElement } from "../../functionalities/mixins";
+
+function attrVisible(t:any, action:string) {
+    attr({
+        target: t,
+        action: action,
+        key: 'visible'
+    });
+}
 
 @auroraCustomElement('ae-confirm-dialog')
 export class AeConfirmDialog extends AuroraElement(LitElement, {
@@ -36,7 +44,7 @@ export class AeConfirmDialog extends AuroraElement(LitElement, {
 
     cancel(e:Event) {
         e.preventDefault();
-        this.removeAttribute('visible');
+        attrVisible(this, 'remove');
         document.body.style.removeProperty('overflow');
     }
 
@@ -57,8 +65,7 @@ export class AeConfirmDialog extends AuroraElement(LitElement, {
 
     protected firstUpdated(_changedProperties: Map<string | number | symbol, unknown>): void {
         document.addEventListener("*:ae-confirm-dialog|confirm-request", (e:CustomEvent) => {
-
-            this.setAttribute('visible', '');
+            attrVisible(this, 'set');
 
             document.body.style.overflow = 'hidden';
 

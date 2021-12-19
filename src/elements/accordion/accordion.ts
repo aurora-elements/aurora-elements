@@ -7,7 +7,7 @@ import { auroraCustomElement } from "../../functionalities/decorators";
 import { aeEvent, attr } from "../../functionalities/directive";
 import { AuroraElement } from "../../functionalities/mixins";
 
-function aeAccordionEvent(t:any, activity:string, details?:any) {
+function aeAccordionEvent(t:any, activity:string, details?:Object) {
    return aeEvent({
         dispatchElement: t, 
         trigger: 'accordion', 
@@ -87,12 +87,6 @@ export class AeAccordion extends AuroraElement(LitElement, {
         }
 
         this.items.map((item:any, index:number, {length}) => {
-           attr({
-               target:item, 
-               action: 'set', 
-               key: 'icon-position', 
-               value: this.itemIconPosition
-            });
             setAccordionAttribute(item, 'icon-position', this.itemIconPosition)
 
             if(index + 1 === length){ 

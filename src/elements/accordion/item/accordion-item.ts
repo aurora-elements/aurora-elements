@@ -1,13 +1,29 @@
 import { LitElement } from "lit";
 import {property, query} from 'lit/decorators.js';
+import { auroraCustomElement } from "../../../functionalities/decorators";
+import { attr } from "../../../functionalities/directive";
+import { AuroraElement } from "../../../functionalities/mixins";
 import { styles } from "./accordion-item.styles";
 import { template } from "./accordion-item.template";
-import { auroraCustomElement } from "../../../functionalities/decorators";
-import { AuroraElement } from "../../../functionalities/mixins";
 
-@auroraCustomElement('ae-accordion-item')
+function removeExpanded(target:any) {
+    attr({
+        target: target,
+        action: 'remove', 
+        key: 'expanded'                    
+     });
+}
+function setExpanded(target:any) {
+    attr({
+        target: target,
+        action: 'set', 
+        key: 'expanded'                    
+     });
+}
+
+@auroraCustomElement('test-accordion-item')
 class AeAccordionItem extends AuroraElement(LitElement, {
-    styles,
+    styles, 
     template
 }) {
 
@@ -38,14 +54,15 @@ class AeAccordionItem extends AuroraElement(LitElement, {
 
         if(!this.multiple) {
             if(expanded !== null) {
-                expanded!.removeAttribute('expanded');
+                 removeExpanded(expanded);
             }
-            this.setAttribute('expanded', '');
+            setExpanded(this);
+
         } else {
             if(this.expanded) {
-                this.removeAttribute('expanded')
+                removeExpanded(expanded);
             } else {
-                this.setAttribute('expanded', '')
+                setExpanded(this);
             }
         }
     }
