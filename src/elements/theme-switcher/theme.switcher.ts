@@ -41,10 +41,10 @@ export class AeThemeSwitcher extends AuroraElement(LitElement, {
     debugMode:boolean = false;
 
     /* Queries */
-    @query('slot[name=theme-icon-light]')
+    @query('slot[name=ae-theme-switcher--icon-light]')
     iconLight:HTMLElement;
 
-    @query('slot[name=theme-icon-dark]')
+    @query('slot[name=ae-theme-switcher--icon-dark]')
     iconDark:HTMLElement;
 
     /* Methods */
@@ -77,9 +77,6 @@ export class AeThemeSwitcher extends AuroraElement(LitElement, {
         const prefersDarkScheme = window.matchMedia("(prefers-color-scheme: dark)");
 
         this.addEventListener('click', () => {
-            this.themeCheck();
-        });
-        this.addEventListener('ae-theme-switcher:*|theme-changed', () => {
             this.themeCheck();
         });
         
