@@ -115,7 +115,14 @@ export class AeOverlay extends LitElement {
     closeHandler() {
         this.removeAttribute('visible');
         this.name= '';
-        aeEvent(this, 'overlay', '*', 'closed', null, this.debugMode)
+       aeEvent({
+            dispatchElement: this, 
+            trigger: "overlay", 
+            target: "*", 
+            activity:"closed", 
+            eventDetails: null, 
+            debug: this.debugMode
+        })
     }
 }
 

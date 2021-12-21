@@ -66,7 +66,16 @@ export class Tabs extends LitElement {
         let target = e.target! as HTMLElement;
         target.setAttribute('active', '');
 
-        aeEvent(this, 'tabs['+ this.id +']', 'tab', 'change', {id: id}, this.debugMode)
+        aeEvent({
+            dispatchElement: this, 
+            trigger: "tabs['+ this.id +']", 
+            target: "tab", 
+            activity:"change", 
+            eventDetails: {
+                id: id
+            }, 
+            debug: this.debugMode
+        })
     }
 
     shouldUpdate(changedProperties:any) {

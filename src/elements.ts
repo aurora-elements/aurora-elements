@@ -1,5 +1,5 @@
 // Card
-import './elements/card/card.element';
+import './elements/card/card';
 // Accordion
 import './elements/accordion/accordion';
 // Tabs
