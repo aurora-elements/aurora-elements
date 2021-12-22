@@ -21,7 +21,7 @@ function setExpanded(target:any) {
      });
 }
 
-@auroraCustomElement('test-accordion-item')
+@auroraCustomElement('ae-accordion-item')
 class AeAccordionItem extends AuroraElement(LitElement, {
     styles, 
     template

@@ -15,25 +15,25 @@ export const styles = css`
         display:                    block;
     }
 
-    slot[name=theme-icon-dark] #fill {
+    slot[name=ae-theme-switcher--icon-light] #fill {
         fill:                       var(--ae-theme-switcher--icon-dark-fill, #f8f8f8);
     }
-    slot[name=theme-icon-light] #fill {
+    slot[name=ae-theme-switcher--icon-dark] #fill {
         fill:                       var(--ae-theme-switcher--icon-light-fill, #1565c0);
     }
     @media (prefers-color-scheme: dark) {
-        slot[name=theme-icon-dark] {
+        slot[name=ae-theme-switcher--icon-dark] {
             display:                block;
         }
-        slot[name=theme-icon-light] {
+        slot[name=ae-theme-switcher--icon-light] {
             display:                none;
         }
     }
     @media (prefers-color-scheme: light) {
-        slot[name=theme-icon-dark] {
+        slot[name=tae-theme-switcher--icon-dark] {
             display:                none;
         }
-        slot[name=theme-icon-light] {
+        slot[name=ae-theme-switcher--icon-light] {
             display:                block;
         }
     }

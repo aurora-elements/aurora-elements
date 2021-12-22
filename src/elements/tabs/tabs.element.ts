@@ -68,7 +68,7 @@ export class Tabs extends LitElement {
 
         aeEvent({
             dispatchElement: this, 
-            trigger: "tabs['+ this.id +']", 
+            trigger: `tabs[${this.id}]`, 
             target: "tab", 
             activity:"change", 
             eventDetails: {
