@@ -2,8 +2,6 @@
 import './elements/card/card';
 // Accordion
 import './elements/accordion/accordion';
-// Tabs
-import './elements/tabs/tabs.element';
 // Scroll top
 import './elements/scroll-top/scroll-top';
 // Theme switcher
