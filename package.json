@@ -1,5 +1,5 @@
 {
-  "name": "aurora_elements",
+  "name": "aurora-elements",
   "version": "0.5.6",
   "description": "UI elements library based on web components",
   "types": "global.d.ts",
@@ -50,10 +50,10 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/theCherti/aurora-elements.git"
+    "url": "https://github.com/aurora-elements/aurora-elements.git"
   },
   "bugs": {
-    "url": "https://github.com/theCherti/aurora-elements/issues"
+    "url": "https://github.com/aurora-elements/aurora-elements/issues"
   },
-  "homepage": "https://github.com/theCherti/aurora-elements#readme"
+  "homepage": "https://github.com/aurora-elements/aurora-elements#readme"
 }
